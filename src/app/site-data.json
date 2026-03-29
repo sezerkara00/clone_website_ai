@@ -1,0 +1,68 @@
+{
+  "title": "Home - LayersTech | Precision 3D Printing & Custom Prototyping Services",
+  "description": "Also known 3D printing, additive manufacturing offers numerous significant advantages that are revolutionizing the world of production",
+  "primary": "var(--porto-primary-color)",
+  "accent": "#0070f3",
+  "navLinks": [
+    "Home",
+    "Industries We Serve",
+    "Automotive",
+    "Industrial Sector"
+  ],
+  "sections": [
+    {
+      "title": "(+44) 7776449775",
+      "content": ""
+    },
+    {
+      "title": "Home",
+      "content": ""
+    },
+    {
+      "title": "ABOUT US",
+      "content": ""
+    },
+    {
+      "title": "Who We Are",
+      "content": ""
+    },
+    {
+      "title": "OUR SERVICES",
+      "content": ""
+    },
+    {
+      "title": "What We Do",
+      "content": ""
+    },
+    {
+      "title": "Additive Manufacturing",
+      "content": "Also known 3D printing, additive manufacturing offers numerous significant advantages that are revolutionizing the world of production"
+    },
+    {
+      "title": "3D Printing Service",
+      "content": "Industrial 3D printing for molding - Integrated functionality and faster additive manufacturing enhance both product quality and productivity in molding tools"
+    },
+    {
+      "title": "Selective Laser Sintering (SLS)",
+      "content": "Create functional parts directly from 3D modeling data."
+    },
+    {
+      "title": "Sample products",
+      "content": ""
+    }
+  ],
+  "images": [
+    "https://layerstech.co.uk/wp-content/uploads/2026/02/s_logo-scaled.png",
+    "https://layerstech.co.uk/wp-content/uploads/2025/06/SLS2.png",
+    "https://layerstech.co.uk/wp-content/uploads/2025/06/DMLS2-4.png",
+    "https://layerstech.co.uk/wp-content/uploads/2025/06/png.png",
+    "https://layerstech.co.uk/wp-content/uploads/2025/06/eklemeli-imalat-1.png",
+    "https://layerstech.co.uk/wp-content/uploads/2025/06/3d-baski-hizmeti-1-1.png",
+    "https://layerstech.co.uk/wp-content/uploads/2025/06/Secici-lazer-sinterleme-2.png",
+    "https://layerstech.co.uk/wp-content/uploads/elementor/thumbs/SECICI-LAZER-SINTERLEME-2-1-scaled-r7ah9xpxmqujoikodcdbtq07lkgetgukcchpchhmbo.jpg",
+    "https://layerstech.co.uk/wp-content/uploads/elementor/thumbs/SECICI-LAZER-SINTERLEME-6-2-r7ahhl4n97bk69gmp5f0mai9ngqygs7x27myyk59ok.jpeg",
+    "https://layerstech.co.uk/wp-content/uploads/elementor/thumbs/SECICI-LAZER-SINTERLEME-7-1-r7ahkcrjdn3ycxfwjchgyld4mb3v4p7grwsftw1jd0.jpeg",
+    "https://layerstech.co.uk/wp-content/uploads/elementor/thumbs/SECICI-LAZER-SINTERLEME-5-r7ahm1v1pvflbkz5mkw7yny38cqq10y0ob700viy4k.webp",
+    "https://layerstech.co.uk/wp-content/uploads/elementor/thumbs/DIREKT-SECICI-LAZER-ERIME-8-1-r7ahmyred2omlxndah45vxn80u8kifkmgu0ztk662s.jpeg"
+  ]
+}
