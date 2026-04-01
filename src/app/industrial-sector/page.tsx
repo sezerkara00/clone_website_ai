@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Link from "next/link";
 import { 
   ChevronRight, 
   Stethoscope, 
@@ -197,7 +197,7 @@ export default function IndustrialSector() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-white" suppressHydrationWarning>
+    <div className="relative min-h-screen bg-white">
       <main className="pt-20">
         {/* Hero Section */}
         <section className="bg-[#1a1a1a] py-32 text-white relative overflow-hidden">
@@ -206,7 +206,7 @@ export default function IndustrialSector() {
           </div>
           <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">
-              <a href="/" className="hover:text-white transition-colors">{t({EN: "Home", TR: "Anasayfa"})}</a>
+              <Link href="/" className="hover:text-white transition-colors">{t({EN: "Home", TR: "Anasayfa"})}</Link>
               <ChevronRight className="w-3 h-3" />
               <span className="text-white">{t({EN: "Industrial", TR: "Endüstriyel"})}</span>
             </div>
@@ -280,10 +280,13 @@ export default function IndustrialSector() {
                      </div>
                      
                      <div className="pt-8">
-                        <button className="flex items-center gap-3 text-[13px] font-black uppercase tracking-[0.2em] text-[#1a1a1a] hover:text-[#F26522] transition-all group">
+                        <Link 
+                           href="/contact" 
+                           className="flex items-center gap-3 text-[13px] font-black uppercase tracking-[0.2em] text-[#1a1a1a] hover:text-[#F26522] transition-all group"
+                        >
                            Request Industry Guide
                            <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                        </button>
+                        </Link>
                      </div>
                   </div>
                   <div className="flex-1 w-full">
@@ -305,17 +308,17 @@ export default function IndustrialSector() {
         <section className="py-32 bg-[#1a1a1a] text-white text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
           <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter text-white text-white">Ready for the <br /> <span className="text-[#F26522]">Next Industrial Revolution?</span></h2>
+            <h2 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter text-white">Ready for the <br /> <span className="text-[#F26522]">Next Industrial Revolution?</span></h2>
             <p className="mb-12 text-white/50 max-w-2xl mx-auto text-xl font-light">
               Contact our engineering team to discuss your multi-material and high-performance silicone requirements.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <a href="/contact" className="bg-[#F26522] text-white px-12 py-6 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white hover:text-black transition-all shadow-2xl">
+              <Link href="/contact" className="bg-[#F26522] text-white px-12 py-6 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white hover:text-black transition-all shadow-2xl">
                 CONSULT AN EXPERT
-              </a>
-              <a href="/3d-printers/m1pro" className="bg-white/5 border border-white/10 text-white px-12 py-6 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white/10 transition-all backdrop-blur-sm">
+              </Link>
+              <Link href="/3d-printers/m1pro" className="bg-white/5 border border-white/10 text-white px-12 py-6 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white/10 transition-all backdrop-blur-sm">
                 EXPLORE M1PRO SYSTEM
-              </a>
+              </Link>
             </div>
           </div>
         </section>
