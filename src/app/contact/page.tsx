@@ -1,12 +1,9 @@
 import React from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { ChevronRight, Phone, Mail, MapPin, Clock, Send } from "lucide-react";
 
 export default function Contact() {
   return (
     <div className="relative min-h-screen">
-      <Navbar />
       <main className="pt-20">
         {/* Header section Haus */}
         <section className="bg-heading py-24 text-white">
@@ -115,7 +112,6 @@ export default function Contact() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

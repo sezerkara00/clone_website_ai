@@ -1,36 +1,34 @@
-# Design Tokens - LayersTech
+# Design Tokens - innovatiQ
 
 ## Colors
 
-| Token | RGB | HEX | Role |
-|-------|-----------|-----|------|
-| Primary | rgb(184, 40, 31) | #B8281F | Main brand red (darker) |
-| Secondary | rgb(227, 97, 89) | #E36159 | Bright red/coral accent |
-| Heading | rgb(34, 37, 41) | #222529 | Titles and headlines |
-| Body Text | rgb(119, 119, 119) | #777777 | General text |
-| Background | rgb(255, 255, 255) | #FFFFFF | Page background |
-| Dark Section | rgb(37, 40, 40) | #252828 | Dark background sections |
-
-### Gradients
-- **Primary Gradient:** `linear-gradient(to bottom, #e36159 0%, #b8281f 100%)` (Buttons/Links)
+| Token | HEX | Role |
+|-------|-----|------|
+| Primary (Teal) | #00a693 | Buttons, active links, highlights |
+| Secondary (Dark) | #2d2d2d | Section & footer backgrounds |
+| Neutral (Black) | #1a1a1a | Headlines, titles |
+| Neutral (Gray) | #4a4a4a | Body text |
+| Background (White) | #ffffff | Core section background |
+| Background (Light Gray) | #f4f4f4 | Alternating sections, forms |
 
 ## Typography
 
-- **Primary Font:** `Poppins` (Google Fonts: 200, 300, 400, 600, 700, 900)
-- **Serif Accent Font:** `Lora` (Google Fonts: 400, 700)
-- **Handwriting Accent:** `Shadows Into Light` (Google Fonts: 400)
-
-### Sizes
-- **H1 (Hero Overlay):** 80px (tracked wide)
-- **H2 (Section Titles):** 36px - 42px
-- **Body:** 13px (Line-height: 24px)
-- **Nav Links:** 14px (Semi-bold)
+- **Primary Font:** `Roboto`, sans-serif
+- **Headings (H1, H2):** 
+  - Weight: `700` (Bold)
+  - Style: `Uppercase`
+  - Letter-spacing: `0.05em`
+- **Body Text:**
+  - Size: `16px` / `1rem`
+  - Line-height: `1.6`
+  - Weight: `400`
 
 ## Spacing
-- **Vertical Padding:** 70px - 80px
-- **Grid Gutter:** 15px - 16px
-- **Max Width:** 1140px (Standard container)
+
+- **Vertical Padding:** `80px`
+- **Container Max-Width:** `1200px`
 
 ## Border Radius
-- **Base:** 4px (Buttons, Inputs)
-- **Large:** 8px (Cards/Sections)
+
+- **Buttons:** `4px`
+- **Inputs:** `2px`

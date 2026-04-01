@@ -1,31 +1,19 @@
-# Asset Inventory - LayersTech
+# Asset Inventory - innovatiQ
 
-## Logo
-- **Main PNG:** `https://layerstech.co.uk/wp-content/uploads/2025/09/Saydam-zeminde-orijinal-2.png`
-- **Secondary/Mobile:** `https://layerstech.co.uk/wp-content/uploads/2026/02/s_logo-scaled.png`
+## Logos
+- **Main Logo:** [https://www.innovatiq.com/hs-fs/hubfs/Brandkit/Logo_innovatiQ_Arb.png?width=600&height=172&name=Logo_innovatiQ_Arb.png](https://www.innovatiq.com/hs-fs/hubfs/Brandkit/Logo_innovatiQ_Arb.png?width=600&height=172&name=Logo_innovatiQ_Arb.png)
 
-## Video
-- **Hero Video MP4:** `https://layerstech.co.uk/wp-content/uploads/revslider/home-one-page1/video1-1.mp4`
+## Hero Assets
+- **Background Video:** [https://www.innovatiq.com/hubfs/Video_IndDruck_1280x720_en.mp4](https://www.innovatiq.com/hubfs/Video_IndDruck_1280x720_en.mp4)
+- **Fallback Image:** [https://www.innovatiq.com/hs-fs/hubfs/+Images/Heroes/Drucker_Hero_2000x1200_o.jpg](https://www.innovatiq.com/hs-fs/hubfs/+Images/Heroes/Drucker_Hero_2000x1200_o.jpg)
 
-## Static Images
-- **Hero Background JPEG:** `https://layerstech.co.uk/wp-content/uploads/revslider/home-one-page1/video1-1_25.jpeg`
-- **Gallery/General Background:** `https://layerstech.co.uk/wp-content/uploads/revslider/home-one-page1/GALERI-scaled.jpg`
+## Product Images (Printers)
+- **TiQ 2 (FFF):** [https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_TiQ2_o.png](https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_TiQ2_o.png)
+- **TiQ 2 Plus:** [https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_TiQ2_Plus_o.png](https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_TiQ2_Plus_o.png)
+- **LiQ 5 (LAM):** [https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_LiQ5_o.png](https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_LiQ5_o.png)
+- **TiQ 8 (Large Scale):** [https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_TiQ8_o.png](https://www.innovatiq.com/hubfs/+Images/Produkte/BildModul%20Product_TiQ8_o.png)
 
-## Icons/Special Assets
-- **SLS Icon:** `https://layerstech.co.uk/wp-content/uploads/2025/06/SLS2.png`
-- **DMLS Icon:** `https://layerstech.co.uk/wp-content/uploads/2025/06/DMLS2-4.png`
-- **General PNG:** `https://layerstech.co.uk/wp-content/uploads/2025/06/png.png`
-- **Eklemeli Imalat (Service Icon):** `https://layerstech.co.uk/wp-content/uploads/2025/06/eklemeli-imalat-1.png`
-- **3D Baski Hizmeti:** `https://layerstech.co.uk/wp-content/uploads/2025/06/3d-baski-hizmeti-1-1.png`
-- **Secici Lazer Sinterleme:** `https://layerstech.co.uk/wp-content/uploads/2025/06/Secici-lazer-sinterleme-2.png`
-
-## Portfolio Items (Products)
-- `https://layerstech.co.uk/wp-content/uploads/2024/04/ALUMIDE-1.webp`
-- `https://layerstech.co.uk/wp-content/uploads/2024/04/DAHA-HAFIF-PARCALAR.png`
-- `https://layerstech.co.uk/wp-content/uploads/2017/03/KALIP-CELIGI-.webp`
-- `https://layerstech.co.uk/wp-content/uploads/2024/04/METAL-URETIM.png`
-- `https://layerstech.co.uk/wp-content/uploads/2024/04/PA1101.png`
-- `https://layerstech.co.uk/wp-content/uploads/2024/04/pa2200.png`
-- `https://layerstech.co.uk/wp-content/uploads/2024/04/PA3200.png`
-- `https://layerstech.co.uk/wp-content/uploads/2024/04/TPU.png`
-- `https://layerstech.co.uk/wp-content/uploads/2026/01/product.png`
+## Application / Features
+- **LiQ 5 Application:** [https://www.innovatiq.com/hs-fs/hubfs/+Images/Bild_Text/Bild_Text_LiQ5_o.png](https://www.innovatiq.com/hs-fs/hubfs/+Images/Bild_Text/Bild_Text_LiQ5_o.png)
+- **SmartFunctions:** [https://www.innovatiq.com/hs-fs/hubfs/+Images/Bild_Text/Bild_Text_SmartFunctions_o.png](https://www.innovatiq.com/hs-fs/hubfs/+Images/Bild_Text/Bild_Text_SmartFunctions_o.png)
+- **Quality Specs:** [https://www.innovatiq.com/hs-fs/hubfs/+Images/iQSpecs/iQcSpecsTiQ2_engl.png](https://www.innovatiq.com/hs-fs/hubfs/+Images/iQSpecs/iQcSpecsTiQ2_engl.png)

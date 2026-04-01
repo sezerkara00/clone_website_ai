@@ -1,24 +1,16 @@
 import React from "react";
-import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
-import { WhoWeAre } from "@/components/WhoWeAre";
-import { Stats } from "@/components/Stats";
-import { ServiceGrid } from "@/components/ServiceGrid";
-import { ProductShowcase } from "@/components/ProductShowcase";
-import { Footer } from "@/components/Footer";
+import { PrinterRange } from "@/components/PrinterRange";
+import { SmartSolutions } from "@/components/SmartSolutions";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen">
-      <Navbar />
+    <div className="relative min-h-screen bg-white">
       <main>
         <Hero />
-        <WhoWeAre />
-        <Stats />
-        <ServiceGrid />
-        <ProductShowcase />
+        <PrinterRange />
+        <SmartSolutions />
       </main>
-      <Footer />
     </div>
   );
 }

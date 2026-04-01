@@ -1,73 +1,92 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { ArrowRight, Cpu, Layers, Zap } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function PrintersPage() {
+  const { t } = useLanguage();
+
   const printers = [
     {
-      name: "S300X",
-      type: "LIQ21 | LIQ11",
-      description: "Industrial 3D printer specialized for silicone and liquid materials. High precision for medical and functional prototypes.",
-      image: "/images/all-printer-s300xliq.webp",
-      specs: ["Dual Extrusion", "Silicone Ready", "Production Speed"]
+      id: "m1",
+      name: "LayersTech M1",
+      type: "INDUSTRIAL FFF/FDM",
+      description: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.",
+      image: "https://layerstech.co.uk/wp-content/uploads/2026/02/m1-scaled.jpg",
+      specs: ["380°C Nozzle", "AI Failure Detection", "65°C Chamber"]
     },
     {
-      name: "S300X",
-      type: "FIL11 | FIL11",
-      description: "Industrial 3D printer for high-performance thermoplastics and engineering filaments.",
-      image: "/images/all-printer-s300xliq.webp",
-      specs: ["PBT/PA/PEI", "Industrial Grade", "Modular Heads"]
-    },
-    {
-      name: "S600D",
-      type: "MODULAR OPEN TECH",
-      description: "The ultimate research and production platform. Modular toolheads for paste, filament, and liquids.",
-      image: "/images/freedom-of-materials_2.webp",
-      specs: ["Interchangeable Tools", "Open System", "Infinite Materials"]
+      id: "m1pro",
+      name: "LayersTech M1PRO",
+      type: "SILICONE / LSR SYSTEM",
+      description: "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control.",
+      image: "https://layerstech.co.uk/wp-content/uploads/2026/02/m1pro-scaled.jpg",
+      specs: ["LSR / RTV Printing", "4 Tool Change", "Multi-Material"]
     }
   ];
 
   return (
     <div className="pt-32 pb-24 bg-white">
-      <div className="container mx-auto px-4 md:px-10">
-        <header className="mb-20">
-          <span className="text-primary font-heading text-xs tracking-widest uppercase">3D PRINTERS</span>
-          <h1 className="mt-6 text-6xl md:text-8xl font-heading text-black uppercase leading-tight">
-            Our Industrial <br />
-            ecosystem.
+      <div className="container mx-auto px-6 lg:px-12 max-w-[1400px]">
+        <header className="mb-24">
+          <span className="text-[#F26522] font-bold text-xs tracking-[0.3em] uppercase">OUR ECOSYSTEM</span>
+          <h1 className="mt-6 text-6xl md:text-8xl font-bold text-[#1a1a1a] uppercase leading-[0.9] tracking-tighter">
+            Industrial <br />
+            <span className="text-black/20">Solutions.</span>
           </h1>
-          <p className="mt-8 text-xl font-sans font-light text-black/60 max-w-2xl">
-            Modular, precise, and material-open. Our printers are designed to bridge 
-            the gap between R&D and production.
+          <p className="mt-10 text-xl font-light text-black/60 max-w-2xl leading-relaxed">
+            Revolutionizing manufacturing with intelligent thermal control, multi-material flexibility, and industrial precision.
           </p>
         </header>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16">
           {printers.map((printer, i) => (
-            <div key={i} className="group cursor-pointer">
-              <div className="relative aspect-square rounded-[30px] overflow-hidden bg-black/5 p-8 flex items-center justify-center">
-                <Image 
-                  src={printer.image} 
-                  alt={printer.name} 
-                  fill 
-                  className="object-contain group-hover:scale-105 transition-all duration-700 p-8" 
-                />
-              </div>
-              <div className="mt-8">
-                <span className="text-primary font-heading text-[10px] tracking-[0.4em] uppercase">{printer.type}</span>
-                <h3 className="mt-2 text-4xl font-heading text-black uppercase">{printer.name}</h3>
-                <p className="mt-4 text-black/60 font-sans font-light text-sm line-clamp-2">{printer.description}</p>
-                <ul className="mt-6 flex flex-wrap gap-2">
+            <div key={i} className="group overflow-hidden">
+              <Link href={`/3d-printers/${printer.id}`} className="block">
+                <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden bg-[#f8f8f8] border border-black/5 flex items-center justify-center group-hover:bg-white group-hover:shadow-[0_40px_80px_rgba(0,0,0,0.08)] transition-all duration-700">
+                  <div className="p-12 relative w-full h-full">
+                    <img 
+                      src={printer.image} 
+                      alt={printer.name} 
+                      className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-1000" 
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&q=80";
+                      }}
+                    />
+                  </div>
+                  <div className="absolute top-8 left-8">
+                    <span className="px-5 py-2 bg-white rounded-full text-[10px] font-bold tracking-[0.2em] text-[#F26522] shadow-sm">
+                      {printer.type}
+                    </span>
+                  </div>
+                </div>
+              </Link>
+              
+              <div className="mt-12 px-2">
+                <h3 className="text-4xl font-bold text-[#1a1a1a] uppercase tracking-tighter">{printer.name}</h3>
+                <p className="mt-6 text-black/60 font-light text-lg leading-relaxed line-clamp-2 max-w-lg">{printer.description}</p>
+                
+                <div className="mt-8 flex flex-wrap gap-3">
                   {printer.specs.map(spec => (
-                    <li key={spec} className="px-3 py-1 bg-black/5 rounded-full text-[10px] uppercase tracking-widest text-black/40 font-heading">
+                    <div key={spec} className="flex items-center gap-2 px-4 py-2 bg-black/5 rounded-full text-[11px] font-bold text-black/40">
+                      <div className="w-1 h-1 rounded-full bg-[#F26522]" />
                       {spec}
-                    </li>
+                    </div>
                   ))}
-                </ul>
-                <div className="mt-8">
-                  <Button variant="outline" className="rounded-full border-black/10 text-black font-heading text-xs tracking-widest group-hover:bg-black group-hover:text-white transition-all">
-                    LEARN MORE
-                  </Button>
+                </div>
+
+                <div className="mt-10">
+                  <Link href={`/3d-printers/${printer.id}`}>
+                    <Button variant="outline" className="h-14 px-8 rounded-lg border-black/10 text-black text-[13px] font-bold tracking-[0.1em] hover:bg-[#1a1a1a] hover:text-white hover:border-[#1a1a1a] transition-all group/btn">
+                      EXPLORE DETAILS
+                      <ArrowRight className="ml-3 w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
+                    </Button>
+                  </Link>
                 </div>
               </div>
             </div>

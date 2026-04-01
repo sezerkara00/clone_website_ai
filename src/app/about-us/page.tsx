@@ -1,12 +1,9 @@
 import React from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { ChevronRight, Target, Users, ShieldCheck } from "lucide-react";
 
 export default function AboutUs() {
   return (
     <div className="relative min-h-screen">
-      <Navbar />
       <main className="pt-20">
         {/* Header section Haus */}
         <section className="bg-heading py-24 text-white">
@@ -84,7 +81,6 @@ export default function AboutUs() {
           </div>
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

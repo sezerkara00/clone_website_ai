@@ -1,48 +1,57 @@
-# Page Topology: Lynxter Home Page
+# Page Topology: innovatiQ Home Page
+
+The homepage follows a modular, vertical layout with alternating background colors (White and Light Gray).
 
 ## 0. Navigation (Sticky)
-- Logo: Lynxter (Left)
-- Links: 3D PRINTERS, MATERIALS, INDUSTRIES, APPLICATIONS, SUPPORT, LEARN, COMPANY
-- Secondary: Store, Search, Language, Contact
-- Behavior: Sticky, potential color change on scroll.
+- Logo: innovatiQ (Left)
+- Links: Industrial 3D-Printing, 3D-Printer, Solutions, News, Partner, Career, Service & Support
+- Language: DE/EN switch (Right)
+- Behavior: Sticky.
 
 ## 1. Hero Section
-- Background: Likely a high-quality video or image of a 3D printer in action.
-- Content: "Leading in Silicone 3D Printing, Open to All Materials."
-- CTA: "EXPERIENCE THE FUTURE" (Yellow Button).
+- Background: Full-width video/image of industrial context.
+- Headline: "INDUSTRIAL 3D PRINTING."
+- Layout: Centered messaging.
 
-## 2. Social Proof / Logo Cloud
-- Headline: "THEY USE LYNXTER 3D PRINTERS"
-- Logos: Airbus, Schneider Electric, etc. (Deduce from content).
+## 2. Quick Action Banner
+- Background: Teal (#00a693)
+- Items: 
+  - "Arrange a consultation"
+  - "Arrange a callback appointment"
+  - "Send request"
 
-## 3. Mission / Value Prop
-- Headline: "WE BELIEVED WHEN OTHERS DIDN’T."
-- Text: Narrative about their origin and innovation.
+## 3. Product Features (FFF)
+- Split: Text (Left), Image (Right).
+- Background: Light Gray (#f4f4f4).
 
-## 4. Key Stats Grid
-- 3 Columns:
-  1. #1 Trusted Partner in Silicone 3D Printing
-  2. 43 Countries with Lynxter 3D Printers
-  3. 100,000+ silicone parts printed
+## 4. Product Features (LAM)
+- Split: Image (Left), Text (Right).
+- Background: White.
 
-## 5. Product Showcases (S300X & S600D)
-- Grid or Alternating Layout.
-- S300X: Industrial Liquid & Filament.
-- S600D: Modular Open Tech.
+## 5. Materials Section
+- Split: Text (Left), Image (Right).
+- Background: Light Gray (#f4f4f4).
 
-## 6. Materials Section
-- "YOUR IDEAS, SMARTER, FASTER. MATERIALS WITHOUT LIMITS."
-- Library of materials (Silicone, Thermoplastics).
+## 6. Smart Functions
+- Carousel/Slider with circular iconography.
+- Background: White.
 
-## 7. Resources / Library
-- "A LIBRARY FOR SMARTER 3D PRINTING"
-- Links to E-books, White papers.
+## 7. Quality Standards
+- Split content or Slider.
+- Background: Light Gray (#f4f4f4).
 
-## 8. About / Company Footer
-- "BONJOUR LYNXTER"
-- "OUR STORY, OUR PEOPLE, OUR PASSION"
+## 8. Efficiency Case Study
+- Text-heavy, centered container.
+- Background: White.
 
-## 9. Global Footer
-- Site map links.
-- Social links.
-- Policy links.
+## 9. Services & Training
+- Background: Dark Gray (#2d2d2d).
+- Text/Icons: Service technicians, on-site service, training.
+
+## 10. Contact Form
+- Fields: Name, Company, Email, Message.
+- Background: Light Gray (#f4f4f4).
+
+## 11. Footer
+- Background: Dark Gray (#2d2d2d).
+- Sections: Newsletter, Quick links, Contact, Socials.

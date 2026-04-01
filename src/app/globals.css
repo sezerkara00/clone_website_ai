@@ -7,10 +7,8 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-heading: var(--font-poppins), var(--font-sans);
-  --font-serif: var(--font-lora), serif;
-  --font-handwriting: var(--font-shadows), cursive;
+  --font-sans: var(--font-roboto), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-roboto), var(--font-sans);
   
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
@@ -24,9 +22,9 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   
-  --color-heading: #222529;
-  --color-body: #777777;
-  --color-dark-section: #252828;
+  --color-heading: #1a1a1a;
+  --color-body: #4a4a4a;
+  --color-dark-section: #2d2d2d;
   
   --radius-sm: 2px;
   --radius-md: 4px;
@@ -44,29 +42,29 @@
 
 :root {
   --background: #FFFFFF;
-  --foreground: #777777;
+  --foreground: #4a4a4a;
   
-  --primary: #B8281F;
+  --primary: #F26522;
   --primary-foreground: #FFFFFF;
   
-  --secondary: #E36159;
+  --secondary: #1a1a1a;
   --secondary-foreground: #FFFFFF;
   
-  --accent: #E36159;
+  --accent: #FF8C00;
   --accent-foreground: #FFFFFF;
   
-  --muted: #F4F4F4;
-  --muted-foreground: #777777;
+  --muted: #1a1a1a;
+  --muted-foreground: #a1a1aa;
   
-  --card: #FFFFFF;
-  --card-foreground: #222529;
+  --card: #1a1a1a;
+  --card-foreground: #FFFFFF;
   
-  --popover: #FFFFFF;
-  --popover-foreground: #222529;
+  --popover: #1a1a1a;
+  --popover-foreground: #FFFFFF;
   
-  --border: #E7E7E7;
-  --input: #E7E7E7;
-  --ring: #B8281F;
+  --border: #2d2d2d;
+  --input: #2d2d2d;
+  --ring: #F26522;
   
   --radius: 4px;
 }
@@ -77,14 +75,14 @@
   }
   body {
     @apply bg-background text-foreground font-sans;
-    font-size: 13px;
-    line-height: 24px;
+    font-size: 16px;
+    line-height: 1.6;
   }
   h1, h2, h3, h4, h5, h6 {
-    @apply text-heading font-heading font-bold;
+    @apply text-heading font-heading font-bold uppercase tracking-wider;
   }
 }
 
 .primary-gradient {
-  background: linear-gradient(to bottom, #e36159 0%, #b8281f 100%);
-}
+  background: linear-gradient(to bottom, #FF8C00 0%, #F26522 100%);
+}

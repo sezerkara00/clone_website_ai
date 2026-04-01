@@ -1,6 +1,4 @@
 import React from "react";
-import { Navbar } from "@/components/Navbar";
-import { Footer } from "@/components/Footer";
 import { ChevronRight, FileText, Download } from "lucide-react";
 
 export default function Materials() {
@@ -20,7 +18,6 @@ export default function Materials() {
 
   return (
     <div className="relative min-h-screen">
-      <Navbar />
       <main className="pt-20">
         {/* Header section Haus */}
         <section className="bg-heading py-24 text-white">
@@ -91,7 +88,6 @@ export default function Materials() {
             "We only use original powders from EOS and Farsoon to ensure clinical-grade precision."
         </section>
       </main>
-      <Footer />
     </div>
   );
 }

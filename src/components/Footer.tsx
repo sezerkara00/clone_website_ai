@@ -1,102 +1,163 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
-import { Phone, Mail, MapPin, Globe, Share2, Users, Activity } from "lucide-react";
+import { Phone, Mail, MapPin, Globe, Share2, Users, Search, ChevronRight } from "lucide-react";
+
+const footerLinks = {
+  products: [
+    { name: "SLS Technology", href: "/technologies/sls" },
+    { name: "DMLS Technology", href: "/technologies/dmls" },
+    { name: "3D Molding", href: "/technologies/molding" },
+    { name: "3D Modeling", href: "/services/modeling" },
+  ],
+  solutions: [
+    { name: "Aerospace", href: "/industries/aerospace" },
+    { name: "Defense", href: "/industries/defense" },
+    { name: "Medical", href: "/industries/medical" },
+    { name: "Automotive", href: "/industries/automotive" },
+  ],
+  company: [
+    { name: "About Us", href: "/about-us" },
+    { name: "Careers", href: "/careers" },
+    { name: "News", href: "/news" },
+    { name: "Contact", href: "/contact" },
+  ]
+};
 
 export function Footer() {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer className="bg-heading pt-20 pb-24 text-white/80">
-      <div className="container mx-auto px-6">
+    <footer className="bg-[#1a1a1a] text-white pt-24 pb-12 border-t border-white/5">
+      <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
-          {/* Logo & Info */}
-          <div className="flex flex-col gap-8">
-            <img src="/images/Saydam-zeminde-orijinal-2.png" alt="LayersTech" className="h-10 self-start" />
-            <p className="text-xs leading-relaxed max-w-xs">
-              LayersTech is a leading industrial 3D printing and modeling solutions provider, bringing precision and innovation to global industrial sectors.
-            </p>
-            <div className="flex items-center gap-4 text-white">
-              <Globe className="w-5 h-5 cursor-pointer hover:text-primary transition-colors" />
-              <Share2 className="w-5 h-5 cursor-pointer hover:text-primary transition-colors" />
-              <Users className="w-5 h-5 cursor-pointer hover:text-primary transition-colors" />
-              <Activity className="w-5 h-5 cursor-pointer hover:text-primary transition-colors" />
+          {/* Brand & Contact */}
+          <div className="space-y-8">
+            <Link href="/">
+              <img 
+                src="https://layerstech.co.uk/wp-content/uploads/2026/02/s_logo-scaled.png" 
+                alt="LayersTech Logo" 
+                className="h-10 w-auto mb-8" 
+              />
+            </Link>
+            
+            <div className="space-y-6">
+               <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#F26522]/20 transition-colors">
+                     <MapPin className="w-5 h-5 text-[#F26522]" />
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-bold tracking-widest text-white/40 mb-1 uppercase">UK Office</p>
+                    <p className="text-[14px] text-white/70 leading-relaxed group-hover:text-white transition-colors">
+                      136 Richmond Hill, Flat 4, 3 The Terrace, <br />
+                      TW10 6RN, Richmond, United Kingdom
+                    </p>
+                  </div>
+               </div>
+
+               <div className="flex items-start gap-4 group cursor-pointer">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#F26522]/20 transition-colors">
+                     <MapPin className="w-5 h-5 text-[#F26522]" />
+                  </div>
+                  <div>
+                    <p className="text-[11px] font-bold tracking-widest text-white/40 mb-1 uppercase">Turkey Office</p>
+                    <p className="text-[14px] text-white/70 leading-relaxed group-hover:text-white transition-colors">
+                      Bahçelievler Mahallesi Fevzi Çakmak 2 Caddesi No:1ANT <br />
+                      (Güzelşehir Site Giriş Yanı Bağımsız Bölüm 1 ) <br />
+                      Büyükçekmece/İSTANBUL
+                    </p>
+                  </div>
+               </div>
+               
+               <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#F26522]/20 transition-colors">
+                     <Phone className="w-5 h-5 text-[#F26522]" />
+                  </div>
+                  <a href="tel:+447776449775" className="text-[14px] text-white/70 group-hover:text-white transition-colors">
+                    +44 7776 449775
+                  </a>
+               </div>
+               
+               <div className="flex items-center gap-4 group cursor-pointer">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#F26522]/20 transition-colors">
+                     <Mail className="w-5 h-5 text-[#F26522]" />
+                  </div>
+                  <a href="mailto:erkan.ates@layerstech.co.uk" className="text-[14px] text-white/70 group-hover:text-white transition-colors">
+                    erkan.ates@layerstech.co.uk
+                  </a>
+               </div>
+            </div>
+            
+            <div className="flex items-center gap-4 pt-4">
+               {[Globe, Share2, Users, Search].map((Icon, idx) => (
+                 <a key={idx} href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#F26522] hover:text-white transition-all duration-300">
+                    <Icon className="w-5 h-5" />
+                 </a>
+               ))}
             </div>
           </div>
 
-          {/* Contact Details */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-sm font-black text-white uppercase tracking-widest border-b border-white/10 pb-4">Our Offices</h4>
-            <div className="flex flex-col gap-4 text-[11px] font-bold">
-              <div className="flex gap-3">
-                <MapPin className="w-4 h-4 text-primary shrink-0" />
-                <div>
-                  <p className="text-white mb-1">TURKEY - ISTANBUL</p>
-                  <p className="font-medium text-white/60 uppercase">Cumhuriyet Mah. Yeniyol Sk. No: 12 Bomonti Business Center Şişli/İstanbul</p>
-                </div>
-              </div>
-              <div className="flex gap-3 mt-2">
-                <MapPin className="w-4 h-4 text-primary shrink-0" />
-                <div>
-                  <p className="text-white mb-1">UNITED KINGDOM</p>
-                  <p className="font-medium text-white/60 uppercase">Suite 129, 2nd Floor, 8-10 Hill Street, Mayfair, London, W1J 5NQ</p>
-                </div>
-              </div>
-            </div>
+          {/* Links Sections */}
+          <div>
+            <h4 className="text-[14px] font-bold tracking-[0.2em] mb-10 text-[#F26522] uppercase">Technologies</h4>
+            <ul className="space-y-4">
+              {footerLinks.products.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-[14px] text-white/50 hover:text-white transition-colors flex items-center gap-2 group">
+                    <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#F26522]" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Quick Contact */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-sm font-black text-white uppercase tracking-widest border-b border-white/10 pb-4">Get In Touch</h4>
-            <div className="flex flex-col gap-4 text-[13px] font-medium">
-              <a href="tel:+447776449775" className="flex items-center gap-3 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+44 7776449775</span>
-              </a>
-              <a href="tel:+902122340333" className="flex items-center gap-3 hover:text-white transition-colors">
-                <Phone className="w-4 h-4 text-primary" />
-                <span>+90 212 234 0333</span>
-              </a>
-              <a href="mailto:info@layerstech.co.uk" className="flex items-center gap-3 hover:text-white transition-colors">
-                <Mail className="w-4 h-4 text-primary" />
-                <span>info@layerstech.co.uk</span>
-              </a>
-            </div>
+          <div>
+            <h4 className="text-[14px] font-bold tracking-[0.2em] mb-10 text-[#F26522] uppercase">Industries</h4>
+            <ul className="space-y-4">
+              {footerLinks.solutions.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-[14px] text-white/50 hover:text-white transition-colors flex items-center gap-2 group">
+                    <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#F26522]" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
 
-          {/* Simple Contact Form */}
-          <div className="flex flex-col gap-6">
-            <h4 className="text-sm font-black text-white uppercase tracking-widest border-b border-white/10 pb-4">Contact Us</h4>
-            <form className="flex flex-col gap-3">
-              <input 
-                type="text" 
-                placeholder="Name" 
-                className="bg-white/5 border border-white/10 rounded px-4 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-white" 
-              />
-              <input 
-                type="email" 
-                placeholder="Email" 
-                className="bg-white/5 border border-white/10 rounded px-4 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-white" 
-              />
-              <textarea 
-                placeholder="Message" 
-                rows={3}
-                className="bg-white/5 border border-white/10 rounded px-4 py-2 text-xs focus:ring-1 focus:ring-primary outline-none text-white resize-none" 
-              />
-              <button 
-                type="submit" 
-                className="primary-gradient py-2 rounded text-[10px] font-black uppercase tracking-widest text-white shadow-lg hover:shadow-primary/20 transition-all"
-              >
-                SUBMIT
-              </button>
-            </form>
+          <div>
+            <h4 className="text-[14px] font-bold tracking-[0.2em] mb-10 text-[#F26522] uppercase">Company</h4>
+            <ul className="space-y-4">
+              {footerLinks.company.map((link) => (
+                <li key={link.name}>
+                  <Link href={link.href} className="text-[14px] text-white/50 hover:text-white transition-colors flex items-center gap-2 group">
+                    <ChevronRight className="w-4 h-4 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all text-[#F26522]" />
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
 
-        <div className="pt-10 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-          <p className="text-[10px] font-bold tracking-widest uppercase text-white/30">
-            © {new Date().getFullYear()} LAYERSTECH. All Rights Reserved.
+        {/* Bottom Bar */}
+        <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
+          <p className="text-[13px] text-white/30">
+            © {currentYear} LAYERSTECH GMBH & CO. KG. All rights reserved.
           </p>
-          <div className="flex items-center gap-6 text-[10px] font-bold tracking-widest uppercase text-white/50">
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
-            <Link href="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+          
+          <div className="flex items-center gap-8 text-[12px] font-bold tracking-widest text-white/30 uppercase">
+            <Link href="/imprint" className="hover:text-white transition-colors">Imprint</Link>
+            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/legal" className="hover:text-white transition-colors">Legal Notice</Link>
+          </div>
+          
+          <div className="flex items-center gap-3 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500">
+            <span className="text-[10px] font-bold tracking-widest text-white/50 uppercase">Part of</span>
+            <div className="h-6 w-px bg-white/20 mx-2" />
+            <span className="text-[14px] font-bold text-white tracking-widest uppercase">LayersTech Group</span>
           </div>
         </div>
       </div>
