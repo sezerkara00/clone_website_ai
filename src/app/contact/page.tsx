@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { ChevronRight, Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { ChevronRight, Phone, Mail, MapPin, Clock, Send, Cpu } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
 
@@ -11,25 +11,45 @@ export default function Contact() {
   return (
     <div className="relative min-h-screen bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
       <main className="pt-20">
-        {/* Header section Haus */}
-        <section className="bg-[#1a1a1a] py-32 text-white relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-full opacity-10">
-             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#F26522] via-transparent to-transparent blur-3xl"></div>
+        {/* Cinematic Header section Haus */}
+        <section className="bg-[#1a1a1a] py-32 md:py-48 text-white relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full opacity-20">
+             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#F26522]/40 via-transparent to-transparent blur-3xl"></div>
+             <div className="absolute bottom-0 right-0 w-[800px] h-[800px] bg-[#F26522]/10 rounded-full blur-[120px] -mr-40 -mb-40"></div>
           </div>
+
+          {/* Technical Data Overlay (To fill right-side space) Haus */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full hidden xl:flex flex-col justify-center gap-12 pr-24 select-none opacity-60 hover:opacity-100 transition-opacity duration-1000 z-10">
+             {[
+               { label: "GLOBAL REACH", val: "24/7" },
+               { label: "AVG RESPONSE", val: "< 12 HR" },
+               { label: "ENGINEERS", val: "ACTIVE" },
+               { label: "PROTOCOL", val: "SECURE" }
+             ].map((stat, i) => (
+               <div key={i} className="flex flex-col items-end border-r-2 border-[#F26522]/60 pr-8">
+                 <span className="text-[10px] font-black tracking-[0.5em] text-[#F26522] mb-1">{stat.label}</span>
+                 <span className="text-5xl font-black tracking-tighter text-white/70">{stat.val}</span>
+               </div>
+             ))}
+          </div>
+
           <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">
+            <div className="flex items-center justify-center md:justify-start gap-2 text-[10px] uppercase font-black tracking-[0.4em] text-white/40 mb-8">
               <Link href="/" className="hover:text-white transition-colors">{t({EN: "Home", TR: "Anasayfa"})}</Link>
               <ChevronRight className="w-3 h-3" />
-              <span className="text-white">{t({EN: "Contact Us", TR: "İletişim"})}</span>
+              <span className="text-white">{t({EN: "Contact", TR: "İletişim"})}</span>
             </div>
-            <h1 className="text-5xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none">{t({ EN: "How Can We Help You?", TR: "Nasıl Yardımcı Olabiliriz?" })}</h1>
-            <p className="text-white/50 max-w-2xl text-xl font-light leading-relaxed mb-12">
+            <h1 className="text-6xl md:text-[130px] font-black mb-8 uppercase tracking-tighter leading-[0.8] text-white">
+               {t({ EN: "Global", TR: "Bize" })} <br />
+               <span className="text-[#F26522]">{t({ EN: "Support", TR: "Ulaşın" })}</span>
+            </h1>
+            <p className="text-white/60 max-w-2xl text-xl md:text-2xl font-light leading-relaxed mb-16">
               {t({
-                EN: "Reach out to our engineering and sales teams for inquiries, quotes, or technical consultations.",
-                TR: "Sorularınız, fiyat teklifleri veya teknik danışmanlık için mühendislik ve satış ekiplerimize ulaşın."
+                EN: "Direct access to our engineering command center. For inquiries, quotes, or technical deep-dives.",
+                TR: "Mühendislik komuta merkezimize doğrudan erişim. Sorularınız, fiyat teklifleri veya teknik analizler için."
               })}
             </p>
-            <div className="w-32 h-1.5 bg-[#F26522] mx-auto md:mx-0"></div>
+            <div className="w-48 h-2 bg-gradient-to-r from-[#F26522] to-transparent mx-auto md:mx-0"></div>
           </div>
         </section>
 
@@ -96,37 +116,47 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Contact Form Haus */}
-              <div className="bg-[#fcfcfc] dark:bg-white/[0.02] border border-black/5 dark:border-white/10 p-12 md:p-16 rounded-[60px] shadow-2xl relative overflow-hidden group">
-                 <div className="absolute top-0 right-0 w-32 h-32 bg-[#F26522]/5 rounded-full -mr-16 -mt-16 blur-3xl"></div>
-                 <h3 className="text-3xl font-black text-[#1a1a1a] dark:text-white mb-10 uppercase tracking-tighter">{t({ EN: "Message Us", TR: "Bize Yazın" })}</h3>
-                 <form className="space-y-8 relative z-10">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                       <div className="flex flex-col gap-3">
-                          <label className="text-[10px] font-black uppercase text-[#1a1a1a]/40 dark:text-white/30 tracking-[0.2em] ml-2">{t({ EN: "Full Name", TR: "Ad Soyad" })}</label>
-                          <input type="text" className="bg-white dark:bg-white/[0.03] border-2 border-transparent border-b-black/10 dark:border-b-white/10 focus:border-[#F26522] dark:focus:border-[#F26522] px-6 py-4 text-sm focus:outline-none transition-all placeholder:text-black/20 dark:placeholder:text-white/10 rounded-2xl" placeholder={t({ EN: "John Doe", TR: "Örn: Ahmet Yılmaz" })} />
+              {/* Secure Direct Contact Block (No Inputs) Haus */}
+              <div className="bg-[#1a1a1a] p-12 md:p-16 rounded-[60px] shadow-2xl relative overflow-hidden flex flex-col justify-between h-full group">
+                 <div className="absolute top-0 right-0 w-64 h-64 bg-[#F26522]/10 rounded-full -mr-24 -mt-24 blur-[80px] pointer-events-none group-hover:bg-[#F26522]/20 transition-colors duration-1000"></div>
+                 
+                 <div className="relative z-10 mb-12">
+                   <span className="text-[#F26522] font-black tracking-[0.4em] text-[10px] mb-4 block uppercase leading-none">{t({ EN: "SECURE PROTOCOL", TR: "GÜVENLİ PROTOKOL" })}</span>
+                   <h3 className="text-4xl md:text-5xl font-black text-white mb-8 uppercase tracking-tighter leading-none">{t({ EN: "Direct Communication", TR: "Doğrudan İletişim" })}</h3>
+                   <p className="text-white/50 text-lg font-light leading-relaxed">
+                     {t({ 
+                       EN: "To ensure the highest level of security and accurate technical routing, we utilize direct executive channels. Please initiate requests directly through our verified digital mailrooms.", 
+                       TR: "En yüksek düzeyde güvenlik ve doğru teknik yönlendirmeyi sağlamak için dışa açık web formları kullanmıyoruz. Lütfen taleplerinizi doğrudan doğrulanmış kanallarımız üzerinden başlatın." 
+                     })}
+                   </p>
+                 </div>
+
+                 <div className="relative z-10 space-y-6">
+                    <a href="mailto:sales@layerstech.co.uk" className="group/link w-full bg-white/5 border border-white/10 hover:border-[#F26522]/50 p-8 rounded-[30px] flex items-center justify-between transition-all duration-500 hover:bg-white/10 hover:-translate-y-1">
+                       <div className="flex flex-col gap-2">
+                         <span className="text-white font-black text-xs tracking-widest uppercase">{t({ EN: "Sales & Quotes", TR: "Satış ve Teklifler" })}</span>
+                         <span className="text-white/40 text-sm font-light">sales@layerstech.co.uk</span>
                        </div>
-                       <div className="flex flex-col gap-3">
-                          <label className="text-[10px] font-black uppercase text-[#1a1a1a]/40 dark:text-white/30 tracking-[0.2em] ml-2">{t({ EN: "Email Address", TR: "E-Posta Adresi" })}</label>
-                          <input type="email" className="bg-white dark:bg-white/[0.03] border-2 border-transparent border-b-black/10 dark:border-b-white/10 focus:border-[#F26522] dark:focus:border-[#F26522] px-6 py-4 text-sm focus:outline-none transition-all placeholder:text-black/20 dark:placeholder:text-white/10 rounded-2xl" placeholder="john@example.com" />
+                       <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover/link:bg-[#F26522] transition-colors shadow-lg">
+                          <Send className="w-5 h-5 text-white" />
                        </div>
-                    </div>
-                    <div className="flex flex-col gap-3">
-                       <label className="text-[10px] font-black uppercase text-[#1a1a1a]/40 dark:text-white/30 tracking-[0.2em] ml-2">{t({ EN: "Subject", TR: "Konu" })}</label>
-                       <input type="text" className="bg-white dark:bg-white/[0.03] border-2 border-transparent border-b-black/10 dark:border-b-white/10 focus:border-[#F26522] dark:focus:border-[#F26522] px-6 py-4 text-sm focus:outline-none transition-all placeholder:text-black/20 dark:placeholder:text-white/10 rounded-2xl" placeholder={t({ EN: "Technical Inquiry", TR: "Örn: Teknik Danışmanlık" })} />
-                    </div>
-                    <div className="flex flex-col gap-3">
-                       <label className="text-[10px] font-black uppercase text-[#1a1a1a]/40 dark:text-white/30 tracking-[0.2em] ml-2">{t({ EN: "Message", TR: "Mesajınız" })}</label>
-                       <textarea rows={6} className="bg-white dark:bg-white/[0.03] border-2 border-transparent border-b-black/10 dark:border-b-white/10 focus:border-[#F26522] dark:focus:border-[#F26522] px-6 py-4 text-sm focus:outline-none transition-all placeholder:text-black/20 dark:placeholder:text-white/10 rounded-2xl resize-none" placeholder={t({ EN: "How can we help you?", TR: "Size nasıl yardımcı olabiliriz?" })}></textarea>
-                    </div>
-                    <button className="w-full bg-gradient-to-br from-[#F26522] to-[#D35400] py-6 rounded-[20px] flex items-center justify-center gap-4 text-white font-black tracking-[0.2em] text-[11px] shadow-2xl shadow-[#F26522]/20 hover:scale-[1.03] active:scale-95 transition-all uppercase">
-                       <Send className="w-4 h-4" />
-                       {t({ EN: "SUBMIT ENQUIRY", TR: "TALEBİ GÖNDER" })}
-                    </button>
-                    <p className="text-[10px] text-center text-black/40 dark:text-white/30 italic mt-6 font-light">
-                       {t({ EN: "We typically respond within 12 - 24 business hours.", TR: "Genellikle 12 - 24 iş saati içinde dönüş yapıyoruz." })}
-                    </p>
-                 </form>
+                    </a>
+
+                    <a href="mailto:erkan.ates@layerstech.co.uk" className="group/link w-full bg-white/5 border border-white/10 hover:border-[#F26522]/50 p-8 rounded-[30px] flex items-center justify-between transition-all duration-500 hover:bg-white/10 hover:-translate-y-1">
+                       <div className="flex flex-col gap-2">
+                         <span className="text-white font-black text-xs tracking-widest uppercase">{t({ EN: "Engineering & Tech", TR: "Mühendislik ve Teknik" })}</span>
+                         <span className="text-white/40 text-sm font-light">erkan.ates@layerstech.co.uk</span>
+                       </div>
+                       <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover/link:bg-[#F26522] transition-colors shadow-lg">
+                          <Cpu className="w-5 h-5 text-white" />
+                       </div>
+                    </a>
+                 </div>
+
+                 <div className="relative z-10 mt-12 pt-8 border-t border-white/10 flex items-center gap-4">
+                    <div className="w-2 h-2 rounded-full bg-[#10b981] animate-pulse shadow-[0_0_10px_#10b981]"></div>
+                    <span className="text-[10px] text-white/40 font-black uppercase tracking-[0.2em]">{t({ EN: "Channels active & monitored", TR: "Kanallar aktif ve izleniyor" })}</span>
+                 </div>
               </div>
             </div>
           </div>
