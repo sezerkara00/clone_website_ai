@@ -388,15 +388,18 @@ export default function ProductDetail() {
             <div className="container mx-auto px-6 max-w-[1400px]">
               <div className="flex flex-col gap-12">
                 {product.features.map((f, i) => (
-                  <div key={i} className="bg-[#f8f8f8] dark:bg-white/[0.03] rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 flex flex-col lg:flex-row gap-20 items-center overflow-hidden transition-colors">
-                    <div className={cn("flex-1 order-2", i % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
-                       <h3 className="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">{f.title}</h3>
+                  <div key={i} className="bg-gradient-to-br from-[#f8f8f8] to-[#efefef] dark:from-white/[0.03] dark:to-transparent rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 flex flex-col lg:flex-row gap-20 items-center overflow-hidden transition-all duration-1000 group hover:shadow-2xl hover:border-[#F26522]/30 relative">
+                    <div className="absolute inset-0 bg-gradient-to-l from-[#F26522]/0 via-[#F26522]/0 to-[#F26522]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+                    <div className={cn("flex-1 order-2 relative z-10", i % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
+                       <h3 className="text-4xl lg:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-black to-[#F26522] dark:from-white dark:via-white dark:to-[#F26522] transition-all duration-1000 group-hover:opacity-90">
+                          {f.title}
+                       </h3>
                        <p className="text-black/70 dark:text-white/70 text-xl font-light leading-relaxed mb-10 max-w-2xl">{f.desc}</p>
                        <ul className="space-y-4">
                          {(f.bullets || []).map((bullet, idx) => (
-                           <li key={idx} className="flex items-start gap-4">
-                             <div className="w-2 h-2 rounded-full bg-[#f26522] mt-2 shrink-0" />
-                             <span className="text-black/90 dark:text-white/90 text-lg font-medium leading-tight">{bullet}</span>
+                           <li key={idx} className="flex items-start gap-4 group/bullet hover:-translate-y-0.5 transition-transform duration-300 cursor-default">
+                             <div className="w-2 h-2 rounded-full bg-gradient-to-br from-[#F26522] to-[#D35400] mt-2 shrink-0 group-hover/bullet:scale-150 transition-all duration-300 shadow-sm shadow-[#F26522]/40" />
+                             <span className="text-black/90 dark:text-white/90 text-lg font-medium leading-tight transition-colors group-hover/bullet:text-[#F26522] dark:group-hover/bullet:text-[#F26522]">{bullet}</span>
                            </li>
                          ))}
                        </ul>

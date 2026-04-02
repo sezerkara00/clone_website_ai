@@ -13,8 +13,8 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "LAYERSTECH | Industrial 3D Printing | Made in Germany",
-  description: "LAYERSTECH offers industrial 3D printing solutions with FFF and patented thermal crosslinking technology. Professional 3D printers for engineering quality.",
+  title: "LAYERSTECH | Advanced Industrial 3D Printing & Silicone LSR Systems",
+  description: "LAYERSTECH is a global engineering leader redefining additive manufacturing with world-first multi-material silicone injection printing and high-temperature FFF systems.",
 };
 
 export default function RootLayout({
