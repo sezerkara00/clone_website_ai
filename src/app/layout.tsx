@@ -15,6 +15,18 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   title: "LAYERSTECH | Advanced Industrial 3D Printing & Silicone LSR Systems",
   description: "LAYERSTECH is a global engineering leader redefining additive manufacturing with world-first multi-material silicone injection printing and high-temperature FFF systems.",
+  openGraph: {
+    title: "LAYERSTECH | Advanced Industrial 3D Printing",
+    description: "Global engineering leader redefining additive manufacturing with world-first multi-material silicone injection printing.",
+    type: "website",
+    url: "https://layerstech.co.uk",
+    siteName: "LayersTech",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "LAYERSTECH | Advanced Industrial 3D Printing",
+    description: "World-first multi-material silicone injection printing and high-temperature FFF systems.",
+  }
 };
 
 export default function RootLayout({
