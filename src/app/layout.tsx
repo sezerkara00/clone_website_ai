@@ -4,6 +4,7 @@ import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { LanguageProvider } from "@/context/LanguageContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -25,12 +26,14 @@ export default function RootLayout({
     <html
       className={`${roboto.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-sans">
-        <LanguageProvider>
-          <Navbar />
-          <main className="flex-grow">{children}</main>
-          <Footer />
-        </LanguageProvider>
+      <body className="min-h-full flex flex-col font-sans transition-colors duration-500 dark:bg-[#0a0a0a]">
+        <ThemeProvider>
+          <LanguageProvider>
+            <Navbar />
+            <main className="flex-grow">{children}</main>
+            <Footer />
+          </LanguageProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

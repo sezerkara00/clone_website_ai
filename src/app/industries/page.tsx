@@ -268,7 +268,7 @@ export default function IndustriesPage() {
   ];
 
   return (
-    <div className="relative min-h-screen bg-white">
+    <div className="relative min-h-screen transition-colors duration-500 bg-white dark:bg-[#0a0a0a]">
       <main className="pt-20">
         {/* Hero Section */}
         <section className="bg-[#1a1a1a] py-32 text-white relative overflow-hidden">
@@ -283,11 +283,11 @@ export default function IndustriesPage() {
                   <ChevronRight className="w-3 h-3" />
                   <span className="text-white">{t({EN: "Industries", TR: "Sektörler"})}</span>
                 </div>
-                <h1 className="text-6xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none text-white whitespace-nowrap">
-                  Industries <br />
-                  <span className="text-[#F26522]">We Serve.</span>
+                <h1 className="text-6xl md:text-[120px] font-black mb-8 uppercase tracking-tighter leading-[0.85] text-white whitespace-nowrap">
+                  {t({ EN: "Industries", TR: "Sektörler" })} <br />
+                  <span className="text-[#F26522]">{t({ EN: "We Serve.", TR: "Hizmetlerimiz." })}</span>
                 </h1>
-                <p className="text-white/60 max-w-2xl text-xl font-light leading-relaxed mb-12">
+                <p className="text-white/40 max-w-2xl text-xl font-light leading-relaxed mb-12">
                   {t({
                     en: "Tailored additive manufacturing solutions for the most demanding technical environments. From medical grade biocompatibility to aerospace-standard thermal resistance.",
                     tr: "En zorlu teknik ortamlar için özelleştirilmiş eklemeli imalat çözümleri. Medikal sınıf biyouyumluluktan havacılık standardı termal dirence kadar."
@@ -297,8 +297,8 @@ export default function IndustriesPage() {
               </div>
               <div className="flex-1 w-full max-w-xl lg:max-w-none">
                 <div className="relative group">
-                  <div className="absolute -inset-1 bg-gradient-to-r from-[#F26522] to-white/10 rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
-                  <div className="relative aspect-square overflow-hidden rounded-[40px] border border-white/5 bg-black/40 backdrop-blur-3xl shadow-2xl">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#F26522] to-white/10 rounded-[60px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                  <div className="relative aspect-square overflow-hidden rounded-[60px] border border-white/5 bg-black/40 backdrop-blur-3xl shadow-2xl">
                     <Image 
                       src="/images/industrial_hero.png" 
                       alt="Industrial 3D Silicone Printing Hero" 
@@ -316,17 +316,17 @@ export default function IndustriesPage() {
         </section>
 
         {/* Industry Navigation Grid */}
-        <section className="py-24 border-b border-black/5 bg-white">
+        <section className="py-24 border-b border-black/5 dark:border-white/5 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                {sectors.map((s) => (
                  <a 
                    key={s.id} 
                    href={`#${s.id}`}
-                   className="flex flex-col items-center justify-center p-8 rounded-2xl bg-[#fcfcfc] border border-black/5 hover:border-[#F26522] hover:bg-white transition-all group gap-4 text-center"
+                   className="flex flex-col items-center justify-center p-8 rounded-[30px] bg-[#fcfcfc] dark:bg-white/[0.03] border border-black/5 dark:border-white/10 hover:border-[#F26522] dark:hover:border-[#F26522] hover:bg-white dark:hover:bg-white/[0.05] transition-all group gap-4 text-center"
                  >
-                    <s.icon className="w-8 h-8 text-black group-hover:text-[#F26522] transition-colors" />
-                    <span className="text-[10px] font-black uppercase tracking-[0.2em]">{t(s.title)}</span>
+                    <s.icon className="w-8 h-8 text-black dark:text-white/60 group-hover:text-[#F26522] transition-colors" />
+                    <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1a1a1a] dark:text-white/40 group-hover:text-[#F26522]">{t(s.title)}</span>
                  </a>
                ))}
             </div>
@@ -334,78 +334,97 @@ export default function IndustriesPage() {
         </section>
 
         {/* Sectors Detail - Enhanced Glassmorphism & Split Hybrid */}
-        {sectors.map((sector, idx) => (
-          <section 
-            id={sector.id} 
-            key={sector.id} 
-            className={`py-32 relative overflow-hidden ${idx % 2 === 1 ? 'bg-[#1a1a1a] text-white' : 'bg-[#fcfcfc] text-black'}`}
-          >
-            {/* Background Accent for Silicone Look */}
-            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 pointer-events-none transition-all duration-1000 ${idx % 2 === 1 ? 'bg-[#F26522]/40' : 'bg-[#F26522]/20'}`}></div>
+        {sectors.map((sector, idx) => {
+          const isDarkSection = idx % 2 === 1;
+          return (
+            <section 
+              id={sector.id} 
+              key={sector.id} 
+              className={`py-32 relative overflow-hidden transition-colors duration-500 ${
+                isDarkSection 
+                  ? 'bg-[#1a1a1a] text-white' 
+                  : 'bg-[#fcfcfc] dark:bg-[#0c0c0c] text-black dark:text-white'
+              }`}
+            >
+              {/* Background Accent for Silicone Look */}
+              <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 pointer-events-none transition-all duration-1000 ${isDarkSection ? 'bg-[#F26522]/40' : 'bg-[#F26522]/20'}`}></div>
 
-            <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
-               <div className={`flex flex-col lg:flex-row gap-20 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  
-                  {/* Left Side: Technical Info with Glassmorphism & Color Gradient */}
-                  <div className="flex-1 space-y-10">
-                     <div className={`p-10 rounded-[40px] border backdrop-blur-2xl transition-all duration-500 shadow-2xl ${idx % 2 === 1 ? 'bg-gradient-to-br from-white/[0.05] via-[#F26522]/5 to-transparent border-white/10 shadow-black/40 hover:from-white/[0.08] hover:via-[#F26522]/10' : 'bg-gradient-to-br from-white/90 via-white/80 to-[#F26522]/10 border-black/5 hover:to-[#F26522]/20'}`}>
-                        <h2 className={`text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none ${idx % 2 === 1 ? 'text-white' : 'text-black'}`}>
-                          {t(sector.title)}
-                        </h2>
-                        <p className={`text-xl font-light leading-relaxed mb-10 ${idx % 2 === 1 ? 'text-white/70' : 'text-black/60'}`}>
-                          {t(sector.description)}
-                        </p>
+              <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
+                 <div className={`flex flex-col lg:flex-row gap-20 items-center ${isDarkSection ? 'lg:flex-row-reverse' : ''}`}>
+                    
+                    {/* Left Side: Technical Info with Glassmorphism & Color Gradient */}
+                    <div className="flex-1 space-y-10">
+                       <div className={`p-10 rounded-[50px] border backdrop-blur-3xl transition-all duration-700 shadow-2xl ${
+                         isDarkSection 
+                           ? 'bg-gradient-to-br from-white/[0.05] via-[#F26522]/5 to-transparent border-white/10 shadow-black/40 hover:from-white/[0.08] hover:via-[#F26522]/10' 
+                           : 'bg-gradient-to-br from-white/95 via-white/80 to-[#F26522]/10 dark:from-white/5 dark:via-[#F26522]/5 dark:to-transparent border-black/5 dark:border-white/10 hover:to-[#F26522]/20 dark:hover:via-[#F26522]/10'
+                       }`}>
+                          <h2 className={`text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none ${isDarkSection ? 'text-white' : 'text-[#1a1a1a] dark:text-white'}`}>
+                            {t(sector.title)}
+                          </h2>
+                          <p className={`text-xl font-light leading-relaxed mb-10 ${isDarkSection ? 'text-white/60' : 'text-black/60 dark:text-white/40'}`}>
+                            {t(sector.description)}
+                          </p>
 
-                        <div className="space-y-6">
-                           {sector.items.map((item, i) => (
-                             <div key={i} className={`group border-l-2 pl-6 transition-colors duration-500 ${idx % 2 === 1 ? 'border-white/10 hover:border-[#F26522]' : 'border-[#F26522]/20 hover:border-[#F26522]'}`}>
-                                <h4 className={`text-lg font-bold uppercase tracking-tight transition-colors mb-1 ${idx % 2 === 1 ? 'text-white group-hover:text-[#F26522]' : 'text-black group-hover:text-[#F26522]'}`}>
-                                  {t(item.name)}
-                                </h4>
-                                <p className={`leading-relaxed text-sm ${idx % 2 === 1 ? 'text-white/50' : 'text-black/50'}`}>
-                                  {t(item.detail)}
-                                </p>
-                             </div>
-                           ))}
-                        </div>
-                        
-                        <div className="pt-10">
-                           <Link 
-                              href="/contact" 
-                              className={`flex items-center gap-3 text-[13px] font-black uppercase tracking-[0.2em] transition-all group ${idx % 2 === 1 ? 'text-white hover:text-[#F26522]' : 'text-[#1a1a1a] hover:text-[#F26522]'}`}
-                           >
-                              Request Application Guide
-                              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                           </Link>
-                        </div>
-                     </div>
-                  </div>
+                          <div className="space-y-6">
+                             {sector.items.map((item, i) => (
+                               <div key={i} className={`group border-l-2 pl-6 transition-colors duration-500 ${isDarkSection ? 'border-white/10 hover:border-[#F26522]' : 'border-[#F26522]/20 hover:border-[#F26522]'}`}>
+                                  <h4 className={`text-lg font-bold uppercase tracking-tight transition-colors mb-1 ${isDarkSection ? 'text-white group-hover:text-[#F26522]' : 'text-[#1a1a1a] dark:text-white/90 group-hover:text-[#F26522]'}`}>
+                                    {t(item.name)}
+                                  </h4>
+                                  <p className={`leading-relaxed text-sm font-light ${isDarkSection ? 'text-white/40' : 'text-black/50 dark:text-white/40'}`}>
+                                    {t(item.detail)}
+                                  </p>
+                               </div>
+                             ))}
+                          </div>
+                          
+                          <div className="pt-10 border-t border-black/5 dark:border-white/5 mt-10">
+                             <Link 
+                                href="/contact" 
+                                className={`flex items-center gap-3 text-[11px] font-black uppercase tracking-[0.3em] transition-all group ${isDarkSection ? 'text-white hover:text-[#F26522]' : 'text-[#1a1a1a] dark:text-white hover:text-[#F26522]'}`}
+                             >
+                                {t({ EN: "Request Application Guide", TR: "Uygulama Kılavuzu İste" })}
+                                <ArrowRight className="w-5 h-5 group-hover:translate-x-3 transition-transform" />
+                             </Link>
+                          </div>
+                       </div>
+                    </div>
 
-                  {/* Right Side: High-Detail Visual with Auto-Sliding Carousel */}
-                  <div className="flex-1 w-full group/img">
-                     <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
-                        <SectorGallery images={sector.images} title={sector.title} t={t} />
-                     </div>
-                  </div>
-               </div>
-            </div>
-          </section>
-        ))}
+                    {/* Right Side: High-Detail Visual with Auto-Sliding Carousel */}
+                    <div className="flex-1 w-full group/img">
+                       <div className="relative aspect-[4/5] rounded-[60px] overflow-hidden shadow-[0_40px_100px_-20px_rgba(0,0,0,0.5)] transition-all duration-1000 group-hover/img:scale-[0.98] border border-white/5 bg-[#f8f8f8] dark:bg-[#1a1a1a]">
+                          <SectorGallery images={sector.images} title={sector.title} t={t} />
+                       </div>
+                    </div>
+                 </div>
+              </div>
+            </section>
+          );
+        })}
 
         {/* Final CTA */}
-        <section className="py-32 bg-[#1a1a1a] text-white text-center relative overflow-hidden">
-          <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+        <section className="py-40 bg-[#0a0a0a] text-white text-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-10 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
           <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-5xl md:text-7xl font-black mb-8 uppercase tracking-tighter text-white">Ready for the <br /> <span className="text-[#F26522]">Next Industrial Revolution?</span></h2>
-            <p className="mb-12 text-white/50 max-w-2xl mx-auto text-xl font-light">
-              Contact our engineering team to discuss your multi-material and high-performance silicone requirements.
+            <h2 className="text-6xl md:text-9xl font-black mb-12 uppercase tracking-tighter text-white leading-none">
+               {t({ EN: "Ready for the", TR: "Sıradaki Devrime" })} <br /> 
+               <span className="text-[#F26522]">{t({ EN: "Industrial Revolution?", TR: "Hazır mısınız?" })}</span>
+            </h2>
+            <p className="mb-16 text-white/40 max-w-3xl mx-auto text-xl font-light leading-relaxed">
+              {t({
+                en: "Contact our engineering team to discuss your multi-material and high-performance silicone requirements.",
+                tr: "Çoklu malzeme ve yüksek performanslı silikon gereksinimlerinizi görüşmek için mühendislik ekibimizle iletişime geçin."
+              })}
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/contact" className="bg-[#F26522] text-white px-12 py-6 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white hover:text-black transition-all shadow-2xl">
-                CONSULT AN EXPERT
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+              <Link href="/contact" className="group/cta relative bg-[#F26522] text-white px-16 py-8 rounded-full font-black tracking-[0.3em] text-[12px] overflow-hidden shadow-2xl transition-all hover:scale-110 active:scale-95">
+                <span className="relative z-10">{t({ EN: "CONSULT AN EXPERT", TR: "UZMANA DANIŞIN" })}</span>
+                <div className="absolute inset-0 bg-white translate-y-full group-hover/cta:translate-y-0 transition-transform duration-500"></div>
               </Link>
-              <Link href="/3d-printers/m1pro" className="bg-white/5 border border-white/10 text-white px-12 py-6 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white/10 transition-all backdrop-blur-sm">
-                EXPLORE M1PRO SYSTEM
+              <Link href="/3d-printers/m1pro" className="group/cta2 px-16 py-8 rounded-full font-black tracking-[0.3em] text-[12px] bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all flex items-center gap-4">
+                {t({ EN: "EXPLORE M1PRO SYSTEM", TR: "M1PRO SİSTEMİNİ KEŞFET" })}
+                <ArrowRight className="w-5 h-5 group-hover/cta2:translate-x-2 transition-transform" />
               </Link>
             </div>
           </div>

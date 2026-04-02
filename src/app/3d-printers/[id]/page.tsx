@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import * as Lucide from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 // Asset URLs mapping
 const materialImages = {
@@ -290,10 +291,13 @@ export default function ProductDetail() {
   const params = useParams();
   const id = params.id as string;
   const product = productData[id as keyof typeof productData];
+  const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("features");
+  const [mounted, setMounted] = useState(false);
   const tabRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    setMounted(true);
     const hash = window.location.hash.replace("#", "");
     if (hash && ["features", "compatibility", "specs"].includes(hash)) {
       setActiveTab(hash);
@@ -309,17 +313,18 @@ export default function ProductDetail() {
     }
   };
 
+  if (!mounted) return <div className="min-h-screen bg-white dark:bg-[#0a0a0a]" />;
   if (!product) return null;
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="bg-white dark:bg-[#0a0a0a] min-h-screen transition-colors duration-500">
       {/* Breadcrumbs */}
-      <div className="bg-[#f8f8f8] border-b border-black/5 py-4">
+      <div className="bg-[#f8f8f8] dark:bg-white/[0.03] border-b border-black/5 dark:border-white/5 py-4 transition-colors">
         <div className="container mx-auto px-6 max-w-[1400px]">
-          <nav className="flex items-center gap-3 text-[10px] font-bold text-black/30 uppercase tracking-[0.2em]">
-            <Link href="/" className="hover:text-[#F26522]">Home</Link>
+          <nav className="flex items-center gap-3 text-[10px] font-bold text-black/50 dark:text-white/50 uppercase tracking-[0.2em]">
+            <Link href="/" className="hover:text-[#F26522]">{t({ EN: "Home", TR: "Anasayfa" })}</Link>
             <Lucide.ChevronRight className="w-3 h-3" />
-            <Link href="/3d-printers" className="hover:text-[#F26522]">3D Printers</Link>
+            <Link href="/3d-printers" className="hover:text-[#F26522]">{t({ EN: "3D Printers", TR: "3D Yazıcılar" })}</Link>
             <Lucide.ChevronRight className="w-3 h-3" />
             <span className="text-[#F26522]">{product.name}</span>
           </nav>
@@ -327,28 +332,28 @@ export default function ProductDetail() {
       </div>
 
       {/* Hero */}
-      <section className="pt-24 pb-32 bg-[#f8f8f8]">
+      <section className="pt-24 pb-32 bg-[#f8f8f8] dark:bg-white/[0.03] transition-colors">
         <div className="container mx-auto px-6 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-               <span className="text-[#F26522] font-bold text-[11px] tracking-[0.5em] uppercase block mb-8 leading-none underline underline-offset-8 decoration-2 decoration-[#F26522]/20">{product.subtitle}</span>
-               <h1 className="text-8xl lg:text-[120px] font-bold text-[#1a1a1a] uppercase leading-[0.8] tracking-tighter mb-12">
+               <span className="text-[#F26522] font-black text-[11px] tracking-[0.5em] uppercase block mb-8 leading-none underline underline-offset-8 decoration-2 decoration-[#F26522]/20">{product.subtitle}</span>
+               <h1 className="text-7xl lg:text-[120px] font-black text-[#1a1a1a] dark:text-white uppercase leading-[0.8] tracking-tighter mb-12">
                  {product.name}
                </h1>
-               <p className="text-2xl text-black/60 font-light leading-relaxed max-w-xl mb-16">{product.description}</p>
-               <Button className="h-16 px-12 bg-[#1a1a1a] text-white rounded-full text-[11px] font-extrabold tracking-[0.2em] hover:bg-[#F26522] transition-all uppercase">
-                 Request a Quote
+               <p className="text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed max-w-xl mb-16">{product.description}</p>
+               <Button className="h-16 px-12 bg-[#1a1a1a] dark:bg-white dark:text-black text-white rounded-full text-[11px] font-extrabold tracking-[0.2em] hover:bg-[#F26522] dark:hover:bg-[#F26522] dark:hover:text-white transition-all uppercase">
+                 {t({ EN: "Request a Quote", TR: "Teklif Alın" })}
                </Button>
             </div>
             <div className="relative aspect-square">
-              <img src={product.image} alt={product.name} className="w-full h-full object-contain mix-blend-multiply" />
+              <img src={product.image} alt={product.name} className="w-full h-full object-contain dark:brightness-90 dark:contrast-125" />
             </div>
           </div>
         </div>
       </section>
 
       {/* Tabs */}
-      <div id="product-nav" ref={tabRef} className="sticky top-[80px] z-[40] bg-white border-y border-black/5 shadow-xl">
+      <div id="product-nav" ref={tabRef} className="sticky top-[80px] z-[40] bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md border-y border-black/5 dark:border-white/10 shadow-xl transition-colors">
         <div className="container mx-auto px-6 max-w-[1400px]">
           <div className="flex justify-center">
             {["features", "compatibility", "specs"].map((tab) => (
@@ -359,10 +364,10 @@ export default function ProductDetail() {
                 onClick={() => handleTabChange(tab)}
                 className={cn(
                   "vanilla-tab-btn px-8 h-20 md:px-12 flex items-center text-[10px] font-extrabold tracking-[0.4em] uppercase transition-all relative cursor-pointer",
-                  activeTab === tab ? "text-[#F26522]" : "text-black/30 hover:text-black"
+                  activeTab === tab ? "text-[#F26522]" : "text-black/30 dark:text-white/30 hover:text-black dark:hover:text-white"
                 )}
               >
-                {tab}
+                {t({ EN: tab, TR: tab === "features" ? "ÖZELLİKLER" : tab === "compatibility" ? "UYUMLULUK" : "TEKNİK" })}
                 {activeTab === tab ? <div className="absolute bottom-0 left-0 right-0 h-1 bg-[#F26522] tab-indicator" /> : <div className="absolute bottom-0 left-0 right-0 h-1 bg-transparent tab-indicator" />}
               </button>
             ))}
@@ -376,22 +381,22 @@ export default function ProductDetail() {
             <div className="container mx-auto px-6 max-w-[1400px]">
               <div className="flex flex-col gap-12">
                 {product.features.map((f, i) => (
-                  <div key={i} className="bg-[#f8f8f8] rounded-[60px] p-12 md:p-20 border border-black/5 flex flex-col lg:flex-row gap-20 items-center overflow-hidden">
+                  <div key={i} className="bg-[#f8f8f8] dark:bg-white/[0.03] rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 flex flex-col lg:flex-row gap-20 items-center overflow-hidden transition-colors">
                     <div className={cn("flex-1 order-2", i % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
-                       <h3 className="text-4xl md:text-5xl font-bold mb-8 uppercase tracking-tighter leading-none text-[#1a1a1a]">{f.title}</h3>
-                       <p className="text-black/60 text-xl font-light leading-relaxed mb-10 max-w-2xl">{f.desc}</p>
+                       <h3 className="text-4xl md:text-5xl font-black mb-8 uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">{f.title}</h3>
+                       <p className="text-black/70 dark:text-white/70 text-xl font-light leading-relaxed mb-10 max-w-2xl">{f.desc}</p>
                        <ul className="space-y-4">
                          {(f.bullets || []).map((bullet, idx) => (
                            <li key={idx} className="flex items-start gap-4">
-                             <div className="w-2 h-2 rounded-full bg-black mt-2 shrink-0" />
-                             <span className="text-black/80 text-lg font-medium leading-tight">{bullet}</span>
+                             <div className="w-2 h-2 rounded-full bg-[#f26522] mt-2 shrink-0" />
+                             <span className="text-black/90 dark:text-white/90 text-lg font-medium leading-tight">{bullet}</span>
                            </li>
                          ))}
                        </ul>
                     </div>
                     <div className={cn("flex-1 w-full order-1", i % 2 === 0 ? "lg:order-1" : "lg:order-2")}>
-                      <div className="aspect-[4/3] bg-white/50 rounded-[40px] overflow-hidden border border-black/5 p-4">
-                         <img src={f.image} alt={f.title} className="w-full h-full object-contain mix-blend-multiply hover:scale-105 transition-transform duration-1000" 
+                      <div className="aspect-[4/3] bg-white/50 dark:bg-black/20 rounded-[40px] overflow-hidden border border-black/5 dark:border-white/10 p-4">
+                         <img src={f.image} alt={f.title} className="w-full h-full object-contain dark:brightness-110 transition-transform duration-1000 group-hover:scale-105" 
                            onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/800x600/ffffff/F26522?text=${f.title}`; }}
                          />
                       </div>
@@ -404,16 +409,16 @@ export default function ProductDetail() {
         </div>
 
         <div id="tab-content-compatibility" className={activeTab === "compatibility" ? "block" : "hidden"}>
-          <section className="py-40 animate-in fade-in slide-in-from-bottom-12 duration-700 bg-white">
+          <section className="py-40 animate-in fade-in slide-in-from-bottom-12 duration-700 bg-white dark:bg-[#0a0a0a] transition-colors">
             <div className="container mx-auto px-6 max-w-[1400px]">
               <div className="text-center mb-32">
-                  <span className="text-[#F26522] font-bold text-xs tracking-[0.4em] uppercase block mb-8">Industrial Excellence</span>
-                  <h2 className="text-7xl font-bold uppercase tracking-tighter">Manufacturing Ecosystem</h2>
+                  <span className="text-[#F26522] font-black text-xs tracking-[0.4em] uppercase block mb-8">{t({ EN: "Industrial Excellence", TR: "Endüstriyel Mükemmellik" })}</span>
+                  <h2 className="text-7xl font-black uppercase tracking-tighter text-[#1a1a1a] dark:text-white leading-none">{t({ EN: "Manufacturing Ecosystem", TR: "Üretim Ekosistemi" })}</h2>
                </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                 {product.materials.map((m, idx) => (
-                   <div key={idx} className="bg-[#fcfcfc] rounded-[50px] border border-black/5 hover:border-[#F26522]/50 hover:shadow-2xl transition-all duration-700 p-6 group">
-                      <div className="aspect-square w-full rounded-[40px] overflow-hidden bg-white mb-8 border border-black/5 relative flex items-center justify-center">
+                   <div key={idx} className="bg-[#fcfcfc] dark:bg-white/[0.03] rounded-[50px] border border-black/5 dark:border-white/10 hover:border-[#F26522]/50 hover:shadow-2xl transition-all duration-700 p-6 group">
+                      <div className="aspect-square w-full rounded-[40px] overflow-hidden bg-white dark:bg-black/40 mb-8 border border-black/5 dark:border-white/10 relative flex items-center justify-center transition-colors">
                         <img 
                           src={m.icon} 
                           alt={m.name} 
@@ -435,7 +440,7 @@ export default function ProductDetail() {
                       </div>
                       <div className="px-4">
                         <p className="text-[10px] font-extrabold tracking-[0.3em] text-[#F26522] uppercase mb-3">{m.type}</p>
-                        <h4 className="text-4xl font-bold uppercase tracking-tighter leading-none">{m.name}</h4>
+                        <h4 className="text-4xl font-black uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">{m.name}</h4>
                       </div>
                    </div>
                 ))}
@@ -450,11 +455,11 @@ export default function ProductDetail() {
                <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
                   <div className="lg:col-span-4">
                     <div className="sticky top-40">
-                      <span className="text-[#F26522] font-bold text-xs tracking-[0.4em] uppercase block mb-10">Technical Documentation</span>
-                      <h2 className="text-7xl font-bold uppercase tracking-tighter leading-[0.9] mb-12">Full Datasheet</h2>
-                      <p className="text-white/30 text-xl font-light mb-16 leading-relaxed">Official manufacturing specifications verified for industrial grade output and 24/7 reliability standards.</p>
+                      <span className="text-[#F26522] font-black text-xs tracking-[0.4em] uppercase block mb-10">{t({ EN: "Technical Documentation", TR: "Teknik Dokümantasyon" })}</span>
+                      <h2 className="text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-12 text-white">{t({ EN: "Full Datasheet", TR: "Tam Veri Sayfası" })}</h2>
+                      <p className="text-white/70 text-xl font-light mb-16 leading-relaxed">{t({ EN: "Official manufacturing specifications verified for industrial grade output and 24/7 reliability standards.", TR: "Endüstriyel sınıf çıktı ve 24/7 güvenilirlik standartları için doğrulanmış resmi üretim özellikleri." })}</p>
                       <Button className="h-16 px-12 bg-white text-black font-extrabold text-[11px] tracking-[0.2em] uppercase hover:bg-[#F26522] hover:text-white transition-all rounded-full w-full">
-                         Download Catalog PDF
+                         {t({ EN: "Download Catalog PDF", TR: "Kataloğu PDF İndir" })}
                       </Button>
                     </div>
                   </div>
@@ -467,8 +472,8 @@ export default function ProductDetail() {
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-0">
                            {(items as {label: string, value: string}[]).map((item, idx) => (
                              <div key={idx} className="flex flex-col py-8 border-b border-white/5 hover:bg-white/5 px-6 transition-all group">
-                               <span className="text-[10px] uppercase tracking-[0.3em] text-white/20 mb-3 group-hover:text-[#F26522] transition-colors">{item.label}</span>
-                               <span className="text-2xl font-bold text-white/95 leading-none tracking-tight">{item.value}</span>
+                               <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-3 group-hover:text-[#F26522] transition-colors">{item.label}</span>
+                               <span className="text-2xl font-black text-white leading-none tracking-tight">{item.value}</span>
                              </div>
                            ))}
                         </div>

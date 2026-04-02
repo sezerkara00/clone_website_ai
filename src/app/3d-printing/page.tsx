@@ -108,7 +108,7 @@ export default function ThreeDPrinting() {
         { EN: "High Temperature Stable", TR: "Yüksek Sıcaklık Kararlılığı" },
         { EN: "Chemical & UV Resistance", TR: "Kimyasal ve UV Direnci" }
       ],
-      images: ["/images/all-printer-s300xliq.webp", "/images/industrial_hero.png"]
+      images: ["/images/4xtool.png", "/images/industrial_hero.png"]
     },
     section2: {
       title: { EN: "LayersTech 4-Extruder Technology: Multimaterial and Dissolvable Support", TR: "LayersTech 4-Ekstrüder Teknolojisi: Çok Malzemeli ve Çözünür Destek" },
@@ -134,30 +134,30 @@ export default function ThreeDPrinting() {
     },
     section3: {
       title: { EN: "Multi-Durometer Manufacturing: 4-Head Mechanical Diversity", TR: "Çoklu Durometre Üretimi: 4 Kafalı Mekanik Çeşitlilik" },
-      subtitle: { EN: "LayersTech isn't just about colors; it's about <strong class=\"text-primary\">variable mechanical properties</strong> in a single print session.", TR: "LayersTech sadece renklerden ibaret değildir; tek bir baskı seansında <strong class=\"text-primary\">değişken mekanik özellikler</strong> sunar." },
-      desc: { EN: "With our quad-head system, you can load four different silicone types with varying <strong class=\"text-heading\">Shore Hardness (A5 to A80)</strong>. This allows for true functional grading—creating complex parts that require soft, energy-absorbing zones seamlessly integrated with rigid, load-bearing structures.", TR: "Dört kafalı sistemimizle, <strong class=\"text-heading\">Shore Sertliği (A5 - A80)</strong> değişen dört farklı silikon tipi yükleyebilirsiniz. Bu, yumuşak, enerji emici bölgelerin sert, yük taşıyan yapılarla sorunsuz bir şekilde entegre edilmesini gerektiren karmaşık parçalar oluşturarak gerçek fonksiyonel derecelendirme sağlar." },
+      subtitle: { EN: "LayersTech isn't just about colors; it's about <strong class=\"text-primary\">total modular freedom</strong> across 4 independent tool slots.", TR: "LayersTech sadece renklerden ibaret değildir; 4 bağımsız kafa yuvasında <strong class=\"text-primary\">tam modüler özgürlük</strong> sunar." },
+      desc: { EN: "Our quad-head system offers absolute flexibility. You can assign any tool—Silicone (Shore A5 to A80), FDM, or Support—to <strong class=\"text-heading\">any of the 4 slots</strong>. This allows for true functional grading, seamlessly integrating soft, energy-absorbing zones with rigid, load-bearing structures in a single print.", TR: "Dört kafalı sistemimiz mutlak esneklik sunar. Silikon (Shore A5 - A80), FDM veya Destek fark etmeksizin; dilediğiniz aracı <strong class=\"text-heading\">4 yuvadan herhangi birine</strong> atayabilirsiniz. Bu, yumuşak bölgelerin sert yapılarla tek bir baskıda sorunsuz entegrasyonunu sağlayarak gerçek fonksiyonel derecelendirme sunar." },
       infoCards: [
-        { title: { EN: "Functional Grading", TR: "Fonksiyonel Derecelendirme" }, desc: { EN: "Seamless transition from soft gaskets to rigid connectors without assembly.", TR: "Montaj gerektirmeden yumuşak contalardan sert konektörlere sorunsuz geçiş." } },
-        { title: { EN: "Custom Shore Blending", TR: "Özel Shore Karışımı" }, desc: { EN: "Define specific hardness zones for medical implants or industrial seals.", TR: "Tıbbi implantlar veya endüstriyel contalar için belirli sertlik bölgeleri tanımlayın." } }
+        { title: { EN: "Any Tool, Any Slot", TR: "İstediğin Araç, İstediğin Kafa" }, desc: { EN: "Zero restrictions on head placement. Configure your own hybrid factory.", TR: "Kafa yerleşiminde sıfır kısıtlama. Kendi hibrit fabrikanızı yapılandırın." } },
+        { title: { EN: "Functional Grading", TR: "Fonksiyonel Derecelendirme" }, desc: { EN: "Seamless transition from soft gaskets to rigid connectors without assembly.", TR: "Montaj gerektirmeden yumuşak contalardan sert konektörlere sorunsuz geçiş." } }
       ],
       features: [
+        { EN: "4 Fully Modular Slots", TR: "4 Tam Modüler Yuva" },
         { EN: "Independent Shore A Control", TR: "Bağımsız Shore A Kontrolü" },
-        { EN: "4 Distinct Material Properties", TR: "4 Belirgin Malzeme Özelliği" },
+        { EN: "Hybrid FDM + Silicone Mix", TR: "Hibrit FDM + Silikon Karışımı" },
         { EN: "Soft-to-Rigid Integration", TR: "Yumuşaktan Serte Entegrasyon" },
         { EN: "Vibration Dampening Zones", TR: "Titreşim Sönümleme Bölgeleri" },
-        { EN: "Anatomical Tissue Mimicking", TR: "Anatomik Doku Taklidi" },
         { EN: "Zero-Interface Bonding", TR: "Arayüzsüz Bağlanma" }
       ],
-      badge: { title: { EN: "Dynamic Hardness", TR: "Dinamik Sertlik" }, desc: { EN: "Achieve Shore A5 (Ultra-Soft) and Shore A80 (Rigid) within the same geometric boundary.", TR: "Aynı geometrik sınır içinde Shore A5 (Ultra Yumuşak) ve Shore A80 (Sert) elde edin." } },
+      badge: { title: { EN: "Any Slot Modular", TR: "Tam Modüler Yuvalar" }, desc: { EN: "Mix Silicone, FDM, and Support in any combination across 4 tools.", TR: "Silikon, FDM ve Desteği 4 kafa üzerinde dilediğiniz gibi karıştırın." } },
       images: ["/images/fashion_detail.webp", "/images/robot1.webp"]
     },
     section4: {
-      title: { EN: "Hybrid Capabilities: Optional FDM Printing Support", TR: "Hibrit Yetenekler: Opsiyonel FDM Baskı Desteği" },
-      p1: { EN: "Expand your manufacturing range with <strong class=\"text-heading\">Integrated FDM Support</strong>. LayersTech systems are optionally configurable to handle standard thermoplastic filaments alongside silicone.", TR: "İmalat yelpazenizi <strong class=\"text-heading\">Entegre FDM Desteği</strong> ile genişletin. LayersTech sistemleri, silikonun yanı sıra standart termoplastik filamentleri de işleyecek şekilde opsiyonel olarak yapılandırılabilir." },
-      p2: { EN: "This versatility makes our printers the ultimate tool for R&D departments and production facilities that need both high-performance elastomers and rigid functional components in one workspace.", TR: "Bu çok yönlülük, yazıcılarımızı tek bir çalışma alanında hem yüksek performanslı elastomerlere hem de sert fonksiyonel bileşenlere ihtiyaç duyan Ar-Ge departmanları ve üretim tesisleri için nihai araç haline getirir." },
+      title: { EN: "Hybrid Capabilities: Any Tool, Any Slot Freedom", TR: "Hibrit Yetenekler: İstediğin Araç, İstediğin Kafa" },
+      p1: { EN: "Unleash total modularity with <strong class=\"text-heading\">Integrated Hybrid Support</strong>. Any of the 4 tool slots can be equipped with either a patented Silicone head or an industrial FDM extruder.", TR: "Toplam modülerliği <strong class=\"text-heading\">Entegre Hibrit Desteği</strong> ile serbest bırakın. 4 kafa yuvasından herhangi biri, patentli bir Silikon kafa veya endüstriyel bir FDM ekstrüderi ile donatılabilir." },
+      p2: { EN: "Choose your setup: 4 Silicone heads, 2 Silicone + 2 FDM, or 3 Silicone + 1 Support. There are no restrictions. This versatility makes our platform the ultimate tool for complex multi-material production.", TR: "Yapılandırmanızı seçin: 4 Silikon kafa, 2 Silikon + 2 FDM veya 3 Silikon + 1 Destek. Hiçbir kısıtlama yok. Bu çok yönlülük, platformumuzu karmaşık çok malzemeli üretim için nihai araç haline getirir." },
       info: [
-        { label: { EN: "FDM Support", TR: "FDM Desteği" }, val: { EN: "Standard & Advanced Filaments", TR: "Standart ve Gelişmiş Filamentler" } },
-        { label: { EN: "All-in-One", TR: "Hepsi Bir Arada" }, val: { EN: "Single Industrial Platform", TR: "Tek Endüstriyel Platform" } }
+        { label: { EN: "Modular Slots", TR: "Modüler Yuvalar" }, val: { EN: "4 Tool-Change Stations", TR: "4 Kafa Değiştirme İstasyonu" } },
+        { label: { EN: "Any Tool", TR: "İstediğin Araç" }, val: { EN: "Silicone, LSR, FDM, Support", TR: "Silikon, LSR, FDM, Destek" } }
       ],
       images: ["/images/industrial_spool_fallback.jpg", "/images/industrial_hero.png"]
     },
@@ -169,7 +169,7 @@ export default function ThreeDPrinting() {
   };
 
   return (
-    <div className="relative min-h-screen">
+    <div className="relative min-h-screen transition-colors duration-500 bg-white dark:bg-[#0a0a0a]">
       <main className="pt-20">
         {/* Header Section */}
         <section className="bg-[#1a1a1a] py-20 text-white">
@@ -179,13 +179,13 @@ export default function ThreeDPrinting() {
               <ChevronRight className="w-3 h-3" />
               <span className="text-white">{t(content.header.breadcrumb.techs)}</span>
             </div>
-            <h1 className="text-4xl md:text-6xl font-black mb-4 text-white">{t(content.header.title)}</h1>
+            <h1 className="text-4xl md:text-6xl font-black mb-4 text-white uppercase tracking-tighter leading-none">{t(content.header.title)}</h1>
             <div className="w-20 h-1 bg-[#f26522]"></div>
           </div>
         </section>
 
         {/* Section 1: Industrial Silicone Leadership */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
@@ -193,10 +193,10 @@ export default function ThreeDPrinting() {
                   <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Layers className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">{t(content.section1.title)}</h2>
+                  <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section1.title)}</h2>
                 </div>
-                <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p className="text-lg font-medium text-[#1a1a1a]/80">
+                <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
+                  <p className="text-lg font-medium text-[#1a1a1a]/80 dark:text-white/80">
                     {t(content.section1.subtitle)}
                   </p>
                   <p>
@@ -204,7 +204,7 @@ export default function ThreeDPrinting() {
                   </p>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     {content.section1.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 font-bold text-[#1a1a1a]">
+                      <li key={i} className="flex items-center gap-2 font-bold text-[#1a1a1a] dark:text-white/90">
                         <CheckCircle2 className="w-4 h-4 text-[#f26522]" />
                         <span>{t(feature)}</span>
                       </li>
@@ -222,7 +222,7 @@ export default function ThreeDPrinting() {
         </section>
 
         {/* Section 2: Versatility & Support Material */}
-        <section className="py-24 bg-[#F8F9FA]">
+        <section className="py-24 bg-[#F8F9FA] dark:bg-white/[0.02] transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="group/img">
@@ -235,16 +235,16 @@ export default function ThreeDPrinting() {
                   <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Zap className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">{t(content.section2.title)}</h2>
+                  <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section2.title)}</h2>
                 </div>
-                <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p className="text-lg" dangerouslySetInnerHTML={{ __html: t(content.section2.p1) }} />
+                <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
+                  <p className="text-lg dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section2.p1) }} />
                   <p>{t(content.section2.p2)}</p>
                   <div className="mt-8 grid grid-cols-3 gap-4">
                     {content.section2.stats.map((stat, i) => (
-                      <div key={i} className="text-center p-4 bg-white rounded-lg shadow-sm border border-black/5">
+                      <div key={i} className="text-center p-4 bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-black/5 dark:border-white/5">
                         <p className="text-xl font-black text-[#f26522]">{t(stat.value)}</p>
-                        <p className="text-[10px] uppercase font-bold text-[#1a1a1a]/50">{t(stat.label)}</p>
+                        <p className="text-[10px] uppercase font-bold text-[#1a1a1a]/50 dark:text-white/40">{t(stat.label)}</p>
                       </div>
                     ))}
                   </div>
@@ -261,7 +261,7 @@ export default function ThreeDPrinting() {
           <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="relative p-10 rounded-[40px] border border-white/10 backdrop-blur-2xl bg-gradient-to-br from-white/[0.05] via-[#f26522]/5 to-transparent">
-                <h2 className="text-3xl md:text-5xl font-black mb-8 uppercase leading-tight text-white tracking-tighter">
+                <h2 className="text-3xl md:text-5xl font-black mb-8 uppercase leading-tight text-[#FFF5F0] tracking-tighter">
                   {t(content.thermal.title)}: <br/>
                   <span className="text-[#f26522]">{t(content.thermal.subtitle)}</span>
                 </h2>
@@ -294,7 +294,7 @@ export default function ThreeDPrinting() {
         </section>
 
         {/* Section 3: Multi-Durometer & Functional Material Grading */}
-        <section className="py-24 bg-white">
+        <section className="py-24 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
@@ -302,18 +302,18 @@ export default function ThreeDPrinting() {
                   <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Settings2 className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">
+                  <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">
                     {t(content.section3.title)}
                   </h2>
                 </div>
-                <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p className="text-lg font-medium text-[#1a1a1a]/80" dangerouslySetInnerHTML={{ __html: t(content.section3.subtitle) }} />
+                <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
+                  <p className="text-lg font-medium text-[#1a1a1a]/80 dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section3.subtitle) }} />
                   <p dangerouslySetInnerHTML={{ __html: t(content.section3.desc) }} />
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                     {content.section3.infoCards.map((card, i) => (
-                      <div key={i} className="p-6 bg-gradient-to-br from-white/90 via-white/80 to-[#f26522]/10 rounded-2xl border border-[#f26522]/20 hover:border-[#f26522] transition-colors duration-500">
-                        <h4 className="font-black text-[#1a1a1a] text-xs mb-2 uppercase">{t(card.title)}</h4>
+                      <div key={i} className="p-6 bg-gradient-to-br from-white/90 via-white/80 to-[#f26522]/10 dark:from-white/5 dark:to-[#f26522]/10 rounded-2xl border border-[#f26522]/20 hover:border-[#f26522] transition-all duration-500">
+                        <h4 className="font-black text-[#1a1a1a] dark:text-white text-xs mb-2 uppercase">{t(card.title)}</h4>
                         <p className="text-[11px]">{t(card.desc)}</p>
                       </div>
                     ))}
@@ -321,7 +321,7 @@ export default function ThreeDPrinting() {
 
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     {content.section3.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 font-bold text-[#1a1a1a]">
+                      <li key={i} className="flex items-center gap-2 font-bold text-[#1a1a1a] dark:text-white/80">
                         <CheckCircle2 className="w-4 h-4 text-[#f26522]" />
                         <span>{t(feature)}</span>
                       </li>
@@ -344,7 +344,7 @@ export default function ThreeDPrinting() {
         </section>
 
         {/* Section 4: Hybrid FDM Capability */}
-        <section className="py-24 bg-[#F8F9FA]">
+        <section className="py-24 bg-[#F8F9FA] dark:bg-white/[0.01] transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="group/img">
@@ -357,16 +357,16 @@ export default function ThreeDPrinting() {
                   <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Settings2 className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">{t(content.section4.title)}</h2>
+                  <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section4.title)}</h2>
                 </div>
-                <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p className="text-lg" dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
+                <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
+                  <p className="text-lg dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
                   <p>{t(content.section4.p2)}</p>
                   <div className="mt-8 grid grid-cols-2 gap-4">
                     {content.section4.info.map((item, i) => (
-                      <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-black/5 hover:border-[#f26522]/30 transition-colors">
-                        <p className="text-sm font-bold text-[#1a1a1a] mb-1 text-[#f26522] tracking-tighter">{t(item.label)}</p>
-                        <p className="text-[10px] text-[#777777] opacity-80 uppercase tracking-widest font-bold">{t(item.val)}</p>
+                      <div key={i} className="p-6 bg-white dark:bg-white/5 rounded-2xl shadow-sm border border-black/5 dark:border-white/5 hover:border-[#f26522]/30 transition-colors">
+                        <p className="text-sm font-bold text-[#f26522] mb-1 tracking-tighter">{t(item.label)}</p>
+                        <p className="text-[10px] text-[#777777] dark:text-white/30 uppercase tracking-widest font-bold">{t(item.val)}</p>
                       </div>
                     ))}
                   </div>
