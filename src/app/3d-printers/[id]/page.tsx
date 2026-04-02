@@ -338,7 +338,14 @@ export default function ProductDetail() {
             <div>
                <span className="text-[#F26522] font-black text-[11px] tracking-[0.5em] uppercase block mb-8 leading-none underline underline-offset-8 decoration-2 decoration-[#F26522]/20">{product.subtitle}</span>
                <h1 className="text-7xl lg:text-[120px] font-black text-[#1a1a1a] dark:text-white uppercase leading-[0.8] tracking-tighter mb-12">
-                 {product.name}
+                 {product.name.includes("PRO") ? (
+                   <>
+                     {product.name.replace("PRO", "")}
+                     <span className="text-[#F26522]">PRO</span>
+                   </>
+                 ) : (
+                   product.name
+                 )}
                </h1>
                <p className="text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed max-w-xl mb-16">{product.description}</p>
                <Button className="h-16 px-12 bg-[#1a1a1a] dark:bg-white dark:text-black text-white rounded-full text-[11px] font-extrabold tracking-[0.2em] hover:bg-[#F26522] dark:hover:bg-[#F26522] dark:hover:text-white transition-all uppercase">

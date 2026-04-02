@@ -123,12 +123,19 @@ export default function PrintersPage() {
                          <span className="text-[#F26522] font-black text-xs tracking-widest uppercase mb-4 block">
                            {t(printer.tagline)}
                          </span>
-                         <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter leading-none">
-                           {printer.fullName}
+                         <h2 className="text-5xl md:text-8xl font-black text-[#1a1a1a] dark:text-white uppercase tracking-tighter leading-none">
+                           {printer.fullName.includes("PRO") ? (
+                             <>
+                               {printer.fullName.replace("PRO", "")}
+                               <span className="text-[#F26522]">PRO</span>
+                             </>
+                           ) : (
+                             printer.fullName
+                           )}
                          </h2>
                        </div>
 
-                       <p className="text-lg text-white/40 font-light leading-relaxed max-w-lg">
+                       <p className="text-lg text-black/60 dark:text-white/40 font-light leading-relaxed max-w-lg transition-colors">
                          {t(printer.description)}
                        </p>
 
