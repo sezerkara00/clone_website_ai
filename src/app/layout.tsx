@@ -19,7 +19,6 @@ export const metadata: Metadata = {
     title: "LAYERSTECH | Advanced Industrial 3D Printing",
     description: "Global engineering leader redefining additive manufacturing with world-first multi-material silicone injection printing.",
     type: "website",
-    url: "https://layerstech.co.uk",
     siteName: "LayersTech",
   },
   twitter: {
