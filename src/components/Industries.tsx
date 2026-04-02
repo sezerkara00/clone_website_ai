@@ -5,7 +5,7 @@ export function Industries() {
   const industries = [
     { title: "R&D", image: "/images/tech-metier.webp" },
     { title: "Healthcare", image: "/images/3d-silicone-printing--use-case--hp.webp" },
-    { title: "Design & Fashion", image: "/images/lynxter-detail-3dprinting-softrobot-silicone.webp" }
+    { title: "Design & Fashion", image: "/images/fashion_detail.webp" }
   ];
 
   return (

@@ -3,6 +3,7 @@ import { Roboto } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
+import { LanguageProvider } from "@/context/LanguageContext";
 
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
@@ -11,11 +12,9 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
-  title: "innovatiQ | Industrial 3D Printing | Made in Germany",
-  description: "innovatiQ offers industrial 3D printing solutions with FFF and patented LAM technology. Professional 3D printers for engineering quality.",
+  title: "LAYERSTECH | Industrial 3D Printing | Made in Germany",
+  description: "LAYERSTECH offers industrial 3D printing solutions with FFF and patented thermal crosslinking technology. Professional 3D printers for engineering quality.",
 };
-
-import { LanguageProvider } from "@/context/LanguageContext";
 
 export default function RootLayout({
   children,
@@ -36,4 +35,3 @@ export default function RootLayout({
     </html>
   );
 }
-

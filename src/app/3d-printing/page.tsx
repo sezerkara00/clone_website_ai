@@ -1,8 +1,78 @@
 "use client";
 
-import React from "react";
-import { ChevronRight, Box, Layers, Zap, Settings2, CheckCircle2 } from "lucide-react";
+import React, { useState, useEffect } from "react";
+import Link from "next/link";
+import Image from "next/image";
+import { ChevronRight, ChevronLeft, Box, Layers, Zap, Settings2, CheckCircle2 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+
+const SectorGallery = ({ images, title, t }: { images: string[], title: any, t: any }) => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= current) setCurrent(0);
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length, current]);
+
+  const next = () => setCurrent((prev) => (prev + 1) % images.length);
+  const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+
+  return (
+    <div className="relative w-full h-full group/gallery bg-[#f8f8f8]">
+      {images.map((img, i) => (
+        <div 
+          key={i} 
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${i === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-110 z-0'}`}
+        >
+          <Image 
+            src={img} 
+            alt={`${t(title)} - ${i + 1}`} 
+            fill
+            unoptimized
+            className={`w-full h-full transition-transform duration-[6000ms] group-hover:scale-105 ${img.includes('robot') || img.includes('giyim') ? 'object-contain p-8' : 'object-cover'}`} 
+            style={{ imageRendering: 'auto' }}
+          />
+          <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 ${img.includes('robot') || img.includes('giyim') ? 'hidden' : ''}`}></div>
+        </div>
+      ))}
+      
+      {/* Navigation Arrows */}
+      {images.length > 1 && (
+        <>
+          <button 
+            onClick={(e) => { e.preventDefault(); prev(); }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover/gallery:opacity-100 transition-all hover:bg-[#F26522] hover:scale-110"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={(e) => { e.preventDefault(); next(); }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover/gallery:opacity-100 transition-all hover:bg-[#F26522] hover:scale-110"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </>
+      )}
+
+      {/* Indicators */}
+      {images.length > 1 && (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {images.map((_, i) => (
+            <button 
+              key={i} 
+              onClick={() => setCurrent(i)}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${i === current ? 'bg-[#F26522] w-6' : 'bg-white/30 hover:bg-white/50'}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function ThreeDPrinting() {
   const { t, language } = useLanguage();
@@ -37,7 +107,8 @@ export default function ThreeDPrinting() {
         { EN: "No Molding Required", TR: "Kalıp Gerektirmez" },
         { EN: "High Temperature Stable", TR: "Yüksek Sıcaklık Kararlılığı" },
         { EN: "Chemical & UV Resistance", TR: "Kimyasal ve UV Direnci" }
-      ]
+      ],
+      images: ["/images/all-printer-s300xliq.webp", "/images/industrial_hero.png"]
     },
     section2: {
       title: { EN: "LayersTech 4-Extruder Technology: Multimaterial and Dissolvable Support", TR: "LayersTech 4-Ekstrüder Teknolojisi: Çok Malzemeli ve Çözünür Destek" },
@@ -47,7 +118,8 @@ export default function ThreeDPrinting() {
         { label: { EN: "Hybrid Config", TR: "Hibrit Yapı" }, value: { EN: "3+1", TR: "3+1" } },
         { label: { EN: "Geometry Limit", TR: "Geometri Sınırı" }, value: { EN: "Zero", TR: "Sıfır" } },
         { label: { EN: "Dissolvable", TR: "Çözünür" }, value: { EN: "100%", TR: "100%" } }
-      ]
+      ],
+      images: ["/images/3d-silicone-printing--use-case--hp.webp", "/images/w_parts.png"]
     },
     thermal: {
       title: { EN: "Patented Thermal Crosslinking", TR: "Patentli Termal Çapraz Bağlanma" },
@@ -76,7 +148,8 @@ export default function ThreeDPrinting() {
         { EN: "Anatomical Tissue Mimicking", TR: "Anatomik Doku Taklidi" },
         { EN: "Zero-Interface Bonding", TR: "Arayüzsüz Bağlanma" }
       ],
-      badge: { title: { EN: "Dynamic Hardness", TR: "Dinamik Sertlik" }, desc: { EN: "Achieve Shore A5 (Ultra-Soft) and Shore A80 (Rigid) within the same geometric boundary.", TR: "Aynı geometrik sınır içinde Shore A5 (Ultra Yumuşak) ve Shore A80 (Sert) elde edin." } }
+      badge: { title: { EN: "Dynamic Hardness", TR: "Dinamik Sertlik" }, desc: { EN: "Achieve Shore A5 (Ultra-Soft) and Shore A80 (Rigid) within the same geometric boundary.", TR: "Aynı geometrik sınır içinde Shore A5 (Ultra Yumuşak) ve Shore A80 (Sert) elde edin." } },
+      images: ["/images/fashion_detail.webp", "/images/robot1.webp"]
     },
     section4: {
       title: { EN: "Hybrid Capabilities: Optional FDM Printing Support", TR: "Hibrit Yetenekler: Opsiyonel FDM Baskı Desteği" },
@@ -85,7 +158,8 @@ export default function ThreeDPrinting() {
       info: [
         { label: { EN: "FDM Support", TR: "FDM Desteği" }, val: { EN: "Standard & Advanced Filaments", TR: "Standart ve Gelişmiş Filamentler" } },
         { label: { EN: "All-in-One", TR: "Hepsi Bir Arada" }, val: { EN: "Single Industrial Platform", TR: "Tek Endüstriyel Platform" } }
-      ]
+      ],
+      images: ["/images/industrial_spool_fallback.jpg", "/images/industrial_hero.png"]
     },
     cta: {
       title: { EN: "Ready to Start Your Project?", TR: "Projenize Başlamaya Hazır Mısınız?" },
@@ -106,7 +180,7 @@ export default function ThreeDPrinting() {
               <span className="text-white">{t(content.header.breadcrumb.techs)}</span>
             </div>
             <h1 className="text-4xl md:text-6xl font-black mb-4 text-white">{t(content.header.title)}</h1>
-            <div className="w-20 h-1 bg-primary"></div>
+            <div className="w-20 h-1 bg-[#f26522]"></div>
           </div>
         </section>
 
@@ -116,13 +190,13 @@ export default function ThreeDPrinting() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg primary-gradient flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Layers className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-heading uppercase">{t(content.section1.title)}</h2>
+                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">{t(content.section1.title)}</h2>
                 </div>
                 <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p className="text-lg font-medium text-heading/80">
+                  <p className="text-lg font-medium text-[#1a1a1a]/80">
                     {t(content.section1.subtitle)}
                   </p>
                   <p>
@@ -130,18 +204,17 @@ export default function ThreeDPrinting() {
                   </p>
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     {content.section1.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 font-bold text-heading">
-                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                      <li key={i} className="flex items-center gap-2 font-bold text-[#1a1a1a]">
+                        <CheckCircle2 className="w-4 h-4 text-[#f26522]" />
                         <span>{t(feature)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div className="order-1 lg:order-2">
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl relative group">
-                  <img src="/images/all-printer-s300xliq.webp" alt="Silicone 3D Printer" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+              <div className="order-1 lg:order-2 group/img">
+                <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                   <SectorGallery images={content.section1.images} title={content.section1.title} t={t} />
                 </div>
               </div>
             </div>
@@ -152,27 +225,26 @@ export default function ThreeDPrinting() {
         <section className="py-24 bg-[#F8F9FA]">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl relative group">
-                  <img src="/images/3d-silicone-printing--use-case--hp.webp" alt="Silicone Support" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+              <div className="group/img">
+                <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                   <SectorGallery images={content.section2.images} title={content.section2.title} t={t} />
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg primary-gradient flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Zap className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-heading uppercase">{t(content.section2.title)}</h2>
+                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">{t(content.section2.title)}</h2>
                 </div>
                 <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p dangerouslySetInnerHTML={{ __html: t(content.section2.p1) }} />
+                  <p className="text-lg" dangerouslySetInnerHTML={{ __html: t(content.section2.p1) }} />
                   <p>{t(content.section2.p2)}</p>
                   <div className="mt-8 grid grid-cols-3 gap-4">
                     {content.section2.stats.map((stat, i) => (
                       <div key={i} className="text-center p-4 bg-white rounded-lg shadow-sm border border-black/5">
-                        <p className="text-xl font-black text-primary">{t(stat.value)}</p>
-                        <p className="text-[10px] uppercase font-bold text-heading/50">{t(stat.label)}</p>
+                        <p className="text-xl font-black text-[#f26522]">{t(stat.value)}</p>
+                        <p className="text-[10px] uppercase font-bold text-[#1a1a1a]/50">{t(stat.label)}</p>
                       </div>
                     ))}
                   </div>
@@ -183,22 +255,23 @@ export default function ThreeDPrinting() {
         </section>
 
         {/* Section: Patented Thermal Crosslinking */}
-        <section className="py-24 bg-[#1a1c1e] text-white">
-          <div className="container mx-auto px-6">
+        <section className="py-24 bg-[#1a1c1e] text-white overflow-hidden relative">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 bg-[#f26522]/40 pointer-events-none"></div>
+          
+          <div className="container mx-auto px-6 relative z-10">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div className="relative">
-                <div className="absolute -left-20 -top-20 w-64 h-64 bg-primary/20 rounded-full blur-3xl"></div>
-                <h2 className="text-3xl md:text-4xl font-black mb-8 uppercase leading-tight text-white">
+              <div className="relative p-10 rounded-[40px] border border-white/10 backdrop-blur-2xl bg-gradient-to-br from-white/[0.05] via-[#f26522]/5 to-transparent">
+                <h2 className="text-3xl md:text-5xl font-black mb-8 uppercase leading-tight text-white tracking-tighter">
                   {t(content.thermal.title)}: <br/>
-                  <span className="text-primary">{t(content.thermal.subtitle)}</span>
+                  <span className="text-[#f26522]">{t(content.thermal.subtitle)}</span>
                 </h2>
                 <div className="space-y-6 text-white/70 text-sm">
                   <p className="text-lg text-white/90" dangerouslySetInnerHTML={{ __html: t(content.thermal.p1) }} />
                   <p>{t(content.thermal.p2)}</p>
                   <div className="grid grid-cols-2 gap-6 mt-10">
                     {content.thermal.cards.map((card, i) => (
-                      <div key={i} className="border-l-2 border-primary pl-4">
-                        <h4 className="font-black text-white uppercase text-xs mb-1">{t(card.title)}</h4>
+                      <div key={i} className="border-l-2 border-[#f26522] pl-4 group hover:border-white transition-colors duration-500">
+                        <h4 className="font-black text-white uppercase text-xs mb-1 group-hover:text-[#f26522]">{t(card.title)}</h4>
                         <p className="text-[11px]">{t(card.desc)}</p>
                       </div>
                     ))}
@@ -206,9 +279,9 @@ export default function ThreeDPrinting() {
                 </div>
               </div>
               <div className="relative flex items-center justify-center">
-                <div className="w-full aspect-square max-w-md rounded-full border border-white/10 p-8 flex items-center justify-center relative">
-                  <div className="absolute inset-0 animate-pulse bg-primary/5 rounded-full"></div>
-                  <div className="text-primary opacity-50 relative">
+                <div className="w-full aspect-square max-w-md rounded-full border border-white/10 p-8 flex items-center justify-center relative bg-white/[0.02]">
+                  <div className="absolute inset-0 animate-pulse bg-[#f26522]/10 rounded-full"></div>
+                  <div className="text-[#f26522] opacity-50 relative">
                      <Zap className="w-32 h-32" />
                   </div>
                   <div className="absolute inset-0 flex items-center justify-center">
@@ -226,21 +299,21 @@ export default function ThreeDPrinting() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
               <div className="order-2 lg:order-1">
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg primary-gradient flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Settings2 className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-heading uppercase">
+                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">
                     {t(content.section3.title)}
                   </h2>
                 </div>
                 <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p className="text-lg font-medium text-heading/80" dangerouslySetInnerHTML={{ __html: t(content.section3.subtitle) }} />
+                  <p className="text-lg font-medium text-[#1a1a1a]/80" dangerouslySetInnerHTML={{ __html: t(content.section3.subtitle) }} />
                   <p dangerouslySetInnerHTML={{ __html: t(content.section3.desc) }} />
                   
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                     {content.section3.infoCards.map((card, i) => (
-                      <div key={i} className="p-4 bg-[#F8F9FA] rounded-xl border-l-4 border-primary">
-                        <h4 className="font-black text-heading text-xs mb-2 uppercase">{t(card.title)}</h4>
+                      <div key={i} className="p-6 bg-gradient-to-br from-white/90 via-white/80 to-[#f26522]/10 rounded-2xl border border-[#f26522]/20 hover:border-[#f26522] transition-colors duration-500">
+                        <h4 className="font-black text-[#1a1a1a] text-xs mb-2 uppercase">{t(card.title)}</h4>
                         <p className="text-[11px]">{t(card.desc)}</p>
                       </div>
                     ))}
@@ -248,26 +321,22 @@ export default function ThreeDPrinting() {
 
                   <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
                     {content.section3.features.map((feature, i) => (
-                      <li key={i} className="flex items-center gap-2 font-bold text-heading">
-                        <CheckCircle2 className="w-4 h-4 text-primary" />
+                      <li key={i} className="flex items-center gap-2 font-bold text-[#1a1a1a]">
+                        <CheckCircle2 className="w-4 h-4 text-[#f26522]" />
                         <span>{t(feature)}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               </div>
-              <div className="order-1 lg:order-2">
-                <div className="relative group">
-                  <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl">
-                     <img src="/images/lynxter-detail-3dprinting-softrobot-silicone.webp" alt="Multi-Durometer Silicone" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  </div>
-                  {/* Teknik Bilgi Kartı */}
-                  <div className="absolute -bottom-6 -left-6 bg-heading text-white p-6 rounded-2xl shadow-xl max-w-[240px]">
-                    <p className="text-[10px] uppercase tracking-widest mb-2 text-primary">{t(content.section3.badge.title)}</p>
-                    <p className="text-xs leading-relaxed font-medium">
-                      {t(content.section3.badge.desc)}
-                    </p>
-                  </div>
+              <div className="order-1 lg:order-2 group/img">
+                <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                   <SectorGallery images={content.section3.images} title={content.section3.title} t={t} />
+                   {/* Optional Technical Badge Overlay */}
+                   <div className="absolute bottom-10 right-10 z-30 bg-[#1a1a1a]/90 backdrop-blur-md p-6 rounded-3xl border border-white/10 max-w-[200px] text-white shadow-2xl">
+                      <p className="text-[10px] font-black tracking-widest text-[#f26522] mb-1 uppercase">{t(content.section3.badge.title)}</p>
+                      <p className="text-[10px] opacity-70 leading-normal">{t(content.section3.badge.desc)}</p>
+                   </div>
                 </div>
               </div>
             </div>
@@ -278,27 +347,26 @@ export default function ThreeDPrinting() {
         <section className="py-24 bg-[#F8F9FA]">
           <div className="container mx-auto px-6">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-              <div>
-                <div className="aspect-video rounded-2xl overflow-hidden shadow-2xl relative group">
-                  <img src="/images/industrial_spool_fallback.jpg" alt="Hybrid FDM Printing" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-                  <div className="absolute inset-0 bg-primary/10 group-hover:bg-transparent transition-colors"></div>
+              <div className="group/img">
+                <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                   <SectorGallery images={content.section4.images} title={content.section4.title} t={t} />
                 </div>
               </div>
               <div>
                 <div className="flex items-center gap-4 mb-6">
-                  <div className="w-12 h-12 rounded-lg primary-gradient flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
                     <Settings2 className="w-6 h-6" />
                   </div>
-                  <h2 className="text-3xl font-black text-heading uppercase">{t(content.section4.title)}</h2>
+                  <h2 className="text-3xl font-black text-[#1a1a1a] uppercase">{t(content.section4.title)}</h2>
                 </div>
                 <div className="space-y-6 text-[#777777] text-sm leading-relaxed">
-                  <p dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
+                  <p className="text-lg" dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
                   <p>{t(content.section4.p2)}</p>
                   <div className="mt-8 grid grid-cols-2 gap-4">
                     {content.section4.info.map((item, i) => (
-                      <div key={i} className="p-4 bg-white rounded-lg shadow-sm border border-black/5">
-                        <p className="text-sm font-bold text-heading mb-1 text-primary">{t(item.label)}</p>
-                        <p className="text-[10px] text-[#777777]">{t(item.val)}</p>
+                      <div key={i} className="p-6 bg-white rounded-2xl shadow-sm border border-black/5 hover:border-[#f26522]/30 transition-colors">
+                        <p className="text-sm font-bold text-[#1a1a1a] mb-1 text-[#f26522] tracking-tighter">{t(item.label)}</p>
+                        <p className="text-[10px] text-[#777777] opacity-80 uppercase tracking-widest font-bold">{t(item.val)}</p>
                       </div>
                     ))}
                   </div>
@@ -309,15 +377,16 @@ export default function ThreeDPrinting() {
         </section>
 
         {/* Call to Action Haus */}
-        <section className="py-20 primary-gradient text-white text-center">
-          <div className="container mx-auto px-6">
-            <h2 className="text-3xl font-black mb-6 uppercase tracking-wider">{t(content.cta.title)}</h2>
-            <p className="mb-10 text-white/80 max-w-2xl mx-auto">
+        <section className="py-32 bg-[#1a1a1a] text-white text-center relative overflow-hidden">
+          <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
+          <div className="container mx-auto px-6 relative z-10">
+            <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter">{t(content.cta.title)}</h2>
+            <p className="mb-10 text-white/50 max-w-2xl mx-auto text-xl font-light">
               {t(content.cta.desc)}
             </p>
-            <a href="/contact" className="inline-block bg-white text-primary px-10 py-4 rounded font-black tracking-widest hover:bg-heading hover:text-white transition-all shadow-xl">
+            <Link href="/contact" className="inline-block bg-[#f26522] text-white px-12 py-5 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white hover:text-[#1a1a1a] transition-all shadow-2xl">
               {t(content.cta.button)}
-            </a>
+            </Link>
           </div>
         </section>
       </main>

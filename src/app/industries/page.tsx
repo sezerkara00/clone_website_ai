@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { 
   ChevronRight, 
+  ChevronLeft,
   Stethoscope, 
   Plane, 
   Car, 
@@ -12,6 +13,76 @@ import {
   ArrowRight
 } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import Image from "next/image";
+import { useState, useEffect } from "react";
+
+const SectorGallery = ({ images, title, t }: { images: string[], title: any, t: any }) => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= current) setCurrent(0);
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length, current]);
+
+  const next = () => setCurrent((prev) => (prev + 1) % images.length);
+  const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+
+  return (
+    <div className="relative w-full h-full group/gallery bg-[#f8f8f8]">
+      {images.map((img, i) => (
+        <div 
+          key={i} 
+          className={`absolute inset-0 transition-all duration-1000 ease-in-out ${i === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-110 z-0'}`}
+        >
+          <Image 
+            src={img} 
+            alt={`${t(title)} - ${i + 1}`} 
+            fill
+            unoptimized
+            className={`w-full h-full transition-transform duration-[6000ms] group-hover:scale-105 ${img.includes('robot') || img.includes('giyim') ? 'object-contain p-8' : 'object-cover'}`} 
+            style={{ imageRendering: 'auto' }}
+          />
+          <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 ${img.includes('robot') || img.includes('giyim') ? 'hidden' : ''}`}></div>
+        </div>
+      ))}
+      
+      {/* Navigation Arrows */}
+      {images.length > 1 && (
+        <>
+          <button 
+            onClick={(e) => { e.preventDefault(); prev(); }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover/gallery:opacity-100 transition-all hover:bg-[#F26522] hover:scale-110"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={(e) => { e.preventDefault(); next(); }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover/gallery:opacity-100 transition-all hover:bg-[#F26522] hover:scale-110"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+        </>
+      )}
+
+      {/* Indicators */}
+      {images.length > 1 && (
+        <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+          {images.map((_, i) => (
+            <button 
+              key={i} 
+              onClick={() => setCurrent(i)}
+              className={`w-1.5 h-1.5 rounded-full transition-all duration-500 ${i === current ? 'bg-[#F26522] w-6' : 'bg-white/30 hover:bg-white/50'}`}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
 
 export default function IndustriesPage() {
   const { t } = useLanguage();
@@ -55,7 +126,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      image: "https://images.unsplash.com/photo-1584982329699-0915a6ba4321?w=800&q=80"
+      images: ["/images/kulak.jpg", "/images/el.webp", "/images/aort.webp"]
     },
     {
       id: "aerospace",
@@ -91,7 +162,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      image: "https://images.unsplash.com/photo-1544724569-5f546fd6f2b5?w=800&q=80"
+      images: ["/images/hava1.jpg", "/images/hava2.webp", "/images/hava_ai.png"]
     },
     {
       id: "automotive",
@@ -127,7 +198,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80"
+      images: ["/images/oto1_ai.png", "/images/blue_gasket_ai.png", "/images/oto3.webp"]
     },
     {
       id: "robotics",
@@ -163,7 +234,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      image: "https://images.unsplash.com/photo-1565043581454-220239ed75d4?w=800&q=80"
+      images: ["/images/robot1.webp", "/images/robot2.webp"]
     },
     {
       id: "electronics",
@@ -192,7 +263,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      image: "https://images.unsplash.com/photo-1510557880182-3d4d3cba35a5?w=800&q=80"
+      images: ["/images/giyim1.jpg", "/images/giyim2.webp", "/images/giyim3.jpg"]
     }
   ];
 
@@ -205,22 +276,42 @@ export default function IndustriesPage() {
              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#F26522] via-transparent to-transparent blur-3xl"></div>
           </div>
           <div className="container mx-auto px-6 relative z-10 text-center md:text-left">
-            <div className="flex items-center justify-center md:justify-start gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">
-              <Link href="/" className="hover:text-white transition-colors">{t({EN: "Home", TR: "Anasayfa"})}</Link>
-              <ChevronRight className="w-3 h-3" />
-              <span className="text-white">{t({EN: "Industries", TR: "Sektörler"})}</span>
+            <div className="flex flex-col lg:flex-row items-center gap-16">
+              <div className="flex-1 text-center lg:text-left">
+                <div className="flex items-center justify-center lg:justify-start gap-2 text-[10px] uppercase tracking-[0.4em] text-white/40 mb-8">
+                  <Link href="/" className="hover:text-white transition-colors">{t({EN: "Home", TR: "Anasayfa"})}</Link>
+                  <ChevronRight className="w-3 h-3" />
+                  <span className="text-white">{t({EN: "Industries", TR: "Sektörler"})}</span>
+                </div>
+                <h1 className="text-6xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none text-white whitespace-nowrap">
+                  Industries <br />
+                  <span className="text-[#F26522]">We Serve.</span>
+                </h1>
+                <p className="text-white/60 max-w-2xl text-xl font-light leading-relaxed mb-12">
+                  {t({
+                    en: "Tailored additive manufacturing solutions for the most demanding technical environments. From medical grade biocompatibility to aerospace-standard thermal resistance.",
+                    tr: "En zorlu teknik ortamlar için özelleştirilmiş eklemeli imalat çözümleri. Medikal sınıf biyouyumluluktan havacılık standardı termal dirence kadar."
+                  })}
+                </p>
+                <div className="w-32 h-1.5 bg-[#F26522] mx-auto lg:mx-0"></div>
+              </div>
+              <div className="flex-1 w-full max-w-xl lg:max-w-none">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-[#F26522] to-white/10 rounded-[40px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
+                  <div className="relative aspect-square overflow-hidden rounded-[40px] border border-white/5 bg-black/40 backdrop-blur-3xl shadow-2xl">
+                    <Image 
+                      src="/images/industrial_hero.png" 
+                      alt="Industrial 3D Silicone Printing Hero" 
+                      fill
+                      unoptimized
+                      priority
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[5000ms]"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <h1 className="text-6xl md:text-8xl font-black mb-8 uppercase tracking-tighter leading-none text-white">
-              Industries <br />
-              <span className="text-[#F26522]">We Serve.</span>
-            </h1>
-            <p className="text-white/60 max-w-2xl text-xl font-light leading-relaxed mb-12">
-              {t({
-                en: "Tailored additive manufacturing solutions for the most demanding technical environments. From medical grade biocompatibility to aerospace-standard thermal resistance.",
-                tr: "En zorlu teknik ortamlar için özelleştirilmiş eklemeli imalat çözümleri. Medikal sınıf biyouyumluluktan havacılık standardı termal dirence kadar."
-              })}
-            </p>
-            <div className="w-32 h-1.5 bg-[#F26522] mx-auto md:mx-0"></div>
           </div>
         </section>
 
@@ -242,61 +333,58 @@ export default function IndustriesPage() {
           </div>
         </section>
 
-        {/* Sectors Detail */}
+        {/* Sectors Detail - Enhanced Glassmorphism & Split Hybrid */}
         {sectors.map((sector, idx) => (
           <section 
             id={sector.id} 
             key={sector.id} 
-            className={`py-32 ${idx % 2 === 1 ? 'bg-[#fcfcfc]' : 'bg-white'}`}
+            className={`py-32 relative overflow-hidden ${idx % 2 === 1 ? 'bg-[#1a1a1a] text-white' : 'bg-[#fcfcfc] text-black'}`}
           >
-            <div className="container mx-auto px-6 max-w-[1400px]">
+            {/* Background Accent for Silicone Look */}
+            <div className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 pointer-events-none transition-all duration-1000 ${idx % 2 === 1 ? 'bg-[#F26522]/40' : 'bg-[#F26522]/20'}`}></div>
+
+            <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
                <div className={`flex flex-col lg:flex-row gap-20 items-center ${idx % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}>
-                  <div className="flex-1 space-y-12">
-                     <div>
-                        {sector.badge && (
-                          <span className="px-4 py-1.5 bg-[#F26522]/10 text-[#F26522] rounded-full text-[10px] font-black uppercase tracking-widest mb-6 inline-block">
-                            {t(sector.badge)}
-                          </span>
-                        )}
-                        <h2 className="text-5xl md:text-6xl font-black text-[#1a1a1a] uppercase tracking-tighter mb-8 leading-none">
+                  
+                  {/* Left Side: Technical Info with Glassmorphism & Color Gradient */}
+                  <div className="flex-1 space-y-10">
+                     <div className={`p-10 rounded-[40px] border backdrop-blur-2xl transition-all duration-500 shadow-2xl ${idx % 2 === 1 ? 'bg-gradient-to-br from-white/[0.05] via-[#F26522]/5 to-transparent border-white/10 shadow-black/40 hover:from-white/[0.08] hover:via-[#F26522]/10' : 'bg-gradient-to-br from-white/90 via-white/80 to-[#F26522]/10 border-black/5 hover:to-[#F26522]/20'}`}>
+                        <h2 className={`text-5xl md:text-6xl font-black uppercase tracking-tighter mb-8 leading-none ${idx % 2 === 1 ? 'text-white' : 'text-black'}`}>
                           {t(sector.title)}
                         </h2>
-                        <p className="text-xl text-black/60 font-light leading-relaxed">
+                        <p className={`text-xl font-light leading-relaxed mb-10 ${idx % 2 === 1 ? 'text-white/70' : 'text-black/60'}`}>
                           {t(sector.description)}
                         </p>
-                     </div>
 
-                     <div className="space-y-8">
-                        {sector.items.map((item, i) => (
-                          <div key={i} className="group border-l-2 border-black/5 pl-8 hover:border-[#F26522] transition-colors">
-                             <h4 className="text-xl font-bold text-[#1a1a1a] mb-2 uppercase tracking-tight group-hover:text-[#F26522] transition-colors">
-                               {t(item.name)}
-                             </h4>
-                             <p className="text-black/60 leading-relaxed text-sm">
-                               {t(item.detail)}
-                             </p>
-                          </div>
-                        ))}
-                     </div>
-                     
-                     <div className="pt-8">
-                        <Link 
-                           href="/contact" 
-                           className="flex items-center gap-3 text-[13px] font-black uppercase tracking-[0.2em] text-[#1a1a1a] hover:text-[#F26522] transition-all group"
-                        >
-                           Request Industry Guide
-                           <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
-                        </Link>
+                        <div className="space-y-6">
+                           {sector.items.map((item, i) => (
+                             <div key={i} className={`group border-l-2 pl-6 transition-colors duration-500 ${idx % 2 === 1 ? 'border-white/10 hover:border-[#F26522]' : 'border-[#F26522]/20 hover:border-[#F26522]'}`}>
+                                <h4 className={`text-lg font-bold uppercase tracking-tight transition-colors mb-1 ${idx % 2 === 1 ? 'text-white group-hover:text-[#F26522]' : 'text-black group-hover:text-[#F26522]'}`}>
+                                  {t(item.name)}
+                                </h4>
+                                <p className={`leading-relaxed text-sm ${idx % 2 === 1 ? 'text-white/50' : 'text-black/50'}`}>
+                                  {t(item.detail)}
+                                </p>
+                             </div>
+                           ))}
+                        </div>
+                        
+                        <div className="pt-10">
+                           <Link 
+                              href="/contact" 
+                              className={`flex items-center gap-3 text-[13px] font-black uppercase tracking-[0.2em] transition-all group ${idx % 2 === 1 ? 'text-white hover:text-[#F26522]' : 'text-[#1a1a1a] hover:text-[#F26522]'}`}
+                           >
+                              Request Application Guide
+                              <ArrowRight className="w-5 h-5 group-hover:translate-x-2 transition-transform" />
+                           </Link>
+                        </div>
                      </div>
                   </div>
-                  <div className="flex-1 w-full">
-                     <div className="aspect-[4/5] rounded-[50px] overflow-hidden shadow-2xl relative bg-black/5">
-                        <img 
-                          src={sector.image} 
-                          alt={t(sector.title)} 
-                          className="w-full h-full object-cover hover:scale-110 transition-transform duration-[2000ms]" 
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+
+                  {/* Right Side: High-Detail Visual with Auto-Sliding Carousel */}
+                  <div className="flex-1 w-full group/img">
+                     <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                        <SectorGallery images={sector.images} title={sector.title} t={t} />
                      </div>
                   </div>
                </div>
@@ -326,3 +414,6 @@ export default function IndustriesPage() {
     </div>
   );
 }
+
+
+
