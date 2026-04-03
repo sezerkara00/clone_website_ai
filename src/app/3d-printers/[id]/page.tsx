@@ -337,7 +337,7 @@ export default function ProductDetail() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
                <span className="text-[#F26522] font-black text-[11px] tracking-[0.5em] uppercase block mb-8 leading-none underline underline-offset-8 decoration-2 decoration-[#F26522]/20">{product.subtitle}</span>
-               <h1 className="text-7xl lg:text-[120px] font-black text-[#1a1a1a] dark:text-white uppercase leading-[0.8] tracking-tighter mb-12">
+               <h1 className="text-5xl sm:text-7xl lg:text-[120px] font-black text-[#1a1a1a] dark:text-white uppercase leading-[0.8] tracking-tighter mb-12">
                  {product.name.includes("PRO") ? (
                    <>
                      {product.name.replace("PRO", "")}
@@ -347,7 +347,7 @@ export default function ProductDetail() {
                    product.name
                  )}
                </h1>
-               <p className="text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed max-w-xl mb-16">{product.description}</p>
+               <p className="text-lg md:text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed max-w-xl mb-16">{product.description}</p>
                <Button className="h-16 px-12 bg-[#1a1a1a] dark:bg-white dark:text-black text-white rounded-full text-[11px] font-extrabold tracking-[0.2em] hover:bg-[#F26522] dark:hover:bg-[#F26522] dark:hover:text-white transition-all uppercase">
                  {t({ EN: "Request a Quote", TR: "Teklif Alın" })}
                </Button>
@@ -362,7 +362,7 @@ export default function ProductDetail() {
       {/* Tabs */}
       <div id="product-nav" ref={tabRef} className="sticky top-[80px] z-[40] bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md border-y border-black/5 dark:border-white/10 shadow-xl transition-colors">
         <div className="container mx-auto px-6 max-w-[1400px]">
-          <div className="flex justify-center">
+          <div className="flex justify-start md:justify-center overflow-x-auto no-scrollbar whitespace-nowrap scroll-smooth">
             {["features", "compatibility", "specs"].map((tab) => (
               <button
                 key={tab}
@@ -388,10 +388,10 @@ export default function ProductDetail() {
             <div className="container mx-auto px-6 max-w-[1400px]">
               <div className="flex flex-col gap-12">
                 {product.features.map((f, i) => (
-                  <div key={i} className="bg-gradient-to-br from-[#f8f8f8] to-[#efefef] dark:from-white/[0.03] dark:to-transparent rounded-[60px] p-12 md:p-20 border border-black/10 dark:border-white/10 flex flex-col lg:flex-row gap-20 items-center overflow-hidden transition-all duration-1000 group shadow-md hover:shadow-2xl hover:border-[#F26522]/30 relative">
-                    <div className="absolute inset-0 bg-gradient-to-l from-[#F26522]/0 via-[#F26522]/0 to-[#F26522]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
+                  <div key={i} className="bg-gradient-to-br from-white via-[#fffaf8] to-[#F26522]/5 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#F26522]/5 rounded-[32px] md:rounded-[60px] p-8 md:p-20 border border-black/5 dark:border-white/10 flex flex-col lg:flex-row gap-20 items-center overflow-hidden transition-all duration-1000 group shadow-md hover:shadow-2xl hover:border-[#F26522]/50 relative">
+                    <div className="absolute inset-0 bg-gradient-to-br from-[#F26522]/0 via-[#F26522]/0 to-[#F26522]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
                     <div className={cn("flex-1 order-2 relative z-10", i % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
-                       <h3 className="text-4xl lg:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-black to-[#F26522] dark:from-white dark:via-white dark:to-[#F26522] transition-all duration-1000 group-hover:opacity-90">
+                       <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a] to-[#F26522] dark:from-white dark:via-white dark:to-[#F26522] group-hover:from-[#F26522] group-hover:to-[#D35400] transition-all duration-700">
                           {f.title}
                        </h3>
                        <p className="text-black/70 dark:text-white/70 text-xl font-light leading-relaxed mb-10 max-w-2xl">{f.desc}</p>
@@ -427,7 +427,7 @@ export default function ProductDetail() {
                </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                 {product.materials.map((m, idx) => (
-                   <div key={idx} className="bg-white dark:bg-white/[0.03] rounded-[50px] border border-black/10 dark:border-white/10 shadow-md hover:border-[#F26522]/50 hover:shadow-2xl transition-all duration-700 p-6 group">
+                   <div key={idx} className="bg-white dark:bg-white/[0.03] rounded-[32px] md:rounded-[50px] border border-black/10 dark:border-white/10 shadow-md hover:border-[#F26522]/50 hover:shadow-2xl transition-all duration-700 p-6 group">
                       <div className="aspect-square w-full rounded-[40px] overflow-hidden bg-white dark:bg-black/40 mb-8 border border-black/5 dark:border-white/10 relative flex items-center justify-center transition-colors">
                         <img 
                           src={m.icon} 
@@ -460,13 +460,13 @@ export default function ProductDetail() {
         </div>
 
         <div id="tab-content-specs" className={activeTab === "specs" ? "block" : "hidden"}>
-          <section className="py-40 animate-in fade-in slide-in-from-bottom-12 duration-700 bg-[#0c0c0c] text-white">
+          <section className="py-20 md:py-40 animate-in fade-in slide-in-from-bottom-12 duration-700 bg-[#0c0c0c] text-white">
             <div className="container mx-auto px-6 max-w-[1400px]">
-               <div className="grid grid-cols-1 lg:grid-cols-12 gap-24">
+               <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24">
                   <div className="lg:col-span-4">
                     <div className="sticky top-40">
                       <span className="text-[#F26522] font-black text-xs tracking-[0.4em] uppercase block mb-10">{t({ EN: "Technical Documentation", TR: "Teknik Dokümantasyon" })}</span>
-                      <h2 className="text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-12 text-white">{t({ EN: "Full Datasheet", TR: "Tam Veri Sayfası" })}</h2>
+                      <h2 className="text-5xl sm:text-7xl font-black uppercase tracking-tighter leading-[0.9] mb-12 text-white">{t({ EN: "Full Datasheet", TR: "Tam Veri Sayfası" })}</h2>
                       <p className="text-white/70 text-xl font-light mb-16 leading-relaxed">{t({ EN: "Official manufacturing specifications verified for industrial grade output and 24/7 reliability standards.", TR: "Endüstriyel sınıf çıktı ve 24/7 güvenilirlik standartları için doğrulanmış resmi üretim özellikleri." })}</p>
                       <Button className="h-16 px-12 bg-white text-black font-extrabold text-[11px] tracking-[0.2em] uppercase hover:bg-[#F26522] hover:text-white transition-all rounded-full w-full">
                          {t({ EN: "Download Catalog PDF", TR: "Kataloğu PDF İndir" })}

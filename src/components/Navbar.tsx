@@ -9,18 +9,18 @@ import { useLanguage } from "@/context/LanguageContext";
 import { useTheme } from "@/context/ThemeContext";
 
 const navLinks = [
-  { name: "HOME", href: "/" },
-  { name: "INDUSTRIES", href: "/industries" },
-  { name: "TECHNOLOGIES", href: "/3d-printing" },
-  { name: "PRODUCTS", href: "/3d-printers" },
-  { name: "ABOUT US", href: "/about-us" },
-  { name: "CONTACT US", href: "/contact" },
+  { name: { EN: "HOME", TR: "ANASAYFA" }, href: "/" },
+  { name: { EN: "INDUSTRIES", TR: "SEKTÖRLER" }, href: "/industries" },
+  { name: { EN: "TECHNOLOGIES", TR: "TEKNOLOJİLER" }, href: "/3d-printing" },
+  { name: { EN: "PRODUCTS", TR: "ÜRÜNLER" }, href: "/3d-printers" },
+  { name: { EN: "ABOUT US", TR: "HAKKIMIZDA" }, href: "/about-us" },
+  { name: { EN: "CONTACT US", TR: "İLETİŞİM" }, href: "/contact" },
 ];
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, t } = useLanguage();
   const { theme, toggleTheme } = useTheme();
   const pathname = usePathname();
   const isHome = pathname === "/";
@@ -39,7 +39,8 @@ export function Navbar() {
     <>
       <nav 
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+          "fixed top-0 left-0 right-0 transition-all duration-500",
+          isOpen ? "z-[70]" : "z-50",
           isTransparent 
             ? "bg-transparent py-6" 
             : "bg-white/95 dark:bg-[#1a1a1a]/95 backdrop-blur-md py-4 shadow-xl border-b border-black/5 dark:border-white/5"
@@ -62,14 +63,14 @@ export function Navbar() {
               const isActive = pathname === link.href;
               return (
                 <Link 
-                  key={link.name} 
+                  key={typeof link.name === 'string' ? link.name : link.name.EN} 
                   href={link.href}
                   className={cn(
                     "text-[12px] font-bold tracking-[0.2em] transition-all duration-300 hover:text-[#F26522]",
                     isActive ? "text-[#F26522]" : isTransparent ? "text-white/90" : "text-[#1a1a1a] dark:text-white/90"
                   )}
                 >
-                  {link.name}
+                  {t(link.name)}
                 </Link>
               );
             })}
@@ -141,7 +142,7 @@ export function Navbar() {
 
       {/* Mobile Menu Overlay */}
       {isOpen && (
-        <div className="fixed inset-0 z-40 bg-white dark:bg-[#1a1a1a] flex flex-col p-10 pt-24 xl:hidden animate-in slide-in-from-right duration-500 transition-colors">
+        <div className="fixed inset-0 z-[60] bg-white dark:bg-[#1a1a1a] flex flex-col p-10 pt-24 xl:hidden animate-in slide-in-from-right duration-500 transition-colors">
           <div className="flex flex-col gap-6 relative z-50">
             <div className="flex gap-4 border-b border-black/5 dark:border-white/10 pb-6 mb-2 pointer-events-auto">
                <button 
@@ -167,7 +168,7 @@ export function Navbar() {
             </div>
             {navLinks.map((link) => (
               <Link 
-                key={link.name} 
+                key={typeof link.name === 'string' ? link.name : link.name.EN} 
                 href={link.href}
                 onClick={() => setIsOpen(false)}
                 className={cn(
@@ -175,7 +176,7 @@ export function Navbar() {
                   pathname === link.href ? "text-[#F26522]" : "text-[#1a1a1a] dark:text-white"
                 )}
               >
-                {link.name}
+                {t(link.name)}
               </Link>
             ))}
             <a href="tel:+447776449775" className={cn("flex items-center gap-3 text-lg font-bold mt-4 py-4", theme === 'light' ? "text-[#1a1a1a]" : "text-white")}>

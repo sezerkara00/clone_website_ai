@@ -212,7 +212,7 @@ export default function ThreeDPrinting() {
         {/* Section 1: Industrial Silicone Leadership */}
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
-            <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+            <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[40px] md:rounded-[60px] p-8 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
               {/* Corner Watermark */}
               <div className="absolute top-0 right-0 p-10 opacity-[0.03] transition-opacity dark:opacity-[0.05] pointer-events-none">
                 <Image src="/images/Saydam zeminde siyah .svg" alt="logo" width={300} height={300} className="dark:invert" />
@@ -243,7 +243,7 @@ export default function ThreeDPrinting() {
                   </div>
                 </div>
                 <div className="order-1 lg:order-2 group/img">
-                  <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-[32px] md:rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
                      <SectorGallery images={content.section1.images} title={content.section1.title} t={t} priority />
                   </div>
                 </div>
@@ -255,14 +255,14 @@ export default function ThreeDPrinting() {
         {/* Section 2: Versatility & Support Material */}
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
-            <div className="bg-gradient-to-br from-[#F8F9FA] via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+            <div className="bg-gradient-to-br from-[#F8F9FA] via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[40px] md:rounded-[60px] p-8 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
               {/* Corner Watermark */}
               <div className="absolute bottom-0 left-0 p-10 opacity-[0.03] transition-opacity dark:opacity-[0.05] pointer-events-none">
                 <Image src="/images/Saydam zeminde siyah .svg" alt="logo" width={300} height={300} className="dark:invert" />
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="group/img">
-                  <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-[32px] md:rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
                      <SectorGallery images={content.section2.images} title={content.section2.title} t={t} />
                   </div>
                 </div>
@@ -276,7 +276,7 @@ export default function ThreeDPrinting() {
                   <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
                     <p className="text-lg dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section2.p1) }} />
                     <p>{t(content.section2.p2)}</p>
-                    <div className="mt-12 grid grid-cols-3 gap-6">
+                    <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
                       {content.section2.stats.map((stat, i) => (
                         <div key={i} className="text-center p-8 bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/10 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[32px] shadow-xl border border-black/5 dark:border-white/10 hover:border-[#f26522]/50 transition-all duration-500 group">
                           <p className="text-4xl font-black text-[#f26522] mb-2 tracking-tighter group-hover:scale-110 transition-transform">{t(stat.value)}</p>
@@ -298,7 +298,7 @@ export default function ThreeDPrinting() {
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[160px] opacity-10 bg-[#f26522]/40 pointer-events-none"></div>
               
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div className="relative p-10 rounded-[40px] border border-white/10 backdrop-blur-2xl bg-gradient-to-br from-white/[0.05] via-[#f26522]/5 to-transparent">
+                <div className="relative p-6 md:p-10 rounded-[30px] md:rounded-[40px] border border-white/10 backdrop-blur-2xl bg-gradient-to-br from-white/[0.05] via-[#f26522]/5 to-transparent">
                   <h2 className="text-3xl md:text-5xl font-black mb-8 uppercase leading-tight text-[#FFF5F0] tracking-tighter">
                     {t(content.thermal.title)}: <br/>
                     <span className="text-[#f26522]">{t(content.thermal.subtitle)}</span>
@@ -335,7 +335,7 @@ export default function ThreeDPrinting() {
         {/* Section 3: Multi-Shore Hardness & Functional Material Grading */}
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
-            <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+            <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[40px] md:rounded-[60px] p-8 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
               {/* Center Watermark */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] dark:opacity-[0.04] pointer-events-none">
                 <Image src="/images/MODEL LOGO_V2.svg" alt="LT Logo" width={800} height={800} />
@@ -356,7 +356,7 @@ export default function ThreeDPrinting() {
                     
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
                       {content.section3.infoCards.map((card, i) => (
-                        <div key={i} className="p-10 bg-gradient-to-br from-white/95 via-white/80 to-[#f26522]/10 dark:from-white/[0.03] dark:to-[#f26522]/5 rounded-[40px] border border-[#f26522]/40 dark:border-white/10 shadow-xl hover:border-[#f26522] transition-all duration-500 group">
+                        <div key={i} className="p-8 md:p-10 bg-gradient-to-br from-white/95 via-white/80 to-[#f26522]/10 dark:from-white/[0.03] dark:to-[#f26522]/5 rounded-[32px] md:rounded-[40px] border border-[#f26522]/40 dark:border-white/10 shadow-xl hover:border-[#f26522] transition-all duration-500 group">
                           <h4 className="font-black text-[#1a1a1a] dark:text-white text-xs mb-2 uppercase">{t(card.title)}</h4>
                           <p className="text-[11px]">{t(card.desc)}</p>
                         </div>
@@ -374,7 +374,7 @@ export default function ThreeDPrinting() {
                   </div>
                 </div>
                 <div className="order-1 lg:order-2 group/img">
-                  <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-[32px] md:rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
                      <SectorGallery images={content.section3.images} title={content.section3.title} t={t} />
                      {/* Optional Technical Badge Overlay */}
                       <div className="absolute bottom-10 right-10 z-30 bg-[#1a1a1a]/95 backdrop-blur-md p-8 rounded-3xl border border-[#f26522]/30 dark:border-white/20 max-w-[220px] text-white shadow-2xl">
@@ -391,10 +391,10 @@ export default function ThreeDPrinting() {
         {/* Section 4: Hybrid FDM Capability */}
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
-            <div className="bg-gradient-to-br from-[#F8F9FA] via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+            <div className="bg-gradient-to-br from-[#F8F9FA] via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[40px] md:rounded-[60px] p-8 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="group/img">
-                  <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-[32px] md:rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
                      <SectorGallery images={content.section4.images} title={content.section4.title} t={t} />
                   </div>
                 </div>
@@ -408,7 +408,7 @@ export default function ThreeDPrinting() {
                   <div className="space-y-6 text-[#1a1a1a]/60 dark:text-white/70 text-sm leading-relaxed">
                     <p className="text-lg text-[#1a1a1a]/80 dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
                     <p>{t(content.section4.p2)}</p>
-                    <div className="mt-8 grid grid-cols-2 gap-4">
+                    <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {content.section4.info.map((item, i) => (
                         <div key={i} className="bg-white dark:bg-white/[0.05] p-8 rounded-3xl border border-black/10 dark:border-white/10 shadow-md hover:shadow-xl transition-all duration-500">
                           <p className="text-sm font-bold text-[#f26522] mb-1 tracking-tighter">{t(item.label)}</p>
@@ -426,7 +426,7 @@ export default function ThreeDPrinting() {
         {/* Section 5: Software & Connectivity */}
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
-            <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+            <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[40px] md:rounded-[60px] p-8 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1">
                   <div className="flex items-center gap-4 mb-6">
@@ -453,7 +453,7 @@ export default function ThreeDPrinting() {
                   </div>
                 </div>
                 <div className="order-1 lg:order-2 group/img">
-                  <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98] bg-[#f8f8f8] dark:bg-[#111]">
+                  <div className="relative aspect-[3/4] sm:aspect-[4/5] rounded-[32px] md:rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98] bg-[#f8f8f8] dark:bg-[#111]">
                      <SectorGallery images={content.section5.images} title={content.section5.title} t={t} />
                   </div>
                 </div>
