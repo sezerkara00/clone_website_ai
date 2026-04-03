@@ -370,7 +370,7 @@ export default function ProductDetail() {
                 data-tab={tab}
                 onClick={() => handleTabChange(tab)}
                 className={cn(
-                  "vanilla-tab-btn px-8 h-20 md:px-12 flex items-center text-[10px] font-extrabold tracking-[0.4em] uppercase transition-all relative cursor-pointer",
+                  "vanilla-tab-btn px-6 h-20 md:px-12 flex items-center text-[10px] font-extrabold tracking-[0.2em] md:tracking-[0.4em] uppercase transition-all relative cursor-pointer",
                   activeTab === tab ? "text-[#F26522]" : "text-black/40 dark:text-white/50 hover:text-black dark:hover:text-white"
                 )}
               >
@@ -421,9 +421,9 @@ export default function ProductDetail() {
         <div id="tab-content-compatibility" className={activeTab === "compatibility" ? "block" : "hidden"}>
           <section className="py-40 animate-in fade-in slide-in-from-bottom-12 duration-700 bg-white dark:bg-[#0a0a0a] transition-colors">
             <div className="container mx-auto px-6 max-w-[1400px]">
-              <div className="text-center mb-32">
+              <div className="text-center mb-16 md:mb-32">
                   <span className="text-[#F26522] font-black text-xs tracking-[0.4em] uppercase block mb-8">{t({ EN: "Industrial Excellence", TR: "Endüstriyel Mükemmellik" })}</span>
-                  <h2 className="text-7xl font-black uppercase tracking-tighter text-[#1a1a1a] dark:text-white leading-none">{t({ EN: "Manufacturing Ecosystem", TR: "Üretim Ekosistemi" })}</h2>
+                  <h2 className="text-4xl sm:text-7xl font-black uppercase tracking-tighter text-[#1a1a1a] dark:text-white leading-none">{t({ EN: "Manufacturing Ecosystem", TR: "Üretim Ekosistemi" })}</h2>
                </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                 {product.materials.map((m, idx) => (
