@@ -17,7 +17,7 @@ const products = [
   { 
     id: "m1pro",
     name: "LayersTech M1PRO", 
-    image: "/images/m1_pro_light.png",
+    image: "/images/m1pro_dark.png",
     category: "SILICONE / LSR SYSTEM",
     description: "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control.",
     features: ["Real Silicone (LSR)", "4 Tool Change System", "Industrial Enclosure"]
