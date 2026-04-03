@@ -283,9 +283,9 @@ export default function IndustriesPage() {
                   <ChevronRight className="w-3 h-3" />
                   <span className="text-white">{t({EN: "Industries", TR: "Sektörler"})}</span>
                 </div>
-                <h1 className="text-6xl md:text-[120px] font-black mb-8 uppercase tracking-tighter leading-[0.85] text-white whitespace-nowrap">
-                  {t({ EN: "Industries", TR: "Sektörler" })} <br />
-                  <span className="text-[#F26522]">{t({ EN: "We Serve.", TR: "HİZMETLERİMİZ." })}</span>
+                <h1 className="text-5xl md:text-8xl lg:text-[100px] font-black mb-8 uppercase tracking-tighter leading-[0.85] text-white">
+                  {t({ EN: "Industries", TR: "HİZMET VERDİĞİMİZ" })} <br />
+                  <span className="text-[#F26522]">{t({ EN: "We Serve.", TR: "SEKTÖRLER." })}</span>
                 </h1>
                 <p className="text-white/40 max-w-2xl text-xl font-light leading-relaxed mb-12">
                   {t({
