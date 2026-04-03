@@ -35,10 +35,10 @@ const SectorGallery = ({ images, title, t, priority = false }: { images: string[
             unoptimized
             priority={priority && i === 0}
             loading={priority && i === 0 ? "eager" : "lazy"}
-            className={`w-full h-full transition-transform duration-[6000ms] group-hover:scale-105 ${img.includes('robot') || img.includes('giyim') ? 'object-contain p-8' : 'object-cover'}`} 
+            className={`w-full h-full transition-transform duration-[6000ms] group-hover:scale-105 ${img.includes('robot') || img.includes('giyim') || img.includes('yaz') ? 'object-contain p-8' : 'object-cover'}`} 
             style={{ imageRendering: 'auto' }}
           />
-          <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 ${img.includes('robot') || img.includes('giyim') ? 'hidden' : ''}`}></div>
+          <div className={`absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 ${img.includes('robot') || img.includes('giyim') || img.includes('yaz') ? 'hidden' : ''}`}></div>
         </div>
       ))}
       
@@ -105,7 +105,7 @@ export default function ThreeDPrinting() {
         { EN: "Industrial-grade Silicone", TR: "Endüstriyel Sınıf Silikon" },
         { EN: "Production-ready Elastomers", TR: "Üretime Hazır Elastomerler" },
         { EN: "Active Thermal Curing", TR: "Aktif Termal Kürleme" },
-        { EN: "Patented Crosslinking Process", TR: "Patentli Çapraz Bağlanma" },
+        { EN: "IR Layer-by-Layer Curing", TR: "IR Katman Bazlı Kürleme" },
         { EN: "No Molding Required", TR: "Kalıp Gerektirmez" },
         { EN: "High Temperature Stable", TR: "Yüksek Sıcaklık Kararlılığı" },
         { EN: "Chemical & UV Resistance", TR: "Kimyasal ve UV Direnci" }
@@ -113,21 +113,21 @@ export default function ThreeDPrinting() {
       images: ["/images/4xtool.png", "/images/industrial_hero.png"]
     },
     section2: {
-      title: { EN: "LayersTech 4-Extruder Technology: Multimaterial and Dissolvable Support", TR: "LAYERSTECH 4-EKSTRÜDER TEKNOLOJİSİ: ÇOK MALZEMELİ VE ÇÖZÜNÜR DESTEK" },
-      p1: { EN: "Engineers face constant challenges with complex geometries. Our <strong class=\"text-heading\">Dissolvable Support</strong> solves this by allowing intricate internal structures that are impossible with standard methods.", TR: "Mühendisler karmaşık geometrilerde sürekli zorluklarla karşılaşır. <strong class=\"text-heading\">Çözünür Destek</strong> teknolojimiz, standart yöntemlerle imkansız olan karmaşık iç yapıları mümkün kılarak bu sorunu çözer." },
-      p2: { EN: "With four independent heads, you can utilize 3 different silicone materials plus 1 dedicated dissolvable support head, ensuring flawless surface finishes and geometric freedom for your most complex parts.", TR: "Dört bağımsız kafa sayesinde, en karmaşık parçalarınız için kusursuz yüzey kalitesi ve geometrik özgürlük sağlayan 3 farklı silikon malzeme artı 1 özel çözünür destek kafası kullanabilirsiniz." },
+      title: { EN: "LayersTech Toolchanger Technology: Multimaterial and Dissolvable Support", TR: "LAYERSTECH TOOLCHANGER TEKNOLOJİSİ: ÇOK MALZEMELİ VE ÇÖZÜNÜR DESTEK" },
+      p1: { EN: "Engineers are no longer limited by geometric complexity. Our <strong class=\"text-[#f26522]\">Toolchanger System</strong> handles intricate internal structures with specialized support materials, unlocking designs that were once considered impossible.", TR: "Mühendisler artık geometrik karmaşıklıkla sınırlı değil. <strong class=\"text-[#f26522]\">Toolchanger Sistemimiz</strong>, özel destek malzemeleri ile karmaşık iç yapıları yöneterek bir zamanlar imkansız görülen tasarımların kapılarını açar." },
+      p2: { EN: "Four independent slots provide total material autonomy. Whether you need multiple grades of silicone, distinct colors, industrial FDM toolheads, or complex dissolvable supports, our system adapts to your unique workflow without fixed configuration limits.", TR: "Dört bağımsız yuva, tam malzeme özerkliği sağlar. İster birden fazla silikon derecesine, ister farklı renklere, endüstriyel FDM kafalarına veya karmaşık çözünür desteklere ihtiyacınız olsun; sistemimiz sabit yapılandırma sınırları olmadan benzersiz iş akışınıza uyum sağlar." },
       stats: [
-        { label: { EN: "Hybrid Config", TR: "Hibrit Yapı" }, value: { EN: "3+1", TR: "3+1" } },
-        { label: { EN: "Geometry Limit", TR: "Geometri Sınırı" }, value: { EN: "Zero", TR: "Sıfır" } },
-        { label: { EN: "Dissolvable", TR: "Çözünür" }, value: { EN: "100%", TR: "100%" } }
+        { label: { EN: "Modular Slots", TR: "Modüler Yuva" }, value: { EN: "4", TR: "4" } },
+        { label: { EN: "Control", TR: "Kontrol" }, value: { EN: "Independent", TR: "Bağımsız" } },
+        { label: { EN: "Geometry Limit", TR: "Geometri Sınırı" }, value: { EN: "Zero", TR: "Sıfır" } }
       ],
       images: ["/images/3d-silicone-printing--use-case--hp.webp", "/images/w_parts.png"]
     },
     thermal: {
-      title: { EN: "Patented Thermal Crosslinking", TR: "PATENTLİ TERMAL ÇAPRAZ BAĞLANMA" },
+      title: { EN: "Active IR Thermal Curing", TR: "AKTİF IR TERMAL KÜRLEME" },
       subtitle: { EN: "Ready-to-Use Resilience", TR: "Kullanıma Hazır Dayanıklılık" },
-      p1: { EN: "LayersTech’s secret to industrial durability lies in our integrated <strong class=\"text-white\">Thermal Crosslinking</strong> process.", TR: "LayersTech'in endüstriyel dayanıklılık sırrı, entegre <strong class=\"text-white\">Termal Çapraz Bağlanma</strong> sürecimizde yatmaktadır." },
-      p2: { EN: "Unlike standard elastomer printing, our patented technology triggers molecular cross-linking during the extrusion phase. This ensures that every part is fully cured and ready for immediate use right off the build plate—no secondary oven curing required.", TR: "Standart elastomer baskıdan farklı olarak, patentli teknolojimiz ekstrüzyon aşamasında moleküler çapraz bağlanmayı tetikler. Bu, her parçanın yapı plakasından çıktığı anda tamamen kürlenmiş ve hemen kullanıma hazır olmasını sağlar; ikincil fırın kürleme gerektirmez." },
+      p1: { EN: "LayersTech’s secret to industrial durability lies in our integrated <strong class=\"text-white\">Infrared (IR) Layer-by-Layer Curing</strong> process.", TR: "LayersTech'in endüstriyel dayanıklılık sırrı, entegre <strong class=\"text-white\">Kızılötesi (IR) Katman Bazlı Kürleme</strong> sürecimizde yatmaktadır." },
+      p2: { EN: "Unlike standard elastomer printing, our integrated IR system cures every single layer as it is printed. This ensures that every part is fully cross-linked and ready for immediate use right off the build plate—no secondary oven curing or post-processing required.", TR: "Standart elastomer baskıdan farklı olarak, entegre IR sistemimiz her bir katmanı basıldığı anda kürler. Bu, her parçanın yapı plakasından çıktığı anda moleküler olarak tam çapraz bağlanmış ve hemen kullanıma hazır olmasını sağlar; ikincil fırın kürleme veya sonradan işleme gerektirmez." },
       cards: [
         { title: { EN: "Instant Curing", TR: "Anında Kürleme" }, desc: { EN: "Zero wait time. Production-ready parts instantly.", TR: "Bekleme süresi yok. Anında üretime hazır parçalar." } },
         { title: { EN: "Dimensional Stability", TR: "Boyutsal Kararlılık" }, desc: { EN: "Eliminates shrinkage common in oven-cured silicones.", TR: "Fırında kürlenen silikonlarda yaygın olan büzülmeyi ortadan kaldırır." } }
@@ -135,9 +135,9 @@ export default function ThreeDPrinting() {
       label: { EN: "Molecular Bonding", TR: "Moleküler Bağlanma" }
     },
     section3: {
-      title: { EN: "Multi-Durometer Manufacturing: 4-Head Mechanical Diversity", TR: "ÇOKLU DUROMETRE ÜRETİMİ: 4 KAFALI MEKANİK ÇEŞİTLİLİK" },
+      title: { EN: "Variable Shore Hardness: 4-Head Material Diversity", TR: "DEĞİŞKEN SHORE SERTLİĞİ: 4 KAFALI MALZEME ÇEŞİTLİLİĞİ" },
       subtitle: { EN: "LayersTech isn't just about colors; it's about <strong class=\"text-primary\">total modular freedom</strong> across 4 independent tool slots.", TR: "LayersTech sadece renklerden ibaret değildir; 4 bağımsız kafa yuvasında <strong class=\"text-primary\">tam modüler özgürlük</strong> sunar." },
-      desc: { EN: "Our quad-head system offers absolute flexibility. You can assign any tool—Silicone (Shore A5 to A80), FDM, or Support—to <strong class=\"text-heading\">any of the 4 slots</strong>. This allows for true functional grading, seamlessly integrating soft, energy-absorbing zones with rigid, load-bearing structures in a single print.", TR: "Dört kafalı sistemimiz mutlak esneklik sunar. Silikon (Shore A5 - A80), FDM veya Destek fark etmeksizin; dilediğiniz aracı <strong class=\"text-heading\">4 yuvadan herhangi birine</strong> atayabilirsiniz. Bu, yumuşak bölgelerin sert yapılarla tek bir baskıda sorunsuz entegrasyonunu sağlayarak gerçek fonksiyonel derecelendirme sunar." },
+      desc: { EN: "Our quad-head system offers absolute flexibility. You can assign any tool—Silicone (Shore A5 to A80), FDM, or Support—to <strong class=\"text-[#f26522]\">any of the 4 slots</strong>. This allows for true functional grading, seamlessly integrating soft, energy-absorbing zones with rigid, load-bearing structures in a single print.", TR: "Dört kafalı sistemimiz mutlak esneklik sunar. Silikon (Shore A5 - A80), FDM veya Destek fark etmeksizin; dilediğiniz aracı <strong class=\"text-[#f26522]\">4 yuvadan herhangi birine</strong> atayabilirsiniz. Bu, yumuşak bölgelerin sert yapılarla tek bir baskıda sorunsuz entegrasyonunu sağlayarak gerçek fonksiyonel derecelendirme sunar." },
       infoCards: [
         { title: { EN: "Any Tool, Any Slot", TR: "İstediğin Araç, İstediğin Kafa" }, desc: { EN: "Zero restrictions on head placement. Configure your own hybrid factory.", TR: "Kafa yerleşiminde sıfır kısıtlama. Kendi hibrit fabrikanızı yapılandırın." } },
         { title: { EN: "Functional Grading", TR: "Fonksiyonel Derecelendirme" }, desc: { EN: "Seamless transition from soft gaskets to rigid connectors without assembly.", TR: "Montaj gerektirmeden yumuşak contalardan sert konektörlere sorunsuz geçiş." } }
@@ -145,7 +145,6 @@ export default function ThreeDPrinting() {
       features: [
         { EN: "4 Fully Modular Slots", TR: "4 Tam Modüler Yuva" },
         { EN: "Independent Shore A Control", TR: "Bağımsız Shore A Kontrolü" },
-        { EN: "Hybrid FDM + Silicone Mix", TR: "Hibrit FDM + Silikon Karışımı" },
         { EN: "Soft-to-Rigid Integration", TR: "Yumuşaktan Serte Entegrasyon" },
         { EN: "Vibration Dampening Zones", TR: "Titreşim Sönümleme Bölgeleri" },
         { EN: "Zero-Interface Bonding", TR: "Arayüzsüz Bağlanma" }
@@ -155,8 +154,8 @@ export default function ThreeDPrinting() {
     },
     section4: {
       title: { EN: "Hybrid Capabilities: Any Tool, Any Slot Freedom", TR: "HİBRİT YETENEKLER: İSTEDİĞİN ARAÇ, İSTEDİĞİN KAFA" },
-      p1: { EN: "Unleash total modularity with <strong class=\"text-heading\">Integrated Hybrid Support</strong>. Any of the 4 tool slots can be equipped with either a patented Silicone head or an industrial FDM extruder.", TR: "Toplam modülerliği <strong class=\"text-heading\">Entegre Hibrit Desteği</strong> ile serbest bırakın. 4 kafa yuvasından herhangi biri, patentli bir Silikon kafa veya endüstriyel bir FDM ekstrüderi ile donatılabilir." },
-      p2: { EN: "Choose your setup: 4 Silicone heads, 2 Silicone + 2 FDM, or 3 Silicone + 1 Support. There are no restrictions. This versatility makes our platform the ultimate tool for complex multi-material production.", TR: "Yapılandırmanızı seçin: 4 Silikon kafa, 2 Silikon + 2 FDM veya 3 Silikon + 1 Destek. Hiçbir kısıtlama yok. Bu çok yönlülük, platformumuzu karmaşık çok malzemeli üretim için nihai araç haline getirir." },
+      p1: { EN: "Unleash total modularity with <strong class=\"text-[#f26522]\">Integrated Hybrid Support</strong>. Any of the 4 tool slots can be equipped with either a Silicone head or an industrial FDM extruder, providing unparalleled production flexibility.", TR: "Toplam modülerliği <strong class=\"text-[#f26522]\">Entegre Hibrit Desteği</strong> ile serbest bırakın. 4 kafa yuvasından herhangi biri, Silikon kafa veya endüstriyel bir FDM ekstrüderi ile donatılabilir; bu da benzersiz bir üretim esnekliği sağlar." },
+      p2: { EN: "No fixed configurations. Seamlessly mix and match Silicone and FDM tools across 4 independent slots to build your perfect manufacturing setup. From multi-material elastomers to rigid-soft-support hybrids, the choice is yours.", TR: "Sabit konfigürasyonlara son. Kendi mükemmel üretim kurulumunuzu oluşturmak için 4 bağımsız yuva üzerinde Silikon ve FDM araçlarını dilediğiniz gibi birleştirin. Çok malzemeli elastomerlerden sert-yumuşak-destek hibritlerine kadar seçim tamamen size ait." },
       info: [
         { label: { EN: "Modular Slots", TR: "Modüler Yuvalar" }, val: { EN: "4 Tool-Change Stations", TR: "4 Kafa Değiştirme İstasyonu" } },
         { label: { EN: "Any Tool", TR: "İstediğin Araç" }, val: { EN: "Silicone, LSR, FDM, Support", TR: "Silikon, LSR, FDM, Destek" } }
@@ -167,6 +166,20 @@ export default function ThreeDPrinting() {
       title: { EN: "Ready to Start Your Project?", TR: "Projenize Başlamaya Hazır Mısınız?" },
       desc: { EN: "Contact our engineering team today to discuss your technical requirements and get a professional consultation.", TR: "Teknik gereksinimlerinizi tartışmak ve profesyonel danışmanlık almak için bugün mühendislik ekibimizle iletişime geçin." },
       button: { EN: "GET A QUOTE", TR: "TEKLİF ALIN" }
+    },
+    section5: {
+      title: { EN: "Smart Ecosystem: Web-Based Control & Remote Monitoring", TR: "AKILLI EKOSİSTEM: WEB TABANLI KONTROL VE UZAKTAN İZLEME" },
+      subtitle: { EN: "1. Intuitive Machine GUI | 2. Advanced Web Application", TR: "1. Sezgisel Makine Arayüzü (GUI) | 2. Gelişmiş Web Uygulaması" },
+      desc: { EN: "LayersTech bridges the gap between hardware and user with a two-tier software approach. First, an on-machine Full-HD HMI screen provides raw, lag-free local control for daily operations. Second, a cross-platform web application allows for total remote management, live camera feeds, and multi-printer synchronization from any device, anywhere.", TR: "LayersTech, donanım ve kullanıcı arasındaki boşluğu iki aşamalı bir yazılım yaklaşımıyla doldurur. İlk olarak; makine üzerindeki Full-HD dokunmatik ekran (HMI), günlük operasyonlar için gecikmesiz, yerel kontrol sağlar. İkinci olarak; çapraz platform web uygulaması, her yerden ve her cihazdan toplam uzaktan yönetim, canlı kamera akışları ve çoklu yazıcı senkronizasyonu sunar." },
+      features: [
+        { EN: "Machine GUI (Local Control)", TR: "Makine Arayüzü (Yerel Kontrol)" },
+        { EN: "Web Application (Remote Access)", TR: "Web Uygulaması (Uzaktan Erişim)" },
+        { EN: "Real-time Monitoring", TR: "Gerçek Zamanlı İzleme" },
+        { EN: "Secure Cloud Connectivity", TR: "Güvenli Bulut Bağlantısı" },
+        { EN: "Live Camera Integration", TR: "Canlı Kamera Entegrasyonu" },
+        { EN: "Global Multi-Printer Sync", TR: "Küresel Yazıcı Senkronizasyonu" }
+      ],
+      images: ["/images/yaz1.png", "/images/yaz2.png"]
     }
   };
 
@@ -174,7 +187,17 @@ export default function ThreeDPrinting() {
     <div className="relative min-h-screen transition-colors duration-500 bg-white dark:bg-[#0a0a0a]">
       <main className="pt-20">
         {/* Header Section */}
-        <section className="bg-[#1a1a1a] py-20 text-white">
+        <section className="bg-[#1a1a1a] py-20 text-white relative overflow-hidden">
+          {/* Subtle Background Watermark Logo */}
+          <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/4 opacity-10 pointer-events-none">
+            <Image 
+              src="/images/Saydam zeminde beyaz .svg" 
+              alt="LayersTech Logo Watermark" 
+              width={800} 
+              height={800} 
+              className="w-auto h-[120%] rotate-12"
+            />
+          </div>
           <div className="container mx-auto px-6">
             <div className="flex items-center gap-2 text-[10px] uppercase tracking-widest text-white/50 mb-4">
               <a href="/" className="hover:text-white transition-colors">{t(content.header.breadcrumb.home)}</a>
@@ -190,6 +213,10 @@ export default function ThreeDPrinting() {
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+              {/* Corner Watermark */}
+              <div className="absolute top-0 right-0 p-10 opacity-[0.03] transition-opacity dark:opacity-[0.05] pointer-events-none">
+                <Image src="/images/Saydam zeminde siyah .svg" alt="logo" width={300} height={300} className="dark:invert" />
+              </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1">
                   <div className="flex items-center gap-4 mb-6">
@@ -229,6 +256,10 @@ export default function ThreeDPrinting() {
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="bg-gradient-to-br from-[#F8F9FA] via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+              {/* Corner Watermark */}
+              <div className="absolute bottom-0 left-0 p-10 opacity-[0.03] transition-opacity dark:opacity-[0.05] pointer-events-none">
+                <Image src="/images/Saydam zeminde siyah .svg" alt="logo" width={300} height={300} className="dark:invert" />
+              </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="group/img">
                   <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98]">
@@ -301,10 +332,14 @@ export default function ThreeDPrinting() {
           </div>
         </section>
 
-        {/* Section 3: Multi-Durometer & Functional Material Grading */}
+        {/* Section 3: Multi-Shore Hardness & Functional Material Grading */}
         <section className="py-12 bg-transparent transition-colors duration-500">
           <div className="container mx-auto px-6">
             <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+              {/* Center Watermark */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-[0.02] dark:opacity-[0.04] pointer-events-none">
+                <Image src="/images/MODEL LOGO_V2.svg" alt="LT Logo" width={800} height={800} />
+              </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1">
                   <div className="flex items-center gap-4 mb-6">
@@ -370,17 +405,56 @@ export default function ThreeDPrinting() {
                     </div>
                     <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section4.title)}</h2>
                   </div>
-                  <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
-                    <p className="text-lg dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
+                  <div className="space-y-6 text-[#1a1a1a]/60 dark:text-white/70 text-sm leading-relaxed">
+                    <p className="text-lg text-[#1a1a1a]/80 dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
                     <p>{t(content.section4.p2)}</p>
                     <div className="mt-8 grid grid-cols-2 gap-4">
                       {content.section4.info.map((item, i) => (
                         <div key={i} className="bg-white dark:bg-white/[0.05] p-8 rounded-3xl border border-black/10 dark:border-white/10 shadow-md hover:shadow-xl transition-all duration-500">
                           <p className="text-sm font-bold text-[#f26522] mb-1 tracking-tighter">{t(item.label)}</p>
-                          <p className="text-[10px] text-[#777777] dark:text-white/30 uppercase tracking-widest font-bold">{t(item.val)}</p>
+                          <p className="text-[10px] text-[#1a1a1a]/50 dark:text-white/50 uppercase tracking-widest font-bold">{t(item.val)}</p>
                         </div>
                       ))}
                     </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Section 5: Software & Connectivity */}
+        <section className="py-12 bg-transparent transition-colors duration-500">
+          <div className="container mx-auto px-6">
+            <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div className="order-2 lg:order-1">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
+                      <Zap className="w-6 h-6" />
+                    </div>
+                    <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section5.title)}</h2>
+                  </div>
+                  <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
+                    <p className="text-lg font-medium text-[#1a1a1a]/80 dark:text-white/80">
+                      {t(content.section5.subtitle)}
+                    </p>
+                    <p>
+                      {t(content.section5.desc)}
+                    </p>
+                    <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+                      {content.section5.features.map((feature, i) => (
+                        <li key={i} className="flex items-center gap-2 font-bold text-[#1a1a1a] dark:text-white/90">
+                          <CheckCircle2 className="w-4 h-4 text-[#f26522]" />
+                          <span>{t(feature)}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+                <div className="order-1 lg:order-2 group/img">
+                  <div className="relative aspect-[4/5] rounded-[50px] overflow-hidden shadow-[0_20px_50px_-20px_rgba(0,0,0,0.5)] transition-all duration-700 group-hover/img:scale-[0.98] bg-[#f8f8f8] dark:bg-[#111]">
+                     <SectorGallery images={content.section5.images} title={content.section5.title} t={t} />
                   </div>
                 </div>
               </div>

@@ -1,23 +1,48 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronDown, Play } from "lucide-react";
+import Image from "next/image";
 import { cn } from "@/lib/utils";
 
+const HERO_IMAGES = [
+  "/images/hero1.png",
+  "/images/hero2.png",
+];
+
 export function Hero() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % HERO_IMAGES.length);
+    }, 4000); // Change image every 4 seconds
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
-      {/* Background Video */}
+      {/* Background Images Cycling (GIF-like effect) */}
       <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="h-full w-full object-cover scale-105 opacity-70"
-        >
-          <source src="https://www.innovatiq.com/hubfs/Video_IndDruck_1280x720_en.mp4" type="video/mp4" />
-        </video>
+        {HERO_IMAGES.map((src, index) => (
+          <div
+            key={src}
+            className={cn(
+              "absolute inset-0 transition-opacity duration-1000 ease-in-out",
+              index === currentImageIndex ? "opacity-70 scale-105" : "opacity-0 scale-100"
+            )}
+            style={{ transition: "opacity 1s ease-in-out, transform 8s linear" }}
+          >
+            <Image
+              src={src}
+              alt={`Industrial 3D Printing ${index + 1}`}
+              fill
+              className="object-cover"
+              priority={index === 0}
+              unoptimized
+            />
+          </div>
+        ))}
         {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#1a1a1a]/80 via-transparent to-[#1a1a1a]" />
       </div>

@@ -9,7 +9,7 @@ const products = [
   { 
     id: "m1",
     name: "LayersTech M1", 
-    image: "https://layerstech.co.uk/wp-content/uploads/2026/01/M1-New--822x1024.jpg",
+    image: "/images/m1pro_dark.png",
     category: "INDUSTRIAL FFF/FDM",
     description: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.",
     features: ["High-Temp (380°C)", "300 x 300 x 320 mm", "AI Failure Detection"]
@@ -17,7 +17,7 @@ const products = [
   { 
     id: "m1pro",
     name: "LayersTech M1PRO", 
-    image: "https://layerstech.co.uk/wp-content/uploads/2026/01/m1pro_front_view.png",
+    image: "/images/m1_pro_light.png",
     category: "SILICONE / LSR SYSTEM",
     description: "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control.",
     features: ["Real Silicone (LSR)", "4 Tool Change System", "Industrial Enclosure"]

@@ -34,7 +34,7 @@ const productData = {
     name: "LayersTech M1",
     subtitle: "Industrial FFF/FDM 3D Printer",
     description: "Built for repeatable, production-ready parts with high-temperature capability and advanced AI monitoring. Engineered for industrial 24/7 reliability.",
-    image: "/images/m1-main.jpg",
+    image: "/images/m1pro_dark.png",
     features: [
       {
         title: "Industrial Stability, Thermal Control, Consistent Output",
@@ -152,7 +152,7 @@ const productData = {
     name: "LayersTech M1PRO",
     subtitle: "Industrial Silicone & LSR System",
     description: "The M1PRO is designed for liquid-to-solid conversion of high-grade silicons and rubbers (LSR/RTV) alongside engineering polymers.",
-    image: "/images/m1-main.jpg",
+    image: "/images/m1pro_dark.png",
     features: [
       {
         title: "Advanced Silicone (LSR) Printing System",
