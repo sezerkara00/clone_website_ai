@@ -271,7 +271,7 @@ export default function IndustriesPage() {
     <div className="relative min-h-screen transition-colors duration-500 bg-white dark:bg-[#0a0a0a]">
       <main className="pt-20">
         {/* Hero Section */}
-        <section className="bg-[#1a1a1a] py-32 text-white relative overflow-hidden">
+        <section className="bg-[#1a1a1a] py-32 md:py-48 text-white relative overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-full opacity-10">
              <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-[#F26522] via-transparent to-transparent blur-3xl"></div>
           </div>
