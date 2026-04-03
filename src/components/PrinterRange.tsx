@@ -60,7 +60,7 @@ export function PrinterRange() {
           {products.map((product, i) => (
             <div 
               key={i} 
-              className="group bg-[#f8f8f8] dark:bg-white/[0.03] rounded-3xl overflow-hidden hover:bg-white dark:hover:bg-white/[0.05] hover:shadow-[0_40px_80px_-20px_rgba(242,101,34,0.15)] transition-all duration-700 border border-transparent hover:border-black/5 dark:hover:border-white/10 flex flex-col"
+              className="group bg-[#f8f8f8] dark:bg-white/[0.03] rounded-3xl overflow-hidden hover:bg-white dark:hover:bg-white/[0.05] hover:shadow-[0_40px_80px_-20px_rgba(242,101,34,0.15)] transition-all duration-700 border border-black/5 dark:border-white/5 hover:border-black/10 dark:hover:border-white/20 flex flex-col"
             >
               <Link href={product.id === "custom" ? "/3d-printers" : `/3d-printers/${product.id}`} className="block">
                 <div className="aspect-square relative flex items-center justify-center p-12 bg-white/[0.8] dark:bg-white/[0.02]">

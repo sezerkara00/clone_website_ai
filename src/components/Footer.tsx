@@ -6,21 +6,21 @@ import { Phone, Mail, MapPin, Globe, Share2, Users, Search, ChevronRight } from 
 
 const footerLinks = {
   products: [
-    { name: "SLS Technology", href: "/technologies/sls" },
-    { name: "DMLS Technology", href: "/technologies/dmls" },
-    { name: "3D Molding", href: "/technologies/molding" },
-    { name: "3D Modeling", href: "/services/modeling" },
+    { name: "Industrial Silicone", href: "/3d-printing" },
+    { name: "Quad-Head Tech", href: "/3d-printing" },
+    { name: "Multi-Material", href: "/3d-printing" },
+    { name: "Thermal Curing", href: "/3d-printing" },
   ],
   solutions: [
-    { name: "Aerospace", href: "/industries/aerospace" },
-    { name: "Defense", href: "/industries/defense" },
-    { name: "Medical", href: "/industries/medical" },
-    { name: "Automotive", href: "/industries/automotive" },
+    { name: "Medical & Healthcare", href: "/industries#medical" },
+    { name: "Aerospace & Defense", href: "/industries#aerospace" },
+    { name: "Automotive & Mobility", href: "/industries#automotive" },
+    { name: "Industrial & Robotics", href: "/industries#robotics" },
   ],
   company: [
     { name: "About Us", href: "/about-us" },
-    { name: "Careers", href: "/careers" },
-    { name: "News", href: "/news" },
+    { name: "Products", href: "/3d-printers" },
+    { name: "Materials", href: "/materials" },
     { name: "Contact", href: "/contact" },
   ]
 };
@@ -149,9 +149,9 @@ export function Footer() {
           </p>
           
           <div className="flex items-center gap-8 text-[12px] font-bold tracking-widest text-white/30 uppercase">
-            <Link href="/imprint" className="hover:text-white transition-colors">Imprint</Link>
-            <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-            <Link href="/legal" className="hover:text-white transition-colors">Legal Notice</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Imprint</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Privacy</Link>
+            <Link href="/contact" className="hover:text-white transition-colors">Legal Notice</Link>
           </div>
           
           <div className="flex items-center gap-3 grayscale opacity-30 hover:grayscale-0 hover:opacity-100 transition-all duration-500">

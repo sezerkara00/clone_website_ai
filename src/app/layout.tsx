@@ -9,7 +9,7 @@ import { ThemeProvider } from "@/context/ThemeContext";
 const roboto = Roboto({
   weight: ["300", "400", "500", "700"],
   variable: "--font-roboto",
-  subsets: ["latin"],
+  subsets: ["latin", "latin-ext"],
 });
 
 export const metadata: Metadata = {

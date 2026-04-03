@@ -371,7 +371,7 @@ export default function ProductDetail() {
                 onClick={() => handleTabChange(tab)}
                 className={cn(
                   "vanilla-tab-btn px-8 h-20 md:px-12 flex items-center text-[10px] font-extrabold tracking-[0.4em] uppercase transition-all relative cursor-pointer",
-                  activeTab === tab ? "text-[#F26522]" : "text-black/30 dark:text-white/30 hover:text-black dark:hover:text-white"
+                  activeTab === tab ? "text-[#F26522]" : "text-black/40 dark:text-white/50 hover:text-black dark:hover:text-white"
                 )}
               >
                 {t({ EN: tab, TR: tab === "features" ? "ÖZELLİKLER" : tab === "compatibility" ? "UYUMLULUK" : "TEKNİK" })}
@@ -388,7 +388,7 @@ export default function ProductDetail() {
             <div className="container mx-auto px-6 max-w-[1400px]">
               <div className="flex flex-col gap-12">
                 {product.features.map((f, i) => (
-                  <div key={i} className="bg-gradient-to-br from-[#f8f8f8] to-[#efefef] dark:from-white/[0.03] dark:to-transparent rounded-[60px] p-12 md:p-20 border border-black/5 dark:border-white/10 flex flex-col lg:flex-row gap-20 items-center overflow-hidden transition-all duration-1000 group hover:shadow-2xl hover:border-[#F26522]/30 relative">
+                  <div key={i} className="bg-gradient-to-br from-[#f8f8f8] to-[#efefef] dark:from-white/[0.03] dark:to-transparent rounded-[60px] p-12 md:p-20 border border-black/10 dark:border-white/10 flex flex-col lg:flex-row gap-20 items-center overflow-hidden transition-all duration-1000 group shadow-md hover:shadow-2xl hover:border-[#F26522]/30 relative">
                     <div className="absolute inset-0 bg-gradient-to-l from-[#F26522]/0 via-[#F26522]/0 to-[#F26522]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
                     <div className={cn("flex-1 order-2 relative z-10", i % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
                        <h3 className="text-4xl lg:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r from-black via-black to-[#F26522] dark:from-white dark:via-white dark:to-[#F26522] transition-all duration-1000 group-hover:opacity-90">
@@ -427,7 +427,7 @@ export default function ProductDetail() {
                </div>
               <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
                 {product.materials.map((m, idx) => (
-                   <div key={idx} className="bg-[#fcfcfc] dark:bg-white/[0.03] rounded-[50px] border border-black/5 dark:border-white/10 hover:border-[#F26522]/50 hover:shadow-2xl transition-all duration-700 p-6 group">
+                   <div key={idx} className="bg-white dark:bg-white/[0.03] rounded-[50px] border border-black/10 dark:border-white/10 shadow-md hover:border-[#F26522]/50 hover:shadow-2xl transition-all duration-700 p-6 group">
                       <div className="aspect-square w-full rounded-[40px] overflow-hidden bg-white dark:bg-black/40 mb-8 border border-black/5 dark:border-white/10 relative flex items-center justify-center transition-colors">
                         <img 
                           src={m.icon} 

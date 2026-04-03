@@ -52,7 +52,7 @@ export function Navbar() {
               alt="LayersTech Logo" 
               className={cn(
                 "h-8 md:h-10 w-auto transition-all",
-                !isTransparent && theme === 'light' ? "invert" : ""
+                !isTransparent && theme === 'light' ? "invert hue-rotate-180 saturate-150" : ""
               )} 
             />
           </Link>

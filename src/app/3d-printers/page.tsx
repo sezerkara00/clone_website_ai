@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { ArrowRight, Cpu, Layers, Zap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
@@ -100,7 +101,7 @@ export default function PrintersPage() {
                   {/* Image Side */}
                   <div className="flex-1 relative">
                     <div className="absolute -inset-20 bg-[#F26522]/5 rounded-full blur-[120px] pointer-events-none"></div>
-                    <div className="relative aspect-square lg:aspect-[4/3] rounded-[60px] overflow-hidden bg-white/[0.02] border border-white/5 backdrop-blur-3xl flex items-center justify-center p-12 transition-all duration-1000 group-hover:bg-white/[0.04]">
+                    <div className="relative aspect-square lg:aspect-[4/3] rounded-[60px] overflow-hidden bg-gray-50/50 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 backdrop-blur-3xl flex items-center justify-center p-12 transition-all duration-1000 group-hover:bg-white/[0.08]">
                        <img 
                         src={printer.image}
                         alt={printer.name}
@@ -141,7 +142,7 @@ export default function PrintersPage() {
 
                        <div className="flex flex-wrap gap-4">
                           {printer.specs.map(spec => (
-                            <div key={spec} className="px-4 py-2 rounded-full border border-white/10 bg-white/[0.02] text-[11px] font-black uppercase tracking-widest text-white/60">
+                            <div key={spec} className="px-4 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/[0.02] text-[11px] font-black uppercase tracking-widest text-black/60 dark:text-white/60">
                                {spec}
                             </div>
                           ))}
@@ -149,7 +150,7 @@ export default function PrintersPage() {
 
                        <div className="pt-6">
                          <Link href={`/3d-printers/${printer.id}`}>
-                            <button className="group/btn relative px-10 py-5 bg-white text-black font-black text-xs tracking-[0.2em] uppercase rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95">
+                             <button className="group/btn relative px-10 py-5 bg-[#1a1a1a] dark:bg-white text-white dark:text-black font-black text-xs tracking-[0.2em] uppercase rounded-full overflow-hidden transition-all hover:scale-105 active:scale-95 shadow-xl">
                                <span className="relative z-10">{t({ EN: "SYSTEM OVERVIEW", TR: "SİSTEME GÖZ AT" })}</span>
                                <div className="absolute inset-0 bg-[#F26522] translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>
                             </button>
@@ -161,17 +162,17 @@ export default function PrintersPage() {
               </div>
               
               {/* Massive Indexed Background Number */}
-              <div className={`absolute top-1/2 -translate-y-1/2 text-[30vw] font-black text-white/[0.02] pointer-events-none select-none z-0 ${idx % 2 === 0 ? '-right-20' : '-left-20'}`}>
-                 0{idx + 1}
-              </div>
+               <div className={`absolute top-1/2 -translate-y-1/2 text-[30vw] font-black text-black/[0.03] dark:text-white/[0.02] pointer-events-none select-none z-0 ${idx % 2 === 0 ? '-right-20' : '-left-20'}`}>
+                  0{idx + 1}
+               </div>
             </div>
           ))}
         </div>
       </section>
 
       {/* INTERACTIVE CONFIGURATOR SECTION */}
-      <section className="container mx-auto px-6 lg:px-12 py-32">
-        <div className="relative py-24 px-8 md:px-16 rounded-[60px] bg-white/[0.02] border border-white/5 backdrop-blur-3xl overflow-hidden text-white">
+       <section className="container mx-auto px-6 lg:px-12 py-32">
+        <div className="relative py-24 px-8 md:px-16 rounded-[60px] bg-gray-50/50 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 backdrop-blur-3xl overflow-hidden text-black dark:text-white">
           <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-[#F26522]/5 via-transparent to-transparent pointer-events-none"></div>
           <div className="absolute -top-24 -left-24 w-96 h-96 bg-[#F26522]/10 rounded-full blur-[120px]"></div>
 
@@ -180,11 +181,11 @@ export default function PrintersPage() {
               <span className="text-[#F26522] font-bold text-xs tracking-[0.4em] uppercase">
                 {t({ EN: "ADVANCED VERSATILITY", TR: "İLERİ SEVİYE ÇOK YÖNLÜLÜK" })}
               </span>
-              <h2 className="mt-6 text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none mb-8 text-[#FFF5F0]">
+               <h2 className="mt-6 text-5xl md:text-7xl font-bold uppercase tracking-tighter leading-none mb-8 text-[#1a1a1a] dark:text-[#FFF5F0]">
                 {t({ EN: "The Quad-Tool", TR: "Dört Kafalı" })} <br/> 
                 <span className="text-[#F26522]">{t({ EN: "Engine.", TR: "Motor." })}</span>
               </h2>
-              <p className="text-white/70 text-lg font-light max-w-md leading-relaxed mb-12">
+               <p className="text-black/60 dark:text-white/70 text-lg font-light max-w-md leading-relaxed mb-12">
                 {t({
                   EN: "Total modular freedom. Assign any tool—Silicone, FDM, or Support—to any of the four available slots. Build your own hybrid manufacturing platform with zero restrictions on head placement.",
                   TR: "Tam modüler özgürlük. Silikon, FDM veya Destek fark etmeksizin; dört istasyondan herhangi birine dilediğiniz kafayı atayın. Kafa yerleşimi konusunda sıfır kısıtlama ile kendi hibrit üretim platformunuzu oluşturun."
@@ -197,16 +198,16 @@ export default function PrintersPage() {
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {materialOptions.map((opt, i) => (
-                    <button
+                     <button
                       key={i}
                       onClick={() => updateTool(opt.type, opt.label, opt.detail)}
                       className={`p-6 rounded-2xl border text-left transition-all duration-300 group ${
                         tools[activeSlot].detail === opt.detail 
                         ? 'bg-[#F26522] border-[#F26522] text-white shadow-[0_20px_40px_rgba(242,101,34,0.2)]' 
-                        : 'bg-white/5 border-white/5 hover:border-white/20 text-white/70 hover:text-white'
+                        : 'bg-black/5 dark:bg-white/5 border-black/5 dark:border-white/5 hover:border-[#F26522]/50 text-black/60 dark:text-white/70 hover:text-black dark:hover:text-white'
                       }`}
                     >
-                      <p className={`text-xs font-black uppercase tracking-tighter mb-1 ${tools[activeSlot].detail === opt.detail ? 'text-white' : 'text-[#FFF5F0]'}`}>
+                      <p className={`text-xs font-black uppercase tracking-tighter mb-1 ${tools[activeSlot].detail === opt.detail ? 'text-white' : 'text-[#1a1a1a] dark:text-[#FFF5F0]'}`}>
                         {t({
                           "Silicone (Soft)": { EN: "Silicone (Soft)", TR: "Silikon (Yumuşak)" },
                           "Silicone (Firm)": { EN: "Silicone (Sert)", TR: "Silikon (Sert)" },
@@ -228,8 +229,8 @@ export default function PrintersPage() {
               </div>
             </div>
 
-            <div className="relative bg-white/[0.02] rounded-[40px] p-12 border border-white/5 backdrop-blur-3xl shadow-2xl overflow-hidden group/viz">
-              <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover/viz:opacity-100 transition-opacity duration-1000"></div>
+            <div className="relative bg-white/[0.02] rounded-[40px] p-12 border border-black/10 dark:border-white/10 backdrop-blur-3xl shadow-2xl overflow-hidden group/viz">
+              <div className="absolute inset-0 bg-gradient-to-br from-black/5 dark:from-white/5 to-transparent opacity-0 group-hover/viz:opacity-100 transition-opacity duration-1000"></div>
               
               <div className="grid grid-cols-2 gap-8 relative z-10">
                 {tools.map((tool, idx) => (
@@ -241,18 +242,23 @@ export default function PrintersPage() {
                     }`}
                   >
                     <div className={`aspect-square rounded-3xl border-2 flex flex-col items-center justify-center gap-4 transition-all duration-500 ${
-                      activeSlot === idx ? 'border-[#F26522] bg-white/5 shadow-[0_0_50px_rgba(242,101,34,0.1)]' : 'border-white/10 bg-black/20'
+                      activeSlot === idx ? 'border-[#F26522] bg-gray-50 dark:bg-white/5 shadow-[0_0_50px_rgba(242,101,34,0.1)]' : 'border-black/10 dark:border-white/10 bg-black/5 dark:bg-black/20'
                     }`}>
-                      <div className={`p-4 rounded-full transition-colors duration-500`} style={{ backgroundColor: tool.color + '20' }}>
-                         {tool.type === 'silicone' ? <Layers className="w-8 h-8" style={{ color: tool.color }} /> : 
-                          tool.type === 'fdm' ? <Cpu className="w-8 h-8" style={{ color: tool.color }} /> :
-                          <Zap className="w-8 h-8" style={{ color: tool.color }} />}
+                      <div className={cn(
+                        "p-4 rounded-full transition-colors duration-500",
+                        tool.type === 'silicone' ? "bg-[#F26522]/10" :
+                        tool.type === 'fdm' ? "bg-black/5 dark:bg-white/10" :
+                        "bg-black/5 dark:bg-charcoal/40 dark:bg-white/5"
+                      )}>
+                         {tool.type === 'silicone' ? <Layers className="w-8 h-8 text-[#F26522]" /> : 
+                          tool.type === 'fdm' ? <Cpu className="w-8 h-8 text-black/80 dark:text-white" /> :
+                          <Zap className="w-8 h-8 text-black/30 dark:text-white/40" />}
                       </div>
                       <div className="text-center">
-                        <p className="text-[10px] font-black tracking-widest text-white/60 mb-1">
+                         <p className="text-[10px] font-black tracking-widest text-black/40 dark:text-white/60 mb-1">
                           {t({ EN: "TOOL", TR: "KAFA" })} 0{tool.id}
                         </p>
-                        <p className="text-sm font-bold tracking-tight text-white/90">
+                         <p className="text-sm font-bold tracking-tight text-black dark:text-white/90">
                            {t({ "SILICONE": { EN: "SILICONE", TR: "SİLİKON" }, "FDM": { EN: "FDM", TR: "FDM" }, "SUPPORT": { EN: "SUPPORT", TR: "DESTEK" } }[tool.label]) || tool.label}
                         </p>
                       </div>
@@ -276,20 +282,20 @@ export default function PrintersPage() {
                 ))}
               </div>
 
-              <div className="mt-16 pt-8 border-t border-white/5 text-center">
-                <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-white/5 border border-white/5">
+              <div className="mt-16 pt-8 border-t border-black/5 dark:border-white/5 text-center">
+                <div className="inline-flex items-center gap-6 px-8 py-3 rounded-full bg-black/5 dark:bg-white/5 border border-black/5 dark:border-white/5">
                    <div className="flex items-center gap-2">
                       <div className="w-2 h-2 rounded-full bg-[#65f222] animate-pulse"></div>
-                      <span className="text-[10px] font-black tracking-widest uppercase">
+                       <span className="text-[10px] font-black tracking-widest uppercase text-black dark:text-white">
                          {t({ EN: "READY TO PRINT", TR: "BASKIYA HAZIR" })}
                       </span>
                    </div>
-                   <div className="w-[1px] h-4 bg-white/10"></div>
+                    <div className="w-[1px] h-4 bg-black/10 dark:bg-white/10"></div>
                    <div className="flex flex-col items-center">
                       <span className="text-[10px] font-black text-[#F26522] tracking-widest uppercase">
                         {t({ EN: "ANY TOOL. ANY SLOT.", TR: "İSTEDİĞİN ARAÇ. İSTEDİĞİN KAFA." })}
                       </span>
-                      <span className="text-[8px] font-light text-white/40 uppercase tracking-widest mt-1">
+                       <span className="text-[8px] font-light text-black/40 dark:text-white/40 uppercase tracking-widest mt-1">
                         {t({ EN: "FULLY MODULAR", TR: "TAM MODÜLER SİSTEM" })}
                       </span>
                    </div>

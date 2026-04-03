@@ -93,7 +93,7 @@ export default function IndustriesPage() {
       icon: Stethoscope,
       title: {
         en: "Medical & Healthcare",
-        tr: "Medikal ve Sağlık"
+        tr: "MEDİKAL VE SAĞLIK"
       },
       badge: {
         en: "Highest Impact",
@@ -105,21 +105,21 @@ export default function IndustriesPage() {
       },
       items: [
         {
-          name: { en: "Anatomical Models", tr: "Anatomik Modeller" },
+          name: { en: "Anatomical Models", tr: "ANATOMİK MODELLER" },
           detail: { 
             en: "Patient-specific pre-surgical models with realistic tissue feel (bone-hard internal, soft external).",
             tr: "Gerçek doku hissi veren (kemik sertliğinde iç yapı, yumuşak doku dış yapı) ameliyat öncesi prova modelleri."
           }
         },
         {
-          name: { en: "Prosthetics & Orthotics", tr: "Protez ve Ortezler" },
+          name: { en: "Prosthetics & Orthotics", tr: "PROTEZ VE ORTEZLER" },
           detail: { 
             en: "Custom-fit parts with soft contact surfaces that prevent irritation and durable outer structures.",
             tr: "Vücuda tam oturan, tahriş etmeyen yumuşak temas yüzeyli ancak dayanıklı dış yapılı protez parçaları."
           }
         },
         {
-          name: { en: "Soft Robotics", tr: "Yumuşak Robotik" },
+          name: { en: "Soft Robotics", tr: "YUMUŞAK ROBOTİK" },
           detail: { 
             en: "Flexible, precision-engineered medical grippers for surgical applications.",
             tr: "Ameliyatlarda kullanılan esnek ve hassas hareket edebilen tıbbi tutucular."
@@ -133,7 +133,7 @@ export default function IndustriesPage() {
       icon: Plane,
       title: {
         en: "Aerospace & Defense",
-        tr: "Havacılık ve Savunma"
+        tr: "HAVACILIK VE SAVUNMA"
       },
       description: {
         en: "Critical sealing and extreme temperature resistance for high-performance applications.",
@@ -141,21 +141,21 @@ export default function IndustriesPage() {
       },
       items: [
         {
-          name: { en: "Custom Seals", tr: "Özel Contalar" },
+          name: { en: "Custom Seals", tr: "ÖZEL CONTALAR" },
           detail: { 
             en: "Complex geometry fuel or air seals operating between -60°C and +250°C.",
             tr: "-60°C ile +250°C arası çalışan, karmaşık geometrili yakıt veya hava sızdırmazlık elemanları."
           }
         },
         {
-          name: { en: "Vibration Damping", tr: "Titreşim Sönümleyiciler" },
+          name: { en: "Vibration Damping", tr: "TİTREŞİM SÖNÜMLEYİCİLER" },
           detail: { 
             en: "Multi-shore shock absorbers designed to protect sensitive electronic devices.",
             tr: "Hassas elektronik cihazları korumak için farklı Shore değerlerinde basılmış darbe emici takozlar."
           }
         },
         {
-          name: { en: "Cabin Insulation", tr: "Kabin İçi İzolasyon" },
+          name: { en: "Cabin Insulation", tr: "KABİN İÇİ İZOLASYON" },
           detail: { 
             en: "Flame retardant silicone cable channels and connectors.",
             tr: "Yanmazlık (Flame Retardant) özelliği olan silikonlarla üretilen özel kablo kanalları."
@@ -169,7 +169,7 @@ export default function IndustriesPage() {
       icon: Car,
       title: {
         en: "Automotive & Mobility",
-        tr: "Otomotiv ve Hareketlilik"
+        tr: "OTOMOTİV VE HAREKETLİLİK"
       },
       description: {
         en: "Eliminate tooling costs and deliver rapid solutions with real silicone properties.",
@@ -177,21 +177,21 @@ export default function IndustriesPage() {
       },
       items: [
         {
-          name: { en: "Functional Prototyping", tr: "Fonksiyonel Prototipleme" },
+          name: { en: "Functional Prototyping", tr: "FONKSİYONEL PROTOTİPLEME" },
           detail: { 
             en: "Pre-production hoses, bellows, and keypads with actual material performance.",
             tr: "Seri üretim öncesi gerçek silikon özelliklerine sahip hortumlar, körükler ve tuş takımları."
           }
         },
         {
-          name: { en: "EV Battery Insulation", tr: "Batarya İzolasyonu" },
+          name: { en: "EV Battery Insulation", tr: "BATARYA İZOLASYONU" },
           detail: { 
             en: "High-insulation heat barriers for thermal management in electric vehicles.",
             tr: "Isı yönetimi gerektiren bölmelerde yüksek yalıtkanlık sağlayan silikon bariyerler."
           }
         },
         {
-          name: { en: "Sensor Protectors", tr: "Sensör Koruyucular" },
+          name: { en: "Sensor Protectors", tr: "SENSÖR KORUYUCULAR" },
           detail: { 
             en: "Flexible, UV and oil-resistant enclosures for harsh outdoor environments.",
             tr: "UV, yağ ve dış ortama dayanıklı esnek sensör kılıfları."
@@ -205,7 +205,7 @@ export default function IndustriesPage() {
       icon: Factory,
       title: {
         en: "Industrial & Robotics",
-        tr: "Endüstriyel Üretim ve Robotik"
+        tr: "ENDÜSTRİYEL ÜRETİM VE ROBOTİK"
       },
       description: {
         en: "Make 'impossible' parts possible with 4-head technology and soluble supports.",
@@ -213,21 +213,21 @@ export default function IndustriesPage() {
       },
       items: [
         {
-          name: { en: "Vacuum Grippers", tr: "Vantuzlar ve Tutucular" },
+          name: { en: "Vacuum Grippers", tr: "VANTUZLAR VE TUTUCULAR" },
           detail: { 
             en: "Custom soft-touch grippers for handling delicate items without damage.",
             tr: "Ürünleri zarar vermeden kavrayabilen içi boş veya karmaşık yapılı vakum kafaları."
           }
         },
         {
-          name: { en: "Lab Equipment", tr: "Laboratuvar Ekipmanları" },
+          name: { en: "Lab Equipment", tr: "LABORATUVAR EKİPMANLARI" },
           detail: { 
             en: "Chemical-resistant custom tubes, connectors, and sealing caps.",
             tr: "Kimyasallara dayanıklı özel borular, bağlantı elemanları ve sızdırmazlık kapakları."
           }
         },
         {
-          name: { en: "Food Industry", tr: "Gıda Endüstrisi" },
+          name: { en: "Food Industry", tr: "GIDA ENDÜSTRİSİ" },
           detail: { 
             en: "FDA-approved silicone parts for food production lines.",
             tr: "FDA onaylı silikonlarla basılmış gıda hatlarında güvenle kullanılabilen esnek parçalar."
@@ -241,7 +241,7 @@ export default function IndustriesPage() {
       icon: Smartphone,
       title: {
         en: "Consumer & Wearables",
-        tr: "Tüketici ve Giyilebilir Teknoloji"
+        tr: "TÜKETİCİ VE GİYİLEBİLİR TEKNOLOJİ"
       },
       description: {
         en: "Ready-to-use seals and skin-friendly wearable prototypes with multi-hardness zones.",
@@ -285,7 +285,7 @@ export default function IndustriesPage() {
                 </div>
                 <h1 className="text-6xl md:text-[120px] font-black mb-8 uppercase tracking-tighter leading-[0.85] text-white whitespace-nowrap">
                   {t({ EN: "Industries", TR: "Sektörler" })} <br />
-                  <span className="text-[#F26522]">{t({ EN: "We Serve.", TR: "Hizmetlerimiz." })}</span>
+                  <span className="text-[#F26522]">{t({ EN: "We Serve.", TR: "HİZMETLERİMİZ." })}</span>
                 </h1>
                 <p className="text-white/40 max-w-2xl text-xl font-light leading-relaxed mb-12">
                   {t({
@@ -305,6 +305,7 @@ export default function IndustriesPage() {
                       fill
                       unoptimized
                       priority
+                      loading="eager"
                       className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[5000ms]"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -323,7 +324,7 @@ export default function IndustriesPage() {
                  <a 
                    key={s.id} 
                    href={`#${s.id}`}
-                   className="flex flex-col items-center justify-center p-8 rounded-[30px] bg-[#fcfcfc] dark:bg-white/[0.03] border border-black/5 dark:border-white/10 hover:border-[#F26522] dark:hover:border-[#F26522] hover:bg-white dark:hover:bg-white/[0.05] transition-all group gap-4 text-center"
+                   className="flex flex-col items-center justify-center p-8 rounded-[30px] bg-white dark:bg-white/[0.03] border border-black/10 dark:border-white/10 hover:border-[#F26522] dark:hover:border-[#F26522] shadow-md hover:shadow-xl transition-all group gap-4 text-center"
                  >
                     <s.icon className="w-8 h-8 text-black dark:text-white/60 group-hover:text-[#F26522] transition-colors" />
                     <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#1a1a1a] dark:text-white/40 group-hover:text-[#F26522]">{t(s.title)}</span>
@@ -357,7 +358,7 @@ export default function IndustriesPage() {
                        <div className={`p-10 rounded-[50px] border backdrop-blur-3xl transition-all duration-700 shadow-2xl ${
                          isDarkSection 
                            ? 'bg-gradient-to-br from-white/[0.05] via-[#F26522]/5 to-transparent border-white/10 shadow-black/40 hover:from-white/[0.08] hover:via-[#F26522]/10' 
-                           : 'bg-gradient-to-br from-white/95 via-white/80 to-[#F26522]/10 dark:from-white/5 dark:via-[#F26522]/5 dark:to-transparent border-black/5 dark:border-white/10 hover:to-[#F26522]/20 dark:hover:via-[#F26522]/10'
+                           : 'bg-gradient-to-br from-white/95 via-white/80 to-[#F26522]/10 dark:from-white/5 dark:via-[#F26522]/5 dark:to-transparent border-black/10 dark:border-white/10 hover:to-[#F26522]/20 dark:hover:via-[#F26522]/10 shadow-xl shadow-black/5'
                        }`}>
                           <h2 className={`text-5xl md:text-7xl font-black uppercase tracking-tighter mb-8 leading-none ${isDarkSection ? 'text-white' : 'text-[#1a1a1a] dark:text-white'}`}>
                             {t(sector.title)}
