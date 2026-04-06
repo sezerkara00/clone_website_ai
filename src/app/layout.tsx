@@ -13,6 +13,14 @@ const roboto = Roboto({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://layerstech.co.uk'),
+  alternates: {
+    canonical: 'https://layerstech.co.uk',
+    languages: {
+      'en-GB': 'https://layerstech.co.uk',
+      'tr-TR': 'https://layerstech.com.tr',
+    },
+  },
   title: "LAYERSTECH | Advanced Industrial 3D Printing & Silicone LSR Systems",
   description: "LAYERSTECH is a global engineering leader redefining additive manufacturing with world-first multi-material silicone injection printing and high-temperature FFF systems.",
   openGraph: {
