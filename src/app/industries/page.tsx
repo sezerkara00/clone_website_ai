@@ -420,7 +420,7 @@ export default function IndustriesPage() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
               <Link href="/contact" className="group/cta relative bg-[#F26522] text-white px-16 py-8 rounded-full font-black tracking-[0.3em] text-[12px] overflow-hidden shadow-2xl transition-all hover:scale-110 active:scale-95">
-                <span className="relative z-10">{t({ EN: "CONSULT AN EXPERT", TR: "UZMANA DANIŞIN" })}</span>
+                <span className="relative z-10 text-white group-hover/cta:text-[#1a1a1a] transition-colors duration-500">{t({ EN: "CONSULT AN EXPERT", TR: "UZMANA DANIŞIN" })}</span>
                 <div className="absolute inset-0 bg-white translate-y-full group-hover/cta:translate-y-0 transition-transform duration-500"></div>
               </Link>
               <Link href="/3d-printers/m1pro" className="group/cta2 px-16 py-8 rounded-full font-black tracking-[0.3em] text-[12px] bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all flex items-center gap-4">

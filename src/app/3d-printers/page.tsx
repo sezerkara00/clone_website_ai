@@ -104,11 +104,16 @@ export default function PrintersPage() {
                   <div className="flex-1 relative">
                     <div className="absolute -inset-20 bg-[#F26522]/5 rounded-full blur-[120px] pointer-events-none"></div>
                     <div className="relative aspect-square lg:aspect-[4/3] rounded-[60px] overflow-hidden bg-gray-50/50 dark:bg-white/[0.02] border border-black/10 dark:border-white/10 backdrop-blur-3xl flex items-center justify-center p-12 transition-all duration-1000 group-hover:bg-white/[0.08]">
-                       <img 
-                        src={printer.image}
-                        alt={printer.name}
-                        className="w-full h-full object-contain transform transition-transform duration-[3000ms] group-hover:scale-110"
-                       />
+                       <div className="relative w-full h-full">
+                         <Image 
+                          src={printer.image}
+                          alt={printer.name}
+                          fill
+                          unoptimized
+                          priority
+                          className="object-contain transform transition-transform duration-[3000ms] group-hover:scale-110"
+                         />
+                       </div>
                        
                        {/* Floating Technical Badge */}
                        <div className="absolute top-10 right-10 flex flex-col items-end gap-2">

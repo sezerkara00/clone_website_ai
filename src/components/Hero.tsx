@@ -106,19 +106,19 @@ export function Hero() {
       
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
         <div className="container mx-auto max-w-5xl">
-          <h1 className="text-white text-4xl md:text-[95px] font-black leading-[0.95] mb-10 tracking-tighter drop-shadow-2xl uppercase italic">
+          <h1 className="text-white text-5xl md:text-7xl lg:text-[80px] xl:text-[95px] font-black leading-[0.95] mb-8 lg:mb-10 tracking-tighter drop-shadow-2xl uppercase italic">
             {t({ EN: "Industrial 3D", TR: "ENDÜSTRİYEL 3D" })} <br />
             <span className="text-white">{t({ EN: "Printing", TR: "YAZICI" })}</span> <br />
             <span className="text-[#F26522] not-italic">{t({ EN: "Systems", TR: "SİSTEMLERİ" })}</span>
           </h1>
           
-          <div className="mb-16">
-            <span className="text-white/40 text-xs md:text-sm font-black tracking-[0.5em] uppercase">
+          <div className="mb-10 lg:mb-16">
+            <span className="text-white/40 text-[10px] sm:text-xs lg:text-sm font-black tracking-[0.3em] sm:tracking-[0.5em] uppercase">
                POWERED BY LAYERSTECH
             </span>
           </div>
           
-          <p className="text-white/80 text-base md:text-lg max-w-2xl mx-auto mb-20 font-light leading-loose drop-shadow-lg">
+          <p className="text-white/80 text-sm md:text-base lg:text-lg max-w-2xl mx-auto mb-12 lg:mb-20 font-light leading-relaxed lg:leading-loose drop-shadow-lg px-4 sm:px-0">
             {t({
               EN: "Bringing your most complex designs to life with precision and speed. From rapid prototyping to small-batch production, we deliver industrial-grade additive manufacturing solutions.",
               TR: "En karmaşık tasarımlarınızı hassasiyet ve hızla hayata geçiriyoruz. Hızlı prototiplemeden düşük adetli üretime kadar endüstriyel sınıf katmanlı üretim çözümleri sunuyoruz."
