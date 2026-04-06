@@ -30,7 +30,7 @@ export default function FounderVision() {
                 <footer className="mt-6">
                    <p className="text-[#F26522] font-black text-xs tracking-widest uppercase">Erkan Ateş</p>
                    <p className="text-[10px] text-gray-400 uppercase tracking-widest mt-1">
-                     {t({ EN: "TECHNICAL MANAGER", TR: "TEKNİK MÜDÜR" })} / LAYERS TECH
+                     {t({ EN: "TECHNICAL MANAGER", TR: "TEKNİK MÜDÜR" })} / LAYERSTECH
                    </p>
                 </footer>
              </blockquote>
