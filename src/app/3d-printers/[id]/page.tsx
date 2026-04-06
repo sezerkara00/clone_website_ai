@@ -79,10 +79,10 @@ const productData: Record<string, Product> = {
         image: "/images/w_parts.png"
       },
       {
-        title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4-Araçlık Sistem)" },
-        desc: { EN: "Built for speed and flexibility, M1 uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.", TR: "Hız ve esneklik için tasarlanan M1, sürekli manuel değiştirme gerektirmeden hızlı çok renkli baskılar veya çoklu malzeme iş akışları için ideal olan, dört değiştirilebilir araç yuvasına sahip doğrudan tahrikli bir araç kafası kullanır. Prototiplemeden küçük parti üretimlere kadar sistemi yüksek verimlilik ve düşük kesinti süresi ile çalıştırmak için tasarlandı." },
+        title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4 Takımlı Sistem)" },
+        desc: { EN: "Built for speed and flexibility, M1 uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.", TR: "Hız ve esneklik için tasarlanan M1, sürekli manuel değiştirme gerektirmeden hızlı çok renkli baskılar veya çoklu malzeme iş akışları için ideal olan, dört değiştirilebilir takım yuvasına sahip doğrudan tahrikli bir araç kafası kullanır. Prototiplemeden küçük parti üretimlere kadar sistemi yüksek verimlilik ve düşük kesinti süresi ile çalıştırmak için tasarlandı." },
         bullets: [
-          { EN: "4-tool workflow for multi-color or multi-material printing", TR: "Çoklu renk veya çoklu malzeme baskısı için 4 araçlık iş akışı" },
+          { EN: "4-tool workflow for multi-color or multi-material printing", TR: "Çoklu renk veya çoklu malzeme baskısı için 4 takımlı iş akışı" },
           { EN: "Direct-drive extrusion for responsive material control", TR: "Hassas malzeme kontrolü için doğrudan tahrikli ekstrüzyon" },
           { EN: "Optimized for repeatable production runs and continuous operation", TR: "Tekrarlanabilir üretim çalışmaları ve sürekli operasyon için optimize edildi" },
           { EN: "Compatible with additional tool types for expanding use cases", TR: "Genişleyen kullanım senaryoları için ek araç türleriyle uyumlu" }
@@ -91,11 +91,11 @@ const productData: Record<string, Product> = {
       },
       {
         title: { EN: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment", TR: "Akıllı Kalibrasyon: Otomatik Z + Kamera Destekli XY Hizalama" },
-        desc: { EN: "M1 reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çoklu araç yapılandırmalarında çok değerlidir." },
+        desc: { EN: "M1 reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy-akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çok takımlı yapılandırmalarda çok değerlidir." },
         bullets: [
-          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy akımı algılama" },
+          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy-akımı algılama" },
           { EN: "Camera-assisted XY offset calibration for faster alignment", TR: "Daha hızlı hizalama için kamera destekli XY ofseti kalibrasyonu" },
-          { EN: "Better repeatability when switching tools/materials", TR: "Araçları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
+          { EN: "Better repeatability when switching tools/materials", TR: "Takımları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
           { EN: "More reliable first layers with less trial-and-error", TR: "Daha az deneme-yanılma ile daha güvenilir ilk katmanlar" }
         ],
         image: "/images/smart-calibration.png"
@@ -148,7 +148,7 @@ const productData: Record<string, Product> = {
       {
         category: { EN: "System Specifications", TR: "Sistem Özellikleri" },
         items: [
-          { label: { EN: "Printing Process", TR: "Baskı İşlemi" }, value: { EN: "FFF (Fused Filament Fabrication)", TR: "FFF (Erimiş Filament Üretimi)" } },
+          { label: { EN: "Printing Process", TR: "Baskı İşlemi" }, value: { EN: "FFF (Fused Filament Fabrication)", TR: "FFF Teknolojisi" } },
           { label: { EN: "Build Volume", TR: "Baskı Hacmi" }, value: { EN: "300 × 300 × 320 mm", TR: "300 × 300 × 320 mm" } },
           { label: { EN: "Printer Category", TR: "Yazıcı Kategorisi" }, value: { EN: "Industrial Multi-Head System", TR: "Endüstriyel Çok Kafalı Sistem" } },
           { label: { EN: "Tool Slots", TR: "Araç Yuvaları" }, value: { EN: "2 / 4 (Independently Interchangeable)", TR: "2 / 4 (Bağımsız Olarak Değiştirilebilir)" } },
@@ -202,7 +202,7 @@ const productData: Record<string, Product> = {
     features: [
       {
         title: { EN: "Advanced Silicone (LSR) Printing System", TR: "Gelişmiş Silikon (LSR) Baskı Sistemi" },
-        desc: { EN: "LayersTech M1PRO is engineered as a true industrial silicone 3D printer, enabling reliable Liquid Silicone Rubber (LSR) printing for flexible, functional, and production-ready parts. The system supports precise deposition of silicone materials with different Shore hardness values, making it suitable for seals, gaskets, soft-touch components, and elastomer-like end-use parts. Unlike conventional systems, M1PRO integrates controlled curing and multi-tool support to ensure consistent layer bonding, dimensional accuracy, and repeatable mechanical performance throughout the entire print process.", TR: "LayersTech M1PRO, esnek, işlevsel ve üretime hazır parçalar için güvenilir Sıvı Silikon Kauçuk (LSR) baskısı sağlayan gerçek bir endüstriyel silikon 3D yazıcı olarak tasarlanmıştır. Sistem, farklı Shore sertlik değerlerine sahip silikon malzemelerin hassas bir şekilde biriktirilmesini destekleyerek contalar, yumuşak dokunuşlu bileşenler ve elastomer benzeri son kullanım parçaları için uygun hale getirir. Geleneksel sistemlerin aksine, M1PRO tüm baskı süreci boyunca tutarlı katman yapışması, boyutsal doğruluk ve tekrarlanabilir mekanik performans sağlamak için kontrollü kürleme ve çoklu araç desteğini entegre eder." },
+        desc: { EN: "LayersTech M1PRO is engineered as a true industrial silicone 3D printer, enabling reliable Liquid Silicone Rubber (LSR) printing for flexible, functional, and production-ready parts. The system supports precise deposition of silicone materials with different Shore hardness values, making it suitable for seals, gaskets, soft-touch components, and elastomer-like end-use parts. Unlike conventional systems, M1PRO integrates controlled curing and multi-tool support to ensure consistent layer bonding, dimensional accuracy, and repeatable mechanical performance throughout the entire print process.", TR: "LayersTech M1PRO, esnek, işlevsel ve üretime hazır parçalar için güvenilir Sıvı Silikon Kauçuk (LSR) baskısı sağlayan gerçek bir endüstriyel silikon 3D yazıcı olarak tasarlanmıştır. Sistem, farklı Shore sertlik değerlerine sahip silikon malzemelerin hassas bir şekilde biriktirilmesini destekleyerek contalar, yumuşak dokunuşlu bileşenler ve elastomer benzeri son kullanım parçaları için uygun hale getirir. Geleneksel sistemlerin aksine, M1PRO tüm baskı süreci boyunca tutarlı katman yapışması, boyutsal doğruluk ve tekrarlanabilir mekanik performans sağlamak için kontrollü kürleme ve çok takımlı desteği entegre eder." },
         bullets: [
           { EN: "LSR printing with multiple Shore hardness options", TR: "Çoklu Shore sertliği seçenekleriyle LSR baskısı" },
           { EN: "Dedicated support material workflow for silicone printing", TR: "Silikon baskı için özel destek malzemesi iş akışı" },
@@ -213,7 +213,7 @@ const productData: Record<string, Product> = {
       },
       {
         title: { EN: "Industrial Stability, Thermal Control, Consistent Output", TR: "Endüstriyel Stabilite, Termal Kontrol, Tutarlı Çıktı" },
-        desc: { EN: "LayersTech M1Pro is engineered for stable, repeatable FFF/FDM production. A rigid industrial frame and enclosed chamber reduce external variation, while PID-controlled temperatures keep the bed, nozzle, and chamber steady throughout long print cycles. This results in predictable layer placement, consistent dimensions, and reliable surface finish—run after run.", TR: "LayersTech M1Pro, stabil, tekrarlanabilir FFF/FDM üretimi için tasarlandı. Sert endüstriyel gövde ve kapalı kabin dış varyasyonları azaltırken, PID kontrollü sıcaklıklar uzun baskı döngüleri boyunca yatak, nozül ve kabini sabit tutar. Bu, her seferinde öngörülebilir katman yerleşimi, tutarlı boyutlar ve güvenilir yüzey kalitesi sağlar." },
+        desc: { EN: "LayersTech M1PRO is engineered for stable, repeatable FFF/FDM production. A rigid industrial frame and enclosed chamber reduce external variation, while PID-controlled temperatures keep the bed, nozzle, and chamber steady throughout long print cycles. This results in predictable layer placement, consistent dimensions, and reliable surface finish—run after run.", TR: "LayersTech M1PRO, stabil, tekrarlanabilir FFF/FDM üretimi için tasarlandı. Sert endüstriyel gövde ve kapalı kabin dış varyasyonları azaltırken, PID kontrollü sıcaklıklar uzun baskı döngüleri boyunca yatak, nozül ve kabini sabit tutar. Bu, her seferinde öngörülebilir katman yerleşimi, tutarlı boyutlar ve güvenilir yüzey kalitesi sağlar." },
         bullets: [
           { EN: "300 × 300 × 320 mm build volume for functional parts and fixtures", TR: "Fonksiyonel parçalar ve fikstürler için 300 × 300 × 320 mm baskı hacmi" },
           { EN: "PID control: bed up to 140°C, nozzle up to 380°C, chamber up to 65°C", TR: "PID kontrolü: 140°C'ye kadar yatak, 380°C'ye kadar nozül, 65°C'ye kadar kabin" },
@@ -223,10 +223,10 @@ const productData: Record<string, Product> = {
         image: "/images/silicone-card.jpg"
       },
       {
-        title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4-Araçlık Sistem)" },
-        desc: { EN: "Built for speed and flexibility, M1Pro uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.", TR: "Hız ve esneklik için tasarlanan M1Pro, sürekli manuel değiştirme gerektirmeden hızlı çok renkli baskılar veya çoklu malzeme iş akışları için ideal olan, dört değiştirilebilir araç yuvasına sahip doğrudan tahrikli bir araç kafası kullanır. Prototiplemeden küçük parti üretimlere kadar sistemi yüksek verimlilik ve düşük kesinti süresi ile çalıştırmak için tasarlandı." },
+        title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4 Takımlı Sistem)" },
+        desc: { EN: "Built for speed and flexibility, M1PRO uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.", TR: "Hız ve esneklik için tasarlanan M1PRO, sürekli manuel değiştirme gerektirmeden hızlı çok renkli baskılar veya çoklu malzeme iş akışları için ideal olan, dört değiştirilebilir takım yuvasına sahip doğrudan tahrikli bir araç kafası kullanır. Prototiplemeden küçük parti üretimlere kadar sistemi yüksek verimlilik ve düşük kesinti süresi ile çalıştırmak için tasarlandı." },
         bullets: [
-          { EN: "4-tool workflow for multi-color or multi-material printing", TR: "Çoklu renk veya çoklu malzeme baskısı için 4 araçlık iş akışı" },
+          { EN: "4-tool workflow for multi-color or multi-material printing", TR: "Çoklu renk veya çoklu malzeme baskısı için 4 takımlı iş akışı" },
           { EN: "Direct-drive extrusion for responsive material control", TR: "Hassas malzeme kontrolü için doğrudan tahrikli ekstrüzyon" },
           { EN: "Optimized for repeatable production runs and continuous operation", TR: "Tekrarlanabilir üretim çalışmaları ve sürekli operasyon için optimize edildi" },
           { EN: "Compatible with additional tool types for expanding use cases", TR: "Genişleyen kullanım senaryoları için ek araç türleriyle uyumlu" }
@@ -235,18 +235,18 @@ const productData: Record<string, Product> = {
       },
       {
         title: { EN: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment", TR: "Akıllı Kalibrasyon: Otomatik Z + Kamera Destekli XY Hizalama" },
-        desc: { EN: "M1Pro reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1Pro, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çoklu araç yapılandırmalarında çok değerlidir." },
+        desc: { EN: "M1PRO reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1PRO, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy-akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çok takımlı yapılandırmalarda çok değerlidir." },
         bullets: [
-          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy akımı algılama" },
+          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy-akımı algılama" },
           { EN: "Camera-assisted XY offset calibration for faster alignment", TR: "Daha hızlı hizalama için kamera destekli XY ofseti kalibrasyonu" },
-          { EN: "Better repeatability when switching tools/materials", TR: "Araçları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
+          { EN: "Better repeatability when switching tools/materials", TR: "Takımları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
           { EN: "More reliable first layers with less trial-and-error", TR: "Daha az deneme-yanılma ile daha güvenilir ilk katmanlar" }
         ],
         image: "/images/smart-calibration.png"
       },
       {
         title: { EN: "AI Print Monitoring: Catch Failures Early, Save Time and Material", TR: "Yapay Zeka Baskı İzleme: Hataları Erken Yakalayın, Zaman ve Malzeme Tasarrufu Sağlayın" },
-        desc: { EN: "Production reliability depends on visibility. M1Pro’s chamber camera and AI monitoring help detect common failures—such as “spaghetti” errors—early in the process. This improves supervision during long prints, reduces wasted material, and helps teams run jobs with more confidence.", TR: "Üretim güvenilirliği görünürlüğe bağlıdır. M1Pro'nun kabin kamerası ve yapay zeka izlemesi, süreçteki 'spagetti' hataları gibi yaygın sorunları erken tespit etmeye yardımcı olur. Bu, uzun baskılar sırasında denetimi artırır, boşa giden malzemeyi azaltır ve ekiplerin daha güvenle iş yapmasına yardımcı olur." },
+        desc: { EN: "Production reliability depends on visibility. M1PRO’s chamber camera and AI monitoring help detect common failures—such as “spaghetti” errors—early in the process. This improves supervision during long prints, reduces wasted material, and helps teams run jobs with more confidence.", TR: "Üretim güvenilirliği görünürlüğe bağlıdır. M1PRO'nun kabin kamerası ve yapay zeka izlemesi, süreçteki 'spagetti' hataları gibi yaygın sorunları erken tespit etmeye yardımcı olur. Bu, uzun baskılar sırasında denetimi artırır, boşa giden malzemeyi azaltır ve ekiplerin daha güvenle iş yapmasına yardımcı olur." },
         bullets: [
           { EN: "Chamber monitoring for real-time visibility", TR: "Gerçek zamanlı görünürlük için kabin izleme" },
           { EN: "AI detection for spaghetti/print failure indicators", TR: "Spagetti/baskı hatası göstergeleri için yapay zeka tespiti" },
@@ -257,7 +257,7 @@ const productData: Record<string, Product> = {
       },
       {
         title: { EN: "Materials, Software, and Secure Connectivity for Teams", TR: "Ekipler için Malzemeler, Yazılım ve Güvenli Bağlantı" },
-        desc: { EN: "M1Pro supports a wide range of materials—from general-purpose plastics to advanced engineering polymers—backed by a modern software stack. Compatibility with popular slicers, plus secure identity and organization controls, makes it suitable for professional environments where access, accountability, and remote workflows matter.", TR: "M1Pro, genel amaçlı plastiklerden gelişmiş mühendislik polimerlerine kadar geniş bir malzeme yelpazesini modern bir yazılım yapısıyla destekler. Popüler dilimleyicilerle uyumluluğun yanı sıra güvenli kimlik ve organizasyon kontrolleri, erişim, hesap verebilirlik ve uzaktan iş akışlarının önemli olduğu profesyonel ortamlar için uygun hale getirir." },
+        desc: { EN: "M1PRO supports a wide range of materials—from general-purpose plastics to advanced engineering polymers—backed by a modern software stack. Compatibility with popular slicers, plus secure identity and organization controls, makes it suitable for professional environments where access, accountability, and remote workflows matter.", TR: "M1PRO, genel amaçlı plastiklerden gelişmiş mühendislik polimerlerine kadar geniş bir malzeme yelpazesini modern bir yazılım yapısıyla destekler. Popüler dilimleyicilerle uyumluluğun yanı sıra güvenli kimlik ve organizasyon kontrolleri, erişim, hesap verebilirlik ve uzaktan iş akışlarının önemli olduğu profesyonel ortamlar için uygun hale getirir." },
         bullets: [
           { EN: "Materials support: PLA/ABS/PETG/ASA and engineering polymers (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)", TR: "Malzeme desteği: PLA/ABS/PETG/ASA ve mühendislik polimerleri (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)" },
           { EN: "Slicer compatibility: PrusaSlicer, Orca Slicer, LayersTech Slicer", TR: "Dilimleyici uyumluluğu: PrusaSlicer, Orca Slicer, LayersTech Slicer" },
@@ -268,7 +268,7 @@ const productData: Record<string, Product> = {
       },
       {
         title: { EN: "Support & Service for Production Teams", TR: "Üretim Ekipleri için Destek ve Servis" },
-        desc: { EN: "Support that keeps production moving. LayersTech M1Pro is backed by a professional service workflow designed for industrial uptime—from onboarding and operator guidance to remote assistance and preventive maintenance planning. Teams can monitor prints via the chamber camera, manage jobs over the network, and keep systems updated through secure connectivity features.", TR: "Üretimi devam ettiren destek. LayersTech M1Pro, eğitime ve operatör yönlendirmesinden uzaktan yardıma ve önleyici bakım planlamasına kadar endüstriyel çalışma süresi için tasarlanmış profesyonel bir servis akışına sahiptir. Ekipler, kabin kamerası ile baskıları izleyebilir, ağ üzerinden işleri yönetebilir ve güvenli bağlantı özellikleri ile sistemleri güncel tutabilir." },
+        desc: { EN: "Support that keeps production moving. LayersTech M1PRO is backed by a professional service workflow designed for industrial uptime—from onboarding and operator guidance to remote assistance and preventive maintenance planning. Teams can monitor prints via the chamber camera, manage jobs over the network, and keep systems updated through secure connectivity features.", TR: "Üretimi devam ettiren destek. LayersTech M1PRO, eğitime ve operatör yönlendirmesinden uzaktan yardıma ve önleyici bakım planlamasına kadar endüstriyel çalışma süresi için tasarlanmış profesyonel bir servis akışına sahiptir. Ekipler, kabin kamerası ile baskıları izleyebilir, ağ üzerinden işleri yönetebilir ve güvenli bağlantı özellikleri ile sistemleri güncel tutabilir." },
         bullets: [
           { EN: "Setup onboarding and operator guidance", TR: "Kurulum eğitimi ve operatör yönlendirmesi" },
           { EN: "Remote support-ready workflow with camera visibility", TR: "Kamera görünürlüğü ile uzaktan desteğe hazır iş akışı" },
