@@ -67,7 +67,7 @@ const productData = {
           "Better repeatability when switching tools/materials",
           "More reliable first layers with less trial-and-error"
         ],
-        image: "/images/nozzle-calibrate.png"
+        image: "/images/smart-calibration.png"
       },
       {
         title: "AI Print Monitoring: Catch Failures Early, Save Time and Material",
@@ -196,7 +196,7 @@ const productData = {
           "Better repeatability when switching tools/materials",
           "More reliable first layers with less trial-and-error"
         ],
-        image: "/images/nozzle-calibrate.png"
+        image: "/images/smart-calibration.png"
       },
       {
         title: "AI Print Monitoring: Catch Failures Early, Save Time and Material",
@@ -294,6 +294,7 @@ export default function ProductDetail() {
   const { t } = useLanguage();
   const [activeTab, setActiveTab] = useState("features");
   const [mounted, setMounted] = useState(false);
+  const [isVideoOpen, setIsVideoOpen] = useState(false);
   const tabRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -348,9 +349,25 @@ export default function ProductDetail() {
                  )}
                </h1>
                <p className="text-lg md:text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed max-w-xl mb-16">{product.description}</p>
-               <Button className="h-16 px-12 bg-[#1a1a1a] dark:bg-white dark:text-black text-white rounded-full text-[11px] font-extrabold tracking-[0.2em] hover:bg-[#F26522] dark:hover:bg-[#F26522] dark:hover:text-white transition-all uppercase">
-                 {t({ EN: "Request a Quote", TR: "Teklif Alın" })}
-               </Button>
+                <div className="flex flex-col sm:flex-row items-center gap-10 mb-16">
+                  <Button className="h-16 px-12 bg-[#F26522] text-white rounded-full text-[11px] font-black tracking-[0.2em] hover:bg-[#1a1a1a] dark:hover:bg-white dark:hover:text-black transition-all uppercase shadow-2xl shadow-[#F26522]/20">
+                    {t({ EN: "Request a Quote", TR: "Teklif Alın" })}
+                  </Button>
+                  
+                  <button 
+                    onClick={() => setIsVideoOpen(true)}
+                    className="flex items-center gap-6 group cursor-pointer"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-black/5 dark:bg-white/5 backdrop-blur-md flex items-center justify-center border border-black/10 dark:border-white/10 group-hover:bg-[#F26522] group-hover:border-[#F26522] transition-all duration-500 shadow-xl">
+                       <Lucide.Play className="w-6 h-6 text-[#F26522] group-hover:text-white group-hover:fill-white transition-all" />
+                    </div>
+                    <div className="flex flex-col items-start gap-1">
+                      <span className="text-black/40 dark:text-white/40 text-[10px] md:text-[11px] font-black tracking-[0.3em] uppercase group-hover:text-[#F26522] transition-colors">
+                        {t({ EN: "Watch Video", TR: "Videoyu İzle" })}
+                      </span>
+                    </div>
+                  </button>
+                </div>
             </div>
             <div className="relative aspect-square">
               <img src={product.image} alt={product.name} className="w-full h-full object-contain dark:brightness-90 dark:contrast-125" />
@@ -495,6 +512,27 @@ export default function ProductDetail() {
           </section>
         </div>
       </main>
+
+      {/* Video Modal */}
+      {isVideoOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 p-6 backdrop-blur-md animate-in fade-in duration-500">
+           <button 
+             onClick={() => setIsVideoOpen(false)} 
+             className="absolute top-10 right-10 text-white hover:text-[#F26522] transition-colors p-4 rounded-full bg-white/5 border border-white/10 z-[110]"
+           >
+              <Lucide.X className="w-8 h-8" />
+           </button>
+           <div className="w-full max-w-6xl aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
+              <video 
+                className="w-full h-full object-cover"
+                src="/videos/homeVideoMobile.mp4"
+                autoPlay 
+                controls 
+                playsInline
+              />
+           </div>
+        </div>
+      )}
     </div>
   );
 }
