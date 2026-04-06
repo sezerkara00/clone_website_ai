@@ -219,11 +219,13 @@ export default function ThreeDPrinting() {
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
-                      <Layers className="w-6 h-6" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#f26522] to-[#d35015] flex items-center justify-center text-white shadow-[0_8px_16px_-6px_rgba(242,101,34,0.5)]">
+                      <Layers className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
-                    <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section1.title)}</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1a1a1a] dark:text-white uppercase leading-tight tracking-tight">
+                      {t(content.section1.title)}
+                    </h2>
                   </div>
                   <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
                     <p className="text-lg font-medium text-[#1a1a1a]/80 dark:text-white/80">
@@ -267,11 +269,13 @@ export default function ThreeDPrinting() {
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
-                      <Zap className="w-6 h-6" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#f26522] to-[#d35015] flex items-center justify-center text-white shadow-[0_8px_16px_-6px_rgba(242,101,34,0.5)]">
+                      <Zap className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
-                    <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section2.title)}</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1a1a1a] dark:text-white uppercase leading-tight tracking-tight">
+                      {t(content.section2.title)}
+                    </h2>
                   </div>
                   <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
                     <p className="text-lg dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section2.p1) }} />
@@ -342,11 +346,11 @@ export default function ThreeDPrinting() {
               </div>
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
-                      <Settings2 className="w-6 h-6" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#f26522] to-[#d35015] flex items-center justify-center text-white shadow-[0_8px_16px_-6px_rgba(242,101,34,0.5)]">
+                      <Settings2 className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
-                    <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1a1a1a] dark:text-white uppercase leading-tight tracking-tight">
                       {t(content.section3.title)}
                     </h2>
                   </div>
@@ -399,11 +403,13 @@ export default function ThreeDPrinting() {
                   </div>
                 </div>
                 <div>
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
-                      <Settings2 className="w-6 h-6" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#f26522] to-[#d35015] flex items-center justify-center text-white shadow-[0_8px_16px_-6px_rgba(242,101,34,0.5)]">
+                      <Settings2 className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
-                    <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section4.title)}</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1a1a1a] dark:text-white uppercase leading-tight tracking-tight">
+                      {t(content.section4.title)}
+                    </h2>
                   </div>
                   <div className="space-y-6 text-[#1a1a1a]/60 dark:text-white/70 text-sm leading-relaxed">
                     <p className="text-lg text-[#1a1a1a]/80 dark:text-white/80" dangerouslySetInnerHTML={{ __html: t(content.section4.p1) }} />
@@ -429,11 +435,13 @@ export default function ThreeDPrinting() {
             <div className="bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/15 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[40px] md:rounded-[60px] p-8 md:p-20 border border-black/5 dark:border-white/10 shadow-2xl overflow-hidden relative">
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
                 <div className="order-2 lg:order-1">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="w-12 h-12 rounded-lg bg-[#f26522] flex items-center justify-center text-white">
-                      <Zap className="w-6 h-6" />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-5 mb-8">
+                    <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-gradient-to-br from-[#f26522] to-[#d35015] flex items-center justify-center text-white shadow-[0_8px_16px_-6px_rgba(242,101,34,0.5)]">
+                      <Zap className="w-6 h-6 sm:w-7 sm:h-7" />
                     </div>
-                    <h2 className="text-3xl font-black text-[#1a1a1a] dark:text-white uppercase">{t(content.section5.title)}</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-[#1a1a1a] dark:text-white uppercase leading-tight tracking-tight">
+                      {t(content.section5.title)}
+                    </h2>
                   </div>
                   <div className="space-y-6 text-[#777777] dark:text-white/50 text-sm leading-relaxed">
                     <p className="text-lg font-medium text-[#1a1a1a]/80 dark:text-white/80">
