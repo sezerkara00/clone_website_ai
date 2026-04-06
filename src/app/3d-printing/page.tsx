@@ -282,8 +282,8 @@ export default function ThreeDPrinting() {
                     <p>{t(content.section2.p2)}</p>
                     <div className="mt-12 grid grid-cols-1 sm:grid-cols-3 gap-6">
                       {content.section2.stats.map((stat, i) => (
-                        <div key={i} className="text-center p-8 bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/10 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[32px] shadow-xl border border-black/5 dark:border-white/10 hover:border-[#f26522]/50 transition-all duration-500 group">
-                          <p className="text-4xl font-black text-[#f26522] mb-2 tracking-tighter group-hover:scale-110 transition-transform">{t(stat.value)}</p>
+                        <div key={i} className="text-center p-8 bg-gradient-to-br from-white via-[#fffaf8] to-[#f26522]/10 dark:from-white/[0.03] dark:via-white/[0.01] dark:to-[#f26522]/10 rounded-[32px] shadow-xl border border-black/5 dark:border-white/10 hover:border-[#f26522]/50 transition-all duration-500 group flex items-center justify-center flex-col overflow-hidden">
+                          <p className={`font-black text-[#f26522] mb-2 tracking-tighter group-hover:scale-110 transition-transform w-full break-words ${String(t(stat.value)).length > 5 ? 'text-2xl lg:text-xl xl:text-3xl' : 'text-4xl'}`}>{t(stat.value)}</p>
                           <p className="text-[10px] uppercase font-black text-black/60 dark:text-white/40 tracking-[0.2em] leading-tight">{t(stat.label)}</p>
                         </div>
                       ))}
