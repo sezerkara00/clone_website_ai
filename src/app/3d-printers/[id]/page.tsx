@@ -22,268 +22,329 @@ const materialImages = {
   rtv: "/images/materials/rtv.jpg",
 };
 
+interface Translation {
+  EN: string;
+  TR: string;
+}
+
 interface Feature {
-  title: string;
-  desc: string;
-  bullets: string[];
+  title: Translation;
+  desc: Translation;
+  bullets: Translation[];
   image: string;
 }
 
-const productData = {
+interface Material {
+  name: string;
+  icon: string;
+  type: Translation;
+}
+
+interface SpecItem {
+  label: Translation;
+  value: Translation;
+}
+
+interface SpecSection {
+  category: Translation;
+  items: SpecItem[];
+}
+
+interface Product {
+  name: string;
+  subtitle: Translation;
+  description: Translation;
+  image: string;
+  features: Feature[];
+  materials: Material[];
+  specs: SpecSection[];
+}
+
+const productData: Record<string, Product> = {
   m1: {
     name: "LayersTech M1",
-    subtitle: "Industrial FFF/FDM 3D Printer",
-    description: "Built for repeatable, production-ready parts with high-temperature capability and advanced AI monitoring. Engineered for industrial 24/7 reliability.",
+    subtitle: { EN: "Industrial FFF/FDM 3D Printer", TR: "Endüstriyel FFF/FDM 3D Yazıcı" },
+    description: { EN: "Built for repeatable, production-ready parts with high-temperature capability and advanced AI monitoring. Engineered for industrial 24/7 reliability.", TR: "Yüksek sıcaklık kapasitesi ve gelişmiş AI izleme ile tekrarlanabilir, üretime hazır parçalar için tasarlandı. Endüstriyel 7/24 güvenilirlik için geliştirildi." },
     image: "/images/m1pro_dark.png",
     features: [
       {
-        title: "Industrial Stability, Thermal Control, Consistent Output",
-        desc: "LayersTech M1 is engineered for stable, repeatable FFF/FDM production. A rigid industrial frame and enclosed chamber reduce external variation, while PID-controlled temperatures keep the bed, nozzle, and chamber steady throughout long print cycles. This results in predictable layer placement, consistent dimensions, and reliable surface finish—run after run.",
+        title: { EN: "Industrial Stability, Thermal Control, Consistent Output", TR: "Endüstriyel Stabilite, Termal Kontrol, Tutarlı Çıktı" },
+        desc: { EN: "LayersTech M1 is engineered for stable, repeatable FFF/FDM production. A rigid industrial frame and enclosed chamber reduce external variation, while PID-controlled temperatures keep the bed, nozzle, and chamber steady throughout long print cycles. This results in predictable layer placement, consistent dimensions, and reliable surface finish—run after run.", TR: "LayersTech M1, stabil, tekrarlanabilir FFF/FDM üretimi için tasarlandı. Sert endüstriyel gövde ve kapalı kabin dış varyasyonları azaltırken, PID kontrollü sıcaklıklar uzun baskı döngüleri boyunca yatak, nozül ve kabini sabit tutar. Bu, her seferinde öngörülebilir katman yerleşimi, tutarlı boyutlar ve güvenilir yüzey kalitesi sağlar." },
         bullets: [
-          "300 × 300 × 320 mm build volume for functional parts and fixtures",
-          "PID control: bed up to 140°C, nozzle up to 380°C, chamber up to 65°C",
-          "Enclosed, insulated chamber for more stable printing conditions",
-          "Engineered for industrial 24/7 production reliability"
+          { EN: "300 × 300 × 320 mm build volume for functional parts and fixtures", TR: "Fonksiyonel parçalar ve fikstürler için 300 × 300 × 320 mm baskı hacmi" },
+          { EN: "PID control: bed up to 140°C, nozzle up to 380°C, chamber up to 65°C", TR: "PID kontrolü: 140°C'ye kadar yatak, 380°C'ye kadar nozül, 65°C'ye kadar kabin" },
+          { EN: "Enclosed, insulated chamber for more stable printing conditions", TR: "Daha stabil baskı koşulları için kapalı, yalıtımlı kabin" },
+          { EN: "Engineered for industrial 24/7 production reliability", TR: "Endüstriyel 7/24 üretim güvenilirliği için üretildi" }
         ],
         image: "/images/w_parts.png"
       },
       {
-        title: "High-Throughput Multi-Material Printing (4-Tool System)",
-        desc: "Built for speed and flexibility, M1 uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.",
+        title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4-Araçlık Sistem)" },
+        desc: { EN: "Built for speed and flexibility, M1 uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.", TR: "Hız ve esneklik için tasarlanan M1, sürekli manuel değiştirme gerektirmeden hızlı çok renkli baskılar veya çoklu malzeme iş akışları için ideal olan, dört değiştirilebilir araç yuvasına sahip doğrudan tahrikli bir araç kafası kullanır. Prototiplemeden küçük parti üretimlere kadar sistemi yüksek verimlilik ve düşük kesinti süresi ile çalıştırmak için tasarlandı." },
         bullets: [
-          "4-tool workflow for multi-color or multi-material printing",
-          "Direct-drive extrusion for responsive material control",
-          "Optimized for repeatable production runs and continuous operation",
-          "Compatible with additional tool types for expanding use cases"
+          { EN: "4-tool workflow for multi-color or multi-material printing", TR: "Çoklu renk veya çoklu malzeme baskısı için 4 araçlık iş akışı" },
+          { EN: "Direct-drive extrusion for responsive material control", TR: "Hassas malzeme kontrolü için doğrudan tahrikli ekstrüzyon" },
+          { EN: "Optimized for repeatable production runs and continuous operation", TR: "Tekrarlanabilir üretim çalışmaları ve sürekli operasyon için optimize edildi" },
+          { EN: "Compatible with additional tool types for expanding use cases", TR: "Genişleyen kullanım senaryoları için ek araç türleriyle uyumlu" }
         ],
         image: "/images/tools.png"
       },
       {
-        title: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment",
-        desc: "M1 reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.",
+        title: { EN: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment", TR: "Akıllı Kalibrasyon: Otomatik Z + Kamera Destekli XY Hizalama" },
+        desc: { EN: "M1 reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çoklu araç yapılandırmalarında çok değerlidir." },
         bullets: [
-          "Eddy-current sensing for automatic nozzle Z offset control",
-          "Camera-assisted XY offset calibration for faster alignment",
-          "Better repeatability when switching tools/materials",
-          "More reliable first layers with less trial-and-error"
+          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy akımı algılama" },
+          { EN: "Camera-assisted XY offset calibration for faster alignment", TR: "Daha hızlı hizalama için kamera destekli XY ofseti kalibrasyonu" },
+          { EN: "Better repeatability when switching tools/materials", TR: "Araçları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
+          { EN: "More reliable first layers with less trial-and-error", TR: "Daha az deneme-yanılma ile daha güvenilir ilk katmanlar" }
         ],
         image: "/images/smart-calibration.png"
       },
       {
-        title: "AI Print Monitoring: Catch Failures Early, Save Time and Material",
-        desc: "Production reliability depends on visibility. M1’s chamber camera and AI monitoring help detect common failures—such as “spaghetti” errors—early in the process. This improves supervision during long prints, reduces wasted material, and helps teams run jobs with more confidence.",
+        title: { EN: "AI Print Monitoring: Catch Failures Early, Save Time and Material", TR: "Yapay Zeka Baskı İzleme: Hataları Erken Yakalayın, Zaman ve Malzeme Tasarrufu Sağlayın" },
+        desc: { EN: "Production reliability depends on visibility. M1’s chamber camera and AI monitoring help detect common failures—such as “spaghetti” errors—early in the process. This improves supervision during long prints, reduces wasted material, and helps teams run jobs with more confidence.", TR: "Üretim güvenilirliği görünürlüğe bağlıdır. M1'in kabin kamerası ve yapay zeka izlemesi, süreçteki 'spagetti' hataları gibi yaygın sorunları erken tespit etmeye yardımcı olur. Bu, uzun baskılar sırasında denetimi artırır, boşa giden malzemeyi azaltır ve ekiplerin daha güvenle iş yapmasına yardımcı olur." },
         bullets: [
-          "Chamber monitoring for real-time visibility",
-          "AI detection for spaghetti/print failure indicators",
-          "Print cycle monitoring for better production oversight",
-          "Supports more reliable unattended printing"
+          { EN: "Chamber monitoring for real-time visibility", TR: "Gerçek zamanlı görünürlük için kabin izleme" },
+          { EN: "AI detection for spaghetti/print failure indicators", TR: "Spagetti/baskı hatası göstergeleri için yapay zeka tespiti" },
+          { EN: "Print cycle monitoring for better production oversight", TR: "Daha iyi üretim denetimi için baskı döngüsü izleme" },
+          { EN: "Supports more reliable unattended printing", TR: "Daha güvenilir gözetimsiz baskıyı destekler" }
         ],
         image: "/images/spaghetti.png"
       },
       {
-        title: "Materials, Software, and Secure Connectivity for Teams",
-        desc: "M1 supports a wide range of materials—from general-purpose plastics to advanced engineering polymers—backed by a modern software stack. Compatibility with popular slicers, plus secure identity and organization controls, makes it suitable for professional environments where access, accountability, and remote workflows matter.",
+        title: { EN: "Materials, Software, and Secure Connectivity for Teams", TR: "Ekipler için Malzemeler, Yazılım ve Güvenli Bağlantı" },
+        desc: { EN: "M1 supports a wide range of materials—from general-purpose plastics to advanced engineering polymers—backed by a modern software stack. Compatibility with popular slicers, plus secure identity and organization controls, makes it suitable for professional environments where access, accountability, and remote workflows matter.", TR: "M1, genel amaçlı plastiklerden gelişmiş mühendislik polimerlerine kadar geniş bir malzeme yelpazesini modern bir yazılım yapısıyla destekler. Popüler dilimleyicilerle uyumluluğun yanı sıra güvenli kimlik ve organizasyon kontrolleri, erişim, hesap verebilirlik ve uzaktan iş akışlarının önemli olduğu profesyonel ortamlar için uygun hale getirir." },
         bullets: [
-          "Materials support: PLA/ABS/PETG/ASA and engineering polymers (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)",
-          "Slicer compatibility: PrusaSlicer, Orca Slicer, LayersTech Slicer",
-          "Secure access: 2FA, organization admin roles, SSO",
-          "Ethernet connectivity and wireless updates; remote access and camera workflow"
+          { EN: "Materials support: PLA/ABS/PETG/ASA and engineering polymers (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)", TR: "Malzeme desteği: PLA/ABS/PETG/ASA ve mühendislik polimerleri (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)" },
+          { EN: "Slicer compatibility: PrusaSlicer, Orca Slicer, LayersTech Slicer", TR: "Dilimleyici uyumluluğu: PrusaSlicer, Orca Slicer, LayersTech Slicer" },
+          { EN: "Secure access: 2FA, organization admin roles, SSO", TR: "Güvenli erişim: 2FA, organizasyon yönetici rolleri, SSO" },
+          { EN: "Ethernet connectivity and wireless updates; remote access and camera workflow", TR: "Ethernet bağlantısı ve kablosuz güncellemeler; uzaktan erişim ve kamera iş akışı" }
         ],
         image: "/images/parts.png"
       },
       {
-        title: "Support & Service for Production Teams",
-        desc: "Support that keeps production moving. LayersTech M1 is backed by a professional service workflow designed for industrial uptime—from onboarding and operator guidance to remote assistance and preventive maintenance planning. Teams can monitor prints via the chamber camera, manage jobs over the network, and keep systems updated through secure connectivity features.",
+        title: { EN: "Support & Service for Production Teams", TR: "Üretim Ekipleri için Destek ve Servis" },
+        desc: { EN: "Support that keeps production moving. LayersTech M1 is backed by a professional service workflow designed for industrial uptime—from onboarding and operator guidance to remote assistance and preventive maintenance planning. Teams can monitor prints via the chamber camera, manage jobs over the network, and keep systems updated through secure connectivity features.", TR: "Üretimi devam ettiren destek. LayersTech M1, eğitime ve operatör yönlendirmesinden uzaktan yardıma ve önleyici bakım planlamasına kadar endüstriyel çalışma süresi için tasarlanmış profesyonel bir servis akışına sahiptir. Ekipler, kabin kamerası ile baskıları izleyebilir, ağ üzerinden işleri yönetebilir ve güvenli bağlantı özellikleri ile sistemleri güncel tutabilir." },
         bullets: [
-          "Setup onboarding and operator guidance",
-          "Remote support-ready workflow with camera visibility",
-          "Maintenance planning for long-term reliability",
-          "Secure access controls (2FA / roles / SSO) for team environments"
+          { EN: "Setup onboarding and operator guidance", TR: "Kurulum eğitimi ve operatör yönlendirmesi" },
+          { EN: "Remote support-ready workflow with camera visibility", TR: "Kamera görünürlüğü ile uzaktan desteğe hazır iş akışı" },
+          { EN: "Maintenance planning for long-term reliability", TR: "Uzun vadeli güvenilirlik için bakım planlaması" },
+          { EN: "Secure access controls (2FA / roles / SSO) for team environments", TR: "Ekip ortamları için güvenli erişim kontrolleri (2FA / roller / SSO)" }
         ],
         image: "/images/support.png"
       }
     ],
     materials: [
-      { name: "PLA", icon: materialImages.pla, type: "Standard" },
-      { name: "ABS", icon: materialImages.abs, type: "Standard" },
-      { name: "PVA", icon: materialImages.pva, type: "Support" },
-      { name: "HIPS", icon: materialImages.hips, type: "Support" },
-      { name: "TPU", icon: materialImages.tpu, type: "Flexible" },
-      { name: "CARBON FIBER", icon: materialImages.cbn, type: "Composite" },
-      { name: "PC", icon: materialImages.pc, type: "Engineering" },
-      { name: "PETG", icon: materialImages.petg, type: "Standard" }
+      { name: "PLA", icon: materialImages.pla, type: { EN: "Standard", TR: "Standart" } },
+      { name: "ABS", icon: materialImages.abs, type: { EN: "Standard", TR: "Standart" } },
+      { name: "PVA", icon: materialImages.pva, type: { EN: "Support", TR: "Destek" } },
+      { name: "HIPS", icon: materialImages.hips, type: { EN: "Support", TR: "Destek" } },
+      { name: "TPU", icon: materialImages.tpu, type: { EN: "Flexible", TR: "Esnek" } },
+      { name: "CARBON FIBER", icon: materialImages.cbn, type: { EN: "Composite", TR: "Kompozit" } },
+      { name: "PC", icon: materialImages.pc, type: { EN: "Engineering", TR: "Mühendislik" } },
+      { name: "PETG", icon: materialImages.petg, type: { EN: "Standard", TR: "Standart" } }
     ],
-    specs: {
-      "System Specifications": [
-        { label: "Printing Process", value: "FFF (Fused Filament Fabrication)" },
-        { label: "Build Volume", value: "300 × 300 × 320 mm" },
-        { label: "Printer Category", value: "Industrial Multi-Head System" },
-        { label: "Tool Slots", value: "2 / 4 (Independently Interchangeable)" },
-        { label: "Slicing Software", value: "LayersTech Slicer, Cura, PrusaSlicer" }
-      ],
-      "Thermal Performance": [
-        { label: "Max Nozzle Temp", value: "300°C (Optional 500°C Extended Nozzle)" },
-        { label: "Max Bed Temp", value: "120°C (PID Controlled)" },
-        { label: "Chamber Temp", value: "Active Heating up to 65°C" },
-        { label: "Thermal Curing", value: "Integrated Passive Insulation" }
-      ],
-      "Mechanical Accuracy": [
-        { label: "X/Y Resolution", value: "6.25 μm" },
-        { label: "Z Resolution", value: "1.25 μm" },
-        { label: "Layer Height", value: "0.05 mm - 0.4 mm" },
-        { label: "Max Travel Speed", value: "300 mm/s" },
-        { label: "Positioning Accuracy", value: "± 0.05 mm" }
-      ],
-      "Software & Security": [
-        { label: "Connectivity", value: "Ethernet, Wi-Fi, USB, LayersOS Cloud" },
-        { label: "Security", value: "2FA, VPN Secure, Admin Audit Trail" },
-        { label: "AI & Monitoring", value: "1080p Camera (Optional AI Monitoring)" },
-        { label: "User Interface", value: "7-inch Industrial Touchscreen" }
-      ],
-      "Facilities & Safety": [
-        { label: "Filtration", value: "HEPA H13 + Active Carbon Filter" },
-        { label: "Power Matrix", value: "3000 W (Peak) / 1250 W (Normal)" },
-        { label: "Weight", value: "240 kg" },
-        { label: "Dimensions", value: "1065 × 711 × 1975 mm" }
-      ]
-    }
+    specs: [
+      {
+        category: { EN: "System Specifications", TR: "Sistem Özellikleri" },
+        items: [
+          { label: { EN: "Printing Process", TR: "Baskı İşlemi" }, value: { EN: "FFF (Fused Filament Fabrication)", TR: "FFF (Erimiş Filament Üretimi)" } },
+          { label: { EN: "Build Volume", TR: "Baskı Hacmi" }, value: { EN: "300 × 300 × 320 mm", TR: "300 × 300 × 320 mm" } },
+          { label: { EN: "Printer Category", TR: "Yazıcı Kategorisi" }, value: { EN: "Industrial Multi-Head System", TR: "Endüstriyel Çok Kafalı Sistem" } },
+          { label: { EN: "Tool Slots", TR: "Araç Yuvaları" }, value: { EN: "2 / 4 (Independently Interchangeable)", TR: "2 / 4 (Bağımsız Olarak Değiştirilebilir)" } },
+          { label: { EN: "Slicing Software", TR: "Dilimleme Yazılımı" }, value: { EN: "LayersTech Slicer, Cura, PrusaSlicer", TR: "LayersTech Slicer, Cura, PrusaSlicer" } }
+        ]
+      },
+      {
+        category: { EN: "Thermal Performance", TR: "Termal Performans" },
+        items: [
+          { label: { EN: "Max Nozzle Temp", TR: "Maksimum Nozül Sıcaklığı" }, value: { EN: "300°C (Optional 500°C Extended Nozzle)", TR: "300°C (Opsiyonel 500°C Uzatılmış Nozül)" } },
+          { label: { EN: "Max Bed Temp", TR: "Maksimum Yatak Sıcaklığı" }, value: { EN: "120°C (PID Controlled)", TR: "120°C (PID Kontrollü)" } },
+          { label: { EN: "Chamber Temp", TR: "Kabin Sıcaklığı" }, value: { EN: "Active Heating up to 65°C", TR: "65°C'ye Kadar Aktif Isıtma" } },
+          { label: { EN: "Thermal Curing", TR: "Termal Kürleme" }, value: { EN: "Integrated Passive Insulation", TR: "Entegre Pasif İzolasyon" } }
+        ]
+      },
+      {
+        category: { EN: "Mechanical Accuracy", TR: "Mekanik Hassasiyet" },
+        items: [
+          { label: { EN: "X/Y Resolution", TR: "X/Y Çözünürlüğü" }, value: { EN: "6.25 μm", TR: "6.25 μm" } },
+          { label: { EN: "Z Resolution", TR: "Z Çözünürlüğü" }, value: { EN: "1.25 μm", TR: "1.25 μm" } },
+          { label: { EN: "Layer Height", TR: "Katman Yüksekliği" }, value: { EN: "0.05 mm - 0.4 mm", TR: "0.05 mm - 0.4 mm" } },
+          { label: { EN: "Max Travel Speed", TR: "Maksimum Hareket Hızı" }, value: { EN: "300 mm/s", TR: "300 mm/s" } },
+          { label: { EN: "Positioning Accuracy", TR: "Konumlandırma Hassasiyeti" }, value: { EN: "± 0.05 mm", TR: "± 0.05 mm" } }
+        ]
+      },
+      {
+        category: { EN: "Software & Security", TR: "Yazılım ve Güvenlik" },
+        items: [
+          { label: { EN: "Connectivity", TR: "Bağlantı" }, value: { EN: "Ethernet, Wi-Fi, USB, LayersOS Cloud", TR: "Ethernet, Wi-Fi, USB, LayersOS Bulut" } },
+          { label: { EN: "Security", TR: "Güvenlik" }, value: { EN: "2FA, VPN Secure, Admin Audit Trail", TR: "2FA, Güvenli VPN, Yönetici Denetim İzi" } },
+          { label: { EN: "AI & Monitoring", TR: "Yapay Zeka ve İzleme" }, value: { EN: "1080p Camera (Optional AI Monitoring)", TR: "1080p Kamera (Opsiyonel Yapay Zeka İzleme)" } },
+          { label: { EN: "User Interface", TR: "Kullanıcı Arayüzü" }, value: { EN: "7-inch Industrial Touchscreen", TR: "7 inç Endüstriyel Dokunmatik Ekran" } }
+        ]
+      },
+      {
+        category: { EN: "Facilities & Safety", TR: "Tesisler ve Güvenlik" },
+        items: [
+          { label: { EN: "Filtration", TR: "Filtrasyon" }, value: { EN: "HEPA H13 + Active Carbon Filter", TR: "HEPA H13 + Aktif Karbon Filtre" } },
+          { label: { EN: "Power Matrix", TR: "Güç Matrisi" }, value: { EN: "3000 W (Peak) / 1250 W (Normal)", TR: "3000 W (Tepe) / 1250 W (Normal)" } },
+          { label: { EN: "Weight", TR: "Ağırlık" }, value: { EN: "240 kg", TR: "240 kg" } },
+          { label: { EN: "Dimensions", TR: "Boyutlar" }, value: { EN: "1065 × 711 × 1975 mm", TR: "1065 × 711 × 1975 mm" } }
+        ]
+      }
+    ]
   },
   m1pro: {
     name: "LayersTech M1PRO",
-    subtitle: "Industrial Silicone & LSR System",
-    description: "The M1PRO is designed for liquid-to-solid conversion of high-grade silicons and rubbers (LSR/RTV) alongside engineering polymers.",
+    subtitle: { EN: "Industrial Silicone & LSR System", TR: "Endüstriyel Silikon & LSR Sistemi" },
+    description: { EN: "The M1PRO is designed for liquid-to-solid conversion of high-grade silicons and rubbers (LSR/RTV) alongside engineering polymers.", TR: "M1PRO, mühendislik polimerlerinin yanı sıra yüksek kaliteli silikonların ve kauçukların (LSR/RTV) sıvıdan katıya dönüştürülmesi için tasarlanmıştır." },
     image: "/images/m1pro_dark.png",
     features: [
       {
-        title: "Advanced Silicone (LSR) Printing System",
-        desc: "LayersTech M1PRO is engineered as a true industrial silicone 3D printer, enabling reliable Liquid Silicone Rubber (LSR) printing for flexible, functional, and production-ready parts. The system supports precise deposition of silicone materials with different Shore hardness values, making it suitable for seals, gaskets, soft-touch components, and elastomer-like end-use parts. Unlike conventional systems, M1PRO integrates controlled curing and multi-tool support to ensure consistent layer bonding, dimensional accuracy, and repeatable mechanical performance throughout the entire print process.",
+        title: { EN: "Advanced Silicone (LSR) Printing System", TR: "Gelişmiş Silikon (LSR) Baskı Sistemi" },
+        desc: { EN: "LayersTech M1PRO is engineered as a true industrial silicone 3D printer, enabling reliable Liquid Silicone Rubber (LSR) printing for flexible, functional, and production-ready parts. The system supports precise deposition of silicone materials with different Shore hardness values, making it suitable for seals, gaskets, soft-touch components, and elastomer-like end-use parts. Unlike conventional systems, M1PRO integrates controlled curing and multi-tool support to ensure consistent layer bonding, dimensional accuracy, and repeatable mechanical performance throughout the entire print process.", TR: "LayersTech M1PRO, esnek, işlevsel ve üretime hazır parçalar için güvenilir Sıvı Silikon Kauçuk (LSR) baskısı sağlayan gerçek bir endüstriyel silikon 3D yazıcı olarak tasarlanmıştır. Sistem, farklı Shore sertlik değerlerine sahip silikon malzemelerin hassas bir şekilde biriktirilmesini destekleyerek contalar, yumuşak dokunuşlu bileşenler ve elastomer benzeri son kullanım parçaları için uygun hale getirir. Geleneksel sistemlerin aksine, M1PRO tüm baskı süreci boyunca tutarlı katman yapışması, boyutsal doğruluk ve tekrarlanabilir mekanik performans sağlamak için kontrollü kürleme ve çoklu araç desteğini entegre eder." },
         bullets: [
-          "LSR printing with multiple Shore hardness options",
-          "Dedicated support material workflow for silicone printing",
-          "Integrated heater rail for layer-by-layer silicone curing",
-          "Production-ready silicone manufacturing"
+          { EN: "LSR printing with multiple Shore hardness options", TR: "Çoklu Shore sertliği seçenekleriyle LSR baskısı" },
+          { EN: "Dedicated support material workflow for silicone printing", TR: "Silikon baskı için özel destek malzemesi iş akışı" },
+          { EN: "Integrated heater rail for layer-by-layer silicone curing", TR: "Katman katman silikon kürleme için entegre ısıtıcı rayı" },
+          { EN: "Production-ready silicone manufacturing", TR: "Üretime hazır silikon üretimi" }
         ],
         image: "/images/silion_parts.png"
       },
       {
-        title: "Industrial Stability, Thermal Control, Consistent Output",
-        desc: "LayersTech M1Pro is engineered for stable, repeatable FFF/FDM production. A rigid industrial frame and enclosed chamber reduce external variation, while PID-controlled temperatures keep the bed, nozzle, and chamber steady throughout long print cycles. This results in predictable layer placement, consistent dimensions, and reliable surface finish—run after run.",
+        title: { EN: "Industrial Stability, Thermal Control, Consistent Output", TR: "Endüstriyel Stabilite, Termal Kontrol, Tutarlı Çıktı" },
+        desc: { EN: "LayersTech M1Pro is engineered for stable, repeatable FFF/FDM production. A rigid industrial frame and enclosed chamber reduce external variation, while PID-controlled temperatures keep the bed, nozzle, and chamber steady throughout long print cycles. This results in predictable layer placement, consistent dimensions, and reliable surface finish—run after run.", TR: "LayersTech M1Pro, stabil, tekrarlanabilir FFF/FDM üretimi için tasarlandı. Sert endüstriyel gövde ve kapalı kabin dış varyasyonları azaltırken, PID kontrollü sıcaklıklar uzun baskı döngüleri boyunca yatak, nozül ve kabini sabit tutar. Bu, her seferinde öngörülebilir katman yerleşimi, tutarlı boyutlar ve güvenilir yüzey kalitesi sağlar." },
         bullets: [
-          "300 × 300 × 320 mm build volume for functional parts and fixtures",
-          "PID control: bed up to 140°C, nozzle up to 380°C, chamber up to 65°C",
-          "Enclosed, insulated chamber for more stable printing conditions",
-          "Designed for industrial continuous production"
+          { EN: "300 × 300 × 320 mm build volume for functional parts and fixtures", TR: "Fonksiyonel parçalar ve fikstürler için 300 × 300 × 320 mm baskı hacmi" },
+          { EN: "PID control: bed up to 140°C, nozzle up to 380°C, chamber up to 65°C", TR: "PID kontrolü: 140°C'ye kadar yatak, 380°C'ye kadar nozül, 65°C'ye kadar kabin" },
+          { EN: "Enclosed, insulated chamber for more stable printing conditions", TR: "Daha stabil baskı koşulları için kapalı, yalıtımlı kabin" },
+          { EN: "Designed for industrial continuous production", TR: "Endüstriyel sürekli üretim için tasarlandı" }
         ],
         image: "/images/silicone-card.jpg"
       },
       {
-        title: "High-Throughput Multi-Material Printing (4-Tool System)",
-        desc: "Built for speed and flexibility, M1Pro uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.",
+        title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4-Araçlık Sistem)" },
+        desc: { EN: "Built for speed and flexibility, M1Pro uses a direct-drive toolhead with four interchangeable tool slots—ideal for fast multi-color prints or multi-material workflows without constant manual swapping. From prototyping to small-batch runs, the system is designed to keep throughput high and downtime low.", TR: "Hız ve esneklik için tasarlanan M1Pro, sürekli manuel değiştirme gerektirmeden hızlı çok renkli baskılar veya çoklu malzeme iş akışları için ideal olan, dört değiştirilebilir araç yuvasına sahip doğrudan tahrikli bir araç kafası kullanır. Prototiplemeden küçük parti üretimlere kadar sistemi yüksek verimlilik ve düşük kesinti süresi ile çalıştırmak için tasarlandı." },
         bullets: [
-          "4-tool workflow for multi-color or multi-material printing",
-          "Direct-drive extrusion for responsive material control",
-          "Optimized for repeatable production runs and continuous operation",
-          "Compatible with additional tool types for expanding use cases"
+          { EN: "4-tool workflow for multi-color or multi-material printing", TR: "Çoklu renk veya çoklu malzeme baskısı için 4 araçlık iş akışı" },
+          { EN: "Direct-drive extrusion for responsive material control", TR: "Hassas malzeme kontrolü için doğrudan tahrikli ekstrüzyon" },
+          { EN: "Optimized for repeatable production runs and continuous operation", TR: "Tekrarlanabilir üretim çalışmaları ve sürekli operasyon için optimize edildi" },
+          { EN: "Compatible with additional tool types for expanding use cases", TR: "Genişleyen kullanım senaryoları için ek araç türleriyle uyumlu" }
         ],
         image: "/images/tools.png"
       },
       {
-        title: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment",
-        desc: "M1Pro reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.",
+        title: { EN: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment", TR: "Akıllı Kalibrasyon: Otomatik Z + Kamera Destekli XY Hizalama" },
+        desc: { EN: "M1Pro reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1Pro, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çoklu araç yapılandırmalarında çok değerlidir." },
         bullets: [
-          "Eddy-current sensing for automatic nozzle Z offset control",
-          "Camera-assisted XY offset calibration for faster alignment",
-          "Better repeatability when switching tools/materials",
-          "More reliable first layers with less trial-and-error"
+          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy akımı algılama" },
+          { EN: "Camera-assisted XY offset calibration for faster alignment", TR: "Daha hızlı hizalama için kamera destekli XY ofseti kalibrasyonu" },
+          { EN: "Better repeatability when switching tools/materials", TR: "Araçları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
+          { EN: "More reliable first layers with less trial-and-error", TR: "Daha az deneme-yanılma ile daha güvenilir ilk katmanlar" }
         ],
         image: "/images/smart-calibration.png"
       },
       {
-        title: "AI Print Monitoring: Catch Failures Early, Save Time and Material",
-        desc: "Production reliability depends on visibility. M1Pro’s chamber camera and AI monitoring help detect common failures—such as “spaghetti” errors—early in the process. This improves supervision during long prints, reduces wasted material, and helps teams run jobs with more confidence.",
+        title: { EN: "AI Print Monitoring: Catch Failures Early, Save Time and Material", TR: "Yapay Zeka Baskı İzleme: Hataları Erken Yakalayın, Zaman ve Malzeme Tasarrufu Sağlayın" },
+        desc: { EN: "Production reliability depends on visibility. M1Pro’s chamber camera and AI monitoring help detect common failures—such as “spaghetti” errors—early in the process. This improves supervision during long prints, reduces wasted material, and helps teams run jobs with more confidence.", TR: "Üretim güvenilirliği görünürlüğe bağlıdır. M1Pro'nun kabin kamerası ve yapay zeka izlemesi, süreçteki 'spagetti' hataları gibi yaygın sorunları erken tespit etmeye yardımcı olur. Bu, uzun baskılar sırasında denetimi artırır, boşa giden malzemeyi azaltır ve ekiplerin daha güvenle iş yapmasına yardımcı olur." },
         bullets: [
-          "Chamber monitoring for real-time visibility",
-          "AI detection for spaghetti/print failure indicators",
-          "Print cycle monitoring for better production oversight",
-          "Supports more reliable unattended printing"
+          { EN: "Chamber monitoring for real-time visibility", TR: "Gerçek zamanlı görünürlük için kabin izleme" },
+          { EN: "AI detection for spaghetti/print failure indicators", TR: "Spagetti/baskı hatası göstergeleri için yapay zeka tespiti" },
+          { EN: "Print cycle monitoring for better production oversight", TR: "Daha iyi üretim denetimi için baskı döngüsü izleme" },
+          { EN: "Supports more reliable unattended printing", TR: "Daha güvenilir gözetimsiz baskıyı destekler" }
         ],
         image: "/images/spaghetti.png"
       },
       {
-        title: "Materials, Software, and Secure Connectivity for Teams",
-        desc: "M1Pro supports a wide range of materials—from general-purpose plastics to advanced engineering polymers—backed by a modern software stack. Compatibility with popular slicers, plus secure identity and organization controls, makes it suitable for professional environments where access, accountability, and remote workflows matter.",
+        title: { EN: "Materials, Software, and Secure Connectivity for Teams", TR: "Ekipler için Malzemeler, Yazılım ve Güvenli Bağlantı" },
+        desc: { EN: "M1Pro supports a wide range of materials—from general-purpose plastics to advanced engineering polymers—backed by a modern software stack. Compatibility with popular slicers, plus secure identity and organization controls, makes it suitable for professional environments where access, accountability, and remote workflows matter.", TR: "M1Pro, genel amaçlı plastiklerden gelişmiş mühendislik polimerlerine kadar geniş bir malzeme yelpazesini modern bir yazılım yapısıyla destekler. Popüler dilimleyicilerle uyumluluğun yanı sıra güvenli kimlik ve organizasyon kontrolleri, erişim, hesap verebilirlik ve uzaktan iş akışlarının önemli olduğu profesyonel ortamlar için uygun hale getirir." },
         bullets: [
-          "Materials support: PLA/ABS/PETG/ASA and engineering polymers (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)",
-          "Slicer compatibility: PrusaSlicer, Orca Slicer, LayersTech Slicer",
-          "Secure access: 2FA, organization admin roles, SSO",
-          "Ethernet connectivity and wireless updates; remote access and camera workflow"
+          { EN: "Materials support: PLA/ABS/PETG/ASA and engineering polymers (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)", TR: "Malzeme desteği: PLA/ABS/PETG/ASA ve mühendislik polimerleri (PA, PC, PC-ABS, PEEK, PEI, CF/GF, TPU/TPE)" },
+          { EN: "Slicer compatibility: PrusaSlicer, Orca Slicer, LayersTech Slicer", TR: "Dilimleyici uyumluluğu: PrusaSlicer, Orca Slicer, LayersTech Slicer" },
+          { EN: "Secure access: 2FA, organization admin roles, SSO", TR: "Güvenli erişim: 2FA, organizasyon yönetici rolleri, SSO" },
+          { EN: "Ethernet connectivity and wireless updates; remote access and camera workflow", TR: "Ethernet bağlantısı ve kablosuz güncellemeler; uzaktan erişim ve kamera iş akışı" }
         ],
         image: "/images/parts.png"
       },
       {
-        title: "Support & Service for Production Teams",
-        desc: "Support that keeps production moving. LayersTech M1Pro is backed by a professional service workflow designed for industrial uptime—from onboarding and operator guidance to remote assistance and preventive maintenance planning. Teams can monitor prints via the chamber camera, manage jobs over the network, and keep systems updated through secure connectivity features.",
+        title: { EN: "Support & Service for Production Teams", TR: "Üretim Ekipleri için Destek ve Servis" },
+        desc: { EN: "Support that keeps production moving. LayersTech M1Pro is backed by a professional service workflow designed for industrial uptime—from onboarding and operator guidance to remote assistance and preventive maintenance planning. Teams can monitor prints via the chamber camera, manage jobs over the network, and keep systems updated through secure connectivity features.", TR: "Üretimi devam ettiren destek. LayersTech M1Pro, eğitime ve operatör yönlendirmesinden uzaktan yardıma ve önleyici bakım planlamasına kadar endüstriyel çalışma süresi için tasarlanmış profesyonel bir servis akışına sahiptir. Ekipler, kabin kamerası ile baskıları izleyebilir, ağ üzerinden işleri yönetebilir ve güvenli bağlantı özellikleri ile sistemleri güncel tutabilir." },
         bullets: [
-          "Setup onboarding and operator guidance",
-          "Remote support-ready workflow with camera visibility",
-          "Maintenance planning for long-term reliability",
-          "Secure access controls (2FA / roles / SSO) for team environments"
+          { EN: "Setup onboarding and operator guidance", TR: "Kurulum eğitimi ve operatör yönlendirmesi" },
+          { EN: "Remote support-ready workflow with camera visibility", TR: "Kamera görünürlüğü ile uzaktan desteğe hazır iş akışı" },
+          { EN: "Maintenance planning for long-term reliability", TR: "Uzun vadeli güvenilirlik için bakım planlaması" },
+          { EN: "Secure access controls (2FA / roles / SSO) for team environments", TR: "Ekip ortamları için güvenli erişim kontrolleri (2FA / roller / SSO)" }
         ],
         image: "/images/support.png"
       }
     ],
     materials: [
-      { name: "LSR Silicone", icon: materialImages.lsr, type: "Industrial Silicone" },
-      { name: "RTV Silicone", icon: materialImages.rtv, type: "Silicone Rubber" },
-      { name: "ASA", icon: "/images/materials/asa.jpg", type: "Engineering" },
-      { name: "PA", icon: "/images/materials/pa.jpg", type: "Engineering" },
-      { name: "PC-ABS", icon: "/images/materials/pcabs.jpg", type: "Engineering" },
-      { name: "PEEK", icon: "/images/materials/peek.jpg", type: "High-Performance" },
-      { name: "PEI", icon: "/images/materials/pei.jpg", type: "High-Performance" },
-      { name: "GF", icon: "/images/materials/gf.jpg", type: "Composite" },
-      { name: "KF", icon: "/images/materials/kf.jpg", type: "Composite" },
-      { name: "CBN", icon: materialImages.cbn, type: "Composite" },
-      { name: "PLA", icon: materialImages.pla, type: "Standard" },
-      { name: "ABS", icon: materialImages.abs, type: "Standard" },
-      { name: "PVA", icon: materialImages.pva, type: "Support" },
-      { name: "HIPS", icon: materialImages.hips, type: "Support" },
-      { name: "PETG", icon: materialImages.petg, type: "Standard" },
-      { name: "TPU", icon: materialImages.tpu, type: "Flexible" }
+      { name: "LSR Silicone", icon: materialImages.lsr, type: { EN: "Industrial Silicone", TR: "Endüstriyel Silikon" } },
+      { name: "RTV Silicone", icon: materialImages.rtv, type: { EN: "Silicone Rubber", TR: "Silikon Kauçuk" } },
+      { name: "ASA", icon: "/images/materials/asa.jpg", type: { EN: "Engineering", TR: "Mühendislik" } },
+      { name: "PA", icon: "/images/materials/pa.jpg", type: { EN: "Engineering", TR: "Mühendislik" } },
+      { name: "PC-ABS", icon: "/images/materials/pcabs.jpg", type: { EN: "Engineering", TR: "Mühendislik" } },
+      { name: "PEEK", icon: "/images/materials/peek.jpg", type: { EN: "High-Performance", TR: "Yüksek Performans" } },
+      { name: "PEI", icon: "/images/materials/pei.jpg", type: { EN: "High-Performance", TR: "Yüksek Performans" } },
+      { name: "GF", icon: "/images/materials/gf.jpg", type: { EN: "Composite", TR: "Kompozit" } },
+      { name: "KF", icon: "/images/materials/kf.jpg", type: { EN: "Composite", TR: "Kompozit" } },
+      { name: "CBN", icon: materialImages.cbn, type: { EN: "Composite", TR: "Kompozit" } },
+      { name: "PLA", icon: materialImages.pla, type: { EN: "Standard", TR: "Standart" } },
+      { name: "ABS", icon: materialImages.abs, type: { EN: "Standard", TR: "Standart" } },
+      { name: "PVA", icon: materialImages.pva, type: { EN: "Support", TR: "Destek" } },
+      { name: "HIPS", icon: materialImages.hips, type: { EN: "Support", TR: "Destek" } },
+      { name: "PETG", icon: materialImages.petg, type: { EN: "Standard", TR: "Standart" } },
+      { name: "TPU", icon: materialImages.tpu, type: { EN: "Flexible", TR: "Esnek" } }
     ],
-    specs: {
-      "System Specifications": [
-        { label: "Printing Process", value: "Industrial LSR & FDM Hybrid" },
-        { label: "Build Volume", value: "300 × 300 × 320 mm" },
-        { label: "Tool Slots", value: "4 (Standart Industrial Multi-Head)" },
-        { label: "LSR Head", value: "Soğutmalı Nozul & Volümetrik Dozaj" },
-        { label: "Slicing Software", value: "LayersTech Professional Slicer (ASM Optimized)" }
-      ],
-      "Thermal & Curing": [
-        { label: "Infrared System", value: "Integrated IR Curing for Silicone Vulcanization" },
-        { label: "Max Nozzle Temp", value: "300°C (FFF) / Cooled LSR Interface" },
-        { label: "Max Bed Temp", value: "120°C (PID Controlled)" },
-        { label: "Chamber Temp", value: "Active Heating + High Efficiency Insulation" }
-      ],
-      "Mechanical Performance": [
-        { label: "X/Y Resolution", value: "6.25 μm" },
-        { label: "Z Resolution", value: "1.25 μm" },
-        { label: "Layer Thickness", value: "0.05 mm - 0.5 mm" },
-        { label: "Travel Speed", value: "300 mm/s (Industrial Grade)" },
-        { label: "Position Accuracy", value: "± 0.05 mm" }
-      ],
-      "Software & Interface": [
-        { label: "Connectivity", value: "Wi-Fi, Ethernet, USB, Cloud, VPN Secure Connection" },
-        { label: "Security", value: "SSO, 2FA, VPN, Admin Audit Trail" },
-        { label: "Monitoring", value: "4K Camera + Advanced AI Print Monitoring Control" },
-        { label: "User Interface", value: "10.1-inch Industrial PC Touchscreen" }
-      ],
-      "Infrastructure & Safety": [
-        { label: "Filtration", value: "HEPA H13 + Active Carbon + Active Volatiles Filtration" },
-        { label: "Power Max", value: "3200 W (Peak Demand)" },
-        { label: "Weight", value: "260 kg" },
-        { label: "Dimensions", value: "1065 × 711 × 1975 mm" }
-      ]
-    }
+    specs: [
+      {
+        category: { EN: "System Specifications", TR: "Sistem Özellikleri" },
+        items: [
+          { label: { EN: "Printing Process", TR: "Baskı İşlemi" }, value: { EN: "Industrial LSR & FDM Hybrid", TR: "Endüstriyel LSR ve FDM Hibrit" } },
+          { label: { EN: "Build Volume", TR: "Baskı Hacmi" }, value: { EN: "300 × 300 × 320 mm", TR: "300 × 300 × 320 mm" } },
+          { label: { EN: "Tool Slots", TR: "Araç Yuvaları" }, value: { EN: "4 (Standart Industrial Multi-Head)", TR: "4 (Standart Endüstriyel Çok Kafalı)" } },
+          { label: { EN: "LSR Head", TR: "LSR Kafası" }, value: { EN: "Cooled Nozzle & Volumetric Dosing", TR: "Soğutmalı Nozul ve Volümetrik Dozaj" } },
+          { label: { EN: "Slicing Software", TR: "Dilimleme Yazılımı" }, value: { EN: "LayersTech Professional Slicer (ASM Optimized)", TR: "LayersTech Profesyonel Slicer (ASM Optimize)" } }
+        ]
+      },
+      {
+        category: { EN: "Thermal & Curing", TR: "Termal ve Kürleme" },
+        items: [
+          { label: { EN: "Infrared System", TR: "Kızılötesi Sistem" }, value: { EN: "Integrated IR Curing for Silicone Vulcanization", TR: "Silikon Vulkanizasyonu için Entegre IR Kürleme" } },
+          { label: { EN: "Max Nozzle Temp", TR: "Maksimum Nozül Sıcaklığı" }, value: { EN: "300°C (FFF) / Cooled LSR Interface", TR: "300°C (FFF) / Soğutmalı LSR Arayüzü" } },
+          { label: { EN: "Max Bed Temp", TR: "Maksimum Yatak Sıcaklığı" }, value: { EN: "120°C (PID Controlled)", TR: "120°C (PID Kontrollü)" } },
+          { label: { EN: "Chamber Temp", TR: "Kabin Sıcaklığı" }, value: { EN: "Active Heating + High Efficiency Insulation", TR: "Aktif Isıtma + Yüksek Verimli Yalıtım" } }
+        ]
+      },
+      {
+        category: { EN: "Mechanical Performance", TR: "Mekanik Performans" },
+        items: [
+          { label: { EN: "X/Y Resolution", TR: "X/Y Çözünürlüğü" }, value: { EN: "6.25 μm", TR: "6.25 μm" } },
+          { label: { EN: "Z Resolution", TR: "Z Çözünürlüğü" }, value: { EN: "1.25 μm", TR: "1.25 μm" } },
+          { label: { EN: "Layer Thickness", TR: "Katman Kalınlığı" }, value: { EN: "0.05 mm - 0.5 mm", TR: "0.05 mm - 0.5 mm" } },
+          { label: { EN: "Travel Speed", TR: "Hareket Hızı" }, value: { EN: "300 mm/s (Industrial Grade)", TR: "300 mm/s (Endüstriyel Sınıf)" } },
+          { label: { EN: "Position Accuracy", TR: "Konumlandırma Hassasiyeti" }, value: { EN: "± 0.05 mm", TR: "± 0.05 mm" } }
+        ]
+      },
+      {
+        category: { EN: "Software & Interface", TR: "Yazılım ve Arayüz" },
+        items: [
+          { label: { EN: "Connectivity", TR: "Bağlantı" }, value: { EN: "Wi-Fi, Ethernet, USB, Cloud, VPN Secure Connection", TR: "Wi-Fi, Ethernet, USB, Bulut, VPN Güvenli Bağlantı" } },
+          { label: { EN: "Security", TR: "Güvenlik" }, value: { EN: "SSO, 2FA, VPN, Admin Audit Trail", TR: "SSO, 2FA, VPN, Yönetici Denetim İzi" } },
+          { label: { EN: "Monitoring", TR: "İzleme" }, value: { EN: "4K Camera + Advanced AI Print Monitoring Control", TR: "4K Kamera + Gelişmiş Yapay Zeka Baskı İzleme Kontrolü" } },
+          { label: { EN: "User Interface", TR: "Kullanıcı Arayüzü" }, value: { EN: "10.1-inch Industrial PC Touchscreen", TR: "10.1 inç Endüstriyel PC Dokunmatik Ekran" } }
+        ]
+      },
+      {
+        category: { EN: "Infrastructure & Safety", TR: "Altyapı ve Güvenlik" },
+        items: [
+          { label: { EN: "Filtration", TR: "Filtrasyon" }, value: { EN: "HEPA H13 + Active Carbon + Active Volatiles Filtration", TR: "HEPA H13 + Aktif Karbon + Aktif Uçucu Maddeler Filtrasyonu" } },
+          { label: { EN: "Power Max", TR: "Maksimum Güç" }, value: { EN: "3200 W (Peak Demand)", TR: "3200 W (Tepe Talebi)" } },
+          { label: { EN: "Weight", TR: "Ağırlık" }, value: { EN: "260 kg", TR: "260 kg" } },
+          { label: { EN: "Dimensions", TR: "Boyutlar" }, value: { EN: "1065 × 711 × 1975 mm", TR: "1065 × 711 × 1975 mm" } }
+        ]
+      }
+    ]
   }
 };
 
@@ -337,7 +398,7 @@ export default function ProductDetail() {
         <div className="container mx-auto px-6 max-w-[1400px]">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-               <span className="text-[#F26522] font-black text-[11px] tracking-[0.5em] uppercase block mb-8 leading-none underline underline-offset-8 decoration-2 decoration-[#F26522]/20">{product.subtitle}</span>
+               <span className="text-[#F26522] font-black text-[11px] tracking-[0.5em] uppercase block mb-8 leading-none underline underline-offset-8 decoration-2 decoration-[#F26522]/20">{t(product.subtitle)}</span>
                <h1 className="text-5xl sm:text-7xl lg:text-[120px] font-black text-[#1a1a1a] dark:text-white uppercase leading-[0.8] tracking-tighter mb-12">
                  {product.name.includes("PRO") ? (
                    <>
@@ -348,7 +409,7 @@ export default function ProductDetail() {
                    product.name
                  )}
                </h1>
-               <p className="text-lg md:text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed max-w-xl mb-16">{product.description}</p>
+               <p className="text-lg md:text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed max-w-xl mb-16">{t(product.description)}</p>
                 <div className="flex flex-col sm:flex-row items-center gap-10 mb-16">
                   <Button className="h-16 px-12 bg-[#F26522] text-white rounded-full text-[11px] font-black tracking-[0.2em] hover:bg-[#1a1a1a] dark:hover:bg-white dark:hover:text-black transition-all uppercase shadow-2xl shadow-[#F26522]/20">
                     {t({ EN: "Request a Quote", TR: "Teklif Alın" })}
@@ -409,22 +470,22 @@ export default function ProductDetail() {
                     <div className="absolute inset-0 bg-gradient-to-br from-[#F26522]/0 via-[#F26522]/0 to-[#F26522]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-1000 pointer-events-none"></div>
                     <div className={cn("flex-1 order-2 relative z-10", i % 2 === 0 ? "lg:order-2" : "lg:order-1")}>
                        <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black mb-8 uppercase tracking-tighter leading-tight text-transparent bg-clip-text bg-gradient-to-r from-[#1a1a1a] via-[#1a1a1a] to-[#F26522] dark:from-white dark:via-white dark:to-[#F26522] group-hover:from-[#F26522] group-hover:to-[#D35400] transition-all duration-700">
-                          {f.title}
+                          {t(f.title)}
                        </h3>
-                       <p className="text-black/70 dark:text-white/70 text-xl font-light leading-relaxed mb-10 max-w-2xl">{f.desc}</p>
+                       <p className="text-black/70 dark:text-white/70 text-xl font-light leading-relaxed mb-10 max-w-2xl">{t(f.desc)}</p>
                        <ul className="space-y-4">
                          {(f.bullets || []).map((bullet, idx) => (
                            <li key={idx} className="flex items-start gap-4 group/bullet hover:-translate-y-0.5 transition-transform duration-300 cursor-default">
                              <div className="w-2 h-2 rounded-full bg-gradient-to-br from-[#F26522] to-[#D35400] mt-2 shrink-0 group-hover/bullet:scale-150 transition-all duration-300 shadow-sm shadow-[#F26522]/40" />
-                             <span className="text-black/90 dark:text-white/90 text-lg font-medium leading-tight transition-colors group-hover/bullet:text-[#F26522] dark:group-hover/bullet:text-[#F26522]">{bullet}</span>
+                             <span className="text-black/90 dark:text-white/90 text-lg font-medium leading-tight transition-colors group-hover/bullet:text-[#F26522] dark:group-hover/bullet:text-[#F26522]">{t(bullet)}</span>
                            </li>
                          ))}
                        </ul>
                     </div>
                     <div className={cn("flex-1 w-full order-1", i % 2 === 0 ? "lg:order-1" : "lg:order-2")}>
                       <div className="aspect-[4/3] bg-white/50 dark:bg-black/20 rounded-[40px] overflow-hidden border border-black/5 dark:border-white/10 p-4">
-                         <img src={f.image} alt={f.title} className="w-full h-full object-contain dark:brightness-110 transition-transform duration-1000 group-hover:scale-105" 
-                           onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/800x600/ffffff/F26522?text=${f.title}`; }}
+                         <img src={f.image} alt={t(f.title)} className="w-full h-full object-contain dark:brightness-110 transition-transform duration-1000 group-hover:scale-105" 
+                           onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/800x600/ffffff/F26522?text=${t(f.title)}`; }}
                          />
                       </div>
                     </div>
@@ -458,7 +519,7 @@ export default function ProductDetail() {
                             target.parentElement!.style.backgroundPosition = 'center';
                             target.parentElement!.innerHTML = `
                               <div class="absolute inset-0 bg-black/60 flex flex-col items-center justify-center p-8 text-center backdrop-blur-[2px]">
-                                <span class="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em] mb-4">${m.type}</span>
+                                <span class="text-white/40 text-[10px] font-bold uppercase tracking-[0.4em] mb-4">${t(m.type)}</span>
                                 <div class="w-12 h-[1px] bg-[#F26522] mb-4"></div>
                                 <span class="text-white font-bold text-4xl leading-[0.8] uppercase tracking-tighter text-wrap">${m.name}</span>
                               </div>`;
@@ -466,7 +527,7 @@ export default function ProductDetail() {
                         />
                       </div>
                       <div className="px-4">
-                        <p className="text-[10px] font-extrabold tracking-[0.3em] text-[#F26522] uppercase mb-3">{m.type}</p>
+                        <p className="text-[10px] font-extrabold tracking-[0.3em] text-[#F26522] uppercase mb-3">{t(m.type)}</p>
                         <h4 className="text-4xl font-black uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">{m.name}</h4>
                       </div>
                    </div>
@@ -491,16 +552,16 @@ export default function ProductDetail() {
                     </div>
                   </div>
                   <div className="lg:col-span-8 flex flex-col gap-32">
-                    {Object.entries(product.specs).map(([category, items]) => (
-                      <div key={category}>
+                    {product.specs.map((specSection, idx) => (
+                      <div key={idx}>
                         <h4 className="flex items-center gap-4 text-[#F26522] text-[11px] font-black tracking-[0.5em] uppercase mb-12 pb-6 border-b border-white/10">
-                          {category}
+                          {t(specSection.category)}
                         </h4>
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-0">
-                           {(items as {label: string, value: string}[]).map((item, idx) => (
-                             <div key={idx} className="flex flex-col py-8 border-b border-white/5 hover:bg-white/5 px-6 transition-all group">
-                               <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-3 group-hover:text-[#F26522] transition-colors">{item.label}</span>
-                               <span className="text-2xl font-black text-white leading-none tracking-tight">{item.value}</span>
+                           {specSection.items.map((item, idxx) => (
+                             <div key={idxx} className="flex flex-col py-8 border-b border-white/5 hover:bg-white/5 px-6 transition-all group">
+                               <span className="text-[10px] uppercase tracking-[0.3em] text-white/50 mb-3 group-hover:text-[#F26522] transition-colors">{t(item.label)}</span>
+                               <span className="text-2xl font-black text-white leading-none tracking-tight">{t(item.value)}</span>
                              </div>
                            ))}
                         </div>
