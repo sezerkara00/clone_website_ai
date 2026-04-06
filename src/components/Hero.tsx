@@ -31,6 +31,53 @@ export function Hero() {
     }
   };
 
+  useEffect(() => {
+    let isScrolling = false;
+    let touchStartY = 0;
+
+    const performScroll = () => {
+      const nextSection = document.getElementById("printer-range");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    const handleWheel = (e: WheelEvent) => {
+      if (window.scrollY < 50 && e.deltaY > 0 && !isScrolling) {
+        e.preventDefault(); 
+        isScrolling = true;
+        performScroll();
+        setTimeout(() => { isScrolling = false; }, 1000);
+      }
+    };
+
+    const handleTouchStart = (e: TouchEvent) => {
+      touchStartY = e.touches[0].clientY;
+    };
+
+    const handleTouchMove = (e: TouchEvent) => {
+      if (window.scrollY < 50 && !isScrolling) {
+        const currentY = e.touches[0].clientY;
+        if (touchStartY - currentY > 30) {
+          e.preventDefault();
+          isScrolling = true;
+          performScroll();
+          setTimeout(() => { isScrolling = false; }, 1000);
+        }
+      }
+    };
+
+    window.addEventListener("wheel", handleWheel, { passive: false });
+    window.addEventListener("touchstart", handleTouchStart, { passive: true });
+    window.addEventListener("touchmove", handleTouchMove, { passive: false });
+
+    return () => {
+      window.removeEventListener("wheel", handleWheel);
+      window.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener("touchmove", handleTouchMove);
+    };
+  }, []);
+
   return (
     <section className="relative h-screen w-full overflow-hidden bg-black">
       {/* Background Images Cycling */}
