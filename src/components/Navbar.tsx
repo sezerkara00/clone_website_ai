@@ -49,12 +49,9 @@ export function Navbar() {
         <div className="container mx-auto px-6 flex items-center justify-between max-w-[1400px]">
           <Link href="/" className="flex-shrink-0 transition-transform duration-300 hover:scale-105">
             <img 
-              src="https://layerstech.co.uk/wp-content/uploads/2026/02/s_logo-scaled.png" 
+              src={!isTransparent && theme === 'light' ? "/images/Saydam zeminde orijinal_V2.png" : "/images/Saydam zeminde orijinal_V4.png"} 
               alt="LayersTech Logo" 
-              className={cn(
-                "h-8 md:h-10 w-auto transition-all",
-                !isTransparent && theme === 'light' ? "invert hue-rotate-180 saturate-150" : ""
-              )} 
+              className="h-10 md:h-12 w-auto transition-all"
             />
           </Link>
           

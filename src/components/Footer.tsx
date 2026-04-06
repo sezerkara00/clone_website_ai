@@ -36,7 +36,7 @@ export function Footer() {
           <div className="space-y-8">
             <Link href="/">
               <img 
-                src="https://layerstech.co.uk/wp-content/uploads/2026/02/s_logo-scaled.png" 
+                src="/images/Saydam zeminde orijinal_V4.png" 
                 alt="LayersTech Logo" 
                 className="h-10 w-auto mb-8" 
               />
@@ -145,7 +145,7 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-8">
           <p className="text-[13px] text-white/30">
-            © {currentYear} LAYERSTECH GMBH & CO. KG. All rights reserved.
+            © {currentYear} LAYERSTECH LTD. All rights reserved.
           </p>
           
           <div className="flex items-center gap-8 text-[12px] font-bold tracking-widest text-white/30 uppercase">

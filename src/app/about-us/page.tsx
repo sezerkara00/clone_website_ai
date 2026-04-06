@@ -223,27 +223,27 @@ export default function AboutUs() {
                        })}</p>
                     </div>
                  </div>
-                 <div className="grid grid-cols-2 gap-8">
-                    <div className="p-12 bg-[#F26522] rounded-[60px] text-white">
-                       <p className="text-6xl font-black mb-2 tracking-tighter text-black/20">20+</p>
-                       <p className="text-lg font-black uppercase tracking-tighter leading-none">{t({ EN: "Years in 3D Printing", TR: "3D Baskıda 20+ Yıl" })}</p>
+                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+                    <div className="p-10 md:p-12 bg-[#F26522] rounded-[40px] md:rounded-[60px] text-white">
+                       <p className="text-5xl md:text-6xl font-black mb-2 tracking-tighter text-black/20">20+</p>
+                       <p className="text-base md:text-lg font-black uppercase tracking-tighter leading-none">{t({ EN: "Years in 3D Printing", TR: "3D Baskıda 20+ Yıl" })}</p>
                     </div>
-                    <div className="p-12 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-[60px]">
-                       <p className="text-6xl font-black mb-2 tracking-tighter text-[#F26522] opacity-20">Global</p>
-                       <p className="text-lg font-black uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">{t({ EN: "Standard Certified", TR: "Standart Sertifikalı" })}</p>
+                    <div className="p-10 md:p-12 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-[40px] md:rounded-[60px]">
+                       <p className="text-5xl md:text-6xl font-black mb-2 tracking-tighter text-[#F26522] opacity-20">Global</p>
+                       <p className="text-base md:text-lg font-black uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">{t({ EN: "Standard Certified", TR: "Standart Sertifikalı" })}</p>
                     </div>
                  </div>
               </div>
 
               {/* Call to Action Haus */}
-              <div className="mt-40 p-12 md:p-32 bg-gradient-to-br from-[#1a1a1a] to-black rounded-[80px] text-center relative overflow-hidden group">
+              <div className="mt-20 md:mt-40 p-8 md:p-32 bg-gradient-to-br from-[#1a1a1a] to-black rounded-[40px] md:rounded-[80px] text-center relative overflow-hidden group">
                 <div className="absolute inset-0 bg-[#F26522] opacity-0 group-hover:opacity-5 transition-opacity duration-1000"></div>
-                <h3 className="text-white text-4xl md:text-7xl font-black uppercase tracking-tighter mb-12 max-w-4xl mx-auto leading-none">
+                <h3 className="text-white text-3xl md:text-7xl font-black uppercase tracking-tighter mb-8 md:mb-12 max-w-4xl mx-auto leading-none">
                   {t({ EN: "Ready to take your production to new heights?", TR: "Üretiminizi yeni zirvelere taşımaya hazır mısınız?" })}
                 </h3>
-                <Link href="/contact" className="inline-flex items-center gap-6 bg-[#F26522] text-white px-16 py-8 rounded-full font-black tracking-[0.3em] text-[12px] hover:bg-white hover:text-black transition-all shadow-2xl uppercase">
-                   {t({ EN: "Consult an Expert", TR: "Bir Uzmana Danışın" })}
-                   <ChevronRight className="w-5 h-5 transition-transform group-hover:translate-x-2" />
+                <Link href="/contact" className="inline-flex items-center gap-4 md:gap-6 bg-[#F26522] text-white px-10 md:px-16 py-6 md:py-8 rounded-full font-black tracking-[0.3em] hover:bg-white hover:text-black transition-all shadow-2xl uppercase">
+                   <span className="text-[11px] md:text-[12px]">{t({ EN: "Consult an Expert", TR: "Bir Uzmana Danışın" })}</span>
+                   <ChevronRight className="w-4 h-4 md:w-5 md:h-5 transition-transform group-hover:translate-x-2" />
                 </Link>
               </div>
            </div>

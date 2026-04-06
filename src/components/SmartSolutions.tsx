@@ -29,7 +29,7 @@ const highlights = [
   }
 ];
 
-export function SmartSolutions() {
+export default function SmartSolutions() {
   const { t } = useLanguage();
 
   return (
@@ -73,22 +73,28 @@ export function SmartSolutions() {
         </div>
         
         <div className="mt-32 p-12 md:p-24 rounded-[60px] bg-gradient-to-br from-[#F26522] to-[#D35400] relative overflow-hidden group shadow-2xl">
-          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12">
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12 text-white">
             <div>
-              <h3 className="text-3xl md:text-5xl font-bold mb-6 uppercase">Ready for Series Production?</h3>
-              <p className="text-white/80 text-lg mb-10 max-w-xl">
-                We accompany you on your way to industrial 3D printing. Discover the possibilities for your industry.
+              <h3 className="text-3xl md:text-6xl font-black mb-6 uppercase tracking-tighter leading-none">
+                {t({ EN: "Ready for Series Production?", TR: "Seri Üretime Hazır Mısınız?" })}
+              </h3>
+              <p className="text-white/90 text-lg mb-10 max-w-xl font-light leading-relaxed">
+                {t({ 
+                  EN: "We accompany you on your way to industrial 3D printing. Discover the possibilities for your industry.", 
+                  TR: "Endüstriyel 3D baskı yolculuğunuzda size eşlik ediyoruz. Sektörünüz için sunduğumuz olanakları keşfedin." 
+                })}
               </p>
-              <button className="bg-white text-[#1a1a1a] px-10 py-5 rounded-sm font-bold tracking-widest text-[13px] hover:bg-[#1a1a1a] hover:text-white transition-all duration-300 flex items-center gap-3">
+              <button className="bg-white text-[#1a1a1a] px-10 py-5 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-[#1a1a1a] hover:text-white transition-all duration-500 flex items-center gap-3 uppercase shadow-xl hover:scale-105">
                 <BookOpen className="w-5 h-5" />
-                EXPLORE CASE STUDIES
+                {t({ EN: "EXPLORE CASE STUDIES", TR: "BAŞARI HİKAYELERİNİ İNCELE" })}
               </button>
             </div>
-            <div className="hidden md:block scale-110 group-hover:scale-125 transition-transform duration-[2000ms]">
+            <div className="hidden md:block relative">
+               <div className="absolute -inset-10 bg-white/10 blur-[100px] rounded-full group-hover:scale-150 transition-transform duration-[3000ms]"></div>
                <img 
-                 src="https://images.unsplash.com/photo-1565043581454-220239ed75d4?w=800&q=80" 
-                 alt="Series Production" 
-                 className="rounded-2xl shadow-2xl"
+                 src="/images/series-production-parts.png" 
+                 alt="Series Production Parts" 
+                 className="relative z-10 rounded-3xl shadow-2xl transform transition-transform duration-[3000ms] group-hover:scale-105"
                />
             </div>
           </div>

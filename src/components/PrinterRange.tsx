@@ -35,7 +35,7 @@ const products = [
 export function PrinterRange() {
   const { t } = useLanguage();
   return (
-    <section className="py-24 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
+    <section id="printer-range" className="py-24 bg-white dark:bg-[#0a0a0a] transition-colors duration-500">
       <div className="container mx-auto px-6 max-w-[1400px]">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
           <div className="max-w-2xl">

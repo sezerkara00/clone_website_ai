@@ -7,6 +7,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { ArrowRight, Cpu, Layers, Zap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
+import FounderVision from "@/components/FounderVision";
+import SmartSolutions from "@/components/SmartSolutions";
 
 export default function PrintersPage() {
   const { t } = useLanguage();
@@ -83,8 +85,8 @@ export default function PrintersPage() {
             </h1>
             <p className="text-xl text-black/50 dark:text-white/50 font-light max-w-2xl leading-relaxed">
               {t({
-                EN: "Redefining additive manufacturing with world-first quad-tool flexibility and patented thermal curing technology.",
-                TR: "Dünyanın ilk dört kafa esnekliği ve patentli termal kürleme teknolojisi ile katmanlı üretimi yeniden tanımlıyoruz."
+                EN: "Redefining additive manufacturing with world-first quad-tool flexibility and thermal curing technology.",
+                TR: "Dünyanın ilk dört kafa esnekliği ve termal kürleme teknolojisi ile katmanlı üretimi yeniden tanımlıyoruz."
               })}
             </p>
           </header>
@@ -305,6 +307,9 @@ export default function PrintersPage() {
           </div>
         </div>
       </section>
+
+      <SmartSolutions />
+      <FounderVision />
     </div>
   );
 }
