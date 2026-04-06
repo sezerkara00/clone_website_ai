@@ -106,10 +106,10 @@ export function Hero() {
       
       <div className="relative z-10 h-full flex flex-col items-center justify-center text-center px-6">
         <div className="container mx-auto max-w-5xl">
-          <h1 className="text-white text-5xl md:text-7xl lg:text-[80px] xl:text-[95px] font-black leading-[0.95] mb-8 lg:mb-10 tracking-tighter drop-shadow-2xl uppercase italic">
+          <h1 className="text-white text-5xl md:text-7xl lg:text-[80px] xl:text-[95px] font-black leading-[0.95] mb-8 lg:mb-10 tracking-tighter drop-shadow-2xl uppercase">
             {t({ EN: "Industrial 3D", TR: "ENDÜSTRİYEL 3D" })} <br />
             <span className="text-white">{t({ EN: "Printing", TR: "YAZICI" })}</span> <br />
-            <span className="text-[#F26522] not-italic">{t({ EN: "Systems", TR: "SİSTEMLERİ" })}</span>
+            <span className="text-[#F26522]">{t({ EN: "Systems", TR: "SİSTEMLERİ" })}</span>
           </h1>
           
           <div className="mb-10 lg:mb-16">

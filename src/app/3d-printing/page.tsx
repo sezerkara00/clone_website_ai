@@ -196,6 +196,8 @@ export default function ThreeDPrinting() {
               width={800} 
               height={800} 
               className="w-auto h-[120%] rotate-12"
+              priority
+              unoptimized
             />
           </div>
           <div className="container mx-auto px-6">
