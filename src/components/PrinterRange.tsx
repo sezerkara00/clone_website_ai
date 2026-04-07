@@ -87,7 +87,7 @@ export function PrinterRange() {
                 <div className="aspect-square relative flex items-center justify-center p-12 bg-white/[0.8] dark:bg-white/[0.02]">
                   <img 
                     src={product.image} 
-                    alt={product.name} 
+                    alt={t(product.name)} 
                     className="max-w-full max-h-full object-contain group-hover:scale-105 transition-transform duration-[2000ms]" 
                     onError={(e) => {
                       const target = e.target as HTMLImageElement;
