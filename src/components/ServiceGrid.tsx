@@ -5,22 +5,22 @@ const services = [
   {
     title: "SLS Technology",
     description: "Selective Laser Sintering for high-durability polyamide parts.",
-    icon: "/images/SLS2.png",
+    icon: "/images/SLS2.webp",
   },
   {
     title: "DMLS Technology",
     description: "Direct Metal Laser Sintering for high-performance metal components.",
-    icon: "/images/DMLS2-4.png",
+    icon: "/images/DMLS2-4.webp",
   },
   {
     title: "3D Modeling",
     description: "Expert 3D modeling and engineering services for rapid development.",
-    icon: "/images/3d-baski-hizmeti-1-1.png",
+    icon: "/images/3d-baski-hizmeti-1-1.webp",
   },
   {
     title: "Additive Manufacturing",
     description: "Industrial scale additive manufacturing solutions for batch production.",
-    icon: "/images/eklemeli-imalat-1.png",
+    icon: "/images/eklemeli-imalat-1.webp",
   },
 ];
 

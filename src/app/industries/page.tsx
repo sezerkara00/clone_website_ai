@@ -126,7 +126,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      images: ["/images/kulak.jpg", "/images/el.webp", "/images/aort.webp"]
+      images: ["/images/kulak.webp", "/images/el.webp", "/images/aort.webp"]
     },
     {
       id: "aerospace",
@@ -162,7 +162,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      images: ["/images/hava1.jpg", "/images/hava2.webp", "/images/hava_ai.png"]
+      images: ["/images/hava1.webp", "/images/hava2.webp", "/images/hava_ai.webp"]
     },
     {
       id: "automotive",
@@ -198,7 +198,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      images: ["/images/oto1_ai.png", "/images/blue_gasket_ai.png", "/images/oto3.webp"]
+      images: ["/images/oto1_ai.webp", "/images/blue_gasket_ai.webp", "/images/oto3.webp"]
     },
     {
       id: "robotics",
@@ -263,7 +263,7 @@ export default function IndustriesPage() {
           }
         }
       ],
-      images: ["/images/giyim1.jpg", "/images/giyim2.webp", "/images/giyim3.jpg"]
+      images: ["/images/giyim1.webp", "/images/giyim2.webp", "/images/giyim3.webp"]
     }
   ];
 
@@ -300,7 +300,7 @@ export default function IndustriesPage() {
                   <div className="absolute -inset-1 bg-gradient-to-r from-[#F26522] to-white/10 rounded-[60px] blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                   <div className="relative aspect-square overflow-hidden rounded-[60px] border border-white/5 bg-black/40 backdrop-blur-3xl shadow-2xl">
                     <Image 
-                      src="/images/industrial_hero.png" 
+                      src="/images/industrial_hero.webp" 
                       alt="Industrial 3D Silicone Printing Hero" 
                       fill
                       unoptimized

@@ -10,17 +10,95 @@ import { useLanguage } from "@/context/LanguageContext";
 
 // Asset URLs mapping
 const materialImages = {
-  pla: "/images/materials/pla.jpg",
-  abs: "/images/materials/abs.jpg",
-  pva: "/images/materials/pva.jpg",
-  hips: "/images/materials/hips.jpg",
-  tpu: "/images/materials/tpu.jpg",
-  cbn: "/images/materials/cbn.jpg",
-  pc: "/images/materials/pc.jpg",
-  petg: "/images/materials/petg.jpg",
-  lsr: "/images/materials/lsr.jpg",
-  rtv: "/images/materials/rtv.jpg",
+  pla: "/images/materials/pla.webp",
+  abs: "/images/materials/abs.webp",
+  pva: "/images/materials/pva.webp",
+  hips: "/images/materials/hips.webp",
+  tpu: "/images/materials/tpu.webp",
+  cbn: "/images/materials/cbn.webp",
+  pc: "/images/materials/pc.webp",
+  petg: "/images/materials/petg.webp",
+  lsr: "/images/materials/lsr.webp",
+  rtv: "/images/materials/rtv.webp",
 };
+
+import Image from "next/image";
+
+const FeatureSlider = ({ images, title, t }: { images: string[], title: any, t: any }) => {
+  const [current, setCurrent] = useState(0);
+
+  useEffect(() => {
+    if (images.length <= current) setCurrent(0);
+    if (images.length <= 1) return;
+    const timer = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, [images.length, current]);
+
+  const next = () => setCurrent((prev) => (prev + 1) % images.length);
+  const prev = () => setCurrent((prev) => (prev - 1 + images.length) % images.length);
+
+  return (
+    <div className="relative w-full h-full group/gallery bg-[#f8f8f8]">
+      {images.map((img, i) => (
+        <div 
+          key={i} 
+          className={cn(
+            "absolute inset-0 transition-all duration-1000 ease-in-out",
+            i === current ? 'opacity-100 scale-100 z-10' : 'opacity-0 scale-110 z-0'
+          )}
+        >
+          <Image 
+            src={img} 
+            alt={`${t(title)} - ${i + 1}`} 
+            fill
+            unoptimized
+            className={cn(
+              "w-full h-full transition-transform duration-[6000ms] group-hover:scale-105",
+              img.includes('tek_renk') || img.includes('cift_parca') || img.includes('silion_parts') || img.includes('robot') || img.includes('giyim') ? 'object-contain p-8' : 'object-cover'
+            )} 
+          />
+          <div className={cn(
+            "absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60",
+            (img.includes('tek_renk') || img.includes('cift_parca') || img.includes('silion_parts') || img.includes('robot') || img.includes('giyim')) ? 'hidden' : ''
+          )}></div>
+        </div>
+      ))}
+      
+      {images.length > 1 && (
+        <>
+          <button 
+            onClick={(e) => { e.preventDefault(); prev(); }}
+            className="absolute left-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover/gallery:opacity-100 transition-all hover:bg-[#F26522] hover:scale-110"
+          >
+            <Lucide.ChevronLeft className="w-5 h-5" />
+          </button>
+          <button 
+            onClick={(e) => { e.preventDefault(); next(); }}
+            className="absolute right-4 top-1/2 -translate-y-1/2 z-30 p-3 rounded-full bg-black/20 backdrop-blur-md border border-white/10 text-white opacity-0 group-hover/gallery:opacity-100 transition-all hover:bg-[#F26522] hover:scale-110"
+          >
+            <Lucide.ChevronRight className="w-5 h-5" />
+          </button>
+
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+            {images.map((_, i) => (
+              <button 
+                key={i} 
+                onClick={() => setCurrent(i)}
+                className={cn(
+                  "w-1.5 h-1.5 rounded-full transition-all duration-500",
+                  i === current ? 'bg-[#F26522] w-6' : 'bg-white/30 hover:bg-white/50'
+                )}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+};
+
 
 interface Translation {
   EN: string;
@@ -31,7 +109,7 @@ interface Feature {
   title: Translation;
   desc: Translation;
   bullets: Translation[];
-  image: string;
+  image: string | string[];
 }
 
 interface Material {
@@ -65,7 +143,7 @@ const productData: Record<string, Product> = {
     name: "LayersTech M1",
     subtitle: { EN: "Industrial FFF/FDM 3D Printer", TR: "Endüstriyel FFF/FDM 3D Yazıcı" },
     description: { EN: "Built for repeatable, production-ready parts with high-temperature capability and advanced AI monitoring. Engineered for industrial 24/7 reliability.", TR: "Yüksek sıcaklık kapasitesi ve gelişmiş AI izleme ile tekrarlanabilir, üretime hazır parçalar için tasarlandı. Endüstriyel 7/24 güvenilirlik için geliştirildi." },
-    image: "/images/m1pro_dark.png",
+    image: "/images/m1pro_dark.webp",
     features: [
       {
         title: { EN: "Industrial Stability, Thermal Control, Consistent Output", TR: "Endüstriyel Stabilite, Termal Kontrol, Tutarlı Çıktı" },
@@ -76,7 +154,7 @@ const productData: Record<string, Product> = {
           { EN: "Enclosed, insulated chamber for more stable printing conditions", TR: "Daha stabil baskı koşulları için kapalı, yalıtımlı kabin" },
           { EN: "Engineered for industrial 24/7 production reliability", TR: "Endüstriyel 7/24 üretim güvenilirliği için üretildi" }
         ],
-        image: "/images/w_parts.png"
+        image: "/images/w_parts.webp"
       },
       {
         title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4 Takımlı Sistem)" },
@@ -87,18 +165,18 @@ const productData: Record<string, Product> = {
           { EN: "Optimized for repeatable production runs and continuous operation", TR: "Tekrarlanabilir üretim çalışmaları ve sürekli operasyon için optimize edildi" },
           { EN: "Compatible with additional tool types for expanding use cases", TR: "Genişleyen kullanım senaryoları için ek araç türleriyle uyumlu" }
         ],
-        image: "/images/tools.png"
+        image: "/images/tools.webp"
       },
       {
         title: { EN: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment", TR: "Akıllı Kalibrasyon: Otomatik Z + Kamera Destekli XY Hizalama" },
-        desc: { EN: "M1 reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy-akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çok takımlı yapılandırmalarda çok değerlidir." },
+        desc: { EN: "M1 reduces setup time with calibration tools designed for production. Advanced automatic sensing enables precise nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Gelişmiş otomatik sensörler, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çok takımlı yapılandırmalarda çok değerlidir." },
         bullets: [
-          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy-akımı algılama" },
+          { EN: "Automatic height sensing for precise nozzle Z offset control", TR: "Hassas nozül Z ofseti kontrolü için tam otomatik algılama" },
           { EN: "Camera-assisted XY offset calibration for faster alignment", TR: "Daha hızlı hizalama için kamera destekli XY ofseti kalibrasyonu" },
           { EN: "Better repeatability when switching tools/materials", TR: "Takımları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
           { EN: "More reliable first layers with less trial-and-error", TR: "Daha az deneme-yanılma ile daha güvenilir ilk katmanlar" }
         ],
-        image: "/images/smart-calibration.png"
+        image: "/images/smart-calibration.webp"
       },
       {
         title: { EN: "AI Print Monitoring: Catch Failures Early, Save Time and Material", TR: "Yapay Zeka Baskı İzleme: Hataları Erken Yakalayın, Zaman ve Malzeme Tasarrufu Sağlayın" },
@@ -109,7 +187,7 @@ const productData: Record<string, Product> = {
           { EN: "Print cycle monitoring for better production oversight", TR: "Daha iyi üretim denetimi için baskı döngüsü izleme" },
           { EN: "Supports more reliable unattended printing", TR: "Daha güvenilir gözetimsiz baskıyı destekler" }
         ],
-        image: "/images/spaghetti.png"
+        image: "/images/spaghetti.webp"
       },
       {
         title: { EN: "Materials, Software, and Secure Connectivity for Teams", TR: "Ekipler için Malzemeler, Yazılım ve Güvenli Bağlantı" },
@@ -120,7 +198,7 @@ const productData: Record<string, Product> = {
           { EN: "Secure access: 2FA, organization admin roles, SSO", TR: "Güvenli erişim: 2FA, organizasyon yönetici rolleri, SSO" },
           { EN: "Ethernet connectivity and wireless updates; remote access and camera workflow", TR: "Ethernet bağlantısı ve kablosuz güncellemeler; uzaktan erişim ve kamera iş akışı" }
         ],
-        image: "/images/parts.png"
+        image: "/images/parts.webp"
       },
       {
         title: { EN: "Support & Service for Production Teams", TR: "Üretim Ekipleri için Destek ve Servis" },
@@ -131,7 +209,7 @@ const productData: Record<string, Product> = {
           { EN: "Maintenance planning for long-term reliability", TR: "Uzun vadeli güvenilirlik için bakım planlaması" },
           { EN: "Secure access controls (2FA / roles / SSO) for team environments", TR: "Ekip ortamları için güvenli erişim kontrolleri (2FA / roller / SSO)" }
         ],
-        image: "/images/support.png"
+        image: "/images/support.webp"
       }
     ],
     materials: [
@@ -198,7 +276,7 @@ const productData: Record<string, Product> = {
     name: "LayersTech M1PRO",
     subtitle: { EN: "Industrial Silicone & LSR System", TR: "Endüstriyel Silikon & LSR Sistemi" },
     description: { EN: "The M1PRO is designed for liquid-to-solid conversion of high-grade silicons and rubbers (LSR/RTV) alongside engineering polymers.", TR: "M1PRO, mühendislik polimerlerinin yanı sıra yüksek kaliteli silikonların ve kauçukların (LSR/RTV) sıvıdan katıya dönüştürülmesi için tasarlanmıştır." },
-    image: "/images/m1pro_dark.png",
+    image: "/images/m1pro_dark.webp",
     features: [
       {
         title: { EN: "Advanced Silicone (LSR) Printing System", TR: "Gelişmiş Silikon (LSR) Baskı Sistemi" },
@@ -209,7 +287,7 @@ const productData: Record<string, Product> = {
           { EN: "Integrated heater rail for layer-by-layer silicone curing", TR: "Katman katman silikon kürleme için entegre ısıtıcı rayı" },
           { EN: "Production-ready silicone manufacturing", TR: "Üretime hazır silikon üretimi" }
         ],
-        image: "/images/silion_parts.png"
+        image: ["/images/tek_renk.webp", "/images/cift_parca.webp", "/images/silion_parts.webp"]
       },
       {
         title: { EN: "Industrial Stability, Thermal Control, Consistent Output", TR: "Endüstriyel Stabilite, Termal Kontrol, Tutarlı Çıktı" },
@@ -220,7 +298,7 @@ const productData: Record<string, Product> = {
           { EN: "Enclosed, insulated chamber for more stable printing conditions", TR: "Daha stabil baskı koşulları için kapalı, yalıtımlı kabin" },
           { EN: "Designed for industrial continuous production", TR: "Endüstriyel sürekli üretim için tasarlandı" }
         ],
-        image: "/images/silicone-card.jpg"
+        image: "/images/silicone-card.webp"
       },
       {
         title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4 Takımlı Sistem)" },
@@ -231,18 +309,18 @@ const productData: Record<string, Product> = {
           { EN: "Optimized for repeatable production runs and continuous operation", TR: "Tekrarlanabilir üretim çalışmaları ve sürekli operasyon için optimize edildi" },
           { EN: "Compatible with additional tool types for expanding use cases", TR: "Genişleyen kullanım senaryoları için ek araç türleriyle uyumlu" }
         ],
-        image: "/images/tools.png"
+        image: "/images/tools.webp"
       },
       {
         title: { EN: "Smart Calibration: Automatic Z + Camera-Assisted XY Alignment", TR: "Akıllı Kalibrasyon: Otomatik Z + Kamera Destekli XY Hizalama" },
-        desc: { EN: "M1PRO reduces setup time with calibration tools designed for production. Eddy-current sensing enables automatic nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1PRO, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Eddy-akımı algılama, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çok takımlı yapılandırmalarda çok değerlidir." },
+        desc: { EN: "M1PRO reduces setup time with calibration tools designed for production. Advanced automatic sensing enables precise nozzle Z offset control for consistent first layers, while camera-assisted calibration makes XY offset alignment quicker and more repeatable—especially valuable in multi-tool configurations.", TR: "M1PRO, üretim için tasarlanmış kalibrasyon araçlarıyla kurulum süresini azaltır. Gelişmiş otomatik sensörler, tutarlı ilk katmanlar için otomatik nozül Z ofseti kontrolü sağlarken, kamera destekli kalibrasyon XY ofseti hizalamasını daha hızlı ve tekrarlanabilir hale getirir — özellikle çok takımlı yapılandırmalarda çok değerlidir." },
         bullets: [
-          { EN: "Eddy-current sensing for automatic nozzle Z offset control", TR: "Otomatik nozül Z ofseti kontrolü için Eddy-akımı algılama" },
+          { EN: "Automatic height sensing for precise nozzle Z offset control", TR: "Hassas nozül Z ofseti kontrolü için tam otomatik algılama" },
           { EN: "Camera-assisted XY offset calibration for faster alignment", TR: "Daha hızlı hizalama için kamera destekli XY ofseti kalibrasyonu" },
           { EN: "Better repeatability when switching tools/materials", TR: "Takımları/malzemeleri değiştirirken daha iyi tekrarlanabilirlik" },
           { EN: "More reliable first layers with less trial-and-error", TR: "Daha az deneme-yanılma ile daha güvenilir ilk katmanlar" }
         ],
-        image: "/images/smart-calibration.png"
+        image: "/images/smart-calibration.webp"
       },
       {
         title: { EN: "AI Print Monitoring: Catch Failures Early, Save Time and Material", TR: "Yapay Zeka Baskı İzleme: Hataları Erken Yakalayın, Zaman ve Malzeme Tasarrufu Sağlayın" },
@@ -253,7 +331,7 @@ const productData: Record<string, Product> = {
           { EN: "Print cycle monitoring for better production oversight", TR: "Daha iyi üretim denetimi için baskı döngüsü izleme" },
           { EN: "Supports more reliable unattended printing", TR: "Daha güvenilir gözetimsiz baskıyı destekler" }
         ],
-        image: "/images/spaghetti.png"
+        image: "/images/spaghetti.webp"
       },
       {
         title: { EN: "Materials, Software, and Secure Connectivity for Teams", TR: "Ekipler için Malzemeler, Yazılım ve Güvenli Bağlantı" },
@@ -264,7 +342,7 @@ const productData: Record<string, Product> = {
           { EN: "Secure access: 2FA, organization admin roles, SSO", TR: "Güvenli erişim: 2FA, organizasyon yönetici rolleri, SSO" },
           { EN: "Ethernet connectivity and wireless updates; remote access and camera workflow", TR: "Ethernet bağlantısı ve kablosuz güncellemeler; uzaktan erişim ve kamera iş akışı" }
         ],
-        image: "/images/parts.png"
+        image: "/images/parts.webp"
       },
       {
         title: { EN: "Support & Service for Production Teams", TR: "Üretim Ekipleri için Destek ve Servis" },
@@ -275,7 +353,7 @@ const productData: Record<string, Product> = {
           { EN: "Maintenance planning for long-term reliability", TR: "Uzun vadeli güvenilirlik için bakım planlaması" },
           { EN: "Secure access controls (2FA / roles / SSO) for team environments", TR: "Ekip ortamları için güvenli erişim kontrolleri (2FA / roller / SSO)" }
         ],
-        image: "/images/support.png"
+        image: "/images/support.webp"
       }
     ],
     materials: [
@@ -283,7 +361,7 @@ const productData: Record<string, Product> = {
       { name: "RTV Silicone", icon: materialImages.rtv, type: { EN: "Silicone Rubber", TR: "Silikon Kauçuk" } },
       { name: "ASA", icon: "/images/materials/asa.jpg", type: { EN: "Engineering", TR: "Mühendislik" } },
       { name: "PA", icon: "/images/materials/pa.jpg", type: { EN: "Engineering", TR: "Mühendislik" } },
-      { name: "PC-ABS", icon: "/images/materials/pcabs.jpg", type: { EN: "Engineering", TR: "Mühendislik" } },
+      { name: "PC-ABS", icon: "/images/materials/pcabs.webp", type: { EN: "Engineering", TR: "Mühendislik" } },
       { name: "PEEK", icon: "/images/materials/peek.jpg", type: { EN: "High-Performance", TR: "Yüksek Performans" } },
       { name: "PEI", icon: "/images/materials/pei.jpg", type: { EN: "High-Performance", TR: "Yüksek Performans" } },
       { name: "GF", icon: "/images/materials/gf.jpg", type: { EN: "Composite", TR: "Kompozit" } },
@@ -436,6 +514,78 @@ export default function ProductDetail() {
           </div>
         </div>
       </section>
+      
+      {/* Production Case Study / Timelapse (Only for M1PRO) */}
+      {id === "m1pro" && (
+        <section className="py-24 md:py-40 bg-[#080808] text-white relative overflow-hidden transition-colors duration-500">
+          {/* Advanced Background Effects */}
+          <div className="absolute top-1/2 left-0 -translate-y-1/2 w-[600px] h-[600px] bg-[#F26522]/10 rounded-full blur-[120px] pointer-events-none animate-pulse"></div>
+          <div className="absolute top-0 right-0 w-full h-full opacity-[0.03] transition-opacity dark:opacity-[0.05] pointer-events-none">
+            <Image src="/images/MODEL LOGO_V2.svg" alt="logo" width={1000} height={1000} className="w-full h-auto translate-x-1/4 -translate-y-1/4 rotate-12" />
+          </div>
+          
+          <div className="container mx-auto px-6 max-w-[1400px] relative z-10">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 md:gap-24 items-center">
+              
+              <div className="lg:col-span-7 order-2 lg:order-1 relative group">
+                {/* Visual Frame */}
+                <div className="relative aspect-video rounded-[40px] md:rounded-[60px] overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(242,101,34,0.15)] group-hover:shadow-[0_0_120px_rgba(242,101,34,0.25)] transition-all duration-700 bg-black">
+                  <video 
+                    src="/videos/output_11sn.mp4" 
+                    className="w-full h-full object-cover transition-transform duration-[10000ms] group-hover:scale-110"
+                    autoPlay 
+                    muted 
+                    loop 
+                    playsInline 
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60"></div>
+                  
+                  {/* Live Indicator */}
+                  <div className="absolute top-8 left-8 flex items-center gap-3 bg-black/40 backdrop-blur-md px-4 py-2 rounded-full border border-white/10">
+                    <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse"></div>
+                    <span className="text-[10px] font-black tracking-[0.2em] uppercase">{t({ EN: "Live Capture", TR: "CANLI ÇEKİM" })}</span>
+                  </div>
+
+                  <button 
+                    onClick={() => setIsVideoOpen(true)}
+                    className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-black/20"
+                  >
+                    <div className="w-20 h-20 rounded-full bg-white/10 backdrop-blur-xl border border-white/20 flex items-center justify-center scale-150 group-hover:scale-100 transition-all duration-500 shadow-2xl">
+                       <Lucide.Play className="w-8 h-8 text-[#F26522] fill-[#F26522]" />
+                    </div>
+                  </button>
+                </div>
+              </div>
+
+              <div className="lg:col-span-5 order-1 lg:order-2 space-y-10">
+                 <div>
+                    <h2 className="text-5xl md:text-8xl font-black uppercase tracking-tighter leading-[0.85] mb-10 text-white">
+                      {t({ EN: "Precision", TR: "HASSAS" })} <br />
+                      <span className="text-white/30">{t({ EN: "in Motion.", TR: "HAREKET." })}</span>
+                    </h2>
+                    <p className="text-xl text-white/50 font-light leading-relaxed max-w-xl italic border-l border-white/10 pl-6">
+                      {t({ 
+                        EN: "Discover the smart production process of LayersTech M1PRO. In this timelapse, witness our Quad-Head system depositing silicone and support materials layer-by-layer in perfect harmony. Advanced infrared (IR) technology ensures that even the most complex geometries are transformed into durable, ready-to-use industrial parts instantly.",
+                        TR: "LayersTech M1PRO'nun akıllı üretim sürecini keşfedin. Bu hızlandırılmış görüntüde, Dört Kafalı sistemimizin silikon ve destek malzemelerini katman katman nasıl kusursuz bir uyumla yerleştirdiğini izleyebilirsiniz. Gelişmiş kızılötesi (IR) teknolojisi sayesinde, en karmaşık geometriler bile biter bitmez dayanıklı ve kullanıma hazır endüstriyel parçalara dönüşür."
+                      })}
+                    </p>
+                 </div>
+
+                 <div className="pt-4">
+                    <button 
+                      onClick={() => setIsVideoOpen(true)}
+                      className="flex items-center gap-4 text-[11px] font-black tracking-[0.3em] text-[#F26522] uppercase hover:gap-6 transition-all"
+                    >
+                      {t({ EN: "View Full Quality Process", TR: "TAM KALİTE SÜRECİ İZLE" })}
+                      <Lucide.ArrowRight className="w-5 h-5" />
+                    </button>
+                 </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Tabs */}
       <div id="product-nav" ref={tabRef} className="sticky top-[80px] z-[40] bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md border-y border-black/5 dark:border-white/10 shadow-xl transition-colors">
@@ -483,10 +633,14 @@ export default function ProductDetail() {
                        </ul>
                     </div>
                     <div className={cn("flex-1 w-full order-1", i % 2 === 0 ? "lg:order-1" : "lg:order-2")}>
-                      <div className="aspect-[4/3] bg-white/50 dark:bg-black/20 rounded-[40px] overflow-hidden border border-black/5 dark:border-white/10 p-4">
-                         <img src={f.image} alt={t(f.title)} className="w-full h-full object-contain dark:brightness-110 transition-transform duration-1000 group-hover:scale-105" 
-                           onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/800x600/ffffff/F26522?text=${t(f.title)}`; }}
-                         />
+                      <div className="aspect-[4/3] bg-white/50 dark:bg-black/20 rounded-[40px] overflow-hidden border border-black/5 dark:border-white/10 p-4 relative">
+                        {Array.isArray(f.image) ? (
+                          <FeatureSlider images={f.image} title={f.title} t={t} />
+                        ) : (
+                          <img src={f.image} alt={t(f.title)} className="w-full h-full object-contain dark:brightness-110 transition-transform duration-1000 group-hover:scale-105" 
+                            onError={(e) => { (e.target as HTMLImageElement).src = `https://placehold.co/800x600/ffffff/F26522?text=${t(f.title)}`; }}
+                          />
+                        )}
                       </div>
                     </div>
                   </div>
@@ -514,7 +668,7 @@ export default function ProductDetail() {
                           onError={(e) => {
                             const target = e.target as HTMLImageElement;
                             target.style.display = 'none';
-                            target.parentElement!.style.backgroundImage = 'url("/images/industrial_spool_fallback.jpg")';
+                            target.parentElement!.style.backgroundImage = 'url("/images/industrial_spool_fallback.webp")';
                             target.parentElement!.style.backgroundSize = 'cover';
                             target.parentElement!.style.backgroundPosition = 'center';
                             target.parentElement!.innerHTML = `
@@ -586,8 +740,10 @@ export default function ProductDetail() {
            <div className="w-full max-w-6xl aspect-video bg-black rounded-3xl overflow-hidden shadow-2xl border border-white/10 relative">
               <video 
                 className="w-full h-full object-cover"
-                src="/videos/homeVideoMobile.mp4"
+                src="/videos/output_11sn.mp4"
                 autoPlay 
+                muted
+                loop
                 controls 
                 playsInline
               />

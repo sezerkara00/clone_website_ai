@@ -4,11 +4,11 @@ import { ArrowRight } from "lucide-react";
 
 const products = [
   { name: "Alumide Part", image: "/images/ALUMIDE-1.webp", category: "SLS Technology" },
-  { name: "Metal Production", image: "/images/METAL-URETIM.png", category: "DMLS Technology" },
-  { name: "PA1101 High Performance", image: "/images/PA1101.png", category: "Materials" },
-  { name: "PA3200 Glass Filled", image: "/images/PA3200.png", category: "Materials" },
-  { name: "Lightweight Parts", image: "/images/DAHA-HAFIF-PARCALAR.png", category: "Sintering" },
-  { name: "Flexible TPU", image: "/images/TPU.png", category: "3D Printing" },
+  { name: "Metal Production", image: "/images/METAL-URETIM.webp", category: "DMLS Technology" },
+  { name: "PA1101 High Performance", image: "/images/PA1101.webp", category: "Materials" },
+  { name: "PA3200 Glass Filled", image: "/images/PA3200.webp", category: "Materials" },
+  { name: "Lightweight Parts", image: "/images/DAHA-HAFIF-PARCALAR.webp", category: "Sintering" },
+  { name: "Flexible TPU", image: "/images/TPU.webp", category: "3D Printing" },
 ];
 
 export function ProductShowcase() {

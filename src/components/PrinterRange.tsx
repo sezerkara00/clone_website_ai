@@ -8,27 +8,48 @@ import { useLanguage } from "@/context/LanguageContext";
 const products = [
   { 
     id: "m1",
-    name: "LayersTech M1", 
-    image: "/images/m1pro_dark.png",
-    category: "INDUSTRIAL FFF/FDM",
-    description: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.",
-    features: ["High-Temp (380°C)", "300 x 300 x 320 mm", "AI Failure Detection"]
+    name: { EN: "LayersTech M1", TR: "LayersTech M1" }, 
+    image: "/images/m1pro_dark.webp",
+    category: { EN: "INDUSTRIAL FFF/FDM", TR: "ENDÜSTRİYEL FFF/FDM" },
+    description: {
+      EN: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.",
+      TR: "Yüksek sıcaklık kabiliyeti ve yapay zeka destekli izleme ile seri üretime hazır plastik parçalar için tasarlandı."
+    },
+    features: [
+      { EN: "High-Temp (380°C)", TR: "Yüksek Sıcaklık (380°C)" },
+      { EN: "300 x 300 x 320 mm", TR: "300 x 300 x 320 mm" },
+      { EN: "AI Failure Detection", TR: "Yapay Zeka Hata Algılama" }
+    ]
   },
   { 
     id: "m1pro",
-    name: "LayersTech M1PRO", 
-    image: "/images/m1pro_dark.png",
-    category: "SILICONE / LSR SYSTEM",
-    description: "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control.",
-    features: ["Real Silicone (LSR)", "4 Tool Change System", "Industrial Enclosure"]
+    name: { EN: "LayersTech M1PRO", TR: "LayersTech M1PRO" }, 
+    image: "/images/m1pro_dark.webp",
+    category: { EN: "SILICONE / LSR SYSTEM", TR: "SİLİKON / LSR SİSTEMİ" },
+    description: {
+      EN: "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control.",
+      TR: "Esnek silikon ve kauçuk parçalar için gelişmiş proses kontrolüne sahip özel endüstriyel 3D yazıcı."
+    },
+    features: [
+      { EN: "Real Silicone (LSR)", TR: "Gerçek Silikon (LSR)" },
+      { EN: "4 Tool Change System", TR: "4 Kafa Değiştirme Sistemi" },
+      { EN: "Industrial Enclosure", TR: "Endüstriyel Kabin" }
+    ]
   },
   { 
     id: "custom",
-    name: "Custom Solutions", 
+    name: { EN: "Custom Solutions", TR: "Özel Çözümler" }, 
     image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=800&q=80",
-    category: "ENGINEERING",
-    description: "Tailored additive manufacturing systems designed for specific industrial requirements and large-scale projects.",
-    features: ["Custom Build Volumes", "Multi-Material Setup", "Full Integration"]
+    category: { EN: "ENGINEERING", TR: "MÜHENDİSLİK" },
+    description: {
+      EN: "Tailored additive manufacturing systems designed for specific industrial requirements and large-scale projects.",
+      TR: "Belirli endüstriyel gereksinimler ve büyük ölçekli projeler için tasarlanmış özel katmanlı üretim sistemleri."
+    },
+    features: [
+      { EN: "Custom Build Volumes", TR: "Özel Baskı Hacimleri" },
+      { EN: "Multi-Material Setup", TR: "Çoklu Malzeme Kurulumu" },
+      { EN: "Full Integration", TR: "Tam Entegrasyon" }
+    ]
   },
 ];
 
@@ -75,7 +96,7 @@ export function PrinterRange() {
                   />
                   <div className="absolute top-8 left-8">
                     <span className="bg-white dark:bg-[#1a1a1a] px-5 py-2 rounded-full text-[10px] font-black tracking-widest text-[#F26522] shadow-xl border border-black/5 dark:border-white/10">
-                      {product.category}
+                      {t(product.category)}
                     </span>
                   </div>
                 </div>
@@ -83,27 +104,17 @@ export function PrinterRange() {
               
               <div className="p-10 pt-10 flex flex-col flex-grow">
                 <Link href={product.id === "custom" ? "/3d-printers" : `/3d-printers/${product.id}`} className="hover:text-[#F26522] transition-colors">
-                  <h3 className="text-3xl font-black text-[#1a1a1a] dark:text-white mb-4 tracking-tighter uppercase leading-none">{product.name}</h3>
+                  <h3 className="text-3xl font-black text-[#1a1a1a] dark:text-white mb-4 tracking-tighter uppercase leading-none">{t(product.name)}</h3>
                 </Link>
                 <p className="text-black/60 dark:text-white/40 text-[15px] mb-8 leading-relaxed font-light">
-                  {t({ 
-                    [product.description]: product.description,
-                    "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.": { EN: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.", TR: "Yüksek sıcaklık kabiliyeti ve AI destekli kontrol ile üretime hazır parçalar için tasarlandı." },
-                    "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control.": { EN: "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control.", TR: "Esnek silikon ve kauçuk parçalar için gelişmiş süreç kontrollü endüstriyel 3D yazıcı." },
-                    "Tailored additive manufacturing systems designed for specific industrial requirements and large-scale projects.": { EN: "Tailored additive manufacturing systems designed for specific industrial requirements and large-scale projects.", TR: "Endüstriyel gereksinimler ve büyük ölçekli projeler için tasarlanmış özel çözümler." }
-                  }[product.description]) || product.description}
+                  {t(product.description)}
                 </p>
                 
                 <ul className="space-y-4 mb-10">
                   {product.features.map((feature, idx) => (
                     <li key={idx} className="flex items-center gap-3 text-[12px] font-bold text-black/80 dark:text-white/70">
                       <div className="w-1.5 h-1.5 rounded-full bg-[#f26522]" />
-                      {t({
-                        [feature]: feature,
-                        "High-Temp (380°C)": { EN: "High-Temp (380°C)", TR: "Yüksek Sıcaklık (380°C)" },
-                        "Real Silicone (LSR)": { EN: "Real Silicone (LSR)", TR: "Gerçek Silikon (LSR)" },
-                        "4 Tool Change System": { EN: "4 Tool Change System", TR: "4 Kafa Değiştirme Sistemi" }
-                      }[feature]) || feature}
+                      {t(feature)}
                     </li>
                   ))}
                 </ul>

@@ -8,8 +8,8 @@ import { useLanguage } from "@/context/LanguageContext";
 import Link from "next/link";
 
 const HERO_IMAGES = [
-  "/images/hero1.png",
-  "/images/hero2.png",
+  "/images/hero1.webp",
+  "/images/hero2.webp",
 ];
 
 export function Hero() {
@@ -114,7 +114,11 @@ export function Hero() {
           
           <div className="mb-10 lg:mb-16">
             <span className="text-white/40 text-[10px] sm:text-xs lg:text-sm font-black tracking-[0.3em] sm:tracking-[0.5em] uppercase">
-               POWERED BY LAYERSTECH
+               POWERED BY 3D DESIGN
+            </span>
+            <br />
+              <span className="text-white/40 text-[10px] sm:text-xs lg:text-sm font-black tracking-[0.3em] sm:tracking-[0.5em] uppercase">
+               3DDT
             </span>
           </div>
           

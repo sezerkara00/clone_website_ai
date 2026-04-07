@@ -1,18 +1,19 @@
 import React from "react";
+import Link from "next/link";
 import { ArrowRight, Settings, Droplet, Headset, BookOpen } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const highlights = [
   {
-    title: { EN: "14+ Years Experience", TR: "14+ Yıl Deneyim" },
+    title: { EN: "20+ Years Experience", TR: "20+ Yıl Deneyim" },
     description: { 
-      EN: "Our long-standing and growing client base, built over more than 14 years, is a testament to the trust we have earned.",
-      TR: "14 yılı aşkın süredir inşa edilen ve sürekli büyüyen müşteri portföyümüz, kazandığımız güvenin en büyük kanıtıdır."
+      EN: "Our long-standing and growing client base, built over more than 20 years, is a testament to the trust we have earned.",
+      TR: "20 yılı aşkın süredir inşa edilen ve sürekli büyüyen müşteri portföyümüz, kazandığımız güvenin en büyük kanıtıdır."
     },
     icon: Settings,
   },
   {
-    title: { EN: "10,000+ Clients", TR: "10.000+ Müşteri" },
+    title: { EN: "20,000+ Clients", TR: "20.000+ Müşteri" },
     description: {
       EN: "Successfully served thousands of companies across aerospace, defense, medical, and automotive sectors.",
       TR: "Havacılık, savunma, medikal ve otomotiv sektörlerinde binlerce şirkete başarıyla hizmet verildi."
@@ -64,10 +65,10 @@ export default function SmartSolutions() {
                 {t(item.description)}
               </p>
               
-              <div className="mt-auto flex items-center gap-3 text-[11px] font-black tracking-widest text-[#F26522] group-hover:translate-x-2 transition-transform duration-300 cursor-pointer uppercase">
+              <Link href="/contact" className="mt-auto flex items-center gap-3 text-[11px] font-black tracking-widest text-[#F26522] group-hover:translate-x-2 transition-transform duration-300 cursor-pointer uppercase">
                 <span>{t({ EN: "READ MORE", TR: "DAHA FAZLA" })}</span>
                 <ArrowRight className="w-4 h-4" />
-              </div>
+              </Link>
             </div>
           ))}
         </div>
@@ -92,7 +93,7 @@ export default function SmartSolutions() {
             <div className="hidden md:block relative">
                <div className="absolute -inset-10 bg-white/10 blur-[100px] rounded-full group-hover:scale-150 transition-transform duration-[3000ms]"></div>
                <img 
-                 src="/images/series-production-parts.png" 
+                 src="/images/series-production-parts.webp" 
                  alt="Series Production Parts" 
                  className="relative z-10 rounded-3xl shadow-2xl transform transition-transform duration-[3000ms] group-hover:scale-105"
                />

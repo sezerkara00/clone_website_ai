@@ -110,7 +110,7 @@ export default function ThreeDPrinting() {
         { EN: "High Temperature Stable", TR: "Yüksek Sıcaklık Kararlılığı" },
         { EN: "Chemical & UV Resistance", TR: "Kimyasal ve UV Direnci" }
       ],
-      images: ["/images/4xtool.png", "/images/industrial_hero.png"]
+      images: ["/images/4xtool.webp", "/images/industrial_hero.webp"]
     },
     section2: {
       title: { EN: "LayersTech Toolchanger Technology: Multimaterial and Dissolvable Support", TR: "LAYERSTECH TOOLCHANGER TEKNOLOJİSİ: ÇOK MALZEMELİ VE ÇÖZÜNÜR DESTEK" },
@@ -121,7 +121,7 @@ export default function ThreeDPrinting() {
         { label: { EN: "Control", TR: "Kontrol" }, value: { EN: "Independent", TR: "Bağımsız" } },
         { label: { EN: "Geometry Limit", TR: "Geometri Sınırı" }, value: { EN: "Zero", TR: "Sıfır" } }
       ],
-      images: ["/images/3d-silicone-printing--use-case--hp.webp", "/images/w_parts.png"]
+      images: ["/images/3d-silicone-printing--use-case--hp.webp", "/images/w_parts.webp"]
     },
     thermal: {
       title: { EN: "Active IR Thermal Curing", TR: "AKTİF IR TERMAL KÜRLEME" },
@@ -150,7 +150,7 @@ export default function ThreeDPrinting() {
         { EN: "Zero-Interface Bonding", TR: "Arayüzsüz Bağlanma" }
       ],
       badge: { title: { EN: "Any Slot Modular", TR: "Tam Modüler Yuvalar" }, desc: { EN: "Mix Silicone, FDM, and Support in any combination across 4 tools.", TR: "Silikon, FDM ve Desteği 4 kafa üzerinde dilediğiniz gibi karıştırın." } },
-      images: ["/images/fashion_detail.webp", "/images/robot1.webp"]
+      images: ["/images/tek_renk.webp", "/images/cift_parca.webp"]
     },
     section4: {
       title: { EN: "Hybrid Capabilities: Any Tool, Any Slot Freedom", TR: "HİBRİT YETENEKLER: İSTEDİĞİN ARAÇ, İSTEDİĞİN KAFA" },
@@ -160,7 +160,7 @@ export default function ThreeDPrinting() {
         { label: { EN: "Modular Slots", TR: "Modüler Yuvalar" }, val: { EN: "4 Tool-Change Stations", TR: "4 Kafa Değiştirme İstasyonu" } },
         { label: { EN: "Any Tool", TR: "İstediğin Araç" }, val: { EN: "Silicone, LSR, FDM, Support", TR: "Silikon, LSR, FDM, Destek" } }
       ],
-      images: ["/images/industrial_spool_fallback.jpg", "/images/industrial_hero.png"]
+      images: ["/images/industrial_spool_fallback.webp", "/images/industrial_hero.webp"]
     },
     cta: {
       title: { EN: "Ready to Start Your Project?", TR: "Projenize Başlamaya Hazır Mısınız?" },
@@ -179,7 +179,7 @@ export default function ThreeDPrinting() {
         { EN: "Live Camera Integration", TR: "Canlı Kamera Entegrasyonu" },
         { EN: "Global Multi-Printer Sync", TR: "Küresel Yazıcı Senkronizasyonu" }
       ],
-      images: ["/images/yaz1.png", "/images/yaz2.png"]
+      images: ["/images/yaz1.webp", "/images/yaz2.webp"]
     }
   };
 

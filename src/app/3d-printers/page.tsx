@@ -19,26 +19,37 @@ export default function PrintersPage() {
       name: "M1",
       fullName: "LayersTech M1",
       tagline: { EN: "THE INDUSTRIAL STANDARD", TR: "ENDÜSTRİYEL STANDART" },
-      type: "FFF / FDM SYSTEM",
+      type: { EN: "FFF / FDM SYSTEM", TR: "FFF / FDM SİSTEMİ" },
       description: { 
         EN: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.", 
         TR: "Yüksek sıcaklık kabiliyeti ve yapay zeka destekli izleme ile tekrarlanabilir, üretime hazır plastik parçalar için üretildi." 
       },
-      image: "/images/product.png",
-      specs: ["380°C Nozzle", "AI Failure Detection", "65°C Chamber"]
+      image: "/images/product.webp",
+      specs: [
+        { EN: "380°C Nozzle", TR: "380°C Nozül" },
+        { EN: "AI Failure Detection", TR: "Yapay Zeka Hata Tespiti" },
+        { EN: "65°C Chamber", TR: "65°C Kabin" }
+      ]
     },
     {
       id: "m1pro",
       name: "M1PRO",
       fullName: "LayersTech M1PRO",
       tagline: { EN: "THE SILICONE PIONEER", TR: "SİLİKONUN ÖNCÜSÜ" },
-      type: "SILICONE / LSR HYBRID",
+      type: { EN: "SILICONE / LSR HYBRID", TR: "SİLİKON / LSR HİBRİT" },
       description: { 
         EN: "Specialized industrial 3D printer for flexible silicone and rubber parts with advanced process control and 4-tool modularity.", 
         TR: "Gelişmiş proses kontrolü ve 4 kafa modülerliği ile esnek silikon ve kauçuk parçalar için özelleşmiş endüstriyel 3D yazıcı." 
       },
-      image: "/images/product.png",
-      specs: ["LSR / RTV Printing", "4 Tool Change", "Multi-Material"]
+      image: "/images/product.webp",
+      specs: [
+        { EN: "LSR / RTV Printing", TR: "LSR / RTV Baskı" },
+        { EN: "4 Tool Change", TR: "4 Kafa Değişimi" },
+        { EN: "Multi-Material", TR: "Çoklu Malzeme" },
+        { EN: "380°C Nozzle", TR: "380°C Nozül" },
+        { EN: "AI Failure Detection", TR: "Yapay Zeka Hata Tespiti" },
+        { EN: "65°C Chamber", TR: "65°C Kabin" }
+      ]
     }
   ];
 
@@ -118,7 +129,7 @@ export default function PrintersPage() {
                        {/* Floating Technical Badge */}
                        <div className="absolute top-10 right-10 flex flex-col items-end gap-2">
                           <span className="px-5 py-2 bg-[#F26522] rounded-full text-[10px] font-black tracking-widest text-white shadow-xl">
-                            {printer.type}
+                            {t(printer.type as any)}
                           </span>
                        </div>
                     </div>
@@ -148,9 +159,9 @@ export default function PrintersPage() {
                        </p>
 
                        <div className="flex flex-wrap gap-4">
-                          {printer.specs.map(spec => (
-                            <div key={spec} className="px-4 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/[0.02] text-[11px] font-black uppercase tracking-widest text-black/60 dark:text-white/60">
-                               {spec}
+                          {printer.specs.map((spec, i) => (
+                            <div key={i} className="px-4 py-2 rounded-full border border-black/10 dark:border-white/10 bg-black/5 dark:bg-white/[0.02] text-[11px] font-black uppercase tracking-widest text-black/60 dark:text-white/60">
+                               {t(spec as any)}
                             </div>
                           ))}
                        </div>

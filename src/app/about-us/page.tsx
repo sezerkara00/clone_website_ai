@@ -60,8 +60,8 @@ export default function AboutUs() {
             </h1>
             <p className="text-white/60 max-w-3xl text-xl md:text-2xl font-light leading-relaxed mb-16">
               {t({
-                EN: "With over 20 years of experience, Layerstech LTD leads the industry in SLS and DMLS 3D printing solutions. We don't just supply products; we provide transformative engineering excellence.",
-                TR: "20 yılı aşkın tecrübesiyle Layerstech LTD, SLS ve DMLS 3D baskı çözümlerinde sektöre liderlik ediyor. Sadece ürün tedarik etmiyoruz; dönüştürücü mühendislik mükemmelliği sunuyoruz."
+                EN: "With over 20 years of experience, 3 Dimension Design Technologies / 3DDT leads the industry in SLS and DMLS 3D printing solutions. We don't just supply products; we provide transformative engineering excellence.",
+                TR: "20 yılı aşkın tecrübesiyle 3 Dimension Design Technologies / 3DDT, SLS ve DMLS 3D baskı çözümlerinde sektöre liderlik ediyor. Sadece ürün tedarik etmiyoruz; dönüştürücü mühendislik mükemmelliği sunuyoruz."
               })}
             </p>
             <div className="w-48 h-2 bg-gradient-to-r from-[#F26522] to-transparent mx-auto md:mx-0"></div>
@@ -75,12 +75,13 @@ export default function AboutUs() {
               <div className="space-y-12">
                 <div>
                   <span className="text-[#F26522] font-black tracking-[0.3em] text-[11px] mb-6 block uppercase whitespace-nowrap border-l-4 border-[#F26522] pl-6 leading-none">{t({ EN: "OVER 20 YEARS OF INNOVATION", TR: "20 YILI AŞKIN İNOVASYON" })}</span>
+                  <img src="/images/3DDT_logo2.webp" alt="3DDT" className="h-16 md:h-20 w-auto object-contain mb-8 drop-shadow-xl" />
                   <h2 className="text-5xl md:text-8xl font-black text-[#1a1a1a] dark:text-white mb-10 uppercase tracking-tighter leading-none">{t({ EN: "Pioneering Precise Tech", TR: "HASSAS TEKNOLOJİNİN ÖNCÜSÜ" })}</h2>
                 </div>
                 
                 <div className="space-y-8 text-black/70 dark:text-white/60 text-lg md:text-xl font-light leading-relaxed">
                   <p>
-                    <strong className="text-[#F26522] font-black">Layerstech LTD</strong> {t({ 
+                    <strong className="text-[#F26522] font-black">3 Dimension Design Technologies / 3DDT</strong> {t({ 
                       EN: "has established itself as a global leader in high-tech 3D printing solutions. Our expertise lies in the rapid production of functional, durable, and highly precise parts using Selective Laser Sintering (SLS) and Direct Metal Laser Sintering (DMLS) technology.", 
                       TR: "yüksek teknolojili 3D baskı çözümlerinde kendisini küresel bir lider olarak konumlandırmıştır. Uzmanlığımız; Seçici Lazer Sinterleme (SLS) ve Doğrudan Metal Lazer Sinterleme (DMLS) teknolojilerini kullanarak fonksiyonel, dayanıklı ve son derece hassas parçaların hızlı üretimine dayanmaktadır." 
                     })}
@@ -113,7 +114,7 @@ export default function AboutUs() {
 
               <div className="relative group lg:mt-24">
                 <div className="relative aspect-[4/5] rounded-[80px] overflow-hidden shadow-2xl border-4 border-black/5 dark:border-white/10 group-hover:rotate-1 transition-all duration-1000">
-                  <img src="/images/GALERI-scaled.jpg" alt="LayersTech R&D Center" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[8000ms]" />
+                  <img src="/images/GALERI-scaled.webp" alt="LayersTech R&D Center" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[8000ms]" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-[#1a1a1a]/20 to-transparent"></div>
                   
                   <div className="absolute top-12 right-12 z-20 bg-white/10 backdrop-blur-xl p-8 rounded-[40px] border border-white/20 text-white animate-pulse">
@@ -132,7 +133,7 @@ export default function AboutUs() {
           <div className="container mx-auto px-6 max-w-[1400px]">
             <div className="text-center md:text-left mb-24">
                <span className="text-[#F26522] font-black tracking-[0.4em] text-[11px] mb-4 block uppercase leading-none">{t({ EN: "THE COMPETITIVE EDGE", TR: "REKABETÇİ ÜSTÜNLÜĞÜMÜZ" })}</span>
-               <h2 className="text-5xl md:text-8xl font-black text-[#1a1a1a] dark:text-white uppercase tracking-tighter leading-[0.8]">{t({ EN: "Why Choose Layerstech?", TR: "Neden Layerstech?" })}</h2>
+               <h2 className="text-5xl md:text-8xl font-black text-[#1a1a1a] dark:text-white uppercase tracking-tighter leading-[0.8]">{t({ EN: "Why Choose 3DDT?", TR: "Neden 3DDT?" })}</h2>
             </div>
             
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
@@ -225,11 +226,11 @@ export default function AboutUs() {
                  </div>
                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
                     <div className="p-10 md:p-12 bg-[#F26522] rounded-[40px] md:rounded-[60px] text-white">
-                       <p className="text-5xl md:text-6xl font-black mb-2 tracking-tighter text-black/20">20+</p>
+                       <p className="text-5xl md:text-6xl font-black mb-2 tracking-tighter text-white">20+</p>
                        <p className="text-base md:text-lg font-black uppercase tracking-tighter leading-none">{t({ EN: "Years in 3D Printing", TR: "3D Baskıda 20+ Yıl" })}</p>
                     </div>
                     <div className="p-10 md:p-12 bg-white dark:bg-white/5 border border-black/5 dark:border-white/10 rounded-[40px] md:rounded-[60px]">
-                       <p className="text-5xl md:text-6xl font-black mb-2 tracking-tighter text-[#F26522] opacity-20">Global</p>
+                       <p className="text-5xl md:text-6xl font-black mb-2 tracking-tighter text-[#F26522]">Global</p>
                        <p className="text-base md:text-lg font-black uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">{t({ EN: "Standard Certified", TR: "Standart Sertifikalı" })}</p>
                     </div>
                  </div>

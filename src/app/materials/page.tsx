@@ -3,17 +3,17 @@ import { ChevronRight, FileText, Download } from "lucide-react";
 
 export default function Materials() {
   const plasticMaterials = [
-    { name: "PA1101", desc: "Pure polyamide 11 with high elasticity and impact resistance.", image: "/images/PA1101.png" },
-    { name: "PA2200", desc: "Most widely used balanced polyamide 12 for industrial parts.", image: "/images/pa2200.png" },
-    { name: "PA3200 GF", desc: "Glass-filled polyamide 12 for high stiffness and heat resistance.", image: "/images/PA3200.png" },
+    { name: "PA1101", desc: "Pure polyamide 11 with high elasticity and impact resistance.", image: "/images/PA1101.webp" },
+    { name: "PA2200", desc: "Most widely used balanced polyamide 12 for industrial parts.", image: "/images/pa2200.webp" },
+    { name: "PA3200 GF", desc: "Glass-filled polyamide 12 for high stiffness and heat resistance.", image: "/images/PA3200.webp" },
     { name: "Alumide", desc: "Aluminum-filled polyamide with high thermal conductivity.", image: "/images/ALUMIDE-1.webp" },
-    { name: "Flexible TPU", desc: "Thermosplastic polyurethane with rubber-like properties.", image: "/images/TPU.png" },
+    { name: "Flexible TPU", desc: "Thermosplastic polyurethane with rubber-like properties.", image: "/images/TPU.webp" },
   ];
 
   const metalMaterials = [
     { name: "Stainless Steel", desc: "High corrosion resistance and strength for industrial tooling.", image: "/images/KALIP-CELIGI-.webp" },
-    { name: "Aluminum", desc: "Lightweight and excellent thermal properties for aerospace components.", image: "/images/DAHA-HAFIF-PARCALAR.png" },
-    { name: "Titanium", desc: "Superior bio-compatibility and strength-to-weight ratio for medical use.", image: "/images/METAL-URETIM.png" },
+    { name: "Aluminum", desc: "Lightweight and excellent thermal properties for aerospace components.", image: "/images/DAHA-HAFIF-PARCALAR.webp" },
+    { name: "Titanium", desc: "Superior bio-compatibility and strength-to-weight ratio for medical use.", image: "/images/METAL-URETIM.webp" },
   ];
 
   return (

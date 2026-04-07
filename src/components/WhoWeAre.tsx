@@ -35,11 +35,11 @@ export function WhoWeAre() {
             <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors"></div>
           </div>
           <div className="relative aspect-video md:aspect-[4/6] overflow-hidden rounded-[40px_100px_40px_100px] shadow-2xl hover:scale-105 transition-transform duration-500 md:-translate-y-12">
-            <img src="/images/METAL-URETIM.png" alt="Metal 3D Printing" className="w-full h-full object-cover" />
+            <img src="/images/METAL-URETIM.webp" alt="Metal 3D Printing" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors"></div>
           </div>
           <div className="relative aspect-video md:aspect-[4/5] overflow-hidden rounded-[100px_40px_100px_40px] shadow-xl hover:scale-105 transition-transform duration-500">
-            <img src="/images/DAHA-HAFIF-PARCALAR.png" alt="Lightweight Parts" className="w-full h-full object-cover" />
+            <img src="/images/DAHA-HAFIF-PARCALAR.webp" alt="Lightweight Parts" className="w-full h-full object-cover" />
             <div className="absolute inset-0 bg-black/10 hover:bg-transparent transition-colors"></div>
           </div>
         </div>

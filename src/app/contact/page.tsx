@@ -21,14 +21,14 @@ export default function Contact() {
           {/* Technical Data Overlay (To fill right-side space) Haus */}
           <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1/3 h-full hidden xl:flex flex-col justify-center gap-12 pr-24 select-none opacity-60 hover:opacity-100 transition-opacity duration-1000 z-10">
              {[
-               { label: "GLOBAL REACH", val: "24/7" },
-               { label: "AVG RESPONSE", val: "< 12 HR" },
-               { label: "ENGINEERS", val: "ACTIVE" },
-               { label: "PROTOCOL", val: "SECURE" }
+               { label: { EN: "GLOBAL REACH", TR: "KÜRESEL ERİŞİM" }, val: { EN: "24/7", TR: "7/24" } },
+               { label: { EN: "AVG RESPONSE", TR: "ORT. YANIT SÜRESİ" }, val: { EN: "< 12 HR", TR: "< 12 SA" } },
+               { label: { EN: "ENGINEERS", TR: "MÜHENDİS DESTEĞİ" }, val: { EN: "ACTIVE", TR: "AKTİF" } },
+               { label: { EN: "PROTOCOL", TR: "GİZLİLİK PROTOKOLÜ" }, val: { EN: "SECURE", TR: "GÜVENLİ" } }
              ].map((stat, i) => (
                <div key={i} className="flex flex-col items-end border-r-2 border-[#F26522]/60 pr-8">
-                 <span className="text-[10px] font-black tracking-[0.5em] text-[#F26522] mb-1">{stat.label}</span>
-                 <span className="text-5xl font-black tracking-tighter text-white/70">{stat.val}</span>
+                 <span className="text-[10px] font-black tracking-[0.5em] text-[#F26522] mb-1">{t(stat.label)}</span>
+                 <span className="text-5xl font-black tracking-tighter text-white/70">{t(stat.val)}</span>
                </div>
              ))}
           </div>
@@ -71,7 +71,7 @@ export default function Contact() {
                             <Phone className="w-4 h-4" />
                             <span>{t({ EN: "Phone", TR: "Telefon" })}</span>
                          </div>
-                         <p className="text-2xl font-black text-[#1a1a1a] dark:text-white transition-colors tracking-tighter">(+44) 7776 449775</p>
+                         <p className="text-2xl font-black text-[#1a1a1a] dark:text-white transition-colors tracking-tighter">(+90) 212 465 68 05</p>
                       </div>
                       <div className="flex flex-col gap-3 group">
                          <div className="flex items-center gap-2 text-[#F26522] font-black text-[10px] uppercase tracking-widest">
@@ -91,8 +91,9 @@ export default function Contact() {
                             <span>{t({ EN: "Address", TR: "Adres" })}</span>
                          </div>
                          <p className="text-[15px] text-black/60 dark:text-white/40 leading-relaxed font-light">
-                            136 Richmond Hill, Flat 4, 2 The Terrace, <br />
-                            TW10 6RN, United Kingdom.
+                            Bahçelievler Mahallesi Fevzi Çakmak 2 Caddesi No:1ANT <br />
+                            (Güzelşehir Site Giriş Yanı Bağımsız Bölüm 1 ) <br />
+                            Büyükçekmece/İSTANBUL
                          </p>
                       </div>
                       <div className="flex flex-col gap-3 group">
@@ -111,7 +112,7 @@ export default function Contact() {
                 
                 {/* Embed Map Haus */}
                 <div className="relative w-full h-[400px] rounded-[40px] overflow-hidden border border-black/5 dark:border-white/10 shadow-2xl grayscale hover:grayscale-0 transition-all duration-1000 group">
-                   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158.94827056230616!2d-0.3015509630094056!3d51.45500003058444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760c6d70d49b2b%3A0xc0f3e69a0a0a0a0a!2sRichmond%20Hill%2C%20Richmond!5e0!3m2!1sen!2suk!4v1711728000000!5m2!1sen!2suk" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="relative z-10"></iframe>
+                   <iframe src="https://maps.google.com/maps?q=3D+DESIGN+TECHNOLOGIES+LTD,+Büyükçekmece,+İstanbul&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style={{ border: 0 }} allowFullScreen loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="relative z-10"></iframe>
                    <div className="absolute inset-0 bg-[#F26522]/5 mix-blend-overlay z-20 pointer-events-none group-hover:opacity-0 transition-opacity"></div>
                 </div>
               </div>
