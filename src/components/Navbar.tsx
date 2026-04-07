@@ -55,10 +55,10 @@ export function Navbar() {
                 className="h-10 md:h-12 w-auto transition-all"
               />
             </Link>
-            <div className={cn("w-px h-10 hidden sm:block transition-colors", !isTransparent && theme === 'light' ? "bg-black/10" : "bg-white/10")}></div>
-            <div className="flex flex-col justify-end h-10 md:h-12 pb-0.5 hidden sm:flex">
-              <span className={cn("text-[8px] font-bold tracking-[0.4em] uppercase mb-1 transition-colors", !isTransparent && theme === 'light' ? "text-black/40" : "text-white/40")}>Powered by</span>
-              <img src="/images/3DDT_logo2.webp" alt="3DDT Logo" className={cn("h-4 md:h-5 w-auto object-contain transition-all", !isTransparent && theme === 'light' ? "filter drop-shadow-sm" : "")} />
+            <div className={cn("w-px h-8 md:h-10 transition-colors", !isTransparent && theme === 'light' ? "bg-black/10" : "bg-white/10")}></div>
+            <div className="flex flex-col justify-end h-8 md:h-12 pb-0.5">
+              <span className={cn("text-[6px] md:text-[8px] font-bold tracking-[0.3em] md:tracking-[0.4em] uppercase mb-0.5 md:mb-1 transition-colors", !isTransparent && theme === 'light' ? "text-black/40" : "text-white/40")}>Powered by</span>
+              <img src="/images/3DDT_logo2.webp" alt="3DDT Logo" className={cn("h-3 md:h-5 w-auto object-contain transition-all", !isTransparent && theme === 'light' ? "filter drop-shadow-sm" : "")} />
             </div>
           </div>
           

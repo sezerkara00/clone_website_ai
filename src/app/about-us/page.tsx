@@ -112,16 +112,24 @@ export default function AboutUs() {
                 </div>
               </div>
 
-              <div className="relative group lg:mt-24">
-                <div className="relative aspect-[4/5] rounded-[80px] overflow-hidden shadow-2xl border-4 border-black/5 dark:border-white/10 group-hover:rotate-1 transition-all duration-1000">
-                  <img src="/images/GALERI-scaled.webp" alt="LayersTech R&D Center" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[8000ms]" />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-[#1a1a1a]/20 to-transparent"></div>
-                  
-                  <div className="absolute top-12 right-12 z-20 bg-white/10 backdrop-blur-xl p-8 rounded-[40px] border border-white/20 text-white animate-pulse">
-                     <Cpu className="w-8 h-8 text-[#F26522] mb-2" />
-                     <p className="text-[8px] font-black tracking-widest uppercase opacity-60">Operations</p>
-                     <p className="text-xl font-black uppercase tracking-tighter">SLS & DMLS</p>
-                  </div>
+              <div className="relative lg:mt-24 grid grid-cols-2 gap-4 group">
+                <div className="relative aspect-[4/5] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl border-4 border-black/5 dark:border-white/10 group-hover:-rotate-1 transition-all duration-1000">
+                  <img src="/images/3ddt.webp" alt="3DDT Operations" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[8000ms]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+                <div className="relative aspect-[4/5] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl border-4 border-black/5 dark:border-white/10 group-hover:rotate-1 transition-all duration-1000 lg:mt-12">
+                  <img src="/images/3ddt_2.webp" alt="3DDT Laboratory" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[8000ms]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
+                </div>
+                <div className="col-span-2 relative aspect-[16/7] rounded-[40px] md:rounded-[60px] overflow-hidden shadow-2xl border-4 border-black/5 dark:border-white/10 group-hover:-translate-y-2 transition-all duration-1000">
+                  <img src="/images/3ddt_3.webp" alt="3DDT Production" className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-[8000ms]" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+                </div>
+                
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20 bg-white/10 backdrop-blur-xl p-8 rounded-[40px] border border-white/20 text-white animate-pulse hidden xl:block">
+                   <Cpu className="w-8 h-8 text-[#F26522] mb-2" />
+                   <p className="text-[8px] font-black tracking-widest uppercase opacity-60">Operations</p>
+                   <p className="text-xl font-black uppercase tracking-tighter text-center">R&D HUB</p>
                 </div>
               </div>
             </div>
