@@ -587,6 +587,93 @@ export default function ProductDetail() {
         </section>
       )}
 
+      {/* Material Resilience Showcase (Only for M1PRO) */}
+      {id === "m1pro" && (
+        <section className="py-24 md:py-40 bg-white dark:bg-[#0a0a0a] transition-colors duration-500 overflow-hidden relative">
+          <div className="container mx-auto px-6 max-w-[1400px]">
+            <div className="flex flex-col lg:flex-row items-end justify-between mb-24 gap-8">
+              <div className="max-w-2xl">
+                <span className="text-[#F26522] font-black text-[12px] tracking-[0.5em] uppercase block mb-6">
+                  {t({ EN: "Material Excellence", TR: "MALZEME MÜKEMMELLİĞİ" })}
+                </span>
+                <h2 className="text-4xl md:text-8xl font-black uppercase tracking-tighter leading-none text-[#1a1a1a] dark:text-white">
+                  {t({ EN: "Superior Recovery", TR: "MÜKEMMEL GERİ" })} <br />
+                  <span className="text-[#F26522]">{t({ EN: "& Elasticity.", TR: "KAZANIM VE ESNEKLİK." })}</span>
+                </h2>
+              </div>
+              <p className="text-xl text-black/50 dark:text-white/40 font-light leading-relaxed max-w-sm border-l border-[#F26522]/30 pl-6 mb-2">
+                {t({ 
+                  EN: "Industrial-grade silicone maintains its original molecular structure even after extreme deformation.",
+                  TR: "Endüstriyel sınıf silikon, aşırı deformasyondan sonra bile orijinal moleküler yapısını korur."
+                })}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+              {/* Stretched State */}
+              <div className="group relative">
+                <div className="aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden border border-black/5 dark:border-white/10 bg-[#f8f8f8] dark:bg-white/5 relative">
+                  <Image 
+                    src="/images/IMG_3199.webp" 
+                    alt="Stretched Silicone" 
+                    fill 
+                    unoptimized
+                    className="object-cover group-hover:scale-105 transition-transform duration-1000" 
+                  />
+                  <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center backdrop-blur-[2px]">
+                    <div className="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full flex items-center gap-4">
+                      <Lucide.MoveHorizontal className="w-5 h-5 text-white" />
+                      <span className="text-white font-black text-[10px] tracking-[0.3em] uppercase">
+                        {t({ EN: "Maximum Strain", TR: "MAKSİMUM ESNETME" })}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-12 space-y-4">
+                  <h4 className="text-3xl font-black uppercase tracking-tighter text-[#1a1a1a] dark:text-white">{t({ EN: "High Flexibility", TR: "YÜKSEK ESNEKLİK" })}</h4>
+                  <p className="text-black/60 dark:text-white/40 text-lg font-light leading-relaxed">
+                    {t({ 
+                      EN: "Industrial LSR materials can be stretched to extreme limits without losing structural integrity, ensuring reliability in dynamic seals.",
+                      TR: "Endüstriyel LSR malzemeleri, dinamik contalarda güvenilirlik sağlamarak, yapısal bütünlüğünü kaybetmeden aşırı limitlere kadar esnetilebilir."
+                    })}
+                  </p>
+                </div>
+              </div>
+
+              {/* Recovered State */}
+              <div className="group relative md:mt-24">
+                <div className="aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden border border-black/5 dark:border-white/10 bg-[#f8f8f8] dark:bg-white/5 relative shadow-2xl shadow-black/5">
+                  <Image 
+                    src="/images/IMG_3200.webp" 
+                    alt="Recovered Silicone" 
+                    fill 
+                    unoptimized
+                    className="object-cover group-hover:scale-105 transition-transform duration-1000" 
+                  />
+                  <div className="absolute inset-0 bg-[#F26522]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center backdrop-blur-[2px]">
+                    <div className="bg-[#F26522] text-white px-8 py-4 rounded-full flex items-center gap-4 shadow-2xl">
+                      <Lucide.RefreshCw className="w-5 h-5 text-white" />
+                      <span className="text-white font-black text-[10px] tracking-[0.3em] uppercase">
+                        {t({ EN: "100% Shape Memory", TR: "%100 FORM HAFIZASI" })}
+                      </span>
+                    </div>
+                  </div>
+                </div>
+                <div className="mt-12 space-y-4">
+                  <h4 className="text-3xl font-black uppercase tracking-tighter text-[#1a1a1a] dark:text-white">{t({ EN: "Perfect Recovery", TR: "TAM GERİ KAZANIM" })}</h4>
+                  <p className="text-black/60 dark:text-white/40 text-lg font-light leading-relaxed">
+                    {t({ 
+                      EN: "Superior molecular memory ensures that parts return to their original precision dimensions instantly after stress release.",
+                      TR: "Üstün moleküler hafıza, parçaların stres ortadan kalktıktan sonra anında orijinal hassas boyutlarına geri dönmesini sağlar."
+                    })}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Tabs */}
       <div id="product-nav" ref={tabRef} className="sticky top-[80px] z-[40] bg-white/95 dark:bg-[#0a0a0a]/95 backdrop-blur-md border-y border-black/5 dark:border-white/10 shadow-xl transition-colors">
         <div className="container mx-auto px-6 max-w-[1400px]">
