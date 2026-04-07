@@ -22,8 +22,8 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   
-  --color-heading: #1a1a1a;
-  --color-body: #4a4a4a;
+  --color-heading: var(--heading);
+  --color-body: var(--foreground);
   --color-dark-section: #2d2d2d;
   
   --radius-sm: 2px;

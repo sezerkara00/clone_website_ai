@@ -476,8 +476,8 @@ export default function ThreeDPrinting() {
         <section className="py-32 bg-[#1a1a1a] text-white text-center relative overflow-hidden">
           <div className="absolute inset-0 opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
           <div className="container mx-auto px-6 relative z-10">
-            <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter">{t(content.cta.title)}</h2>
-            <p className="mb-10 text-white/50 max-w-2xl mx-auto text-xl font-light">
+            <h2 className="text-4xl md:text-6xl font-black mb-8 uppercase tracking-tighter text-white">{t(content.cta.title)}</h2>
+            <p className="mb-10 text-white/70 max-w-2xl mx-auto text-xl font-light">
               {t(content.cta.desc)}
             </p>
             <Link href="/contact" className="inline-block bg-[#f26522] text-white px-12 py-5 rounded-full font-black tracking-[0.2em] text-[11px] hover:bg-white hover:text-[#1a1a1a] transition-all shadow-2xl">

@@ -7,7 +7,7 @@ import { LanguageProvider } from "@/context/LanguageContext";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const roboto = Roboto({
-  weight: ["300", "400", "500", "700"],
+  weight: ["300", "400", "500", "700", "900"],
   variable: "--font-roboto",
   subsets: ["latin", "latin-ext"],
 });
@@ -43,6 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html
+      lang="tr"
       className={`${roboto.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans transition-colors duration-500 dark:bg-[#0a0a0a]">

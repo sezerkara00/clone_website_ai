@@ -185,7 +185,7 @@ export default function AboutUs() {
             <div className="flex flex-col lg:flex-row gap-20 items-center">
                <div className="flex-1">
                   <span className="text-[#F26522] font-black tracking-[0.4em] text-[11px] mb-6 block uppercase">{t({ EN: "TECHNOLOGY INSIGHT", TR: "TEKNOLOJİ BİLGİSİ" })}</span>
-                  <h2 className="text-5xl font-black uppercase tracking-tighter mb-8 leading-none">{t({ EN: "Understanding SLS Technology", TR: "SLS Teknolojisini Anlamak" })}</h2>
+                  <h2 className="text-5xl font-black uppercase tracking-tighter mb-8 leading-none text-white">{t({ EN: "Understanding SLS Technology", TR: "SLS Teknolojisini Anlamak" })}</h2>
                   <div className="space-y-6 text-white/60 text-lg font-light leading-relaxed">
                     <p>
                       {t({

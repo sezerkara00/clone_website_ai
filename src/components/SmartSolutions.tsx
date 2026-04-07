@@ -76,7 +76,7 @@ export default function SmartSolutions() {
         <div className="mt-32 p-12 md:p-24 rounded-[60px] bg-gradient-to-br from-[#F26522] to-[#D35400] relative overflow-hidden group shadow-2xl">
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 items-center gap-12 text-white">
             <div>
-              <h3 className="text-3xl md:text-6xl font-black mb-6 uppercase tracking-tighter leading-none">
+              <h3 className="text-3xl md:text-6xl font-black mb-6 uppercase tracking-tighter leading-none text-white">
                 {t({ EN: "Ready for Series Production?", TR: "Seri Üretime Hazır Mısınız?" })}
               </h3>
               <p className="text-white/90 text-lg mb-10 max-w-xl font-light leading-relaxed">

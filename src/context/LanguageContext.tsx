@@ -25,9 +25,10 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
     }
   }, []);
 
-  // Update localStorage when language changes
+  // Update localStorage and document.documentElement.lang when language changes
   useEffect(() => {
     localStorage.setItem("language", language);
+    document.documentElement.lang = language.toLowerCase();
   }, [language]);
 
   const t = (translations: any) => {
