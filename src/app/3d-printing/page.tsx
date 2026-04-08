@@ -124,7 +124,7 @@ export default function ThreeDPrinting() {
       images: ["/images/3d-silicone-printing--use-case--hp.webp", "/images/w_parts.webp"]
     },
     thermal: {
-      title: { EN: "Active IR Thermal Curing", TR: "AKTİF IR TERMAL KÜRLEME" },
+      title: { EN: "THERMAL CURING", TR: "KÜRLEME" },
       subtitle: { EN: "Ready-to-Use Resilience", TR: "Kullanıma Hazır Dayanıklılık" },
       p1: { EN: "LayersTech’s secret to industrial durability lies in our integrated <strong class=\"text-white\">Infrared (IR) Layer-by-Layer Curing</strong> process.", TR: "LayersTech'in endüstriyel dayanıklılık sırrı, entegre <strong class=\"text-white\">Kızılötesi (IR) Katman Bazlı Kürleme</strong> sürecimizde yatmaktadır." },
       p2: { EN: "Unlike standard elastomer printing, our integrated IR system cures every single layer as it is printed. This ensures that every part is fully cross-linked and ready for immediate use right off the build plate—no secondary oven curing or post-processing required.", TR: "Standart elastomer baskıdan farklı olarak, entegre IR sistemimiz her bir katmanı basıldığı anda kürler. Bu, her parçanın yapı plakasından çıktığı anda moleküler olarak tam çapraz bağlanmış ve hemen kullanıma hazır olmasını sağlar; ikincil fırın kürleme veya sonradan işleme gerektirmez." },
@@ -322,14 +322,42 @@ export default function ThreeDPrinting() {
                     </div>
                   </div>
                 </div>
-                <div className="relative flex items-center justify-center">
-                  <div className="w-full aspect-square max-w-md rounded-full border border-white/10 p-8 flex items-center justify-center relative bg-white/[0.02]">
-                    <div className="absolute inset-0 animate-pulse bg-[#f26522]/10 rounded-full"></div>
-                    <div className="text-[#f26522] opacity-50 relative">
-                       <Zap className="w-32 h-32" />
+
+                <div className="relative">
+                  <div className="grid grid-cols-2 gap-4 md:gap-6">
+                    <div className="space-y-4 md:space-y-6">
+                      <div className="aspect-[3/4] rounded-[24px] md:rounded-[40px] overflow-hidden border border-white/10 relative group shadow-2xl">
+                        <Image 
+                          src="/images/ir_1.jfif" 
+                          alt="IR Curing 1" 
+                          fill 
+                          unoptimized
+                          className="object-cover group-hover:scale-110 transition-transform duration-1000" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                      </div>
+                      <div className="bg-[#f26522] aspect-square rounded-[24px] md:rounded-[40px] flex flex-col items-center justify-center p-6 text-white relative overflow-hidden group">
+                         <Zap className="w-10 h-10 mb-3 group-hover:scale-125 transition-transform duration-500" />
+                         <span className="text-[8px] font-black tracking-[0.3em] uppercase mb-1 opacity-80">{t({ EN: "READY TO USE", TR: "HEMEN KULLAN" })}</span>
+                         <p className="text-xl font-black text-center leading-none uppercase tracking-tighter">{t({ EN: "Instant Curing", TR: "ANINDA KÜRLEME" })}</p>
+                      </div>
                     </div>
-                    <div className="absolute inset-0 flex items-center justify-center">
-                       <p className="text-[10px] font-black tracking-widest text-white/40 uppercase rotate-90 origin-center">{t(content.thermal.label)}</p>
+                    <div className="pt-8 md:pt-12 space-y-4 md:space-y-6">
+                      <div className="bg-white/10 aspect-square rounded-[24px] md:rounded-[40px] flex flex-col items-center justify-center p-6 text-[#f26522] relative overflow-hidden group border border-white/5">
+                         <Layers className="w-10 h-10 mb-3 group-hover:scale-125 transition-transform duration-500" />
+                         <span className="text-[8px] font-black tracking-[0.3em] uppercase mb-1 opacity-80">{t({ EN: "MOLECULAR", TR: "MOLEKÜLER" })}</span>
+                         <p className="text-xl font-black text-center text-white leading-none uppercase tracking-tighter">{t({ EN: "Cross-Bonding", TR: "ÇAPRAZ BAĞLANMA" })}</p>
+                      </div>
+                      <div className="aspect-[3/4] rounded-[24px] md:rounded-[40px] overflow-hidden border border-white/10 relative group shadow-2xl">
+                        <Image 
+                          src="/images/ir_2.jfif" 
+                          alt="IR Curing 2" 
+                          fill 
+                          unoptimized
+                          className="object-cover group-hover:scale-110 transition-transform duration-1000" 
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -337,6 +365,94 @@ export default function ThreeDPrinting() {
             </div>
           </div>
         </section>
+        
+        {/* Section: Superior Resilience & Shape Memory */}
+        <section className="py-12 bg-transparent overflow-hidden">
+          <div className="container mx-auto px-6">
+             <div className="bg-gradient-to-br from-[#1a1c1e] via-[#1a1c1e] to-[#f26522]/5 rounded-[60px] p-12 md:p-20 border border-white/10">
+               <div className="flex flex-col lg:flex-row items-end justify-between mb-20 gap-8">
+                  <div className="max-w-2xl">
+                    <span className="text-[#F26522] font-black text-[12px] tracking-[0.5em] uppercase block mb-6">
+                      {t({ EN: "Material Excellence", TR: "MALZEME MÜKEMMELLİĞİ" })}
+                    </span>
+                    <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-none text-white">
+                      {t({ EN: "Superior Recovery", TR: "MÜKEMMEL GERİ" })} <br />
+                      <span className="text-[#F26522]">{t({ EN: "& Elasticity.", TR: "KAZANIM VE ESNEKLİK." })}</span>
+                    </h2>
+                  </div>
+                  <p className="text-xl text-white/40 font-light leading-relaxed max-w-sm border-l border-[#F26522]/30 pl-6 mb-2">
+                    {t({ 
+                      EN: "Industrial-grade silicone maintains its original molecular structure even after extreme deformation.",
+                      TR: "Endüstriyel sınıf silikon, aşırı deformasyondan sonra bile orijinal moleküler yapısını korur."
+                    })}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+                  {/* Stretched State */}
+                  <div className="group relative">
+                    <div className="aspect-[4/3] rounded-[40px] md:rounded-[50px] overflow-hidden border border-white/10 bg-white/5 relative">
+                      <Image 
+                        src="/images/IMG_3199.webp" 
+                        alt="Stretched Silicone" 
+                        fill 
+                        unoptimized
+                        className="object-cover group-hover:scale-105 transition-transform duration-1000" 
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center backdrop-blur-[2px]">
+                        <div className="bg-white/10 backdrop-blur-md border border-white/20 px-8 py-4 rounded-full flex items-center gap-4">
+                          < ChevronRight className="w-5 h-5 text-white" />
+                          <span className="text-white font-black text-[10px] tracking-[0.3em] uppercase">
+                            {t({ EN: "Maximum Strain", TR: "MAKSİMUM ESNETME" })}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-12 space-y-4">
+                      <h4 className="text-3xl font-black uppercase tracking-tighter text-white">{t({ EN: "High Flexibility", TR: "YÜKSEK ESNEKLİK" })}</h4>
+                      <p className="text-white/40 text-lg font-light leading-relaxed">
+                        {t({ 
+                          EN: "Industrial LSR materials can be stretched to extreme limits without losing structural integrity, ensuring reliability in dynamic seals.",
+                          TR: "Endüstriyel LSR malzemeleri, dinamik contalarda güvenilirlik sağlamarak, yapısal bütünlüğünü kaybetmeden aşırı limitlere kadar esnetilebilir."
+                        })}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Recovered State */}
+                  <div className="group relative">
+                    <div className="aspect-[4/3] rounded-[40px] md:rounded-[50px] overflow-hidden border border-white/10 bg-white/5 relative shadow-2xl">
+                      <Image 
+                        src="/images/IMG_3200.webp" 
+                        alt="Recovered Silicone" 
+                        fill 
+                        unoptimized
+                        className="object-cover group-hover:scale-105 transition-transform duration-1000" 
+                      />
+                      <div className="absolute inset-0 bg-[#F26522]/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 flex items-center justify-center backdrop-blur-[2px]">
+                        <div className="bg-[#F26522] text-white px-8 py-4 rounded-full flex items-center gap-4 shadow-2xl">
+                          < CheckCircle2 className="w-5 h-5 text-white" />
+                          <span className="text-white font-black text-[10px] tracking-[0.3em] uppercase">
+                            {t({ EN: "100% Shape Memory", TR: "%100 FORM HAFIZASI" })}
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="mt-12 space-y-4">
+                      <h4 className="text-3xl font-black uppercase tracking-tighter text-white">{t({ EN: "Perfect Recovery", TR: "TAM GERİ KAZANIM" })}</h4>
+                      <p className="text-white/40 text-lg font-light leading-relaxed">
+                        {t({ 
+                          EN: "Superior molecular memory ensures that parts return to their original precision dimensions instantly after stress release.",
+                          TR: "Üstün moleküler hafıza, parçaların stres ortadan kalktıktan sonra anında orijinal hassas boyutlarına geri dönmesini sağlar."
+                        })}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+             </div>
+          </div>
+        </section>
+        
 
         {/* Section 3: Multi-Shore Hardness & Functional Material Grading */}
         <section className="py-12 bg-transparent transition-colors duration-500">

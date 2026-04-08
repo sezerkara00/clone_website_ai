@@ -282,10 +282,10 @@ const productData: Record<string, Product> = {
         title: { EN: "Advanced Silicone (LSR) Printing System", TR: "Gelişmiş Silikon (LSR) Baskı Sistemi" },
         desc: { EN: "LayersTech M1PRO is engineered as a true industrial silicone 3D printer, enabling reliable Liquid Silicone Rubber (LSR) printing for flexible, functional, and production-ready parts. The system supports precise deposition of silicone materials with different Shore hardness values, making it suitable for seals, gaskets, soft-touch components, and elastomer-like end-use parts. Unlike conventional systems, M1PRO integrates controlled curing and multi-tool support to ensure consistent layer bonding, dimensional accuracy, and repeatable mechanical performance throughout the entire print process.", TR: "LayersTech M1PRO, esnek, işlevsel ve üretime hazır parçalar için güvenilir Sıvı Silikon Kauçuk (LSR) baskısı sağlayan gerçek bir endüstriyel silikon 3D yazıcı olarak tasarlanmıştır. Sistem, farklı Shore sertlik değerlerine sahip silikon malzemelerin hassas bir şekilde biriktirilmesini destekleyerek contalar, yumuşak dokunuşlu bileşenler ve elastomer benzeri son kullanım parçaları için uygun hale getirir. Geleneksel sistemlerin aksine, M1PRO tüm baskı süreci boyunca tutarlı katman yapışması, boyutsal doğruluk ve tekrarlanabilir mekanik performans sağlamak için kontrollü kürleme ve çok takımlı desteği entegre eder." },
         bullets: [
-          { EN: "LSR printing with multiple Shore hardness options", TR: "Çoklu Shore sertliği seçenekleriyle LSR baskısı" },
-          { EN: "Dedicated support material workflow for silicone printing", TR: "Silikon baskı için özel destek malzemesi iş akışı" },
-          { EN: "Integrated heater rail for layer-by-layer silicone curing", TR: "Katman katman silikon kürleme için entegre ısıtıcı rayı" },
-          { EN: "Production-ready silicone manufacturing", TR: "Üretime hazır silikon üretimi" }
+          { EN: "Industrial LSR printing with multiple Shore hardness options (A5 - A80)", TR: "Çoklu Shore sertliği seçenekleriyle (A5 - A80) endüstriyel LSR baskısı" },
+          { EN: "Dedicated support material workflow for complex silicone geometries", TR: "Karmaşık silikon geometrileri için özel destek malzemesi iş akışı" },
+          { EN: "Integrated IR Layer-Based Curing for instant molecular cross-linking", TR: "Anında moleküler çapraz bağlanma için entegre IR Katman Bazlı Kürleme" },
+          { EN: "Ready-to-use parts directly from the build plate—no post-curing needed", TR: "Yapı plakasından doğrudan kullanıma hazır parçalar—ek kürleme gerekmez" }
         ],
         image: ["/images/tek_renk.webp", "/images/cift_parca.webp", "/images/silion_parts.webp"]
       },
@@ -298,7 +298,7 @@ const productData: Record<string, Product> = {
           { EN: "Enclosed, insulated chamber for more stable printing conditions", TR: "Daha stabil baskı koşulları için kapalı, yalıtımlı kabin" },
           { EN: "Designed for industrial continuous production", TR: "Endüstriyel sürekli üretim için tasarlandı" }
         ],
-        image: "/images/silicone-card.webp"
+        image: "/images/industrial_hero.webp"
       },
       {
         title: { EN: "High-Throughput Multi-Material Printing (4-Tool System)", TR: "Yüksek Verimli Çoklu Malzeme Baskısı (4 Takımlı Sistem)" },
@@ -641,7 +641,7 @@ export default function ProductDetail() {
               </div>
 
               {/* Recovered State */}
-              <div className="group relative md:mt-24">
+              <div className="group relative">
                 <div className="aspect-[4/3] rounded-[40px] md:rounded-[60px] overflow-hidden border border-black/5 dark:border-white/10 bg-[#f8f8f8] dark:bg-white/5 relative shadow-2xl shadow-black/5">
                   <Image 
                     src="/images/IMG_3200.webp" 
@@ -667,6 +667,111 @@ export default function ProductDetail() {
                       TR: "Üstün moleküler hafıza, parçaların stres ortadan kalktıktan sonra anında orijinal hassas boyutlarına geri dönmesini sağlar."
                     })}
                   </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Integrated IR Curing Showcase (Only for M1PRO) */}
+      {id === "m1pro" && (
+        <section className="py-24 md:py-40 bg-[#fefefe] dark:bg-[#080808] transition-colors duration-500 overflow-hidden relative">
+          {/* Thermal glow effects */}
+          <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-red-600/[0.03] dark:bg-red-600/[0.05] rounded-full blur-[150px] pointer-events-none"></div>
+          <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#F26522]/[0.05] dark:bg-[#F26522]/[0.08] rounded-full blur-[150px] pointer-events-none"></div>
+          
+          <div className="container mx-auto px-6 max-w-[1400px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+              <div className="order-2 lg:order-1">
+                <div className="grid grid-cols-2 gap-6 md:gap-8">
+                  <div className="space-y-6 md:space-y-8">
+                    <div className="aspect-[3/4] rounded-[30px] md:rounded-[50px] overflow-hidden border border-black/5 dark:border-white/10 relative group shadow-2xl">
+                      <Image 
+                        src="/images/ir_1.jfif" 
+                        alt="IR Curing Process 1" 
+                        fill 
+                        unoptimized
+                        className="object-cover group-hover:scale-110 transition-transform duration-1000" 
+                      />
+                      <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <span className="text-white/60 text-[8px] font-black tracking-[0.3em] uppercase">{t({ EN: "Real-time", TR: "GERÇEK ZAMANLI" })}</span>
+                        <p className="text-white text-xs font-bold uppercase tracking-widest mt-1">{t({ EN: "Layer Fusion", TR: "KATMAN FÜZYONU" })}</p>
+                      </div>
+                    </div>
+                    <div className="bg-[#F26522] aspect-square rounded-[30px] md:rounded-[50px] flex flex-col items-center justify-center p-8 text-white relative overflow-hidden group">
+                       <Lucide.Zap className="w-12 h-12 mb-4 group-hover:scale-125 transition-transform duration-500" />
+                       <span className="text-[10px] font-black tracking-[0.4em] uppercase mb-2 opacity-80">{t({ EN: "Efficiency", TR: "VERİMLİLİK" })}</span>
+                       <p className="text-2xl font-black text-center leading-none uppercase tracking-tighter">{t({ EN: "Ready to Use", TR: "HEMEN KULLANIMA HAZIR" })}</p>
+                       <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-white/10 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                    </div>
+                  </div>
+                  <div className="pt-12 md:pt-20 space-y-6 md:space-y-8">
+                    <div className="bg-black dark:bg-white/[0.05] aspect-square rounded-[30px] md:rounded-[50px] flex flex-col items-center justify-center p-8 text-white dark:text-[#F26522] relative overflow-hidden group">
+                       <Lucide.Flame className="w-12 h-12 mb-4 text-[#F26522] group-hover:scale-125 transition-transform duration-500" />
+                       <span className="text-[10px] font-black tracking-[0.4em] uppercase mb-2 opacity-80">{t({ EN: "Process", TR: "SÜREÇ" })}</span>
+                       <p className="text-2xl font-black text-center leading-none uppercase tracking-tighter">{t({ EN: "Zero Post-Processing", TR: "SIFIR SON İŞLEM" })}</p>
+                       <div className="absolute -top-10 -left-10 w-32 h-32 bg-[#F26522]/20 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-700"></div>
+                    </div>
+                    <div className="aspect-[3/4] rounded-[30px] md:rounded-[50px] overflow-hidden border border-black/5 dark:border-white/10 relative group shadow-2xl">
+                      <Image 
+                        src="/images/ir_2.jfif" 
+                        alt="IR Curing Process 2" 
+                        fill 
+                        unoptimized
+                        className="object-cover group-hover:scale-110 transition-transform duration-1000" 
+                      />
+                      <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent">
+                        <span className="text-white/60 text-[8px] font-black tracking-[0.3em] uppercase">{t({ EN: "Integrated", TR: "ENTEGRE" })}</span>
+                        <p className="text-white text-xs font-bold uppercase tracking-widest mt-1">{t({ EN: "Curing System", TR: "KÜRLEME SİSTEMİ" })}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="order-1 lg:order-2 space-y-12 lg:pl-10">
+                <div className="space-y-6">
+                  <span className="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#F26522]/10 border border-[#F26522]/20">
+                    <div className="w-1.5 h-1.5 rounded-full bg-[#F26522] animate-pulse"></div>
+                    <span className="text-[#F26522] font-black text-[10px] tracking-[0.3em] uppercase">
+                      {t({ EN: "Molecular Bonding Security", TR: "MOLEKÜLER BAĞ GÜVENLİĞİ" })}
+                    </span>
+                  </span>
+                  
+                  <h2 className="text-4xl md:text-7xl font-black uppercase tracking-tighter leading-[0.9] text-[#1a1a1a] dark:text-white">
+                    {t({ EN: "The Secret of", TR: "ENDÜSTRİYEL" })} <br />
+                    <span className="text-[#F26522]">{t({ EN: "Industrial Durability.", TR: "DAYANIKLILIĞIN SIRRI." })}</span>
+                  </h2>
+                </div>
+
+                <div className="space-y-8">
+                  <p className="text-xl md:text-2xl text-black/70 dark:text-white/70 font-light leading-relaxed">
+                    {t({ 
+                      EN: "LayersTech's secret to industrial durability lies in our integrated Infrared (IR) Layer-Based Curing process.",
+                      TR: "LayersTech'in endüstriyel dayanıklılık sırrı, entegre Kızılötesi (IR) Katman Bazlı Kürleme sürecimizde yatmaktadır."
+                    })}
+                  </p>
+
+                  <div className="h-[1px] w-20 bg-[#F26522]"></div>
+
+                  <p className="text-lg text-black/50 dark:text-white/40 font-light leading-relaxed">
+                    {t({ 
+                      EN: "Unlike standard elastomer printing, our integrated IR system cures each layer the moment it is printed. This ensures every part is molecularly cross-linked and ready for use right off the build plate, with no secondary oven curing or post-processing required.",
+                      TR: "Standart elastomer baskıdan farklı olarak, entegre IR sistemimiz her bir katmanı basıldığı anda kürler. Bu, her parçanın yapı plakasından çıktığı anda moleküler olarak tam çapraz bağlanmış ve hemen kullanıma hazır olmasını sağlar; ikincil fırın kürleme veya sonradan işleme gerektirmez."
+                    })}
+                  </p>
+                </div>
+
+                <div className="grid grid-cols-2 gap-10 pt-8">
+                   <div className="space-y-2">
+                      <span className="text-3xl font-black text-[#1a1a1a] dark:text-white leading-none">0%</span>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-[#F26522]">{t({ EN: "Post-Processing", TR: "SON İŞLEM" })}</p>
+                   </div>
+                   <div className="space-y-2">
+                      <span className="text-3xl font-black text-[#1a1a1a] dark:text-white leading-none">100%</span>
+                      <p className="text-[10px] font-black uppercase tracking-widest text-[#F26522]">{t({ EN: "Cross-Linked", TR: "ÇAPRAZ BAĞLANMIŞ" })}</p>
+                   </div>
                 </div>
               </div>
             </div>
