@@ -169,13 +169,13 @@ export function Hero() {
              <X className="w-10 h-10" />
            </button>
            <div className="w-full max-w-5xl aspect-video bg-gray-900 rounded-3xl overflow-hidden shadow-2xl border border-white/10">
-              <iframe 
+              <video 
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/mBJ73Feg8w8?autoplay=1" // Örnek video linki
-                title="LayersTech Industrial 3D Printing"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
+                src="/videos/Video Project_1.mp4"
+                controls
+                autoPlay
+                playsInline
+              />
            </div>
         </div>
       )}
