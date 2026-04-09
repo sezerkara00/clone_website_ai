@@ -14,23 +14,23 @@ export default function PrintersPage() {
   const { t } = useLanguage();
 
   const printers = [
-    {
-      id: "m1",
-      name: "M1",
-      fullName: "LayersTech M1",
-      tagline: { EN: "THE INDUSTRIAL STANDARD", TR: "ENDÜSTRİYEL STANDART" },
-      type: { EN: "FFF / FDM SYSTEM", TR: "FFF / FDM SİSTEMİ" },
-      description: { 
-        EN: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.", 
-        TR: "Yüksek sıcaklık kabiliyeti ve yapay zeka destekli izleme ile tekrarlanabilir, üretime hazır plastik parçalar için üretildi." 
-      },
-      image: "/images/product.webp",
-      specs: [
-        { EN: "380°C Nozzle", TR: "380°C Nozül" },
-        { EN: "AI Failure Detection", TR: "Yapay Zeka Hata Tespiti" },
-        { EN: "65°C Chamber", TR: "65°C Kabin" }
-      ]
-    },
+    // {
+    //   id: "m1",
+    //   name: "M1",
+    //   fullName: "LayersTech M1",
+    //   tagline: { EN: "THE INDUSTRIAL STANDARD", TR: "ENDÜSTRİYEL STANDART" },
+    //   type: { EN: "FFF / FDM SYSTEM", TR: "FFF / FDM SİSTEMİ" },
+    //   description: { 
+    //     EN: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.", 
+    //     TR: "Yüksek sıcaklık kabiliyeti ve yapay zeka destekli izleme ile tekrarlanabilir, üretime hazır plastik parçalar için üretildi." 
+    //   },
+    //   image: "/images/product.webp",
+    //   specs: [
+    //     { EN: "380°C Nozzle", TR: "380°C Nozül" },
+    //     { EN: "AI Failure Detection", TR: "Yapay Zeka Hata Tespiti" },
+    //     { EN: "65°C Chamber", TR: "65°C Kabin" }
+    //   ]
+    // },
     {
       id: "m1pro",
       name: "M1PRO",

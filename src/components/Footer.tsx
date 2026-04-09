@@ -80,8 +80,8 @@ export function Footer() {
                   <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-[#F26522]/20 transition-colors">
                      <Mail className="w-5 h-5 text-[#F26522]" />
                   </div>
-                  <a href="mailto:erkan.ates@layerstech.co.uk" className="text-[14px] text-white/70 group-hover:text-white transition-colors">
-                    erkan.ates@layerstech.co.uk
+                  <a href="mailto:info@3ddt.com.tr" className="text-[14px] text-white/70 group-hover:text-white transition-colors">
+                    info@3ddt.com.tr
                   </a>
                </div>
             </div>

@@ -6,21 +6,21 @@ import { ArrowRight, Cpu, Layers, Zap } from "lucide-react";
 import { useLanguage } from "@/context/LanguageContext";
 
 const products = [
-  { 
-    id: "m1",
-    name: { EN: "LayersTech M1", TR: "LayersTech M1" }, 
-    image: "/images/m1pro_dark.webp",
-    category: { EN: "INDUSTRIAL FFF/FDM", TR: "ENDÜSTRİYEL FFF/FDM" },
-    description: {
-      EN: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.",
-      TR: "Yüksek sıcaklık kabiliyeti ve yapay zeka destekli izleme ile seri üretime hazır plastik parçalar için tasarlandı."
-    },
-    features: [
-      { EN: "High-Temp (380°C)", TR: "Yüksek Sıcaklık (380°C)" },
-      { EN: "300 x 300 x 320 mm", TR: "300 x 300 x 320 mm" },
-      { EN: "AI Failure Detection", TR: "Yapay Zeka Hata Algılama" }
-    ]
-  },
+  // { 
+  //   id: "m1",
+  //   name: { EN: "LayersTech M1", TR: "LayersTech M1" }, 
+  //   image: "/images/m1pro_dark.webp",
+  //   category: { EN: "INDUSTRIAL FFF/FDM", TR: "ENDÜSTRİYEL FFF/FDM" },
+  //   description: {
+  //     EN: "Built for repeatable, production-ready plastic parts with high-temperature capability and AI-assisted monitoring.",
+  //     TR: "Yüksek sıcaklık kabiliyeti ve yapay zeka destekli izleme ile seri üretime hazır plastik parçalar için tasarlandı."
+  //   },
+  //   features: [
+  //     { EN: "High-Temp (380°C)", TR: "Yüksek Sıcaklık (380°C)" },
+  //     { EN: "300 x 300 x 320 mm", TR: "300 x 300 x 320 mm" },
+  //     { EN: "AI Failure Detection", TR: "Yapay Zeka Hata Algılama" }
+  //   ]
+  // },
   { 
     id: "m1pro",
     name: { EN: "LayersTech M1PRO", TR: "LayersTech M1PRO" }, 

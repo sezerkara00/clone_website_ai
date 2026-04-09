@@ -86,7 +86,6 @@ async function main() {
     }
     fs.writeFileSync(GLOBALS_CSS, globalsCss);
 
-    console.log('--- KLONLAMA TAMAMLANDI, VERILER KAYDEDILDI ---');
 }
 
 main().catch(console.error);

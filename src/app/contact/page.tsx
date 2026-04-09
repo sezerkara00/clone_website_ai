@@ -79,7 +79,7 @@ export default function Contact() {
                             <span>{t({ EN: "Email", TR: "E-Posta" })}</span>
                          </div>
                          <div className="space-y-1">
-                            <p className="text-lg font-bold text-[#1a1a1a] dark:text-white/80">erkan.ates@layerstech.co.uk</p>
+                            <p className="text-lg font-bold text-[#1a1a1a] dark:text-white/80">info@3ddt.com.tr</p>
                             <p className="text-lg font-bold text-[#1a1a1a] dark:text-white/80">sales@layerstech.co.uk</p>
                          </div>
                       </div>
@@ -143,10 +143,10 @@ export default function Contact() {
                        </div>
                     </a>
 
-                    <a href="mailto:erkan.ates@layerstech.co.uk" className="group/link w-full bg-white/5 border border-white/10 hover:border-[#F26522]/50 p-8 rounded-[30px] flex items-center justify-between transition-all duration-500 hover:bg-white/10 hover:-translate-y-1">
+                    <a href="mailto:info@3ddt.com.tr" className="group/link w-full bg-white/5 border border-white/10 hover:border-[#F26522]/50 p-8 rounded-[30px] flex items-center justify-between transition-all duration-500 hover:bg-white/10 hover:-translate-y-1">
                        <div className="flex flex-col gap-2">
                          <span className="text-white font-black text-xs tracking-widest uppercase">{t({ EN: "Engineering & Tech", TR: "Mühendislik ve Teknik" })}</span>
-                         <span className="text-white/40 text-sm font-light">erkan.ates@layerstech.co.uk</span>
+                         <span className="text-white/40 text-sm font-light">info@3ddt.com.tr</span>
                        </div>
                        <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover/link:bg-[#F26522] transition-colors shadow-lg">
                           <Cpu className="w-5 h-5 text-white" />
